@@ -1,0 +1,304 @@
+/* ========================================
+   GLOBAL NETWORK - Sleek B2B
+======================================== */
+.global-network {
+  padding: var(--spacing-8) 0;
+  background-color: var(--neutral-white);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  .global-network {
+    padding: var(--spacing-10) 0;
+  }
+}
+
+.global-network__header-container,
+.global-network__content-container {
+  position: relative;
+  z-index: 5; /* Ensure text is always above the map */
+}
+
+.global-network__header {
+  margin-bottom: var(--spacing-4);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.global-network.is-visible .global-network__header {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ========================================
+   CONTENT LAYOUT
+======================================== */
+.global-network__content {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+.global-network__text-column {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* ========================================
+   BACKGROUND MAP
+======================================== */
+.global-network__map-wrapper {
+  margin-bottom: var(--spacing-6);
+  opacity: 0;
+  transform: translateY(30px);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.global-network.is-visible .global-network__map-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.global-network__bg-map {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Taller for mobile "big" look */
+  background-image: url('/images/dotted-world-map.png');
+  background-size: cover; /* Edge-to-edge fill */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Gradient overlay - Shown on desktop to prevent text interference */
+.global-network__bg-map::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--neutral-white) 0%, rgba(255, 255, 255, 0.95) 20%, transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+@media screen and (min-width: 1024px) {
+  .global-network__map-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 65%; /* Reduced width to clear text */
+    margin-bottom: 0;
+    transform: translateX(40px);
+    pointer-events: none; /* Never interfere with clicks */
+  }
+
+  .global-network.is-visible .global-network__map-wrapper {
+    transform: translateX(0);
+  }
+
+  .global-network__bg-map {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+    background-size: cover;
+    background-position: right center;
+  }
+
+  .global-network__bg-map::after {
+    opacity: 1;
+  }
+}
+
+/* Ping Animations */
+.ping {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.ping::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  opacity: 0.8;
+}
+
+@keyframes ping {
+
+  75%,
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+
+/* Color Variants */
+.ping--primary {
+  background-color: var(--primary-color);
+}
+
+.ping--primary::before {
+  background-color: var(--primary-color);
+}
+
+.ping--secondary {
+  background-color: var(--secondary-color);
+}
+
+.ping--secondary::before {
+  background-color: var(--secondary-color);
+}
+
+.ping--success {
+  background-color: var(--success-color);
+}
+
+.ping--success::before {
+  background-color: var(--success-color);
+}
+
+/* Approximate locations for 16:9 World Map */
+.ping--na {
+  top: 30%;
+  left: 20%;
+  animation-delay: 0.4s;
+}
+
+.ping--sa {
+  top: 65%;
+  left: 30%;
+  animation-delay: 1.6s;
+}
+
+.ping--europe {
+  top: 30%;
+  left: 50%;
+  animation-delay: 0s;
+}
+
+.ping--africa {
+  top: 55%;
+  left: 52%;
+  animation-delay: 1.2s;
+}
+
+.ping--asia {
+  top: 35%;
+  left: 75%;
+  animation-delay: 0.8s;
+}
+
+.ping--oceania {
+  top: 75%;
+  left: 85%;
+  animation-delay: 2.0s;
+}
+
+/* ========================================
+   STATS GRID -> FEATURES GRID
+======================================== */
+.global-network__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.global-network__feature-card {
+  background: var(--neutral-white);
+  border: 1px solid rgba(46, 196, 182, 0.25);
+  border-left: 4px solid var(--accent-color-dark);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(46, 196, 182, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+
+  /* Slide Up */
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.global-network.is-visible .global-network__feature-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.global-network__feature-card:hover {
+  transform: translateY(-5px);
+  background: rgba(46, 196, 182, 0.03);
+  box-shadow: 0 15px 40px rgba(46, 196, 182, 0.12);
+  border-color: var(--accent-color-dark);
+  border-left-color: var(--primary-color);
+}
+
+.feature-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feature-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin: 0;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.global-network__feature-card:hover .feature-card__title {
+  color: var(--primary-color);
+}
+
+.feature-card__desc {
+  font-size: 0.95rem;
+  color: var(--neutral-medium);
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+
+  .global-network__header,
+  .global-network__map,
+  .global-network__feature-card,
+  .ping::before {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .global-network:not(.is-visible) .global-network__header,
+  .global-network:not(.is-visible) .global-network__map,
+  .global-network:not(.is-visible) .global-network__feature-card {
+    opacity: 1 !important;
+  }
+}

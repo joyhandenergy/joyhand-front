@@ -1,0 +1,313 @@
+/* =====================================================
+   PAGE HEADER - Fixed Height, B2B Branding
+===================================================== */
+.page-header {
+  position: relative;
+  /* Use min-height instead of fixed height so text never gets cut off */
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--header-height) + var(--spacing-6)) 0 var(--spacing-5);
+  background-color: var(--secondary-color-dark);
+  overflow: hidden;
+  z-index: 1;
+  isolation: isolate;
+}
+
+@media screen and (min-width: 768px) {
+  .page-header {
+    min-height: 420px;
+    padding-top: calc(var(--header-height) + var(--spacing-10));
+    padding-bottom: var(--spacing-8);
+  }
+}
+
+/* Compact version when breadcrumb is moved below header */
+.page-header--no-breadcrumb {
+  min-height: 220px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-header--no-breadcrumb {
+    min-height: 300px;
+    padding-top: calc(var(--header-height) + var(--spacing-8));
+  }
+}
+
+/* =====================================================
+   BOTTOM GRADIENT BAR
+===================================================== */
+.page-header__bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg,
+      var(--primary-color) 0%,
+      var(--accent-color-dark) 100%);
+  z-index: 10;
+}
+
+/* =====================================================
+   CINEMATIC BACKGROUND
+===================================================== */
+.page-header__bg-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.page-header__bg {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1.5s ease-in-out, transform 3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-header__bg--loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =====================================================
+   OVERLAY & GLOWS (Orange & Teal Mix)
+===================================================== */
+.page-header__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* Dark Navy base blending into image */
+  background: linear-gradient(90deg,
+      rgba(18, 27, 45, 0.98) 0%,
+      rgba(18, 27, 45, 0.8) 40%,
+      rgba(18, 27, 45, 0.3) 100%);
+}
+
+.page-header__glow-orange {
+  position: absolute;
+  right: -5%;
+  bottom: -20%;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+      rgba(255, 127, 65, 0.15) 0%,
+      transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.page-header__glow-teal {
+  position: absolute;
+  left: 10%;
+  top: -20%;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+      rgba(46, 196, 182, 0.08) 0%,
+      transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.page-header__decor-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* =====================================================
+   CONTENT & GLASSMORPHISM
+===================================================== */
+.page-header__container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.page-header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
+  animation: pageHeaderFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@media screen and (min-width: 768px) {
+  .page-header__content {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 800px;
+  }
+}
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+.page-header__breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--spacing-2);
+  padding: 6px 16px;
+  background: rgba(255, 127, 65, 0.1);
+  /* User added Orange tint */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 127, 65, 0.25);
+  /* Adjusted to match orange background */
+  border-left: 3px solid var(--accent-color-dark);
+  /* Touch of green*/
+  border-radius: 50px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  flex-wrap: nowrap;
+  /* Forces same line no matter what */
+  white-space: nowrap;
+  max-width: 90vw;
+  box-shadow: 0 4px 15px rgba(255, 127, 65, 0.05);
+  /* Soft orange glow */
+}
+
+@media screen and (max-width: 767px) {
+  .page-header__breadcrumb {
+    font-size: 0.65rem;
+    padding: 4px 14px;
+    letter-spacing: 0.8px;
+    gap: 6px;
+  }
+}
+
+.page-header__breadcrumb-link {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition);
+  cursor: pointer;
+}
+
+.page-header__breadcrumb-link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.page-header__breadcrumb-icon {
+  color: var(--primary-color);
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 767px) {
+  .page-header__breadcrumb-icon {
+    font-size: 0.7rem;
+  }
+}
+
+.page-header__breadcrumb-current {
+  color: var(--neutral-white);
+  font-weight: 700;
+  cursor: default;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 150px;
+  /* Limit on mobile to keep everything on one line */
+}
+
+@media screen and (min-width: 768px) {
+  .page-header__breadcrumb-current {
+    max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .page-header__breadcrumb {
+    font-size: 0.8rem;
+    gap: 10px;
+    padding: 8px 20px;
+  }
+}
+
+/* =====================================================
+   TITLE & DESCRIPTION
+===================================================== */
+.page-header__title {
+  font-family: var(--font-family-heading);
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: var(--spacing-1);
+}
+
+.page-header__title-text {
+  color: var(--neutral-white);
+}
+
+.page-header__title-accent {
+  color: var(--primary-color);
+}
+
+@media screen and (min-width: 768px) {
+  .page-header__title {
+    font-size: clamp(3rem, 5vw, 4rem);
+  }
+}
+
+.page-header__description {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--font-size-sm);
+  max-width: 100%;
+  /* Changed from fixed 600px so it wraps beautifully */
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 768px) {
+  .page-header__description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-top: var(--spacing-1);
+    max-width: 700px;
+    /* Slightly wider */
+  }
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+@keyframes pageHeaderFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   ACCESSIBILITY & PERFORMANCE
+===================================================== */
+@media (prefers-reduced-motion: reduce) {
+
+  .page-header__bg,
+  .page-header__content {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .page-header__bg {
+    opacity: 1 !important;
+  }
+}

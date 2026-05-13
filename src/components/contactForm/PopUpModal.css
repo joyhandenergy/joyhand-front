@@ -1,0 +1,716 @@
+/* ===================================================== 
+   MODAL COMPONENT - Dual Mode (Mobile Vertical / Desktop Horizontal)
+===================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 27, 45, 0.9);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: var(--spacing-4);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===================================================== 
+   MOBILE STYLES (Default - Vertical)
+===================================================== */
+.modal-container {
+  background: var(--neutral-white);
+  width: 100%;
+  max-width: 400px;
+  border-radius: 32px;
+  padding: var(--spacing-6);
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  animation: modalSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 127, 65, 0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* NFC VISUAL HEADER */
+.modal__header {
+  text-align: center;
+  margin-bottom: var(--spacing-5);
+}
+
+.modal__nfc-visual {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto var(--spacing-3);
+  display: grid;
+  place-items: center;
+}
+
+.modal__nfc-ring {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed var(--primary-color);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: modalRingRotate 10s linear infinite;
+}
+
+.modal__nfc-ring::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: modalPulseRing 2s ease-out infinite;
+}
+
+@keyframes modalPulseRing {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 0.1; 
+  }
+  50% { 
+    transform: scale(1.1); 
+    opacity: 0.2; 
+  }
+}
+
+.modal__icon-box {
+  width: 64px;
+  height: 64px;
+  background: var(--accent-color-light);
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(255, 127, 65, 0.2);
+  transition: all 0.3s ease;
+}
+
+.modal__title {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.modal__subtitle {
+  color: var(--neutral-medium);
+  font-size: 0.9rem;
+  max-width: 300px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* CLOSE BUTTON */
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--neutral-light);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--secondary-color);
+  z-index: 10;
+}
+
+.modal__close:hover {
+  background: var(--error-color);
+  color: white;
+  transform: rotate(90deg);
+}
+
+/* FORM STYLES */
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.modal__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3);
+}
+
+.modal__field {
+  position: relative;
+  width: 100%;
+}
+
+.modal__input {
+  width: 100%;
+  padding: 14px 18px;
+  background: #f8fafc;
+  border: 1px solid rgba(18, 27, 45, 0.2);
+  border-radius: 12px;
+  font-family: var(--font-family-base);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  color: var(--secondary-color);
+}
+
+.modal__input::placeholder {
+  color: rgba(18, 27, 45, 0.3);
+  font-weight: 400;
+}
+
+.modal__input:focus {
+  border-color: var(--primary-color);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(255, 127, 65, 0.1);
+  outline: none;
+}
+
+.modal__input--error {
+  border-color: var(--error-color) !important;
+  background: rgba(230, 57, 70, 0.02) !important;
+}
+
+.modal__select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23121b2d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 48px;
+}
+
+.modal__textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Fixed height container for error messages – prevents layout shift */
+.modal__error-container {
+  min-height: 70px;
+  margin-bottom: var(--spacing-2);
+}
+
+.modal__status {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.modal__status--error {
+  background: rgba(230, 57, 70, 0.1);
+  color: var(--error-color);
+  border-left: 3px solid var(--error-color);
+}
+
+.modal__error-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.modal__error-list span {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.modal__status--success {
+  background: rgba(42, 157, 143, 0.1);
+  color: var(--success-color);
+}
+
+.modal__submit {
+  margin-top: var(--spacing-2);
+  padding: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modal__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.modal__submit svg {
+  transition: transform 0.3s ease;
+}
+
+.modal__submit:hover:not(:disabled) svg {
+  transform: translateX(5px);
+}
+
+.modal__loading-dots {
+  display: inline-flex;
+  gap: 2px;
+  margin-left: 4px;
+}
+
+.modal__loading-dots span {
+  animation: loadingDots 1.4s infinite;
+  opacity: 0;
+}
+
+.modal__loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.modal__loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loadingDots {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.modal__footnote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  color: var(--neutral-medium);
+  margin-top: var(--spacing-2);
+  opacity: 0.7;
+}
+
+.modal__footnote svg {
+  color: var(--primary-color);
+}
+
+/* ===================================================== 
+   SUCCESS STATE
+===================================================== */
+.modal__success-state {
+  text-align: center;
+  padding: var(--spacing-4) 0;
+  animation: successFadeIn 0.5s ease;
+}
+
+@keyframes successFadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal__success-icon {
+  color: var(--success-color);
+  margin-bottom: var(--spacing-3);
+  filter: drop-shadow(0 4px 10px rgba(42, 157, 143, 0.3));
+}
+
+.modal__success-state h4 { 
+  font-size: 1.5rem; 
+  margin-bottom: 10px; 
+  color: var(--secondary-color); 
+  font-weight: 800;
+}
+
+.modal__success-state p { 
+  color: var(--neutral-medium); 
+  margin-bottom: var(--spacing-5); 
+  line-height: 1.6;
+}
+
+/* ===================================================== 
+   COOLDOWN STATE (Spam Protection)
+===================================================== */
+.modal__cooldown-state {
+  text-align: center;
+  padding: var(--spacing-4) 0;
+  animation: successFadeIn 0.5s ease;
+}
+
+.modal__cooldown-icon {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-3);
+  filter: drop-shadow(0 4px 10px rgba(255, 127, 65, 0.3));
+}
+
+.modal__cooldown-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+  font-weight: 800;
+}
+
+.modal__cooldown-text {
+  color: var(--neutral-medium);
+  margin-bottom: var(--spacing-5);
+  line-height: 1.6;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal__cooldown-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  margin-top: var(--spacing-2);
+}
+
+@keyframes modalRingRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===================================================== 
+   MOBILE - BOTTOM SHEET MODE
+===================================================== */
+@media screen and (max-width: 768px) {
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal-container {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 32px 32px 0 0;
+    padding: var(--spacing-5) var(--spacing-4) var(--spacing-8);
+    animation: modalSheetUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2);
+  }
+  
+  .modal__form {
+    gap: var(--spacing-2);
+  }
+  
+  .modal__title { 
+    font-size: 1.25rem; 
+  }
+  
+  .modal__subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .modal__close {
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .modal__icon-box {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .modal__icon-box svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .modal__nfc-visual {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .modal__input {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .modal__select {
+    background-position: right 12px center;
+    padding-right: 40px;
+  }
+  
+  .modal__submit {
+    padding: 14px;
+  }
+  
+  .modal__error-container {
+    min-height: 60px;
+  }
+  
+  .modal__error-list span {
+    font-size: 0.75rem;
+  }
+  
+  /* Cooldown state mobile */
+  .modal__cooldown-title {
+    font-size: 1.25rem;
+  }
+  
+  .modal__cooldown-text {
+    font-size: 0.9rem;
+  }
+}
+
+@keyframes modalSheetUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* ===================================================== 
+   DESKTOP - HORIZONTAL LAYOUT (1024px+)
+   No scroll – content fits naturally
+===================================================== */
+@media screen and (min-width: 1024px) {
+  .modal-container {
+    max-width: 900px;
+    padding: var(--spacing-4);
+    max-height: none;          /* Remove any height restriction */
+    overflow-y: visible;       /* No scroll */
+  }
+  
+  /* Split into two columns */
+  .modal__content-wrapper {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: var(--spacing-5);
+    align-items: start;
+  }
+  
+  /* Left Column - Header & NFC (more compact) */
+  .modal__header {
+    text-align: left;
+    margin-bottom: 0;
+    padding-right: var(--spacing-4);
+    border-right: 1px solid rgba(18, 27, 45, 0.05);
+  }
+  
+  .modal__nfc-visual {
+    margin: 0 0 var(--spacing-3) 0;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .modal__icon-box {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .modal__icon-box svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .modal__title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-1);
+  }
+  
+  .modal__subtitle {
+    font-size: 0.85rem;
+    margin-bottom: var(--spacing-3);
+  }
+  
+  /* Right Column - Form (more compact) */
+  .modal__form {
+    gap: var(--spacing-2);
+  }
+  
+  .modal__grid {
+    gap: var(--spacing-2);
+  }
+  
+  .modal__input {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .modal__textarea {
+    padding: 10px 12px;
+    min-height: 80px;
+  }
+  
+  .modal__select {
+    padding: 8px 32px 8px 12px;
+    background-position: right 12px center;
+    background-size: 14px;
+    padding-right: 32px;
+  }
+  
+  .modal__error-container {
+    min-height: 55px;
+    margin-bottom: var(--spacing-1);
+  }
+  
+  .modal__status {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .modal__error-list span {
+    font-size: 0.7rem;
+  }
+  
+  .modal__submit {
+    margin-top: var(--spacing-1);
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+  
+  .modal__footnote {
+    font-size: 0.65rem;
+    margin-top: var(--spacing-1);
+  }
+  
+  /* Adjust close button */
+  .modal__close {
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .modal__close svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  /* Success & cooldown states */
+  .modal__success-state,
+  .modal__cooldown-state {
+    grid-column: span 2;
+    padding: var(--spacing-4);
+  }
+  
+  .modal__success-state h4,
+  .modal__cooldown-title {
+    font-size: 1.3rem;
+  }
+  
+  .modal__success-state p,
+  .modal__cooldown-text {
+    font-size: 0.85rem;
+  }
+  
+  .modal__cooldown-icon,
+  .modal__success-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: var(--spacing-2);
+  }
+  
+  .modal__cooldown-btn,
+  .modal__success-btn {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===================================================== 
+   LARGE DESKTOP (1440px+)
+===================================================== */
+@media screen and (min-width: 1440px) {
+  .modal-container {
+    max-width: 1000px;
+    padding: var(--spacing-6);
+  }
+  
+  .modal__content-wrapper {
+    gap: var(--spacing-6);
+  }
+  
+  .modal__title {
+    font-size: 1.75rem;
+  }
+  
+  .modal__subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .modal__input {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+  
+  .modal__submit {
+    padding: 12px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===================================================== 
+   SMALL MOBILE
+===================================================== */
+@media screen and (max-width: 480px) {
+  .modal-container {
+    padding: var(--spacing-4) var(--spacing-3) var(--spacing-6);
+  }
+  
+  .modal__title {
+    font-size: 1.1rem;
+  }
+  
+  .modal__subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .modal__input {
+    padding: 10px 14px;
+  }
+  
+  .modal__field {
+    margin-bottom: 4px;
+  }
+  
+  .modal__status {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .modal__footnote {
+    font-size: 0.65rem;
+    flex-wrap: wrap;
+  }
+  
+  .modal__error-container {
+    min-height: 55px;
+  }
+  
+  /* Cooldown state small mobile */
+  .modal__cooldown-title {
+    font-size: 1.1rem;
+  }
+  
+  .modal__cooldown-text {
+    font-size: 0.85rem;
+  }
+  
+  .modal__cooldown-icon {
+    width: 48px;
+    height: 48px;
+  }
+}

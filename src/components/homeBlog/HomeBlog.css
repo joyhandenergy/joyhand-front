@@ -1,0 +1,174 @@
+.home-blog {
+  padding: var(--spacing-8) 0;
+  background: linear-gradient(180deg, var(--neutral-white) 0%, #f4f7f9 100%);
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+  border-top: 1px solid rgba(18, 27, 45, 0.03);
+}
+
+@media screen and (min-width: 1024px) {
+  .home-blog {
+    padding: var(--spacing-10) 0;
+  }
+}
+
+.home-blog__carousel {
+  margin: var(--spacing-6) 0 var(--spacing-4);
+  overflow: hidden;
+}
+
+.home-blog__track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 10px 10px 30px 10px;
+  cursor: grab;
+  scroll-behavior: smooth;
+  margin: -10px; /* offset padding so cards don't clip shadows */
+}
+
+.home-blog__track::-webkit-scrollbar {
+  display: none;
+}
+
+.home-blog__track:active {
+  cursor: grabbing;
+}
+
+.home-blog__slide {
+  flex: 0 0 85vw;
+  max-width: 380px;
+  scroll-snap-align: center;
+}
+
+@media (min-width: 768px) {
+  .home-blog__slide {
+    flex: 0 0 350px;
+    scroll-snap-align: start;
+  }
+}
+
+.home-blog__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0 40px;
+}
+
+.home-blog__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--secondary-color);
+  opacity: 0.15;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-blog__dot:hover {
+  opacity: 0.4;
+}
+
+.home-blog__dot--active {
+  opacity: 1;
+  background: var(--primary-color);
+  width: 32px;
+  box-shadow: 0 4px 10px rgba(255, 127, 65, 0.3);
+}
+
+.home-blog__dot--active:hover {
+  opacity: 1;
+}
+
+.home-blog__footer {
+  text-align: center;
+}
+
+.home-blog__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--secondary-color);
+  color: var(--neutral-white);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 14px 36px;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 20px rgba(18, 27, 45, 0.1);
+  border: 2px solid var(--secondary-color);
+}
+
+.home-blog__link svg {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.home-blog__link:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(255, 127, 65, 0.25);
+}
+
+.home-blog__link:hover svg {
+  transform: translateX(4px);
+}
+
+/* =====================================================
+   ARTISTIC CIRCLE PATTERN (same as Trust section)
+===================================================== */
+.home-blog::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255,127,65,0.03) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(46,196,182,0.03) 0%,
+      transparent 60%
+    ),
+    repeating-radial-gradient(
+      circle at 30% 40%,
+      rgba(255,127,65,0.02) 0px,
+      rgba(255,127,65,0.02) 2px,
+      transparent 2px,
+      transparent 24px
+    );
+  background-blend-mode: overlay;
+  background-size: 100% 100%, 100% 100%, 28px 28px;
+  background-position: 0 0, 0 0, 0 0;
+}
+
+/* Subtle movement on hover (optional, respects reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .home-blog::before {
+    transition: background-position 0.4s ease;
+  }
+  .home-blog:hover::before {
+    background-position: 0 0, 0 0, 8px 8px;
+  }
+}
+
+/* Ensure content stays above pattern */
+.home-blog .container,
+.home-blog__carousel,
+.home-blog__dots,
+.home-blog__footer {
+  position: relative;
+  z-index: 2;
+}

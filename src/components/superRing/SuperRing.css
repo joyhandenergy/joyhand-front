@@ -1,0 +1,86 @@
+/* =====================================================
+   SUPER RING – Decorative Rings (Optimized)
+===================================================== */
+.super-ring {
+  position: absolute;
+  border-style: solid;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+  
+  /* Performance: Prevents jittery motion on high-res screens */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform, opacity;
+  
+  transition: opacity 0.3s ease;
+
+  width: clamp(200px, 40vw, 800px);
+  aspect-ratio: 1 / 1;
+  border-width: clamp(2px, 0.6vw, 6px);
+  opacity: 0.15 !important; /* Force higher visibility */
+  filter: drop-shadow(0 0 10px rgba(255, 127, 65, 0.2));
+  flex-shrink: 0;
+
+  /* Optional Enhancement: Soft fade-out at edges */
+  mask-image: radial-gradient(circle, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 100%);
+  animation: ringFloat 20s infinite ease-in-out;
+}
+
+@keyframes ringFloat {
+  0%, 100% { transform: translate(-50%, 0) rotate(0deg); }
+  50% { transform: translate(-51%, -1%) rotate(2deg); }
+}
+
+/* COLORS */
+.super-ring--primary {
+  border-color: var(--primary-color);
+}
+
+.super-ring--secondary {
+  border-color: var(--secondary-color);
+}
+
+.super-ring--accent {
+  border-color: var(--accent-color-dark);
+}
+
+/* Blend Mode: Keeping it normal for clarity, 
+   but 'screen' or 'multiply' can be used if you want them to react to bg colors */
+.super-ring {
+  mix-blend-mode: normal;
+}
+
+/* =====================================================
+   DEVICE TUNING (Kept exactly as yours, but cleaner)
+===================================================== */
+
+@media (max-width: 480px) {
+  .super-ring {
+    width: clamp(80px, 30vw, 180px);
+    border-width: 1px;
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .super-ring {
+    width: clamp(100px, 25vw, 250px);
+    border-width: 2px;
+    opacity: 0.7;
+  }
+}
+
+@media (min-width: 1440px) {
+  .super-ring {
+    width: clamp(200px, 18vw, 500px);
+    border-width: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .super-ring {
+    transition: none;
+  }
+}

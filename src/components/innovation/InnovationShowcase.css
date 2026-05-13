@@ -1,0 +1,567 @@
+/* =====================================================
+   INNOVATION SECTION - Mobile First
+===================================================== */
+.innovation-section {
+  position: relative;
+  margin-bottom: 60px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .innovation-section {
+    margin-bottom: 80px;
+  }
+}
+
+/* =====================================================
+   HERO VIDEO - Mobile First
+===================================================== */
+.innovation-section__hero {
+  position: relative;
+  height: 50vh;
+  min-height: 350px;
+  overflow: hidden;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
+@media screen and (min-width: 768px) {
+  .innovation-section__hero {
+    height: 60vh;
+    min-height: 450px;
+  }
+}
+
+.innovation-section__poster {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.5s ease;
+}
+
+.innovation-section__poster--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.innovation-section__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.innovation-section__video--loaded {
+  opacity: 1;
+}
+
+.innovation-section__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(18,27,45,0.9), rgba(18,27,45,0.6));
+  display: flex;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.innovation-section__hero-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-3);
+  width: 100%;
+}
+
+.innovation-section.is-visible .innovation-section__hero-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================================================
+   GRID - Cards stay within container
+===================================================== */
+.innovation-section__container {
+  margin-top: -40px;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .innovation-section__container {
+    margin-top: -80px;
+  }
+}
+
+.innovation-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .innovation-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .innovation-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+.innovation-card {
+  background: linear-gradient(145deg, #ffffff, #fff5ef);
+  padding: 24px;
+  border-radius: 24px;
+  height: auto;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(18,27,45,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  will-change: transform, box-shadow;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Entrance Animation */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+  transition-delay: var(--delay, 0s);
+}
+
+@media screen and (min-width: 480px) {
+  .innovation-card {
+    padding: 28px;
+    min-height: 320px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .innovation-card {
+    padding: 30px;
+    min-height: 340px;
+  }
+}
+
+.innovation-section.is-visible .innovation-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.innovation-card:hover,
+.innovation-card:active {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 127, 65, 0.12);
+}
+
+/* =====================================================
+   HEADER CONTENT
+===================================================== */
+.innovation-card__main {
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.innovation-card__icon {
+  width: 44px;
+  height: 44px;
+  background: var(--primary-color);
+  color: var(--accent-color-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  will-change: transform;
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+  .innovation-card__icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+.innovation-card:hover .innovation-card__icon,
+.innovation-card:active .innovation-card__icon {
+  background: var(--primary-color);
+  color: white;
+  transform: scale(1.05);
+}
+
+.innovation-card__title {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+  .innovation-card__title {
+    font-size: 1.25rem;
+  }
+}
+
+/* =====================================================
+   PREVIEW TEXT
+===================================================== */
+.innovation-card__preview {
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.innovation-card__preview-text {
+  font-size: 0.85rem;
+  color: var(--neutral-medium);
+  line-height: 1.4;
+  border-left: 2px solid var(--primary-color);
+  padding-left: 12px;
+  margin: 0;
+  font-style: italic;
+}
+
+@media screen and (min-width: 768px) {
+  .innovation-card__preview-text {
+    font-size: 0.9rem;
+    padding-left: 15px;
+  }
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+.innovation-card__description {
+  margin-top: 8px;
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.innovation-card__description-text {
+  font-size: 0.85rem;
+  color: var(--neutral-medium);
+  line-height: 1.5;
+  margin: 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+@media screen and (min-width: 768px) {
+  .innovation-card__description-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+/* =====================================================
+   DECORATIONS
+===================================================== */
+.innovation-card__pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--primary-color) 0.5px, transparent 0.5px);
+  background-size: 16px 16px;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.innovation-card__glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+  will-change: transform;
+}
+
+.innovation-card:hover .innovation-card__glow,
+.innovation-card:active .innovation-card__glow {
+  transform: scaleX(1);
+}
+
+/* =====================================================
+   SIDE RING (div)
+===================================================== */
+.innovation-card__ring {
+  position: absolute;
+  right: -15%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 127, 65, 0.08) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0.5;
+}
+
+.innovation-card:hover .innovation-card__ring {
+  opacity: 0.9;
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* =====================================================
+   TECHNICAL GRID (pseudo-element)
+===================================================== */
+.innovation-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 127, 65, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 127, 65, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.innovation-card:hover::after {
+  opacity: 0.6;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.innovation-section__footer {
+  margin-top: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .innovation-section__footer {
+    margin-top: 40px;
+  }
+}
+
+.innovation-section__footer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  color: var(--neutral-medium);
+  font-size: 0.85rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 640px) {
+  .innovation-section__footer-text {
+    flex-direction: row;
+    padding: 12px 25px;
+    border-radius: 50px;
+    width: auto;
+    display: inline-flex;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .innovation-section__footer-text {
+    font-size: 0.9rem;
+    gap: 10px;
+  }
+}
+
+.innovation-section__footer-link {
+  color: var(--primary-color);
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.2s ease;
+}
+
+.innovation-section__footer-link:hover,
+.innovation-section__footer-link:active {
+  gap: 8px;
+  color: var(--secondary-color);
+}
+
+/* =====================================================
+   MOBILE TAP STATES
+===================================================== */
+@media screen and (max-width: 767px) {
+  .innovation-card:active {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 127, 65, 0.12);
+  }
+  
+  .innovation-card:active .innovation-card__icon {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE (480px and below)
+===================================================== */
+@media screen and (max-width: 480px) {
+  .innovation-card {
+    padding: 20px;
+    min-height: 280px;
+  }
+  
+  .innovation-card__icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .innovation-card__title {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+  
+  .innovation-card__preview-text {
+    font-size: 0.75rem;
+    padding-left: 8px;
+  }
+  
+  .innovation-card__description-text {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  
+  .innovation-section__footer-text {
+    padding: 10px 15px;
+    font-size: 0.75rem;
+  }
+  
+  .innovation-section__badge {
+    font-size: 0.55rem;
+    padding: 3px 8px;
+  }
+  
+  .innovation-section__title {
+    font-size: 1.3rem;
+  }
+  
+  .innovation-section__subtitle {
+    font-size: 0.75rem;
+  }
+
+  /* Mobile ring adjustments */
+  .innovation-card__ring {
+    right: -30%;
+    width: 300%;
+    height: 300%;
+    opacity: 0.3;
+  }
+  .innovation-card:hover .innovation-card__ring {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.5;
+  }
+  .innovation-card::after {
+    background-size: 16px 16px;
+    opacity: 0.2;
+  }
+  .innovation-card:hover::after {
+    opacity: 0.4;
+  }
+}
+
+/* =====================================================
+   PERFORMANCE OPTIMIZATIONS
+===================================================== */
+.innovation-card,
+.innovation-card__icon,
+.innovation-card__glow,
+.innovation-card__ring {
+  will-change: transform;
+}
+
+.innovation-section__video,
+.innovation-section__poster {
+  will-change: opacity;
+}
+
+/* =====================================================
+   REDUCED MOTION PREFERENCES
+===================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .innovation-card,
+  .innovation-card__icon,
+  .innovation-card__glow,
+  .innovation-card__preview,
+  .innovation-card__description,
+  .innovation-section__hero-content,
+  .innovation-card__ring,
+  .innovation-card::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .innovation-card:hover,
+  .innovation-card:active {
+    transform: none;
+  }
+  
+  .innovation-card:hover .innovation-card__icon {
+    transform: none;
+  }
+  
+  .innovation-card:hover .innovation-card__ring {
+    transform: none;
+  }
+  
+  .innovation-section__video {
+    opacity: 1 !important;
+  }
+  
+  .innovation-section__poster {
+    display: none;
+  }
+}

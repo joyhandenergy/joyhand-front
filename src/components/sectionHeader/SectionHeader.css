@@ -1,0 +1,177 @@
+/* =====================================================
+   SECTION HEADER - Sleek Premium B2B
+===================================================== */
+.section-header {
+  margin-bottom: var(--spacing-4);
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .section-header {
+    margin-bottom: var(--spacing-5);
+  }
+}
+
+/* ---------------------------------------------------
+   ALIGNMENT MODIFIERS
+--------------------------------------------------- */
+.section-header--align-left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.section-header--align-center {
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header--align-right {
+  align-items: flex-end;
+  text-align: right;
+  margin-left: auto;
+}
+
+/* ---------------------------------------------------
+   BADGE (Glassmorphism + Teal Accent)
+--------------------------------------------------- */
+.section-header__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(46, 196, 182, 0.1); /* Teal glass */
+  color: var(--accent-color-dark); /* Teal text */
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--spacing-2);
+  border: 1px solid rgba(46, 196, 182, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  width: fit-content;
+  animation: badgePulse 3s ease-in-out infinite;
+}
+
+@media screen and (min-width: 768px) {
+  .section-header__badge {
+    gap: 8px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+.section-header__badge-icon {
+  width: 14px;
+  height: 14px;
+  fill: var(--primary-color);
+  filter: drop-shadow(0 0 5px rgba(46, 196, 182, 0.4));
+}
+
+@media screen and (min-width: 768px) {
+  .section-header__badge-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* ---------------------------------------------------
+   TITLE
+--------------------------------------------------- */
+.section-header__title {
+  color: var(--secondary-color);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  margin-bottom: var(--spacing-2);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.section-header--theme-light .section-header__title {
+  color: var(--neutral-white);
+}
+
+/* ---------------------------------------------------
+   SUBTITLE
+--------------------------------------------------- */
+.section-header__subtitle {
+  color: var(--neutral-medium);
+  font-size: 1rem;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.section-header--align-left .section-header__subtitle {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.section-header--theme-light .section-header__subtitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media screen and (min-width: 768px) {
+  .section-header__subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* Center subtitle for center alignment */
+.section-header--align-center .section-header__subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------------------------------------------------
+   ACCENT BAR
+--------------------------------------------------- */
+.section-header__bar {
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color);
+  margin-top: var(--spacing-3);
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-header:hover .section-header__bar {
+  width: 80px;
+}
+
+/* Center bar for center alignment */
+.section-header--align-center .section-header__bar {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------------------------------------------------
+   ANIMATIONS
+--------------------------------------------------- */
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(46, 196, 182, 0);
+  }
+}
+
+/* Accessibility & Performance */
+@media (prefers-reduced-motion: reduce) {
+  .section-header__badge {
+    animation: none;
+  }
+  .section-header__bar {
+    transition: none;
+  }
+  .section-header:hover .section-header__bar {
+    width: 60px;
+  }
+}

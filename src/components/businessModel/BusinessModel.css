@@ -1,0 +1,269 @@
+/* =====================================================
+   BUSINESS MODEL (MANUFACTURING HUB) - Sleek B2B
+===================================================== */
+.businessModel {
+  padding: var(--spacing-8) 0;
+  /* Tech grid background on a soft gray to contrast the white section above */
+  background-color: var(--neutral-light);
+  background-image: 
+    radial-gradient(var(--neutral-medium) 0.5px, transparent 0.5px),
+    radial-gradient(var(--neutral-medium) 0.5px, transparent 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  /* Lowering the opacity of the dots so it's extremely subtle */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Pseudo element to wash out the dots so they are barely visible */
+.businessModel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(244, 246, 249, 0.9) 0%, rgba(244, 246, 249, 0.6) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .businessModel {
+    padding: var(--spacing-10) 0;
+  }
+}
+
+.businessModel__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (min-width: 1024px) {
+  .businessModel__container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-8);
+    align-items: center;
+  }
+}
+
+/* Animations */
+.businessModel:not(.is-visible) .businessModel__images {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.businessModel:not(.is-visible) .businessModel__content {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.businessModel.is-visible .businessModel__images,
+.businessModel.is-visible .businessModel__content {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =====================================================
+   IMAGE CARDS
+===================================================== */
+.businessModel__images {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  position: relative;
+}
+
+.businessModel__image-card {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--neutral-light);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 4px solid var(--neutral-white); /* Clean white border */
+}
+
+.businessModel__image-card--dynamic {
+  aspect-ratio: 4 / 3;
+}
+
+.businessModel__image-card--static {
+  aspect-ratio: 16 / 9;
+  display: none; /* Hide static image on mobile for better focus */
+}
+
+@media screen and (min-width: 768px) {
+  .businessModel__image-card--static {
+    display: block;
+  }
+}
+
+.businessModel__image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(255, 127, 65, 0.1);
+}
+
+.businessModel__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18,27,45,0.4) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.businessModel__image {
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  z-index: 1;
+}
+
+.businessModel__image-card:hover .businessModel__image {
+  transform: scale(1.05);
+}
+
+/* =====================================================
+   TABS
+===================================================== */
+.businessModel__service-tabs {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: var(--spacing-4);
+  padding-bottom: 4px;
+}
+
+.businessModel__service-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.service-tab-btn {
+  flex-shrink: 0;
+  padding: 10px 24px;
+  background: rgba(18, 27, 45, 0.03);
+  border: 1px solid rgba(18, 27, 45, 0.08);
+  border-radius: 100px;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: var(--neutral-medium);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.service-tab-btn.active {
+  background: var(--primary-color);
+  color: var(--neutral-white);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 15px rgba(255, 127, 65, 0.25);
+  font-weight: 700;
+}
+
+.service-tab-btn:hover:not(.active) {
+  background: rgba(255, 127, 65, 0.05);
+  border-color: rgba(255, 127, 65, 0.3);
+  color: var(--primary-color);
+}
+
+/* =====================================================
+   CONTENT (using SectionHeader)
+===================================================== */
+.businessModel__section-header {
+  margin-bottom: var(--spacing-3);
+}
+
+.businessModel__text-content {
+  min-height: 280px; /* Prevent vertical shift */
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.businessModel__extra {
+  font-size: 1rem;
+  color: var(--neutral-medium);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-3);
+  text-align: justify;
+}
+
+/* =====================================================
+   FEATURES LIST
+===================================================== */
+.businessModel__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: var(--spacing-4);
+}
+
+@media screen and (min-width: 640px) {
+  .businessModel__list {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+.businessModel__list li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 0.95rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+}
+
+.businessModel__list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  color: var(--primary-color);
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+/* =====================================================
+   LINK
+===================================================== */
+.businessModel__actions {
+  margin-top: var(--spacing-4);
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .businessModel__actions {
+    text-align: left;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .businessModel,
+  .businessModel__image-card,
+  .businessModel__image,
+  .businessModel__link,
+  .businessModel__link::after,
+  .businessModel__text-content {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

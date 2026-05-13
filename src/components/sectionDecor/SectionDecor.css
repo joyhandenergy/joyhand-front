@@ -1,0 +1,124 @@
+/* =====================================================
+   SECTION DECOR SYSTEM - High-Performance Atmospheric
+===================================================== */
+.section-decor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1; /* Keep it strictly in background */
+  opacity: 1; /* Full opacity, we control strength via child shapes */
+  
+  /* Performance: Create a new stacking context */
+  contain: strict; 
+}
+
+/* Base shape */
+.section-decor__shape {
+  position: absolute;
+  filter: blur(80px);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0); 
+  mix-blend-mode: color-dodge; /* Much more intense than screen */
+}
+
+/* =====================================================
+   THEMES (Optimized aspect-ratios)
+===================================================== */
+
+/* PRIMARY: Clean Circles */
+.section-decor--primary .section-decor__shape {
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 60%);
+  border-radius: 50%;
+  opacity: 0.25; /* Increased from 0.15 */
+  width: clamp(400px, 50vw, 800px); /* Increased size */
+  aspect-ratio: 1 / 1;
+  animation: floatBubble 25s infinite ease-in-out;
+}
+
+/* SECONDARY: Engineering Ovals */
+.section-decor--secondary .section-decor__shape {
+  background: var(--secondary-color-light);
+  opacity: 0.08;
+  width: clamp(250px, 40vw, 700px);
+  aspect-ratio: 16 / 9; /* Ultra-wide industrial feel */
+  border-radius: 50%;
+  animation: morphOval 30s infinite ease-in-out;
+}
+
+/* ACCENT: Organic 'Energy' Blobs */
+.section-decor--accent .section-decor__shape {
+  background: var(--accent-color-dark);
+  opacity: 0.1;
+  width: clamp(120px, 15vw, 220px);
+  aspect-ratio: 4 / 5;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation: driftEgg 18s infinite linear;
+}
+
+/* =====================================================
+   GPU-FRIENDLY ANIMATIONS (Slow = Premium)
+===================================================== */
+@keyframes floatBubble {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(5%, -10%, 0) scale(1.05); }
+  66% { transform: translate3d(-5%, 5%, 0) scale(0.95); }
+}
+
+@keyframes morphOval {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(2%, 2%, 0) rotate(10deg) scale(1.02); }
+}
+
+@keyframes driftEgg {
+  from { transform: translate3d(0, 80%, 0) rotate(0deg); opacity: 0; }
+  20%, 80% { opacity: 0.12; }
+  to { transform: translate3d(0, -80%, 0) rotate(360deg); opacity: 0; }
+}
+
+/* =====================================================
+   POSITIONING & PERFORMANCE
+===================================================== */
+.section-decor__shape:nth-child(1) {
+  top: 5%;
+  left: -5%;
+  animation-delay: 0s;
+}
+
+.section-decor__shape:nth-child(2) {
+  bottom: 5%;
+  right: -5%;
+  animation-delay: -7s;
+}
+
+.section-decor__shape:nth-child(3) {
+  top: 45%;
+  left: 55%;
+  animation-delay: -14s;
+}
+
+/* =====================================================
+   RESPONSIVE OPTIMIZATION
+===================================================== */
+@media (max-width: 768px) {
+  .section-decor {
+    opacity: 0.35;
+  }
+  
+  /* Limit blur and movement on mobile for battery life */
+  .section-decor__shape {
+    filter: blur(35px);
+    animation-duration: 35s; /* Slower = less CPU usage */
+  }
+
+  .section-decor__shape:nth-child(3) {
+    display: none; /* Hide middle shape on mobile for performance */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-decor__shape {
+    animation: none !important;
+  }
+}

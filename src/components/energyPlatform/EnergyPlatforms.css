@@ -1,0 +1,257 @@
+/* ========================================
+   ENERGY PLATFORMS - High-End Scoped Style
+======================================== */
+
+.energy-platforms {
+  width: 100%;
+  background-color: var(--neutral-white);
+  overflow: hidden;
+  position: relative;
+}
+
+.energy-platforms__header-container {
+  padding-top: var(--spacing-8);
+  padding-bottom: var(--spacing-6);
+}
+
+@media screen and (min-width: 1024px) {
+  .energy-platforms__header-container {
+    padding-top: var(--spacing-10);
+    padding-bottom: var(--spacing-8);
+  }
+}
+
+/* SCOPED BORDER RADIUS: 
+   Only removes curves from the grid and cards. */
+.energy-platforms__grid,
+.energy-platforms .platform-card, 
+.energy-platforms .platform-card__image {
+  border-radius: 0 !important;
+}
+
+.energy-platforms__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px; /* Precision split line between cards */
+  background-color: var(--neutral-white); /* creates the line color */
+}
+
+@media screen and (min-width: 768px) {
+  .energy-platforms__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .energy-platforms__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ========================================
+   PLATFORM CARD
+======================================== */
+.platform-card {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  max-height: 600px;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+  
+  /* Entrance Animation */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.energy-platforms.energy-platforms--is-visible .platform-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.platform-card__link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+.platform-card__image-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.platform-card__image {
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.platform-card__overlay {
+  position: absolute;
+  inset: 0;
+  /* Darker base for better title pop */
+  background: color-mix(in srgb, var(--secondary-color-dark), transparent 50%);
+  z-index: 2;
+  transition: background 0.5s ease;
+}
+
+/* ========================================
+   CONTENT ALIGNMENT (Centered)
+======================================== */
+.platform-card__content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical Center */
+  align-items: center;    /* Horizontal Center */
+  padding: 30px;
+  text-align: center;
+}
+
+.platform-card__center-group {
+  transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.platform-card__title {
+  color: #ffffff;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ========================================
+   REVEAL LOGIC & CURVED BUTTON
+======================================== */
+.platform-card__reveal-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.platform-card__description {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 15px auto 25px;
+  max-width: 300px;
+}
+
+.platform-card__button-container {
+  margin-top: 5px;
+}
+
+/* THE CURVED BUTTON */
+.platform-card__button {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 10px 28px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  
+  /* Explicitly curved like a pill */
+  border-radius: 50px !important; 
+  
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.platform-card__button:hover {
+  background-color: #ffffff;
+  color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* ========================================
+   STATIONARY ELEMENTS
+======================================== */
+.platform-card__source-tag {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* ========================================
+   HOVER ACTIONS
+======================================== */
+.platform-card:hover .platform-card__image {
+  transform: scale(1.1);
+}
+
+.platform-card:hover .platform-card__overlay {
+  background: color-mix(in srgb, var(--secondary-color-dark), transparent 20%);
+}
+
+.platform-card:hover .platform-card__center-group {
+  /* Shifts the title up slightly to keep the whole group centered when expanded */
+  transform: translateY(-20px);
+}
+
+.platform-card:hover .platform-card__reveal-content {
+  max-height: 350px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 10px;
+}
+
+/* Mobile Tweak - Show more by default on small screens */
+@media screen and (max-width: 768px) {
+  .platform-card {
+    height: 50vh;
+  }
+  
+  .platform-card__reveal-content {
+    max-height: none;
+    opacity: 1;
+    transform: none;
+    margin-top: 15px;
+  }
+  
+  .platform-card:hover .platform-card__center-group {
+    transform: none;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+  .platform-card,
+  .platform-card__image,
+  .platform-card__center-group,
+  .platform-card__reveal-content,
+  .platform-card__overlay {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .energy-platforms:not(.energy-platforms--is-visible) .platform-card {
+    opacity: 1 !important;
+  }
+
+  .platform-card:hover .platform-card__image {
+    transform: none;
+  }
+}
