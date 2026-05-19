@@ -24,50 +24,7 @@ import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import "../Products.css";
 
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const product = productData.find((p) => p.slug === slug);
-  
-  if (!product) {
-    return { title: "Product Not Found | JoyHand Energy" };
-  }
 
-  // Generate localized SEO keywords based on the category
-  const getRegionalKeywords = (category) => {
-    const regions = "Nigeria, Kenya, South Africa, Pakistan, Bangladesh";
-    switch(category) {
-      case "battery": return `LFP Battery wholesale, Solar battery manufacturer China, OEM batteries for ${regions}`;
-      case "inverter": return `Hybrid inverter supplier, Wholesale solar inverters China, off-grid inverters for ${regions}`;
-      case "electric-mobility": return `Electric motorcycle manufacturer, OEM E-bike supplier, EV wholesale ${regions}`;
-      case "portable-power": return `Portable power station wholesale, OEM solar generator manufacturer for ${regions}`;
-      case "power-bank": return `Power bank wholesale, OEM power bank manufacturer China, B2B power banks for ${regions}`;
-      default: return `Energy solutions wholesale, OEM manufacturer China for ${regions}`;
-    }
-  };
-
-  const dynamicTitle = `${product.name} | Factory Direct Wholesale | JoyHand Energy`;
-  
-  return {
-    title: dynamicTitle,
-    description: `Import ${product.name} directly from JoyHand Energy's ISO-certified manufacturing facility. High-performance design suitable for wholesale distribution.`,
-    keywords: `${getRegionalKeywords(product.category)}, ${product.name} manufacturer, B2B wholesale ${product.category}`,
-    openGraph: {
-      title: dynamicTitle,
-      description: `Wholesale ${product.name} from a premium direct factory supplier. Ideal for unstable grids and renewable integration.`,
-      images: [
-        {
-          url: product.image,
-          width: 1200,
-          height: 630,
-          alt: product.name,
-        },
-      ],
-    },
-    alternates: {
-      canonical: `/products/${slug}`,
-    }
-  };
-}
 
 function getCategoryIcon(category) {
   switch (category) {
