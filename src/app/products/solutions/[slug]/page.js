@@ -11,13 +11,17 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const config = solutionConfigs[slug];
   if (!config) return { title: "Category Not Found" };
+  
+  const title = `${config.title} | JoyHand`.substring(0, 60);
+  const description = config.description.substring(0, 160);
+
   return {
-    title: `${config.title} | Wholesale OEM Supply`,
-    description: config.description,
+    title: title,
+    description: description,
     keywords: config.keywords,
     openGraph: {
-      title: `${config.title} - Factory Direct Supply`,
-      description: config.description,
+      title: title,
+      description: description,
       type: "website",
       images: [
         {

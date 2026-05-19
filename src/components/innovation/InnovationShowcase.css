@@ -398,10 +398,12 @@
 @media screen and (min-width: 640px) {
   .innovation-section__footer-text {
     flex-direction: row;
+    justify-content: center;
     padding: 12px 25px;
     border-radius: 50px;
     width: auto;
     display: inline-flex;
+    white-space: nowrap; /* Forces text to stay straight on one line */
   }
 }
 
@@ -420,6 +422,7 @@
   align-items: center;
   gap: 5px;
   transition: gap 0.2s ease;
+  white-space: nowrap;
 }
 
 .innovation-section__footer-link:hover,

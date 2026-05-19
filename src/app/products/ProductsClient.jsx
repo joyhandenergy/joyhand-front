@@ -6,6 +6,7 @@ import { productData, solutionLinks } from "@/data";
 import ProductCard from "@/components/productCard/ProductCard";
 import Pagination from "@/components/pagination/Pagination";
 import { PiPackage } from "react-icons/pi";
+import { useScrollReveal } from "@/components/useScrollReveal";
 import "./Products.css";
 
 const PRODUCTS_PER_PAGE = 12;
@@ -18,8 +19,11 @@ export default function ProductsClient() {
   const paginatedProducts = productData.slice(start, end);
   const totalPages = Math.ceil(productData.length / PRODUCTS_PER_PAGE);
 
+  const sectionReveal = useScrollReveal();
+  const gridReveal    = useScrollReveal();
+
   return (
-    <section className="products-page__section">
+    <section ref={sectionReveal.ref} className={`products-page__section reveal ${sectionReveal.isVisible ? 'is-visible' : ''}`}>
       <div className="container">
 
         {/* ── Category Filter Bar ── */}
@@ -62,8 +66,8 @@ export default function ProductsClient() {
         {/* ── Products Grid ── */}
         <div className="products-page__grid">
           {paginatedProducts.length > 0 ? (
-            paginatedProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+            paginatedProducts.map((product, index) => (
+              <ProductCard key={product.id} product={product} priority={index < 4} />
             ))
           ) : (
             <div className="products-page__empty">

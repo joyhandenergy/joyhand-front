@@ -16,8 +16,11 @@ export default function PageLoader({ children }) {
     const handleComplete = () => {
       const elapsedTime = Date.now() - startTime;
       const remainingTime = Math.max(0, minLoadTime - elapsedTime);
-      setProgress(100);
-      setTimeout(() => setLoading(false), remainingTime);
+      
+      setTimeout(() => {
+        setProgress(100);
+        setTimeout(() => setLoading(false), 600); // Wait for CSS transition
+      }, remainingTime);
     };
 
     // Deep Asset Tracking
@@ -76,41 +79,42 @@ export default function PageLoader({ children }) {
     };
   }, []);
 
-  if (loading) {
-    return (
-      <div className={`page-loader ${!loading ? 'page-loader--hidden' : ''}`}>
-        <div className="page-loader__container">
-          {/* Animated Logo */}
-          <div className="page-loader__logo-wrapper">
-            <Image
-              src="/images/logos/joyhandLogo.png"
-              alt="JoyHand Energy"
-              width={220}
-              height={74}
-              className="page-loader__logo"
-              priority
-            />
-          </div>
+  return (
+    <>
+      {loading && (
+        <div className={`page-loader ${progress === 100 ? 'page-loader--hidden' : ''}`}>
+          <div className="page-loader__container">
+            {/* Animated Logo */}
+            <div className="page-loader__logo-wrapper">
+              <Image
+                src="/images/logos/joyhandLogo.png"
+                alt="JoyHand Energy"
+                width={220}
+                height={74}
+                className="page-loader__logo"
+                priority
+              />
+            </div>
 
-          {/* Precision Loading Bar */}
-          <div className="page-loader__bar-container">
-            <div 
-              className="page-loader__bar" 
-              style={{ width: `${progress}%` }}
-            ></div>
-          </div>
+            {/* Precision Loading Bar */}
+            <div className="page-loader__bar-container">
+              <div 
+                className="page-loader__bar" 
+                style={{ width: `${progress}%` }}
+              ></div>
+            </div>
 
-          {/* Professional Status */}
-          <div className="page-loader__status">
-            <span className="page-loader__text">
-              {progress < 100 ? "Initializing Systems" : "Systems Online"}
-            </span>
-            <span className="page-loader__percentage">{progress}%</span>
+            {/* Professional Status */}
+            <div className="page-loader__status">
+              <span className="page-loader__text">
+                {progress < 100 ? "Initializing Systems" : "Systems Online"}
+              </span>
+              <span className="page-loader__percentage">{progress}%</span>
+            </div>
           </div>
         </div>
-      </div>
-    );
-  }
-
-  return children;
+      )}
+      {children}
+    </>
+  );
 }

@@ -153,6 +153,7 @@ const SimpleContactForm = ({ mode = "quote" }) => {
           <input
             name="firstName"
             placeholder="First Name *"
+            aria-label="First Name"
             value={formData.firstName}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -171,6 +172,7 @@ const SimpleContactForm = ({ mode = "quote" }) => {
           <input
             name="lastName"
             placeholder="Last Name"
+            aria-label="Last Name"
             value={formData.lastName}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -185,6 +187,7 @@ const SimpleContactForm = ({ mode = "quote" }) => {
           type="email"
           name="email"
           placeholder="Business Email *"
+          aria-label="Business Email"
           value={formData.email}
           onChange={handleChange}
           onBlur={handleBlur}
@@ -206,6 +209,7 @@ const SimpleContactForm = ({ mode = "quote" }) => {
             <input
               name="companyName"
               placeholder="Company Name *"
+              aria-label="Company Name"
               value={formData.companyName}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -223,6 +227,7 @@ const SimpleContactForm = ({ mode = "quote" }) => {
           <div className="modal__field">
             <select
               name="orderVolume"
+              aria-label="Expected Order Volume"
               className="modal__input modal__select"
               onChange={handleChange}
               onBlur={handleBlur}
@@ -243,6 +248,7 @@ const SimpleContactForm = ({ mode = "quote" }) => {
         <textarea
           name="message"
           placeholder={isQuote ? "Tell us about your requirements... *" : "Your message... *"}
+          aria-label={isQuote ? "Requirements message" : "Contact message"}
           rows="4"
           value={formData.message}
           onChange={handleChange}
@@ -257,28 +263,6 @@ const SimpleContactForm = ({ mode = "quote" }) => {
           <span className="modal__error">{errors.message}</span>
         )}
       </div>
-
-      {/* Status Messages */}
-      {status === "error" && (
-        <div className="modal__status modal__status--error">
-          <PiWarningCircleFill size={18} />
-          <span>Please fix the errors above and try again.</span>
-        </div>
-      )}
-
-      {status === "cooldown" && (
-        <div className="modal__status modal__status--cooldown">
-          <PiWarningCircleFill size={18} />
-          <span>Please wait {cooldownTimer} minute{cooldownTimer !== 1 ? 's' : ''} before submitting again.</span>
-        </div>
-      )}
-
-      {status === "success" && (
-        <div className="modal__status modal__status--success">
-          <PiCheckCircleFill size={18} />
-          <span>Message sent successfully! We will respond within 24 hours.</span>
-        </div>
-      )}
 
       {/* Submit Button */}
       <button
@@ -300,10 +284,56 @@ const SimpleContactForm = ({ mode = "quote" }) => {
         )}
       </button>
 
-      {/* Footnote */}
-      <p className="modal__footnote">
-        <PiCheckCircleFill size={12} /> Priority response for volume inquiries
-      </p>
+      {/* Footer Area with Absolute Status Badge */}
+      <div style={{ position: "relative", minHeight: "30px", marginTop: "16px" }}>
+        
+        {/* Normal Footnote (hides when status is shown) */}
+        <p 
+          className="modal__footnote" 
+          style={{ 
+            opacity: status === 'idle' || status === 'loading' ? 1 : 0, 
+            transition: 'opacity 0.3s',
+            margin: 0
+          }}
+        >
+          <PiCheckCircleFill size={12} /> Priority response for volume inquiries
+        </p>
+
+        {/* Absolute Status Badge (Overlays footnote without shifting layout) */}
+        <div style={{ 
+          position: "absolute", 
+          bottom: "-5px", 
+          left: 0, 
+          width: "100%", 
+          zIndex: 10,
+          opacity: status !== 'idle' && status !== 'loading' ? 1 : 0,
+          pointerEvents: status !== 'idle' && status !== 'loading' ? 'auto' : 'none',
+          transition: 'opacity 0.3s, transform 0.3s',
+          transform: status !== 'idle' && status !== 'loading' ? 'translateY(0)' : 'translateY(10px)'
+        }}>
+          {status === "error" && (
+            <div className="modal__status modal__status--error" style={{ margin: 0, boxShadow: "0 4px 15px rgba(0,0,0,0.1)" }}>
+              <PiWarningCircleFill size={18} />
+              <span>Please fix the errors above and try again.</span>
+            </div>
+          )}
+
+          {status === "cooldown" && (
+            <div className="modal__status modal__status--cooldown" style={{ margin: 0, boxShadow: "0 4px 15px rgba(0,0,0,0.1)" }}>
+              <PiWarningCircleFill size={18} />
+              <span>Please wait {cooldownTimer} minute{cooldownTimer !== 1 ? 's' : ''} before submitting again.</span>
+            </div>
+          )}
+
+          {status === "success" && (
+            <div className="modal__status modal__status--success" style={{ margin: 0, boxShadow: "0 4px 15px rgba(0,0,0,0.1)" }}>
+              <PiCheckCircleFill size={18} />
+              <span>Message sent successfully! We will respond within 24 hours.</span>
+            </div>
+          )}
+        </div>
+      </div>
+
 
     </form>
   );

@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function CatchAllNotFound() {
   return (
-    <div className="not-found">
+    <main className="not-found">
       <div className="not-found__content">
         <h1 className="not-found__title">404</h1>
         <h2 className="not-found__subtitle">Page Not Found</h2>
@@ -16,14 +16,14 @@ export default function CatchAllNotFound() {
           The page you are looking for doesn't exist or has been moved. Explore our product catalog or contact our sales team directly.
         </p>
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center", marginTop: "1.5rem" }}>
-          <Link href="/products" className="not-found__btn">
+          <Link href="/products" className="btn btn--primary">
             Browse Products
           </Link>
-          <Link href="/contact-us" className="not-found__btn" style={{ background: "transparent", border: "2px solid currentColor" }}>
+          <Link href="/contact-us" className="btn btn--outline-light">
             Contact Sales
           </Link>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

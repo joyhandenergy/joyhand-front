@@ -2,8 +2,6 @@ import { blogPosts } from "@/data";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
-import RichTextRenderer from "@/components/richText/RichTextRenderer";
-import "@/components/richText/RichText.css";
 import Link from "next/link";
 import Script from "next/script";
 import {
@@ -19,6 +17,7 @@ import {
   PiShieldCheck,
   PiEnvelopeSimple
 } from "react-icons/pi";
+import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import "../blog.css";
 
 export async function generateMetadata({ params }) {
@@ -33,13 +32,16 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  const title = blogPost.metaTitle || `${blogPost.title} | JoyHand`;
+  const description = blogPost.metaDescription || blogPost.excerpt;
+
   return {
-    title: blogPost.title,
-    description: blogPost.excerpt,
+    title: title.substring(0, 60),
+    description: description.substring(0, 160),
     keywords: [blogPost.category, "energy manufacturing insight", "OEM strategy", "B2B energy intelligence", "JoyHand technical report"],
     openGraph: {
-      title: blogPost.title,
-      description: blogPost.excerpt,
+      title: title,
+      description: description,
       type: "article",
       images: [
         {
@@ -83,27 +85,72 @@ export default async function BlogDetailsPage({ params }) {
     day: 'numeric'
   });
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": blogPost.title,
-    "image": [
-      `https://www.joyhand.com${blogPost.image || "/homeImg/businessModelImage001.jpg"}`
-    ],
-    "author": {
-      "@type": "Organization",
-      "name": "JoyHand Editorial Team"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "JoyHand Energy",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.joyhand.com/homeImg/businessModelImage001.jpg"
+  // Simple parser for plain text content with headings
+  const renderContent = (content) => {
+    return content.split('\n\n').map((block, index) => {
+      // Check if block is likely a heading (short, no period at end)
+      const isHeading = block.length < 60 && !block.trim().endsWith('.');
+      if (isHeading) {
+        return <h2 key={index} className="blog-details__heading h3">{block.trim()}</h2>;
       }
-    },
-    "description": blogPost.excerpt
+      return <p key={index} className="blog-details__paragraph">{block.trim()}</p>;
+    });
   };
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://www.joyhand.com/blog/${blogPost.slug}`
+      },
+      "headline": blogPost.title,
+      "image": [
+        `https://www.joyhand.com${blogPost.image || "/homeImg/businessModelImage001.jpg"}`
+      ],
+      "datePublished": blogPost.date ? new Date(blogPost.date).toISOString() : new Date().toISOString(),
+      "dateModified": blogPost.date ? new Date(blogPost.date).toISOString() : new Date().toISOString(),
+      "author": {
+        "@type": "Organization",
+        "name": "JoyHand Editorial Team",
+        "url": "https://www.joyhand.com/about-us"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "JoyHand Energy",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.joyhand.com/homeImg/businessModelImage001.jpg"
+        }
+      },
+      "description": blogPost.excerpt
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Manufacturing Intel",
+          "item": "https://www.joyhand.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": blogPost.category || "Technology",
+          "item": `https://www.joyhand.com/blog?category=${encodeURIComponent(blogPost.category || "Technology")}`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": blogPost.title,
+          "item": `https://www.joyhand.com/blog/${blogPost.slug}`
+        }
+      ]
+    }
+  ];
 
   return (
     <article className="blog-details">
@@ -123,7 +170,7 @@ export default async function BlogDetailsPage({ params }) {
 
         <div className="blog-details__layout">
           {/* Column 1: Main Content Card */}
-          <div className="blog-details__main">
+          <ScrollRevealWrapper className="blog-details__main">
             <h1 className="blog-details__title">{blogPost.title}</h1>
             <div className="blog-details__meta-bar">
               <div className="blog-details__category-tag">{blogPost.category || "Energy Technology"}</div>
@@ -154,7 +201,12 @@ export default async function BlogDetailsPage({ params }) {
             )}
 
             <div className="blog-details__content">
-              <RichTextRenderer value={blogPost.content} />
+              {blogPost.excerpt && (
+                <p className="blog-details__paragraph blog-details__excerpt-lead">
+                  <strong>Summary:</strong> {blogPost.excerpt}
+                </p>
+              )}
+              {renderContent(blogPost.content)}
             </div>
 
             <section className="blog-details__author-card">
@@ -174,7 +226,12 @@ export default async function BlogDetailsPage({ params }) {
                 {prevPost && (
                   <Link href={`/blog/${prevPost.slug}`} className="blog-details__nav-link blog-details__nav-link--prev">
                     <div className="blog-details__nav-thumb">
-                      <img src={prevPost.image || "/images/pageHeadImg/factory-blog.jpg"} alt={prevPost.title} />
+                      <Image 
+                        src={prevPost.image || "/images/pageHeadImg/factory-blog.jpg"} 
+                        alt={prevPost.title}
+                        width={120}
+                        height={80}
+                      />
                     </div>
                     <div className="blog-details__nav-content">
                       <span className="blog-details__nav-label"><PiArrowLeft /> Previous Insight</span>
@@ -190,16 +247,21 @@ export default async function BlogDetailsPage({ params }) {
                       <span className="blog-details__nav-title">{nextPost.title}</span>
                     </div>
                     <div className="blog-details__nav-thumb">
-                      <img src={nextPost.image || "/images/pageHeadImg/factory-blog.jpg"} alt={nextPost.title} />
+                      <Image 
+                        src={nextPost.image || "/images/pageHeadImg/factory-blog.jpg"} 
+                        alt={nextPost.title}
+                        width={120}
+                        height={80}
+                      />
                     </div>
                   </Link>
                 )}
               </div>
             )}
-          </div>
+          </ScrollRevealWrapper>
 
           {/* Column 2: Sidebar (Sticky) */}
-          <aside className="blog-details__sidebar">
+          <ScrollRevealWrapper as="aside" className="blog-details__sidebar">
             <div className="sidebar-sticky-inner">
               {/* Share Buttons */}
               <div className="sidebar-share">
@@ -217,7 +279,7 @@ export default async function BlogDetailsPage({ params }) {
                 </div>
                 <h4 className="sidebar-card__title">Direct Factory Partnership</h4>
                 <p className="sidebar-card__text">
-                  Bypass intermediaries and scale your energy brand with our direct, certified production lines.
+                  Bypass intermediaries and scale your energy brand with our direct, standards-compliant production lines.
                 </p>
                 <Link href="/contact" className="sidebar-card__link-btn">
                   Scale Your OEM Brand
@@ -228,16 +290,24 @@ export default async function BlogDetailsPage({ params }) {
                 <div className="sidebar-card__icon-wrapper">
                   <PiShieldCheck />
                 </div>
-                <h4 className="sidebar-card__title">Core Capabilities</h4>
+                <h4 className="sidebar-card__title">Explore Core Capabilities</h4>
                 <ul className="sidebar-card__list">
-                  <li>LFP Cell Grading & Matching</li>
-                  <li>BMS Firmware Development</li>
-                  <li>High-Power Inverter QC</li>
-                  <li>Logistics & Certification</li>
+                  <li>
+                    <Link href="/manufacturing">LFP Cell Grading & Assembly <PiArrowRight /></Link>
+                  </li>
+                  <li>
+                    <Link href="/products">Hybrid Inverter Production <PiArrowRight /></Link>
+                  </li>
+                  <li>
+                    <Link href="/about-us">ISO Quality Control Standards <PiArrowRight /></Link>
+                  </li>
+                  <li>
+                    <Link href="/contact-us">Global Logistics & Support <PiArrowRight /></Link>
+                  </li>
                 </ul>
               </div>
             </div>
-          </aside>
+          </ScrollRevealWrapper>
         </div>
       </div>
     </article>

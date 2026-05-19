@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PageHeader from "@/components/pageHeader/PageHeader";
 import "../legal.css";
 
@@ -75,7 +76,7 @@ export default function PrivacyPage() {
           <section className="legal__section">
             <h2>6. Cookies & Tracking</h2>
             <p>
-              Our website uses cookies to enhance functionality. For detailed information, please refer to our <a href="/cookie-policy">Cookie Policy</a>.
+              Our website uses cookies to enhance functionality. For detailed information, please refer to our <Link href="/cookie-policy">Cookie Policy</Link>.
             </p>
           </section>
 
@@ -86,7 +87,7 @@ export default function PrivacyPage() {
             </p>
             <div className="legal__contact-box">
               <p><strong>JoyHand Energy Compliance</strong></p>
-              <p>Email: <a href="mailto:privacy@joyhand.com">privacy@joyhand.com</a></p>
+              <p>Email: <a href="mailto:sales@joyhand.com">sales@joyhand.com</a></p>
               <p>Address: 445 Dexter Avenue, Suite 4050, Montgomery, AL 36104, USA</p>
             </div>
           </section>

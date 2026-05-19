@@ -81,7 +81,7 @@ export default function TermsPage() {
             </p>
             <div className="legal__contact-box">
               <p><strong>JoyHand Energy Legal Department</strong></p>
-              <p>Email: <a href="mailto:legal@joyhand.com">legal@joyhand.com</a></p>
+              <p>Email: <a href="mailto:sales@joyhand.com">sales@joyhand.com</a></p>
               <p>Subject: Terms of Service Inquiry</p>
             </div>
           </section>

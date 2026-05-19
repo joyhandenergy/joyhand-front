@@ -169,9 +169,8 @@
   margin: 0;
   letter-spacing: -0.01em;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  max-height: 2.7em;
+  display: block;
   min-height: 2.7em;
   transition: color 0.3s ease;
 }
@@ -187,9 +186,8 @@
   line-height: 1.45;
   margin: 0;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  max-height: 2.9em;
+  display: block;
   min-height: 2.4em;
 }
 
@@ -553,20 +551,29 @@
 /* Main Content Wrapper */
 .blog-details__main {
   background: var(--neutral-white);
-  border-radius: 32px;
+  border-radius: 24px; /* Slightly smaller radius for mobile */
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(18, 27, 45, 0.05);
-  padding: 24px;
+  padding: 16px; /* Reduced from 24px to give text more room on small screens */
   margin-right: 0;
 }
 
+@media screen and (min-width: 640px) {
+  .blog-details__main {
+    padding: 24px;
+    border-radius: 32px;
+  }
+}
+
 .blog-details__title {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.5rem, 5vw, 2.8rem);
   font-weight: 800;
   color: var(--secondary-color);
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin-bottom: var(--spacing-4);
+  text-align: center; /* Center aligned for premium magazine feel */
+  text-wrap: balance; 
 }
 
 @media screen and (min-width: 768px) {
@@ -586,6 +593,7 @@
 .blog-details__meta-bar {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Centered on mobile */
   gap: var(--spacing-3);
   margin-bottom: var(--spacing-6);
   padding-bottom: var(--spacing-4);
@@ -612,7 +620,8 @@
   .blog-details__meta-bar {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Centered on larger screens */
+    gap: var(--spacing-6);
   }
 }
 
@@ -631,6 +640,7 @@
 .blog-details__meta-items {
   display: flex;
   align-items: center;
+  justify-content: center; /* Centered */
   flex-wrap: wrap;
   gap: var(--spacing-5);
 }
@@ -651,24 +661,43 @@
 /* Typography Enhancements - Expansive & Readable */
 .blog-details__content {
   margin-bottom: var(--spacing-12);
+  text-align: left; /* Base alignment */
+  width: 100%;
 }
 
 .blog-details__paragraph {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  margin-bottom: var(--spacing-3);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-4);
   color: var(--neutral-dark);
-  max-width: 850px; /* Optimal line length for professional readability */
+  max-width: 850px;
   opacity: 0.95;
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+.blog-details__excerpt-lead {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  background: rgba(46, 196, 182, 0.05);
+  padding: 24px;
+  border-radius: 16px;
+  border-left: 4px solid var(--accent-color-dark);
+  margin-bottom: var(--spacing-6);
+  opacity: 1;
+  text-align: justify;
 }
 
 @media screen and (min-width: 768px) {
   .blog-details__paragraph {
-    font-size: 1.25rem;
-    line-height: 2.1;
+    font-size: 1.2rem;
+    line-height: 1.9;
+    text-align: justify; /* Professional look on desktop */
+    text-justify: inter-word;
+    hyphens: auto;
   }
 }
 
@@ -710,14 +739,20 @@
 .blog-details__list-item {
   position: relative;
   margin-bottom: var(--spacing-4);
-  font-size: 1.15rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.7;
   color: var(--neutral-dark);
   padding-left: 32px;
   max-width: 920px;
   text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .blog-details__list-item {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
 }
 
 .blog-details__list-item::before {
@@ -879,9 +914,8 @@
   color: var(--secondary-color);
   line-height: 1.3;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  max-height: 2.6em;
+  display: block;
 }
 
 .blog-details__nav-link--next {
@@ -1107,10 +1141,16 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--secondary-color);
+  transition: all 0.3s ease;
+}
+
+.sidebar-card__list li a {
+  color: inherit;
+  text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .sidebar-card__list li:last-child {

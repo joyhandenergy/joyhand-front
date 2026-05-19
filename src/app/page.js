@@ -9,43 +9,62 @@ import GlobalNetwork from "@/components/globalNetwork/GlobalNetwork";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Reliable OEM Solar & LFP Battery Manufacturer",
-  description: "JoyHand is an ISO 9001:2025 certified direct factory. We manufacture and export wholesale LFP batteries, hybrid inverters, and e-mobility solutions directly to Nigeria, Kenya, Pakistan, and Bangladesh.",
-  keywords: ["solar battery manufacturer Nigeria", "wholesale hybrid inverters Pakistan", "OEM LFP batteries Africa", "direct solar factory", "B2B energy storage"],
+  title: "Solar & LFP Battery Factory Direct | JoyHand",
+  description: "Direct factory wholesale of LFP batteries, hybrid inverters, and electric motorcycle batteries for unstable grids. Exporting to Nigeria, Bangladesh, and Kenya. OEM/ODM ready.",
+  keywords: ["power solutions for unstable grids", "factory direct solar", "OEM battery manufacturer", "Nigeria export", "solar inverters B2B"],
   alternates: {
     canonical: '/',
   }
 };
 
 export default function Home() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "JoyHand Energy",
-    "url": "https://www.joyhand.com",
-    "logo": "https://www.joyhand.com/homeImg/businessModelImage001.jpg",
-    "description": "ISO 9001:2025 certified manufacturer of premium energy storage systems, solar inverters, and electric mobility solutions.",
-    "address": [
-      {
-        "@type": "PostalAddress",
-        "addressLocality": "Guangzhou",
-        "addressRegion": "Guangdong",
-        "addressCountry": "CN"
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "JoyHand Energy",
+      "url": "https://www.joyhand.com",
+      "logo": "https://www.joyhand.com/homeImg/businessModelImage001.jpg",
+      "description": "Direct factory manufacturer of premium energy storage systems, solar inverters, and electric mobility solutions operating under ISO 9001:2015 standards.",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Guangzhou",
+          "addressRegion": "Guangdong",
+          "addressCountry": "CN"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Lagos",
+          "addressCountry": "NG"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+86-186-0202-1144",
+        "contactType": "wholesale sales",
+        "areaServed": ["NG", "PK", "BD", "KE", "ZA", "US", "AU"],
+        "availableLanguage": "en"
       },
-      {
-        "@type": "PostalAddress",
-        "addressLocality": "Lagos",
-        "addressCountry": "NG"
+      "hasCertification": [
+        "Tested for ISO 9001:2015 compliance",
+        "Products meet CE requirements",
+        "UL tested safety standards",
+        "UN38.3 compliant shipping"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "JoyHand Energy",
+      "url": "https://www.joyhand.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.joyhand.com/products?search={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+86-130-6085-0617",
-      "contactType": "wholesale sales",
-      "areaServed": ["NG", "PK", "BD", "KE", "ZA"],
-      "availableLanguage": "en"
     }
-  };
+  ];
 
   return (
     <>

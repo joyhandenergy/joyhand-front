@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { PiArrowRight } from "react-icons/pi";
 import { partners } from "@/data";
 import SectionHeader from "../sectionHeader/SectionHeader";
@@ -67,12 +68,12 @@ const TrustSignals = () => {
         <p className="trust__logos-note">Strategic manufacturing partners across China</p>
 
         <div className="trust__footer">
-          <a href="/about-us" className="btn btn--outline trust__btn-desktop">
+          <Link href="/about-us" className="btn btn--outline trust__btn-desktop">
             How we partner <PiArrowRight />
-          </a>
-          <a href="/about-us" className="trust__link-mobile">
+          </Link>
+          <Link href="/about-us" className="trust__link-mobile">
             How we partner <PiArrowRight />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

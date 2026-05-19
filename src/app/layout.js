@@ -1,3 +1,4 @@
+import { Roboto, Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
@@ -6,6 +7,20 @@ import PageLoader from "@/components/pageLoader/PageLoader";
 import CookieConsent from "@/components/cookieConsent/CookieConsent";
 import Script from "next/script";
 
+const roboto = Roboto({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
+});
+
+const poppins = Poppins({
+  weight: ["400", "600", "700", "800"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+});
+
 // ⚠️ Replace "G-XXXXXXXXXX" with your real GA4 Measurement ID from Google Analytics
 const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
 
@@ -13,18 +28,18 @@ const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
 export const metadata = {
   metadataBase: new URL("https://www.joyhand.com"),
   title: {
-    default: "JoyHand Energy | ISO Certified OEM Solar & Battery Manufacturer",
-    template: "%s | JoyHand Manufacturing",
+    default: "Factory Direct Solar & Batteries | JoyHand Manufacturer",
+    template: "%s | JoyHand Manufacturer",
   },
-  description: "Direct factory wholesale supply of Grade-A LFP batteries, hybrid inverters, and e-mobility solutions. Engineering excellence for off-grid and unstable grid markets in Africa and South Asia.",
-  keywords: ["OEM solar manufacturer", "wholesale LFP batteries", "solar factory China", "energy storage distributor supply", "B2B energy supplier"],
+  description: "Direct factory wholesale of LFP batteries, hybrid inverters, and electric motorcycle batteries. Reliable power solutions for unstable grids in Nigeria and beyond.",
+  keywords: ["solar factory China", "OEM energy manufacturer", "wholesale LFP batteries", "ISO standard production", "B2B energy supplier"],
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: "JoyHand Energy | Direct Factory Partnership",
-    description: "Bypass middlemen. Scale your energy brand with our ISO 9001:2025 certified production lines in Guangzhou.",
+    description: "Bypass middlemen. Scale your energy brand with industrial-grade production for Nigeria, Bangladesh, and South Asia.",
     type: "website",
     siteName: "JoyHand Energy",
     locale: "en_US",
@@ -33,7 +48,7 @@ export const metadata = {
         url: "/homeImg/businessModelImage001.jpg", 
         width: 1200,
         height: 630,
-        alt: "JoyHand ISO 9001:2025 Certified Export Facility",
+        alt: "JoyHand ISO 9001:2015 Manufacturing Facility",
       },
     ],
   },
@@ -48,7 +63,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth" className={`${roboto.variable} ${poppins.variable}`}>
       <body suppressHydrationWarning={true} className="antialiased">
         {/* Google Analytics 4 - loads after page is interactive */}
         <Script

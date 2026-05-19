@@ -252,7 +252,7 @@ export async function GET(request) {
             </View>
             <View style={styles.headerInfo}>
               <Text style={styles.headerTitle}>PRODUCT CATALOG</Text>
-              <Text style={styles.headerBadge}>DIRECT MANUFACTURING • ISO 9001:2025</Text>
+              <Text style={styles.headerBadge}>DIRECT MANUFACTURING • ISO 9001:2015 STANDARDS</Text>
             </View>
           </View>
 

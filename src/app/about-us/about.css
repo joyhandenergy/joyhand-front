@@ -603,7 +603,7 @@
 ===================================================== */
 .values-section {
   padding: var(--spacing-5) 0;
-  background: transparent;
+  background: var(--secondary-color-dark);
   position: relative;
   overflow: hidden;
 }
@@ -1420,27 +1420,18 @@
   margin-top: var(--spacing-2);
 }
 
-.executive-card__linkedin {
+.executive-card__expert-badge {
   display: inline-flex;
   align-items: center;
   gap: 12px;
   color: var(--secondary-color);
-  text-decoration: none;
   font-weight: 700;
   font-size: 0.95rem;
-  transition: all 0.3s ease;
-  padding: 10px 0;
-  border-bottom: 2px solid transparent;
+  padding: 8px 0;
 }
 
-.executive-card__linkedin:hover {
-  color: var(--primary-color);
-  border-bottom-color: var(--primary-color);
-}
-
-.executive-card__linkedin svg {
-  color: #0077b5;
-  /* LinkedIn Brand Color */
+.executive-card__expert-badge svg {
+  color: var(--accent-color-dark); /* Teal for trust/authority */
 }
 
 

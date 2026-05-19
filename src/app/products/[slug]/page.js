@@ -21,9 +21,53 @@ import ProductActions from "./ProductActions";
 import ProductFAQ from "./ProductFAQ";
 import ProductRelated from "./ProductRelated";
 import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
-import RichTextRenderer from "@/components/richText/RichTextRenderer";
-import "@/components/richText/RichText.css";
+import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import "../Products.css";
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const product = productData.find((p) => p.slug === slug);
+  
+  if (!product) {
+    return { title: "Product Not Found | JoyHand Energy" };
+  }
+
+  // Generate localized SEO keywords based on the category
+  const getRegionalKeywords = (category) => {
+    const regions = "Nigeria, Kenya, South Africa, Pakistan, Bangladesh";
+    switch(category) {
+      case "battery": return `LFP Battery wholesale, Solar battery manufacturer China, OEM batteries for ${regions}`;
+      case "inverter": return `Hybrid inverter supplier, Wholesale solar inverters China, off-grid inverters for ${regions}`;
+      case "electric-mobility": return `Electric motorcycle manufacturer, OEM E-bike supplier, EV wholesale ${regions}`;
+      case "portable-power": return `Portable power station wholesale, OEM solar generator manufacturer for ${regions}`;
+      case "power-bank": return `Power bank wholesale, OEM power bank manufacturer China, B2B power banks for ${regions}`;
+      default: return `Energy solutions wholesale, OEM manufacturer China for ${regions}`;
+    }
+  };
+
+  const dynamicTitle = `${product.name} | Factory Direct Wholesale | JoyHand Energy`;
+  
+  return {
+    title: dynamicTitle,
+    description: `Import ${product.name} directly from JoyHand Energy's ISO-certified manufacturing facility. High-performance design suitable for wholesale distribution.`,
+    keywords: `${getRegionalKeywords(product.category)}, ${product.name} manufacturer, B2B wholesale ${product.category}`,
+    openGraph: {
+      title: dynamicTitle,
+      description: `Wholesale ${product.name} from a premium direct factory supplier. Ideal for unstable grids and renewable integration.`,
+      images: [
+        {
+          url: product.image,
+          width: 1200,
+          height: 630,
+          alt: product.name,
+        },
+      ],
+    },
+    alternates: {
+      canonical: `/products/${slug}`,
+    }
+  };
+}
 
 function getCategoryIcon(category) {
   switch (category) {
@@ -41,7 +85,7 @@ function getCategoryDisplay(category) {
   switch (category) {
     case "battery": return "Battery Storage Solutions";
     case "inverter": return "Smart Hybrid Inverters";
-    case "electric-mobility": return "E-Mobility Solutions";
+    case "electric-mobility": return "Electric Mobility Solutions";
     case "portable-power": return "Portable Power Stations";
     case "power-bank": return "Premium Power Banks";
     case "phone-screen-protector": return "Screen Protection Solutions";
@@ -64,7 +108,7 @@ function getTypeDisplay(type) {
     "compact": "Compact",
     "high-capacity": "High Capacity",
     "wireless": "Wireless",
-    "built-in-cables": "Built‑in Cables"
+    "built-in-cables": "Built in Cables"
   };
   return types[type] || type;
 }
@@ -115,7 +159,7 @@ function ProductKeySpecs({ product }) {
       { label: "Material", value: specifications.material || "Tempered Glass" },
       { label: "Hardness", value: specifications.hardness || "9H" },
       { label: "Thickness", value: specifications.thickness || "0.33mm" },
-      { label: "Finish", value: specifications.finish || "Clear / Matte / Anti‑Spy" },
+      { label: "Finish", value: specifications.finish || "Clear / Matte / Anti Spy" },
     ].filter(spec => spec.value);
   }
 
@@ -256,7 +300,7 @@ function ProductSpecs({ product }) {
       { label: "Wireless Output", value: specifications.wirelessOutput },
       { label: "USB-C Output", value: specifications.usbCOutput },
       { label: "USB-A Output", value: specifications.usbAOutput },
-      { label: "Built‑in Cables", value: specifications.builtInCables },
+      { label: "Built in Cables", value: specifications.builtInCables },
       { label: "Input (USB-C)", value: specifications.input },
       { label: "Total Output", value: specifications.totalOutput },
       { label: "Cycle Life", value: specifications.cycleLife },
@@ -270,7 +314,7 @@ function ProductSpecs({ product }) {
       { label: "Thickness", value: specifications.thickness },
       { label: "Compatibility", value: specifications.compatibility },
       { label: "Finish", value: specifications.finish },
-      { label: "Anti‑Spy", value: specifications.antiSpy ? "Yes" : "No" },
+      { label: "Anti Spy", value: specifications.antiSpy ? "Yes" : "No" },
       { label: "Application", value: specifications.application },
     ].filter(spec => spec.value);
   }
@@ -342,33 +386,79 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const product = productData.find(p => p.slug === slug);
   if (!product) return { title: "Product Not Found" };
-  
-  const categoryDisplay = getCategoryDisplay(product.category);
-  const plainTextDescription = typeof product.description === 'string' 
-    ? product.description 
-    : `Direct factory supply of ${product.name}. Request wholesale pricing for B2B importers.`;
+
+  // ── Use dedicated pain-point SEO fields if available, else smart fallback ──
+  const fallbackTitle = buildFallbackTitle(product);
+  const fallbackDesc  = buildFallbackDesc(product);
+
+  const title       = (product.seoTitle       || fallbackTitle).substring(0, 60);
+  const description = (product.metaDescription || fallbackDesc ).substring(0, 160);
+
+  // Category-specific keyword banks for richer indexing
+  const categoryKeywords = {
+    battery:          ["LiFePO4 battery Nigeria", "solar backup battery Africa", "stop blackouts battery", "wholesale LFP battery"],
+    inverter:         ["hybrid solar inverter Nigeria", "MPPT inverter wholesale", "blackout proof inverter", "solar inverter Africa"],
+    "electric-mobility": ["electric scooter Nigeria delivery", "e-motorcycle no fuel Africa", "electric bike wholesale"],
+    "portable-power": ["portable power station Nigeria", "solar generator blackout backup", "LiFePO4 power station Africa"],
+    "power-bank":     ["power bank wholesale Nigeria", "wireless power bank Africa", "phone backup NEPA outage"],
+  };
+  const keywords = [
+    ...(categoryKeywords[product.category] || []),
+    product.name,
+    product.model,
+    "B2B energy supplier Nigeria",
+    "JoyHand factory direct",
+  ].filter(Boolean);
 
   return {
-    title: `${product.name} ${product.model ? `(${product.model})` : ''} | JoyHand Wholesale`,
-    description: plainTextDescription.substring(0, 160),
-    keywords: [`wholesale ${product.name}`, `OEM ${categoryDisplay}`, `${product.model} manufacturer`, "B2B energy supplier"],
+    title,
+    description,
+    keywords,
     openGraph: {
-      title: `${product.name} - Direct Factory Supply`,
-      description: plainTextDescription.substring(0, 160),
+      title,
+      description,
       type: "website",
       images: [
         {
           url: product.image || "/homeImg/businessModelImage001.jpg",
           width: 800,
           height: 600,
-          alt: product.name,
+          alt: `${product.name} – JoyHand Energy`,
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
     alternates: {
       canonical: `/products/${product.slug}`,
-    }
+    },
   };
+}
+
+// ── Fallback builders – category-aware pain-point copy ────────────────────
+function buildFallbackTitle(product) {
+  const painMap = {
+    battery:          `End Blackouts: ${product.name} for Nigeria | JoyHand`,
+    inverter:         `No More Outages: ${product.name} – Nigeria Ready | JoyHand`,
+    "electric-mobility": `Zero Fuel Bills: ${product.name} – Nigeria Delivery | JoyHand`,
+    "portable-power": `Beat Blackouts: ${product.name} – Nigeria Backup | JoyHand`,
+    "power-bank":     `Stay Charged: ${product.name} – Nigeria Blackout Proof | JoyHand`,
+  };
+  return painMap[product.category] || `${product.name} | JoyHand`;
+}
+
+function buildFallbackDesc(product) {
+  const descMap = {
+    battery:          `Factory-direct ${product.name} (${product.model}) – LiFePO4 chemistry, 6000+ cycles. Wholesale backup battery for homes, SMEs, and telecom in Nigeria.`,
+    inverter:         `${product.name} (${product.model}) – auto-switch solar, battery & grid during NEPA blackouts. CE certified. B2B wholesale pricing for Nigerian distributors.`,
+    "electric-mobility": `${product.name} (${product.model}) – eliminate petrol costs for Nigeria's delivery fleets. CE certified, bulk import pricing available.`,
+    "portable-power": `${product.name} (${product.model}) – LiFePO4 power station with pure sine wave. Emergency backup for homes and businesses during Nigerian power cuts.`,
+    "power-bank":     `${product.name} (${product.model}) – stay connected through Nigeria's NEPA blackouts. CE/FCC certified. B2B wholesale pricing for African distributors.`,
+  };
+  return descMap[product.category] || `JoyHand ${product.name} (${product.model}) – factory-direct energy solution. Request B2B wholesale pricing for Africa.`;
 }
 
 export async function generateStaticParams() {
@@ -444,39 +534,40 @@ export default async function ProductDetailsPage({ params }) {
           currentTitle={product.name} 
         />
         <div className="product-details__grid">
-          <section className="product-details__gallery">
+          <ScrollRevealWrapper as="section" className="product-details__gallery">
             <ProductGallery images={images} productName={product.name} />
             <ProductVideo videoId={videoId} productName={product.name} />
-          </section>
-          <section className="product-details__info">
+          </ScrollRevealWrapper>
+          <ScrollRevealWrapper as="section" className="product-details__info">
             <div className="product-details__meta">
               <span className="product-details__badge">{categoryIcon} {categoryDisplay}</span>
               <span className="product-details__type">{typeDisplay}</span>
               {product.model && <span className="product-details__model">Model: {product.model}</span>}
             </div>
             <h1 className="product-details__title">{product.name}</h1>
-            <RichTextRenderer 
-              value={product.description} 
-              components={{
-                block: {
-                  normal: ({ children }) => <p className="product-details__description">{children}</p>
-                }
-              }}
-            />
+            <p className="product-details__description">{product.description}</p>
             <ProductKeySpecs product={product} />
             <ProductFeaturesCompact features={product.features} />
             <ProductActions category={product.category} />
-          </section>
+          </ScrollRevealWrapper>
         </div>
         <div className="product-details__full-content">
-          <ProductSpecs product={product} />
-          <ProductApplications applications={product.applications} />
-          <div className="product-details__bottom-grid">
+          <ScrollRevealWrapper>
+            <ProductSpecs product={product} />
+          </ScrollRevealWrapper>
+          <ScrollRevealWrapper>
+            <ProductApplications applications={product.applications} />
+          </ScrollRevealWrapper>
+          <ScrollRevealWrapper className="product-details__bottom-grid">
             <ProductCertifications certifications={product.certifications} />
             <ProductWarranty warranty={product.warranty} />
-          </div>
-          <ProductFAQ product={product} />
-          <ProductRelated currentProductId={product.id} />
+          </ScrollRevealWrapper>
+          <ScrollRevealWrapper>
+            <ProductFAQ product={product} />
+          </ScrollRevealWrapper>
+          <ScrollRevealWrapper>
+            <ProductRelated currentProductId={product.id} />
+          </ScrollRevealWrapper>
         </div>
       </div>
     </main>

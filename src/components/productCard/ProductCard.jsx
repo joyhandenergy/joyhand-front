@@ -13,7 +13,7 @@ import {
   PiShieldCheck,
 } from "react-icons/pi";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, priority = false }) => {
   const { name, slug, description, image, category, specifications } = product;
 
   const categoryMap = {
@@ -66,7 +66,7 @@ const ProductCard = ({ product }) => {
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="product-card__img"
-            loading="lazy"
+            priority={priority}
           />
           <meta itemProp="image" content={image} />
 

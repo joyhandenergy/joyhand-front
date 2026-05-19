@@ -23,6 +23,7 @@ export default function ProductGallery({ images, productName }) {
           alt={`${productName} - view ${currentIndex + 1}`}
           fill
           priority
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="product-details__main-img"
         />
         
@@ -53,6 +54,7 @@ export default function ProductGallery({ images, productName }) {
                 src={img} 
                 alt={`Thumbnail ${idx + 1}`} 
                 fill 
+                sizes="100px"
                 className="product-details__strip-img" 
               />
             </button>

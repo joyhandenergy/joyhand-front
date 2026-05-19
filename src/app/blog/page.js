@@ -3,12 +3,13 @@ import BlogCard from "@/components/blogCard/BlogCard";
 import PageHeader from "@/components/pageHeader/PageHeader";
 import SectionHeader from "@/components/sectionHeader/SectionHeader";
 import Script from "next/script";
+import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import "./blog.css";
 
 export const metadata = {
-  title: "Technical Reports & Industry Insights",
-  description: "Explore deep-dives into LFP battery manufacturing, OEM supply chain strategies, and global energy certifications. Expert intel for distributors in Africa and Asia.",
-  keywords: ["energy manufacturing news", "solar supply chain strategy", "LFP battery insights", "B2B solar intelligence", "OEM factory updates"],
+  title: "Energy Insights & Manufacturing Blog | JoyHand",
+  description: "Read technical insights on energy storage, grid stability, and manufacturing. Export guides for distributors in Nigeria, Kenya, and South Asia.",
+  keywords: ["energy storage insights", "grid stability solutions", "manufacturing blog", "Nigeria solar market", "South Asia energy trends"],
   alternates: {
     canonical: '/blog',
   }
@@ -43,7 +44,7 @@ export default function BlogPage() {
         pageImage="/pageHeadImg/pageheader-blog1.jpg"  // update to a factory or lab image
       />
 
-      <section className="blog-section">
+      <ScrollRevealWrapper as="section" className="blog-section">
         <div className="container">
           <SectionHeader
             badge="Engineering Insights"
@@ -52,12 +53,12 @@ export default function BlogPage() {
           />
 
           <div className="blog-grid">
-            {blogPosts.map((post) => (
-              <BlogCard key={post.id} post={post} />
+            {blogPosts.map((post, index) => (
+              <BlogCard key={post.id} post={post} priority={index < 4} />
             ))}
           </div>
         </div>
-      </section>
+      </ScrollRevealWrapper>
     </main>
   );
 }

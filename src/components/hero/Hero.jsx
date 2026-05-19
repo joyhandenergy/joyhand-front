@@ -82,7 +82,7 @@ export default function Hero() {
               </h1>
 
               <p className="hero__desc">
-                From LFP batteries and solar inverters to e‑mobility and EV infrastructure; we manufacture and export directly to Nigeria, Bangladesh, Kenya, Pakistan, and across Africa & South Asia. ISO 9001:2025. CE, UL, UN38.3 certified.
+                From LFP batteries and solar inverters to electric motorcycle batteries and power banks; we manufacture and export directly to Nigeria, Bangladesh, Kenya, Pakistan, and across Africa & South Asia. Operating under ISO 9001:2015 standards. Products meet CE, UL, and UN38.3 requirements.
               </p>
 
               <div className="hero__actions">

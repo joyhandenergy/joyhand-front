@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { PiQuestion, PiCaretDown, PiCaretUp } from "react-icons/pi";
-import RichTextRenderer from "@/components/richText/RichTextRenderer";
-import "@/components/richText/RichText.css";
 
 export default function ProductFAQ({ product }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -18,8 +16,8 @@ export default function ProductFAQ({ product }) {
       answer: "Yes, we provide full OEM/ODM services including custom branding, packaging, and firmware modifications."
     },
     {
-      question: "What certifications are available?",
-      answer: `This product is certified: ${product.certifications?.join(", ") || "CE, UL, IEC"}. Additional certifications can be arranged.`
+      question: "What compliance standards are met?",
+      answer: `This product meets the following standards: ${product.certifications?.join(", ") || "CE, UL, IEC"}. Complete test records are available upon request.`
     },
     {
       question: "How long is the lead time?",
@@ -52,7 +50,7 @@ export default function ProductFAQ({ product }) {
             </button>
             {openIndex === idx && (
               <div className="product-details__faq-answer">
-                <RichTextRenderer value={faq.answer} />
+                <p className="product-details__faq-answer-text">{faq.answer}</p>
               </div>
             )}
           </div>
