@@ -34,8 +34,8 @@ export const metadata = {
   description: "Direct factory wholesale of LFP batteries, hybrid inverters, and electric motorcycle batteries. Reliable power solutions for unstable grids in Nigeria and beyond.",
   keywords: ["solar factory China", "OEM energy manufacturer", "wholesale LFP batteries", "ISO standard production", "B2B energy supplier"],
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
   openGraph: {
     title: "JoyHand Energy | Direct Factory Partnership",
