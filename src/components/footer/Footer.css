@@ -72,7 +72,7 @@
 }
 
 .footer__logo-img {
-  width: 140px;
+  width: 120px;
   height: auto;
   display: block;
 }
@@ -374,7 +374,7 @@
   }
 
   .footer__logo-img {
-    width: 140px;
+    width: 130px;
   }
 
   .footer__bottom-container {
@@ -423,7 +423,7 @@
   }
 
   .footer__logo-img {
-    width: 180px;
+    width: 150px;
   }
 
   .footer__title {
@@ -458,7 +458,7 @@
   }
   
   .footer__logo-img {
-    width: 180px;
+    width: 150px;
   }
 }
 
@@ -467,7 +467,7 @@
 ===================================================== */
 @media screen and (max-width: 480px) {
   .footer__logo-img {
-    width: 130px;
+    width: 110px;
   }
 }
 
