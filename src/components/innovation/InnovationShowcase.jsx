@@ -2,13 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import {
-  PiCertificate,
-  PiShieldCheck,
-  PiTestTube,
-  PiGlobe,
-  PiArrowRight,
-} from "react-icons/pi";
+import { PiCertificate, PiShieldCheck, PiTestTube, PiGlobe, PiArrowRight } from "react-icons/pi";
 import "./InnovationShowcase.css";
 import SectionHeader from "../sectionHeader/SectionHeader";
 import SuperRing from "../superRing/SuperRing";
@@ -50,7 +44,7 @@ const InnovationShowcase = () => {
         <div 
           className={`innovation-section__poster ${videoLoaded ? 'innovation-section__poster--hidden' : ''}`}
           style={{
-            backgroundImage: "url('/videos/heroImg/factory-poster.png')",
+            backgroundImage: "url('/videos/heroImg/factory-poster.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center"
           }}
@@ -63,7 +57,7 @@ const InnovationShowcase = () => {
           playsInline
           preload="metadata"
           className={`innovation-section__video ${videoLoaded ? 'innovation-section__video--loaded' : ''}`}
-          poster="/videos/heroImg/factory-poster.png"
+          poster="/videos/heroImg/factory-poster.jpg"
           onCanPlayThrough={() => setVideoLoaded(true)}
         >
           <source

@@ -4,14 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import {
-  PiPhone,
-  PiEnvelopeSimple,
-  PiList,
-  PiCaretDownBold,
-  PiX,
-  PiArrowRight
-} from "react-icons/pi";
+import { PiPhone, PiEnvelopeSimple, PiList, PiCaretDownBold, PiX, PiArrowRight } from "react-icons/pi";
 import PopUpModal from "../contactForm/PopUpModal";
 import { links, headerData } from "@/data";
 import "./Header.css";
@@ -125,6 +118,7 @@ export default function Header() {
                 height={60}
                 className="header__logo-img"
                 priority
+                style={{ width: "auto", height: "auto" }}
               />
             </Link>
 

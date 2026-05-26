@@ -948,7 +948,7 @@
 }
 
 .services-cta__banner {
-  background: linear-gradient(rgba(18, 27, 45, 0.70), rgba(18, 27, 45, 0.85)), url('/serviceImg/serviceCtaImg.png') no-repeat;
+  background: linear-gradient(rgba(18, 27, 45, 0.70), rgba(18, 27, 45, 0.85)), url('/serviceImg/serviceCtaImg.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   padding: var(--spacing-5) var(--spacing-3);
@@ -1214,7 +1214,7 @@
   position: relative;
   z-index: 2;
   /* Premium Solid Background with Image Overlay */
-  background: linear-gradient(rgba(9, 14, 24, 0.94), rgba(9, 14, 24, 0.98)), url('/serviceImg/serviceCtaImg.png') no-repeat;
+  background: linear-gradient(rgba(9, 14, 24, 0.94), rgba(9, 14, 24, 0.98)), url('/serviceImg/serviceCtaImg.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   border: 1px solid rgba(255, 255, 255, 0.1);

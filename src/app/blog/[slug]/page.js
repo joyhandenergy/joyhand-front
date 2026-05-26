@@ -4,19 +4,7 @@ import Image from "next/image";
 import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import Link from "next/link";
 import Script from "next/script";
-import {
-  PiCalendarBlank,
-  PiUser,
-  PiClock,
-  PiArrowLeft,
-  PiArrowRight,
-  PiLinkedinLogo,
-  PiTwitterLogo,
-  PiLinkSimple,
-  PiFactory,
-  PiShieldCheck,
-  PiEnvelopeSimple
-} from "react-icons/pi";
+import { PiCalendarBlank, PiUser, PiClock, PiArrowLeft, PiArrowRight, PiLinkedinLogo, PiTwitterLogo, PiLinkSimple, PiFactory, PiShieldCheck } from "react-icons/pi";
 import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import "../blog.css";
 

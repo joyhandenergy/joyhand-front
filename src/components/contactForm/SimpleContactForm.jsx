@@ -12,7 +12,8 @@ const SimpleContactForm = ({ mode = "quote" }) => {
     email: "",
     companyName: "",
     orderVolume: "",
-    message: ""
+    message: "",
+    botcheck: false
   });
 
   const [status, setStatus] = useState("idle"); // idle | loading | success | error | cooldown
@@ -39,7 +40,7 @@ const SimpleContactForm = ({ mode = "quote" }) => {
 
     setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: e.target.type === "checkbox" ? e.target.checked : value
     }));
   };
 
@@ -94,7 +95,7 @@ const SimpleContactForm = ({ mode = "quote" }) => {
     try {
       // Prepare form data for Web3Forms
       const web3FormData = new FormData();
-      web3FormData.append("access_key", "3301949a-20bb-40e5-a650-7845eb68a24f");
+      web3FormData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY);
       web3FormData.append("name", `${formData.firstName} ${formData.lastName}`);
       web3FormData.append("email", formData.email);
       web3FormData.append("message", formData.message);
@@ -102,8 +103,10 @@ const SimpleContactForm = ({ mode = "quote" }) => {
       web3FormData.append("order_volume", formData.orderVolume || "Not specified");
       web3FormData.append("inquiry_type", isQuote ? "Quote Request" : "Contact Form");
 
-      // Optional: Add honeypot for spam protection
-      web3FormData.append("botcheck", "");
+      // Web3Forms Honeypot: if botcheck is true, Web3Forms will silently ignore the spam
+      if (formData.botcheck) {
+        web3FormData.append("botcheck", "true");
+      }
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -123,7 +126,8 @@ const SimpleContactForm = ({ mode = "quote" }) => {
           email: "",
           companyName: "",
           orderVolume: "",
-          message: ""
+          message: "",
+          botcheck: false
         });
         setTouched({});
       } else {
@@ -146,6 +150,15 @@ const SimpleContactForm = ({ mode = "quote" }) => {
 
   return (
     <form className="modal__form" onSubmit={handleSubmit} noValidate>
+
+      {/* Honeypot Spam Trap (Hidden from Real Users) */}
+      <input 
+        type="checkbox" 
+        name="botcheck" 
+        style={{ display: "none" }} 
+        checked={formData.botcheck} 
+        onChange={handleChange} 
+      />
 
       {/* Name Grid */}
       <div className="modal__grid">

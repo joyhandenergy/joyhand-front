@@ -2,18 +2,7 @@
 
 import { useState } from "react";
 import { useScrollReveal } from "@/components/useScrollReveal";
-import {
-  PiGear,
-  PiArrowRight,
-  PiShieldCheck,
-  PiCheckCircleFill,
-  PiSealCheckFill,
-  PiMagnifyingGlass,
-  PiHandshake,
-  PiClipboardText,
-  PiBoat,
-  PiFactory
-} from "react-icons/pi";
+import { PiGear, PiArrowRight, PiShieldCheck, PiCheckCircleFill, PiSealCheckFill, PiMagnifyingGlass, PiHandshake, PiClipboardText, PiBoat, PiFactory } from "react-icons/pi";
 import PageHeader from "@/components/pageHeader/PageHeader";
 import SectionHeader from "@/components/sectionHeader/SectionHeader";
 import SectionDecor from "@/components/sectionDecor/SectionDecor";

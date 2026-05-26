@@ -1,16 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  PiYoutubeLogo, 
-  PiTiktokLogo, 
-  PiInstagramLogo,
-  PiFacebookLogo,
-  PiPinterestLogo,
-  PiGlobe,
-  PiFactory,
-  PiBuilding
-} from "react-icons/pi";
+import { PiYoutubeLogo, PiTiktokLogo, PiInstagramLogo, PiFacebookLogo, PiPinterestLogo, PiGlobe, PiFactory, PiBuilding } from "react-icons/pi";
 import { footerData } from "@/data";
 import "./Footer.css";
 
@@ -64,6 +55,7 @@ export default function Footer() {
               style={{ 
                 filter: "brightness(0) invert(1)", 
                 display: "block",
+                width: "auto",
                 height: "auto" 
               }}
             />

@@ -69,7 +69,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3; /* Taller for mobile "big" look */
-  background-image: url('/images/dotted-world-map.png');
+  background-image: url('/images/dotted-world-map.jpg');
   background-size: cover; /* Edge-to-edge fill */
   background-position: center;
   background-repeat: no-repeat;

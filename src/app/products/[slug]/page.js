@@ -2,18 +2,7 @@
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import {
-  PiArrowLeft,
-  PiBatteryHigh,
-  PiLightning,
-  PiMotorcycle,
-  PiFactory,
-  PiPlug,
-  PiBatteryCharging,
-  PiHouse,
-  PiCaretRight,
-  PiDeviceMobile,      // added for phone screen protectors
-} from "react-icons/pi";
+import { PiBatteryHigh, PiLightning, PiMotorcycle, PiFactory, PiPlug, PiBatteryCharging, PiDeviceMobile } from "react-icons/pi";
 import { productData } from "@/data";
 import ProductGallery from "./ProductGallery";
 import ProductVideo from "./ProductVideo";

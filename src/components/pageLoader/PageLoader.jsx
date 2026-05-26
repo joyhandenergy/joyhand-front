@@ -93,6 +93,7 @@ export default function PageLoader({ children }) {
                 height={74}
                 className="page-loader__logo"
                 priority
+                style={{ width: "auto", height: "auto" }}
               />
             </div>
 

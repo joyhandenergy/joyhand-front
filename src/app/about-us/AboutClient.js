@@ -4,18 +4,7 @@ import React, { useState } from "react";
 import { useScrollReveal } from "@/components/useScrollReveal";
 import Image from "next/image";
 
-import {
-  PiLinkedinLogo,
-  PiArrowRight,
-  PiCheckCircleFill,
-  PiGear,
-  PiShieldCheck,
-  PiGlobe,
-  PiFactory,
-  PiChartLineUp,
-  PiQuotesFill,
-  PiLightning,
-} from "react-icons/pi";
+import { PiArrowRight, PiCheckCircleFill, PiGear, PiShieldCheck, PiGlobe, PiFactory, PiChartLineUp, PiQuotesFill, PiLightning } from "react-icons/pi";
 
 import PageHeader from "@/components/pageHeader/PageHeader";
 import SectionHeader from "@/components/sectionHeader/SectionHeader";
@@ -116,6 +105,7 @@ export default function AboutClient() {
                   src="/aboutImg/joyhandBuilding.jpg"
                   alt="JoyHand Owned Factory Building"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="about-intro__img"
                   priority
                 />
@@ -191,7 +181,7 @@ export default function AboutClient() {
             {aboutSectors.map((sector, index) => (
               <div key={index} className={`market-row ${index % 2 !== 0 ? 'market-row--reverse' : ''} stagger-${index % 6 + 1}`}>
                 <div className="market-image">
-                  <Image src={sector.img} alt={sector.title} fill />
+                  <Image src={sector.img} alt={sector.title} fill sizes="(max-width: 768px) 100vw, 50vw" />
                   <div className="market-badge">{sector.tag}</div>
                 </div>
                 <div className="market-text">
@@ -231,7 +221,7 @@ export default function AboutClient() {
                   <p className="testimonial-card__text">{t.quote}</p>
                   <div className="testimonial-card__author">
                     <div className="testimonial-card__author-image">
-                      <Image src={t.image} alt={t.author} fill />
+                      <Image src={t.image} alt={t.author} fill sizes="80px" />
                     </div>
                     <div>
                       <h5>{t.author}</h5>
@@ -258,7 +248,7 @@ export default function AboutClient() {
             {aboutTeam.map((member, index) => (
               <div key={index} className={`executive-card stagger-${index % 6 + 1}`}>
                 <div className="executive-card__image-box">
-                  <Image src={member.image} alt={member.name} fill className="executive-card__img" />
+                  <Image src={member.image} alt={member.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="executive-card__img" />
                   <div className="executive-card__experience-badge">{member.experience} Yrs Exp</div>
                 </div>
                 <div className="executive-card__content">

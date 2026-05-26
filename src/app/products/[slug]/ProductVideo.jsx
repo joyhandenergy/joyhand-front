@@ -3,15 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  PiPlayCircle, 
-  PiYoutubeLogo, 
-  PiArrowRight, 
-  PiShieldCheck, 
-  PiSealCheck, 
-  PiGear, 
-  PiGauge 
-} from "react-icons/pi";
+import { PiPlayCircle, PiYoutubeLogo, PiShieldCheck } from "react-icons/pi";
 
 export default function ProductVideo({ videoId, productName = "this product" }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -62,6 +54,7 @@ export default function ProductVideo({ videoId, productName = "this product" }) 
             src={thumbnailUrl}
             alt={`${productName} video thumbnail`}
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="product-details__video-thumb-img"
             unoptimized
           />

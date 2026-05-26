@@ -3,15 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  PiBatteryHigh,
-  PiLightning,
-  PiMotorcycle,
-  PiPlug,
-  PiBatteryCharging,
-  PiArrowRight,
-  PiShieldCheck,
-} from "react-icons/pi";
+import { PiBatteryHigh, PiLightning, PiMotorcycle, PiPlug, PiBatteryCharging, PiArrowRight, PiShieldCheck } from "react-icons/pi";
 
 const ProductCard = ({ product, priority = false }) => {
   const { name, slug, description, image, category, specifications } = product;

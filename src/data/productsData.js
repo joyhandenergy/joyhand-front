@@ -253,7 +253,7 @@ export const productData = [
       "Kenya off-grid power",
       "Nigeria blackout backup"
     ],
-    "image": "/images/productImg/s-battery1.png",
+    "image": "/images/productImg/s-battery1.jpg",
     "gallery": [],
     "datasheet": "/datasheets/GW-51.2-100-B.pdf",
     "certifications": [
@@ -299,7 +299,7 @@ export const productData = [
       "Kenya off-grid power",
       "Nigeria blackout backup"
     ],
-    "image": "/images/productImg/s-battery2.png",
+    "image": "/images/productImg/s-battery2.jpg",
     "gallery": [],
     "datasheet": "/datasheets/GW-51.2-300-B.pdf",
     "certifications": [

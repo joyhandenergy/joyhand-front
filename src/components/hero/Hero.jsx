@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="hero__background">
           <div className="hero__static-bg" aria-hidden="true">
             <Image
-              src="/videos/heroImg/hero-poster.png"
+              src="/videos/heroImg/hero-poster.jpg"
               alt="JoyHand manufacturing facility Guangzhou China"
               fill
               priority
@@ -55,7 +55,7 @@ export default function Hero() {
             playsInline
             preload="none"
             className={`hero__video ${videoLoaded ? "hero__video--loaded" : ""}`}
-            poster="/videos/heroImg/hero-poster.png"
+            poster="/videos/heroImg/hero-poster.jpg"
           >
             <source src="/videos/heroImg/joyhand-hero-video.mp4" type="video/mp4" />
           </video>
@@ -82,7 +82,7 @@ export default function Hero() {
               </h1>
 
               <p className="hero__desc">
-                From LFP batteries and solar inverters to electric motorcycle batteries and power banks; we manufacture and export directly to Nigeria, Bangladesh, Kenya, Pakistan, and across Africa & South Asia. Operating under ISO 9001:2015 standards. Products meet CE, UL, and UN38.3 requirements.
+                From LFP batteries and solar inverters to e-mobility solutions and power banks; we manufacture and export directly to Nigeria, Bangladesh, Kenya, Pakistan, and across Africa & South Asia. Operating under ISO 9001:2015 standards. Products meet CE, UL, and UN38.3 requirements.
               </p>
 
               <div className="hero__actions">

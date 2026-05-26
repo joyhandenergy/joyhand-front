@@ -1,14 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import {
-  PiXBold,
-  PiFactoryDuotone,
-  PiChatsCircleDuotone,
-  PiCheckCircleFill,
-  PiWarningCircleFill,
-  PiArrowRight,
-} from "react-icons/pi";
+import { PiXBold, PiFactoryDuotone, PiChatsCircleDuotone, PiCheckCircleFill, PiWarningCircleFill, PiArrowRight } from "react-icons/pi";
 
 import "./PopUpModal.css";
 

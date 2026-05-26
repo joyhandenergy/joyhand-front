@@ -28,14 +28,19 @@ export const partners = [
   { id: 2, name: "xionel", logo: "/homeImg/partner02.jpeg" },
   { id: 3, name: "mangotech", logo: "/homeImg/partner003.jpg" },
   { id: 4, name: "kemans", logo: "/homeImg/partner004.jpg" },
-  { id: 5, name: "partner5", logo: "/homeImg/parner05.jpg" },
+  { id: 5, name: "evps", logo: "/homeImg/parner05.jpg" },
+  { id: 6, name: "dodo", logo: "/homeImg/partner06.jpg" },
+  { id: 7, name: "jinwantong", logo: "/homeImg/partner07.jpg" },
+  { id: 8, name: "jike", logo: "/homeImg/partner08.jpg" },
+  { id: 9, name: "meinaid", logo: "/homeImg/partner09.jpg" },
+  { id: 10, name: "jingxin", logo: "/homeImg/partner10.jpg" }
 ];
 
 // ==============================
 // FOOTER DATA
 // ==============================
 export const footerData = {
-  brandDescription: "JoyHand is a direct factory manufacturer of energy storage, solar inverters, and electric motorcycle batteries. We engineer reliable power solutions for unstable grids in Nigeria and across Africa and South Asia.",
+  brandDescription: "JoyHand is a direct factory manufacturer of energy storage, solar inverters, and e-mobility solutions including EVs and motorcycles. We engineer reliable power solutions for unstable grids in Nigeria and across Africa and South Asia.",
   socialLinks: [
     { name: "YouTube", url: "https://www.youtube.com/@JoyHandSolar", icon: "youtube" },
     { name: "TikTok", url: "https://www.tiktok.com/@joyhandsolar", icon: "tiktok" },
@@ -113,7 +118,7 @@ export const businessServices = [
       "6,000+ cycle life LFP cells",
       "B2B MOQs for distributors"
     ],
-    image: "/homeImg/businessModelImage2.jpg",
+    image: "/homeImg/businessModelImage02.jpg",
     imageAlt: "OEM production line for solar inverters and battery packs"
   },
   {
@@ -128,7 +133,7 @@ export const businessServices = [
       "Exclusive tooling & IP protection",
       "Direct engineer-to-engineer support"
     ],
-    image: "/homeImg/businessModelImage03.jpg"
+    image: "/homeImg/businessModelImage003.jpg"
   },
   {
     id: "b2b",
@@ -142,7 +147,7 @@ export const businessServices = [
       "Direct factory pricing",
       "Customs clearance assistance"
     ],
-    image: "/homeImg/businessModelImage4.jpg",
+    image: "/homeImg/businessModelImage04.jpg",
     imageAlt: "Finished products ready for global shipment"
   }
 ];
@@ -237,7 +242,7 @@ export const featuredCategories = [
     slug: "solar-inverters",
     image: "/homeImg/energyPlatformImage002.jpg",
     desc: "Pure sine wave inverters with smart grid switching. Engineered for grid stability in Nigeria.",
-    sourceNote: "ISO Certified"
+    sourceNote: "ISO Standards"
   },
   {
     id: 3,
@@ -257,10 +262,10 @@ export const featuredCategories = [
   },
   {
     id: 5,
-    title: "Electric Motorcycle Batteries",
+    title: "E-Mobility & EV Solutions",
     slug: "electric-mobility",
     image: "/homeImg/energyPlatformImage04.jpg",
-    desc: "Heavy-duty batteries for electric motorcycles and urban fleets. Designed for rugged use.",
+    desc: "High-performance batteries for electric vehicles, motorcycles, and urban fleets. Designed for rugged logistics and transportation.",
     sourceNote: "E-Mobility"
   },
   {
@@ -336,7 +341,7 @@ export const aboutSectors = [
     title: "Solar Inverter Engineering",
     desc: "Hybrid inverters with smart grid switching. Designed to handle voltage drops and protect devices in unstable grids.",
     features: ["Pure Sine Wave Tech", "Smart Switching", "98% Efficiency"],
-    img: "/aboutImg/aboutProductimg02.jpg",
+    img: "/aboutImg/aboutProductimg002.jpg",
     tag: "Power Electronics"
   },
   {
@@ -354,10 +359,10 @@ export const aboutSectors = [
     tag: "Consumer Tech"
   },
   {
-    title: "Electric Motorcycle Batteries",
-    desc: "Heavy-duty batteries for electric motorcycles. Features reinforced frames and weatherproof casings for rugged terrain.",
-    features: ["IP65 Weatherproof", "Reinforced Casing", "Custom BMS"],
-    img: "/aboutImg/aboutProductimg4.jpg",
+    title: "E-Mobility & EV Solutions",
+    desc: "Complete battery manufacturing for electric vehicles and motorcycles. Engineered with reinforced structures and smart BMS for rugged transportation needs.",
+    features: ["EV & Motorcycle Focus", "IP65 Weatherproof", "Smart Fleet BMS"],
+    img: "/aboutImg/aboutProductimg04.jpg",
     tag: "E-Mobility"
   },
   {
@@ -604,7 +609,7 @@ export const contactFaqs = [
   },
   {
     question: "How do you ensure export quality?",
-    answer: "We control production in our ISO-certified factory. Every shipment undergoes full audit and documentation before leaving the port."
+    answer: "We control production according to ISO 9001:2015 standards. Every shipment undergoes full audit and documentation before leaving the port."
   }
 ];
 
@@ -643,11 +648,11 @@ export const solutionConfigs = {
     keywords: "portable power station factory, solar generator OEM, lithium power station wholesale, mobile backup power"
   },
   "electric-mobility": {
-    title: "Electric Motorcycle Batteries",
+    title: "E-Mobility & EV Solutions",
     filterCategory: "electric-mobility",
     image: "/homeImg/energyPlatformImage04.jpg",
-    description: "Factory engineering for electric motorcycle batteries and urban fleet systems. Rugged design for demanding logistics.",
-    keywords: "electric motorcycle battery, EV battery OEM, electric vehicle mobility, mobility fleet supply"
+    description: "Factory engineering for electric vehicles, motorcycles, and urban fleet systems. Rugged battery design for demanding global logistics.",
+    keywords: "e-mobility solutions, EV battery OEM, electric vehicle manufacturing, electric motorcycle battery, mobility fleet supply"
   },
   "power-banks": {
     title: "Wholesale Power Bank Supply",

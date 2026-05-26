@@ -2,8 +2,8 @@ import AboutClient from "./AboutClient";
 
 export const metadata = {
   title: "Manufacturing Heritage Since 1998 | JoyHand",
-  description: "Learn about JoyHand’s 28‑year manufacturing heritage. Direct factory output of ISO‑certified energy solutions for distributors in Nigeria and South Asia.",
-  keywords: ["manufacturing heritage", "factory direct output", "ISO certified energy", "ISO quality control standards", "energy storage factory", "Nigeria B2B energy"],
+  description: "Learn about JoyHand’s 28‑year manufacturing heritage. Direct factory output of energy solutions, including EV and e-mobility batteries, aligned with ISO standards.",
+  keywords: ["manufacturing heritage", "factory direct output", "ISO standard energy", "e-mobility solutions", "EV battery manufacturing", "electric motorcycle batteries", "Nigeria B2B energy"],
   alternates: {
     canonical: '/about-us',
   }

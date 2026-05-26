@@ -4,7 +4,7 @@ const nextConfig = {
 
   /* Image optimization: AVIF/WebP for 50-80% smaller file sizes */
   images: {
-    qualities: [75, 85],
+    qualities: [70, 75, 85, 90, 100],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60 * 60 * 24 * 30, // Cache images for 30 days
   },
