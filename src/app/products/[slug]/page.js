@@ -387,24 +387,24 @@ export async function generateMetadata({ params }) {
 // ── Fallback builders – category-aware pain-point copy ────────────────────
 function buildFallbackTitle(product) {
   const painMap = {
-    battery:          `End Blackouts: ${product.name} for Nigeria | JoyHand`,
-    inverter:         `No More Outages: ${product.name} – Nigeria Ready | JoyHand`,
-    "electric-mobility": `Zero Fuel Bills: ${product.name} – Nigeria Delivery | JoyHand`,
-    "portable-power": `Beat Blackouts: ${product.name} – Nigeria Backup | JoyHand`,
-    "power-bank":     `Stay Charged: ${product.name} – Nigeria Blackout Proof | JoyHand`,
+    battery:          `End Blackouts: ${product.name} for Nigeria & Kenya | JoyHand`,
+    inverter:         `No More Outages: ${product.name} – Global Export | JoyHand`,
+    "electric-mobility": `Zero Fuel Bills: ${product.name} – Lagos to Dhaka | JoyHand`,
+    "portable-power": `Beat Blackouts: ${product.name} – Reliable Backup | JoyHand`,
+    "power-bank":     `Stay Charged: ${product.name} – Blackout Proof | JoyHand`,
   };
   return painMap[product.category] || `${product.name} | JoyHand`;
 }
 
 function buildFallbackDesc(product) {
   const descMap = {
-    battery:          `Factory-direct ${product.name} (${product.model}) – LiFePO4 chemistry, 6000+ cycles. Wholesale backup battery for homes, SMEs, and telecom in Nigeria.`,
-    inverter:         `${product.name} (${product.model}) – auto-switch solar, battery & grid during NEPA blackouts. CE certified. B2B wholesale pricing for Nigerian distributors.`,
-    "electric-mobility": `${product.name} (${product.model}) – eliminate petrol costs for Nigeria's delivery fleets. CE certified, bulk import pricing available.`,
-    "portable-power": `${product.name} (${product.model}) – LiFePO4 power station with pure sine wave. Emergency backup for homes and businesses during Nigerian power cuts.`,
-    "power-bank":     `${product.name} (${product.model}) – stay connected through Nigeria's NEPA blackouts. CE/FCC certified. B2B wholesale pricing for African distributors.`,
+    battery:          `Factory-direct ${product.name} (${product.model}) – LiFePO4 chemistry, 6000+ cycles. Wholesale backup battery for homes, SMEs, and telecom in Lagos and Nairobi.`,
+    inverter:         `${product.name} (${product.model}) – auto-switch solar, battery & grid during grid failures. CE certified. B2B wholesale pricing for global distributors.`,
+    "electric-mobility": `${product.name} (${product.model}) – eliminate petrol costs for delivery fleets in Karachi and Dhaka. CE certified, bulk import pricing available.`,
+    "portable-power": `${product.name} (${product.model}) – LiFePO4 power station with pure sine wave. Emergency backup for homes and businesses during frequent power cuts.`,
+    "power-bank":     `${product.name} (${product.model}) – stay connected through regional blackouts. CE/FCC certified. B2B wholesale pricing for African and Asian distributors.`,
   };
-  return descMap[product.category] || `JoyHand ${product.name} (${product.model}) – factory-direct energy solution. Request B2B wholesale pricing for Africa.`;
+  return descMap[product.category] || `JoyHand ${product.name} (${product.model}) – factory-direct energy solution. Request B2B wholesale pricing for emerging markets.`;
 }
 
 export async function generateStaticParams() {

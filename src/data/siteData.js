@@ -627,45 +627,45 @@ export const solutionLinks = [
 
 export const solutionConfigs = {
   "storage-batteries": {
-    title: "LFP Battery Manufacturing",
+    title: "Wholesale LFP Battery Manufacturing",
     image: "/homeImg/energyPlatformImage01.jpg",
     filterCategory: "battery",
-    description: "Direct factory manufacturer of Grade A LFP batteries. Optimized for residential and industrial energy storage in Nigeria.",
+    description: "Grade-A LFP batteries for blackout protection. Factory direct to West Africa and global markets. Competitive B2B pricing and flexible wholesale MOQs.",
     keywords: "LFP battery manufacturer, wholesale solar batteries, LiFePO4 storage, wall-mount battery, rack-mounted LFP"
   },
   "solar-inverters": {
-    title: "Hybrid Inverter Production",
+    title: "Wholesale Hybrid Inverter Production",
     filterCategory: "inverter",
     image: "/homeImg/energyPlatformImage002.jpg",
-    description: "Direct production of hybrid and off-grid solar inverters. Engineered for grid stability and power conversion efficiency.",
+    description: "Direct OEM production of hybrid and off-grid solar inverters. Engineered for grid stability in Nigeria. Get a custom B2B quote in 24h.",
     keywords: "hybrid inverter factory, off-grid inverter OEM, pure sine wave inverter, solar power conversion"
   },
   "portable-power-stations": {
-    title: "Portable Power Station OEM",
+    title: "Portable Power Station OEM Manufacturing",
     filterCategory: "portable-power",
     image: "/homeImg/energyPlatformImage003.jpg",
-    description: "Manufacturer direct portable power stations. Optimized for emergency backup during blackouts and off-grid use.",
+    description: "Manufacturer direct portable power stations. Optimized for emergency backup during blackouts in Africa. Low MOQs for distributors.",
     keywords: "portable power station factory, solar generator OEM, lithium power station wholesale, mobile backup power"
   },
   "electric-mobility": {
-    title: "E-Mobility & EV Solutions",
+    title: "E-Mobility & EV Battery Solutions",
     filterCategory: "electric-mobility",
     image: "/homeImg/energyPlatformImage04.jpg",
-    description: "Factory engineering for electric vehicles, motorcycles, and urban fleet systems. Rugged battery design for demanding global logistics.",
+    description: "Factory engineering for electric motorcycles and fleet systems. Rugged battery designs built for global distributors. Bulk export pricing.",
     keywords: "e-mobility solutions, EV battery OEM, electric vehicle manufacturing, electric motorcycle battery, mobility fleet supply"
   },
   "power-banks": {
-    title: "Wholesale Power Bank Supply",
+    title: "Wholesale PD Fast Power Bank Supply",
     filterCategory: "power-bank",
     image: "/homeImg/energyPlatformImage005.jpg",
-    description: "High-volume power bank manufacturing. Direct wholesale supply for retail networks and telecom distributors.",
+    description: "High-volume power bank manufacturing. Direct wholesale supply for retail networks and telecom distributors in Nigeria & South Asia.",
     keywords: "power bank factory, fast charger manufacturer, bulk power banks, PD charging wholesale"
   },
   "phone-screen-protectors": {
-    title: "Screen Protector Factory",
+    title: "Wholesale 9H Screen Protector Factory",
     filterCategory: "phone-screen-protector",
     image: "/homeImg/energyPlatformImage06.jpg",
-    description: "Direct factory for 9H tempered glass and anti-spy films. High-margin supply for global tech distributors.",
+    description: "Direct factory for 9H tempered glass and anti-spy films. High-margin wholesale supply for global tech distributors. Request a sample today.",
     keywords: "screen protector factory, tempered glass manufacturer, 9H screen guard bulk, mobile accessory manufacturing"
   }
 };

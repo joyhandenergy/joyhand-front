@@ -1,8 +1,8 @@
 import ContactClient from "./ContactClient";
 
 export const metadata = {
-  title: "Manufacturing Inquiry & Support | JoyHand",
-  description: "Contact JoyHand for custom manufacturing proposals. Global support for B2B importers in Nigeria, Pakistan, and Bangladesh. Fast response times.",
+  title: "Contact JoyHand Factory | B2B Manufacturing Inquiry",
+  description: "Get a custom OEM/ODM manufacturing proposal in 24h. Call +86 130 6085 0617 or submit an inquiry. Dedicated global logistics to Lagos, Karachi, and worldwide ports.",
   keywords: ["manufacturing inquiry", "B2B energy support", "global logistics and support", "custom power proposal", "global export inquiry", "Nigeria distributor support"],
   alternates: {
     canonical: '/contact-us',

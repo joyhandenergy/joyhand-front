@@ -5,8 +5,8 @@ import Script from "next/script";
 import "./Products.css";
 
 export const metadata = {
-  title: "Energy Storage, Inverters & Power Banks | JoyHand",
-  description: "Explore factory-direct LFP batteries, hybrid inverters, portable power stations, and power banks – OEM/ODM ready. Export to Nigeria, Kenya, and worldwide.",
+  title: "Wholesale Energy, E-Mobility & Tech Accessories | JoyHand Catalog",
+  description: "Explore factory-direct LFP batteries, hybrid inverters, portable power stations, e-mobility & tech accessories. Flexible B2B MOQs and global shipping to ports like Lagos and Dhaka.",
   keywords: ["energy storage", "hybrid inverters", "hybrid inverter production", "portable power stations", "wholesale power banks", "B2B energy products"],
   alternates: {
     canonical: '/products',

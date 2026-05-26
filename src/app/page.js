@@ -9,8 +9,8 @@ import GlobalNetwork from "@/components/globalNetwork/GlobalNetwork";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Solar & LFP Battery Factory Direct | JoyHand",
-  description: "Direct factory wholesale of LFP batteries, hybrid inverters, and e-mobility solutions for unstable grids. Exporting to Nigeria, Bangladesh, and Kenya. OEM/ODM ready.",
+  title: "JoyHand Energy: Global OEM/ODM Manufacturer | Energy & E-Mobility",
+  description: "Competitive factory-direct pricing on LFP batteries, inverters, e-mobility & power stations. Direct export to emerging markets, including Lagos, Nairobi, and Dhaka. Get a quote in 24h.",
   keywords: ["power solutions for unstable grids", "factory direct solar", "OEM battery manufacturer", "Nigeria export", "solar inverters B2B"],
   alternates: {
     canonical: '/',

@@ -7,8 +7,8 @@ import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import "./blog.css";
 
 export const metadata = {
-  title: "Energy Insights & Manufacturing Blog | JoyHand",
-  description: "Read technical insights on energy storage, grid stability, and manufacturing. Export guides for distributors in Nigeria, Kenya, and South Asia.",
+  title: "B2B Energy Insights & Manufacturing Blog | JoyHand",
+  description: "Deep-dives into global energy storage. Latest: LFP vs Lead-Acid, OEM vs ODM strategies, and container export guides for emerging markets like Nairobi and Karachi. Free B2B downloads.",
   keywords: ["energy storage insights", "grid stability solutions", "manufacturing blog", "Nigeria solar market", "South Asia energy trends"],
   alternates: {
     canonical: '/blog',

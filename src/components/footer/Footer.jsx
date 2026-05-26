@@ -54,9 +54,7 @@ export default function Footer() {
               priority 
               style={{ 
                 filter: "brightness(0) invert(1)", 
-                display: "block",
-                width: "auto",
-                height: "auto" 
+                display: "block"
               }}
             />
           </Link>

@@ -118,7 +118,6 @@ export default function Header() {
                 height={60}
                 className="header__logo-img"
                 priority
-                style={{ width: "auto", height: "auto" }}
               />
             </Link>
 
