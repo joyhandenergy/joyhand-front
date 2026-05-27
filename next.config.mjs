@@ -2,11 +2,10 @@
 const nextConfig = {
   reactCompiler: true,
 
-  /* Image optimization: AVIF/WebP for 50-80% smaller file sizes */
+  /* Image optimization disabled for Cloudflare Pages compatibility, but qualities listed to prevent console warnings */
   images: {
+    unoptimized: true,
     qualities: [70, 75, 85, 90, 100],
-    formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // Cache images for 30 days
   },
 
   /* Security & Performance HTTP Headers */

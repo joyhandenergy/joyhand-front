@@ -108,7 +108,7 @@ export default function PageLoader({ children }) {
             {/* Professional Status */}
             <div className="page-loader__status">
               <span className="page-loader__text">
-                {progress < 100 ? "Initializing Systems" : "Systems Online"}
+                {progress < 100 ? "Loading..." : "Welcome"}
               </span>
               <span className="page-loader__percentage">{progress}%</span>
             </div>
