@@ -429,9 +429,9 @@ p {
 }
 
 .btn--secondary:hover {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  box-shadow: 0 8px 25px rgba(255, 127, 65, 0.3);
+  background-color: var(--secondary-color-light);
+  border-color: var(--secondary-color-light);
+  box-shadow: 0 8px 25px rgba(18, 27, 45, 0.3);
 }
 
 /* Outline Button (Orange) */

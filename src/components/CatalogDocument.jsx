@@ -79,8 +79,9 @@ export default function CatalogDocument({ category }) {
     return <Document><Page><Text>No products found.</Text></Page></Document>;
   }
 
-  // Relative paths work perfectly on the client side since the browser resolves them
-  const logoUrl = `/images/logos/joyhandLogo.png`;
+  // Absolute paths are required for react-pdf to fetch images successfully in deployed environments
+  const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+  const logoUrl = `${baseUrl}/images/logos/joyhandLogo.png`;
 
   return (
     <Document title={`JoyHand Energy - ${categoryMeta[category].name} Catalog`}>
@@ -105,7 +106,7 @@ export default function CatalogDocument({ category }) {
         <View style={styles.productsContainer}>
           {filteredProducts.map((product, idx) => {
             const keySpecs = getKeySpecs(product);
-            const imageUrl = product.image; 
+            const imageUrl = product.image.startsWith('http') ? product.image : `${baseUrl}${product.image}`; 
             return (
               <View key={idx} style={styles.productCard} wrap={false}>
                 <View style={styles.imageSection}>
