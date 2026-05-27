@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { PiXBold, PiFactoryDuotone, PiChatsCircleDuotone, PiCheckCircleFill, PiWarningCircleFill, PiArrowRight } from "react-icons/pi";
 
 import "./PopUpModal.css";
@@ -205,7 +206,9 @@ const PopUpModal = ({ isOpen, onClose, mode = "quote" }) => {
 
   const errorMessages = Object.values(errors).filter(Boolean);
 
-  return (
+  if (typeof document === 'undefined') return null;
+
+  return createPortal(
     <div className="modal-overlay" onClick={handleClose}>
       <div className="modal-container" onClick={(e) => e.stopPropagation()}>
         <button
@@ -404,7 +407,8 @@ const PopUpModal = ({ isOpen, onClose, mode = "quote" }) => {
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

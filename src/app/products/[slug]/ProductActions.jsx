@@ -14,16 +14,37 @@ export default function ProductActions({ category }) {
   };
   const closeModal = () => setIsModalOpen(false);
 
-  const downloadCatalog = () => {
-    const url = `/api/catalog?category=${category}`;
-    window.open(url, '_blank');
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  const downloadCatalog = async () => {
+    if (isGenerating) return;
+    setIsGenerating(true);
+    
+    try {
+      // Dynamically import the PDF tools so they don't block initial page load
+      const { pdf } = await import('@react-pdf/renderer');
+      const CatalogDocument = (await import('@/components/CatalogDocument')).default;
+      
+      const blob = await pdf(<CatalogDocument category={category} />).toBlob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `joyhand-${category}-catalog.pdf`;
+      link.click();
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Failed to generate PDF locally:", error);
+      alert("Failed to generate catalog. Please try again.");
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   return (
     <>
       <div className="product-details__actions">
-        <button onClick={downloadCatalog} className="btn btn--primary product-details__cta">
-          <PiFileText size={20} /> Request Datasheet
+        <button onClick={downloadCatalog} className="btn btn--primary product-details__cta" disabled={isGenerating}>
+          <PiFileText size={20} /> {isGenerating ? "Generating..." : "Request Datasheet"}
         </button>
         <button onClick={() => openModal("quote")} className="btn btn--secondary product-details__cta">
           <PiChatCenteredDots size={20} /> Bulk Inquiry

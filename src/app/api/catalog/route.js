@@ -1,5 +1,4 @@
-export const runtime = 'edge';
-
+// Removed edge runtime because @react-pdf requires Node.js capabilities to render PDFs
 import { NextResponse } from "next/server";
 import { productData } from "@/data";
 import { Document, Page, Text, View, Image, StyleSheet, renderToBuffer } from "@react-pdf/renderer";
