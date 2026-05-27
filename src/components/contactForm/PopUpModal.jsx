@@ -161,7 +161,9 @@ const PopUpModal = ({ isOpen, onClose, mode = "quote" }) => {
 
     try {
       const web3FormData = new FormData();
-      web3FormData.append("access_key", "889ad27b-0f25-4686-a395-692a6df4ffa2");
+      web3FormData.append("access_key", "b13aff84-22b0-4b50-8d7b-88a92b7d7f25");
+      web3FormData.append("from_name", "JoyHand Energy B2B Portal");
+      web3FormData.append("subject", `[${isQuote ? "Manufacturing Quote Request" : "Technical Consultation"}] ${formData.firstName} ${formData.lastName} (${formData.companyName || "No Company"})`);
       web3FormData.append("name", `${formData.firstName} ${formData.lastName}`);
       web3FormData.append("email", formData.email);
       web3FormData.append("message", formData.message);

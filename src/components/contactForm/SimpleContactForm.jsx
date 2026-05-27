@@ -95,7 +95,9 @@ const SimpleContactForm = ({ mode = "quote" }) => {
     try {
       // Prepare form data for Web3Forms
       const web3FormData = new FormData();
-      web3FormData.append("access_key", "889ad27b-0f25-4686-a395-692a6df4ffa2");
+      web3FormData.append("access_key", "b13aff84-22b0-4b50-8d7b-88a92b7d7f25");
+      web3FormData.append("from_name", "JoyHand Energy B2B Portal");
+      web3FormData.append("subject", `[${isQuote ? "Quote Request" : "General Inquiry"}] ${formData.firstName} ${formData.lastName} (${formData.companyName || "No Company"})`);
       web3FormData.append("name", `${formData.firstName} ${formData.lastName}`);
       web3FormData.append("email", formData.email);
       web3FormData.append("message", formData.message);
@@ -103,7 +105,7 @@ const SimpleContactForm = ({ mode = "quote" }) => {
       web3FormData.append("order_volume", formData.orderVolume || "Not specified");
       web3FormData.append("inquiry_type", isQuote ? "Quote Request" : "Contact Form");
 
-      // Web3Forms Honeypot: if botcheck is true, Web3Forms will silently ignore the spam
+      // Web3Forms Honeypot
       if (formData.botcheck) {
         web3FormData.append("botcheck", "true");
       }

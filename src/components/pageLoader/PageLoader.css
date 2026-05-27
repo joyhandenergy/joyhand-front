@@ -29,7 +29,7 @@
 
 /* Logo Animation */
 .page-loader__logo-wrapper {
-  margin-bottom: var(--spacing-3);
+  margin-bottom: 8px; /* Reduced space between logo and loading bar */
   animation: logoFloat 3s ease-in-out infinite;
 }
 
@@ -38,7 +38,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-5px); /* Reduced floating distance so it stays closer to the bar */
   }
 }
 
