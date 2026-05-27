@@ -95,7 +95,7 @@ const SimpleContactForm = ({ mode = "quote" }) => {
     try {
       // Prepare form data for Web3Forms
       const web3FormData = new FormData();
-      web3FormData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY);
+      web3FormData.append("access_key", "889ad27b-0f25-4686-a395-692a6df4ffa2");
       web3FormData.append("name", `${formData.firstName} ${formData.lastName}`);
       web3FormData.append("email", formData.email);
       web3FormData.append("message", formData.message);

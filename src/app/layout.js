@@ -21,8 +21,8 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-// ⚠️ Replace "G-XXXXXXXXXX" with your real GA4 Measurement ID from Google Analytics
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+// Google Analytics 4 Measurement ID
+const GA_MEASUREMENT_ID = "G-8E48B4E7B2";
 
 // SEO Metadata - Direct Factory & B2B Wholesale Optimized
 export const metadata = {

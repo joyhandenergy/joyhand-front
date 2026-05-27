@@ -15,7 +15,7 @@
 
 .home-blog__carousel {
   margin: var(--spacing-6) 0 var(--spacing-4);
-  overflow: hidden;
+  /* Removed overflow: hidden to prevent top/left clipping */
 }
 
 .home-blog__track {
@@ -24,10 +24,10 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  padding: 10px 10px 30px 10px;
+  padding: 40px 24px 60px 24px; /* Generous padding to hold hover transforms and shadows */
   cursor: grab;
   scroll-behavior: smooth;
-  margin: -10px; /* offset padding so cards don't clip shadows */
+  margin: -40px -24px -60px -24px; /* Exact negative margin to offset the padding, keeping alignment perfect */
 }
 
 .home-blog__track::-webkit-scrollbar {

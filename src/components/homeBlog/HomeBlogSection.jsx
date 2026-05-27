@@ -18,6 +18,9 @@ const HomeBlogSection = () => {
   const featuredPosts = blogPosts.slice(0, 5);
   const slideCount = featuredPosts.length;
 
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef(null);
+
   // Get the actual width of one slide (including gap)
   const getSlideWidth = useCallback(() => {
     if (!sliderRef.current) return 320;
@@ -80,9 +83,31 @@ const HomeBlogSection = () => {
   // Reset auto-play timer when user stops scrolling
   const handleScrollEnd = useCallback(() => {
     stopAutoPlay();
-    startAutoPlay();
-  }, [stopAutoPlay, startAutoPlay]);
+    if (isInView) {
+      startAutoPlay();
+    }
+  }, [stopAutoPlay, startAutoPlay, isInView]);
 
+  // Intersection Observer for visibility
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.15 } // Start autoplay when 15% is visible
+    );
+
+    observer.observe(section);
+
+    return () => {
+      observer.unobserve(section);
+    };
+  }, []);
+
+  // Handle Play/Pause based on visibility and event listeners
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
@@ -96,14 +121,19 @@ const HomeBlogSection = () => {
     };
 
     slider.addEventListener("scroll", onScrollWithDelay);
-    startAutoPlay();
+
+    if (isInView) {
+      startAutoPlay();
+    } else {
+      stopAutoPlay();
+    }
 
     return () => {
       slider.removeEventListener("scroll", onScrollWithDelay);
       clearTimeout(scrollTimeout);
       stopAutoPlay();
     };
-  }, [handleScroll, handleScrollEnd, startAutoPlay, stopAutoPlay]);
+  }, [handleScroll, handleScrollEnd, startAutoPlay, stopAutoPlay, isInView]);
 
   // Handle dot click
   const handleDotClick = (idx) => {
@@ -111,12 +141,12 @@ const HomeBlogSection = () => {
     scrollToIndex(idx, "smooth");
     setCurrentIndex(idx);
     setTimeout(() => {
-      startAutoPlay();
+      if (isInView) startAutoPlay();
     }, 3000);
   };
 
   return (
-    <section className="home-blog">
+    <section className="home-blog" ref={sectionRef}>
       <SectionDecor type="primary" count={1} />
       <div className="container">
        <SectionHeader
