@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import ProductCard from "@/components/productCard/ProductCard";
@@ -28,9 +29,29 @@ export default function SolutionClient({ slug, config, allProducts }) {
   const totalPages = Math.ceil(allProducts.length / PRODUCTS_PER_PAGE);
   const isComingSoon = config.comingSoon === true;
 
-  const downloadCatalog = () => {
-    const url = `/api/catalog?category=${config.filterCategory}`;
-    window.open(url, '_blank');
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  const downloadCatalog = async () => {
+    if (isGenerating) return;
+    setIsGenerating(true);
+    
+    try {
+      const { pdf } = await import('@react-pdf/renderer');
+      const CatalogDocument = (await import('@/components/CatalogDocument')).default;
+      
+      const blob = await pdf(<CatalogDocument category={config.filterCategory} />).toBlob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `joyhand-${config.filterCategory}-catalog.pdf`;
+      link.click();
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Failed to generate PDF locally:", error);
+      alert("Failed to generate catalog. Please try again.");
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   const sectionReveal = useScrollReveal();
@@ -101,9 +122,10 @@ export default function SolutionClient({ slug, config, allProducts }) {
                   onClick={downloadCatalog}
                   className="btn btn--outline-primary products-page__catalog-btn"
                   title={`Download PDF Catalog for ${config.title}`}
+                  disabled={isGenerating}
                 >
                   <PiFilePdf size={20} />
-                  <span>Download Full Catalog</span>
+                  <span>{isGenerating ? "Generating..." : "Download Full Catalog"}</span>
                 </button>
               </div>
 
