@@ -8,6 +8,7 @@ export const links = [
     href: "/products",
     subLinks: [
       { name: "Storage Batteries", href: "/products/solutions/storage-batteries" },
+      { name: "Solar Panels", href: "/products/solutions/solar-panels" },
       { name: "Solar Inverters", href: "/products/solutions/solar-inverters" },
       { name: "Portable Power Stations", href: "/products/solutions/portable-power-stations" },
       { name: "Electric Mobility", href: "/products/solutions/electric-mobility" },
@@ -40,7 +41,7 @@ export const partners = [
 // FOOTER DATA
 // ==============================
 export const footerData = {
-  brandDescription: "JoyHand is a direct factory manufacturer of energy storage, solar inverters, and e-mobility solutions including EVs and motorcycles. We engineer reliable power solutions for unstable grids in Nigeria and across Africa and South Asia.",
+  brandDescription: "JoyHand is a direct factory manufacturer of storage batteries, solar power stations, solar panels, inverters, electric motorcycles, screen protectors, and complete solar solutions. We engineer reliable power systems for global markets.",
   socialLinks: [
     { name: "YouTube", url: "https://www.youtube.com/@JoyHandSolar", icon: "youtube" },
     { name: "TikTok", url: "https://www.tiktok.com/@joyhandsolar", icon: "tiktok" },
@@ -50,6 +51,7 @@ export const footerData = {
   ],
   solutions: [
     { name: "Storage Batteries", path: "/products/solutions/storage-batteries" },
+    { name: "Solar Panels", path: "/products/solutions/solar-panels" },
     { name: "Solar Inverters", path: "/products/solutions/solar-inverters" },
     { name: "Portable Power Stations", path: "/products/solutions/portable-power-stations" },
     { name: "Electric Mobility", path: "/products/solutions/electric-mobility" },
@@ -618,6 +620,7 @@ export const contactFaqs = [
 // ==============================
 export const solutionLinks = [
   { slug: "storage-batteries", name: "Battery Storage" },
+  { slug: "solar-panels", name: "Solar Panels" },
   { slug: "solar-inverters", name: "Hybrid Inverters" },
   { slug: "portable-power-stations", name: "Portable Power" },
   { slug: "electric-mobility", name: "Electric Mobility" },

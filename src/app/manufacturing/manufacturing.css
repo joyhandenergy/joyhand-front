@@ -673,7 +673,7 @@
   font-size: 0.9rem;
   /* Smaller on mobile */
   font-weight: 800;
-  color: var(--primary-color);
+  color: var(--accent-color-dark);
   margin-bottom: var(--spacing-2);
   letter-spacing: 1px;
 }

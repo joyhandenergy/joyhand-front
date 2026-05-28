@@ -7,7 +7,7 @@ import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import "./blog.css";
 
 export const metadata = {
-  title: "B2B Energy Insights & Manufacturing Blog | JoyHand",
+  title: "B2B Energy Insights & Manufacturing Blog | JoyHand Energy",
   description: "Deep-dives into global energy storage. Latest: LFP vs Lead-Acid, OEM vs ODM strategies, and container export guides for emerging markets like Nairobi and Karachi. Free B2B downloads.",
   keywords: ["energy storage insights", "grid stability solutions", "manufacturing blog", "Nigeria solar market", "South Asia energy trends"],
   alternates: {

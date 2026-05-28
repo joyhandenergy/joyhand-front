@@ -44,13 +44,13 @@ export default function Footer() {
       <div className="container footer__container">
         {/* BRAND SECTION */}
         <div className="footer__brand">
-          <Link href="/" className="footer__logo" aria-label="JoyHand Energy – Manufacturer">
+          <Link href="/" className="footer__logo" aria-label="JoyHand – Manufacturer">
             <Image 
-              src="/images/logos/joyhandLogo.png" 
+              src="/images/logos/joyhand-logo.png" 
               className="footer__logo-img"
-              alt="JoyHand Energy – Premium Battery & E‑Mobility Manufacturer"
-              width={180} 
-              height={60} 
+              alt="JoyHand – Premium Battery & E‑Mobility Manufacturer"
+              width={250} 
+              height={83} 
               priority 
               style={{ 
                 filter: "brightness(0) invert(1)", 

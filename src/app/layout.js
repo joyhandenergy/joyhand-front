@@ -1,4 +1,4 @@
-import { Roboto, Poppins } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
@@ -7,18 +7,10 @@ import PageLoader from "@/components/pageLoader/PageLoader";
 import CookieConsent from "@/components/cookieConsent/CookieConsent";
 import Script from "next/script";
 
-const roboto = Roboto({
-  weight: ["400", "500", "700"],
+const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-roboto",
-});
-
-const poppins = Poppins({
-  weight: ["400", "600", "700", "800"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-poppins",
+  variable: "--font-outfit",
 });
 
 // Google Analytics 4 Measurement ID
@@ -31,15 +23,15 @@ export const metadata = {
     default: "Factory Direct Solar & Batteries | JoyHand Manufacturer",
     template: "%s | JoyHand Manufacturer",
   },
-  description: "Direct factory wholesale of LFP batteries, hybrid inverters, and e-mobility solutions. Reliable power solutions for unstable grids in Nigeria and beyond.",
-  keywords: ["solar factory China", "OEM energy manufacturer", "wholesale LFP batteries", "ISO standard production", "B2B energy supplier"],
+  description: "Direct factory wholesale of LFP batteries, hybrid inverters, e-mobility solutions, portable power stations, and tempered glass screen protectors. Reliable power solutions for unstable grids in Nigeria and beyond.",
+  keywords: ["solar factory China", "OEM energy manufacturer", "wholesale LFP batteries", "ISO standard production", "B2B energy supplier", "portable power stations", "tempered glass screen protector"],
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: "JoyHand Energy | Direct Factory Partnership",
-    description: "Bypass middlemen. Scale your energy brand with industrial-grade production for Nigeria, Bangladesh, and South Asia.",
+    description: "Bypass middlemen. Scale your energy brand with industrial-grade production of solar solutions, portable power stations, and tempered glass screen protectors for Nigeria, Bangladesh, and South Asia.",
     type: "website",
     siteName: "JoyHand Energy",
     locale: "en_US",
@@ -52,6 +44,9 @@ export const metadata = {
       },
     ],
   },
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export const viewport = {
@@ -63,7 +58,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${roboto.variable} ${poppins.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${outfit.variable}`}>
       <body suppressHydrationWarning={true} className="antialiased">
         {/* Google Analytics 4 - loads after page is interactive */}
         <Script

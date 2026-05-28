@@ -81,7 +81,7 @@ export default function CatalogDocument({ category }) {
 
   // Absolute paths are required for react-pdf to fetch images successfully in deployed environments
   const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
-  const logoUrl = `${baseUrl}/images/logos/joyhandLogo.png`;
+  const logoUrl = `${baseUrl}/images/logos/joyhand-logo.png`;
 
   return (
     <Document title={`JoyHand Energy - ${categoryMeta[category].name} Catalog`}>

@@ -108,14 +108,14 @@ export default function Header() {
               href="/" 
               className="header__logo" 
               onClick={closeMenu}
-              aria-label="JoyHand Energy - Manufacturer"
+              aria-label="JoyHand - Manufacturer"
               prefetch={true}
             >
               <Image
-                src="/images/logos/joyhandLogo.png"
-                alt="JoyHand Energy"
-                width={180}
-                height={60}
+                src="/images/logos/joyhand-logo.png"
+                alt="JoyHand"
+                width={250}
+                height={83}
                 className="header__logo-img"
                 priority
                 style={{ height: "auto" }}

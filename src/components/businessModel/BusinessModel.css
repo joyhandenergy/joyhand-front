@@ -233,7 +233,7 @@
   position: absolute;
   left: 0;
   top: -2px;
-  color: var(--primary-color);
+  color: var(--accent-color-dark);
   font-weight: 900;
   font-size: 1.2rem;
 }

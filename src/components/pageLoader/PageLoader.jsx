@@ -87,10 +87,10 @@ export default function PageLoader({ children }) {
             {/* Animated Logo */}
             <div className="page-loader__logo-wrapper">
               <Image
-                src="/images/logos/joyhandLogo.png"
-                alt="JoyHand Energy"
-                width={220}
-                height={74}
+                src="/images/logos/joyhand-logo.png"
+                alt="JoyHand"
+                width={250}
+                height={83}
                 className="page-loader__logo"
                 priority
                 style={{ width: "auto", height: "auto" }}
