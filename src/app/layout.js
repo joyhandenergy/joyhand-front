@@ -22,7 +22,7 @@ const poppins = Poppins({
 });
 
 // Google Analytics 4 Measurement ID
-const GA_MEASUREMENT_ID = "G-8E48B4E7B2";
+const GA_MEASUREMENT_ID = "G-NPVW8QGRQT";
 
 // SEO Metadata - Direct Factory & B2B Wholesale Optimized
 export const metadata = {
