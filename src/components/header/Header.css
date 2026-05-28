@@ -106,7 +106,7 @@
 }
 
 .header__logo-img {
-  width: 120px;
+  width: 150px;
   height: auto;
   display: block;
 }
@@ -252,8 +252,8 @@
   padding: 8px;
   border-radius: var(--spacing-1);
   transition: var(--transition);
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
 }
 
 .header__mobile-toggle:hover {
@@ -483,13 +483,13 @@
   }
 
   .header__logo-img {
-    width: 150px;
+    width: 190px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .header__logo-img {
-    width: 110px;
+    width: 165px;
   }
 }
 

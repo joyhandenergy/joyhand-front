@@ -57,7 +57,7 @@ main {
 ===================================================== */
 :root {
   /* Header - Mobile default */
-  --header-height: 80px;
+  --header-height: 100px;
 
   /* Primary Brand (Solar Orange) */
   --primary-color: #ff7f41;

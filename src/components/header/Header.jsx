@@ -171,7 +171,7 @@ export default function Header() {
                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMenuOpen}
               >
-                {isMenuOpen ? <PiX size={36} /> : <PiList size={36} />}
+                {isMenuOpen ? <PiX size={44} /> : <PiList size={44} />}
               </button>
             </div>
           </div>
