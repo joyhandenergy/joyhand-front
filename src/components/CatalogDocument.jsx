@@ -114,7 +114,16 @@ export default function CatalogDocument({ category, products = null }) {
         <View style={styles.productsContainer}>
           {filteredProducts.map((product, idx) => {
             const keySpecs = getKeySpecs(product);
-            const imageUrl = product.image.startsWith('http') ? product.image : `${baseUrl}${product.image}`; 
+            
+            // Handle missing images safely and fix CORS opaque response caching for Sanity CDN images
+            let imageUrl = logoUrl; // Fallback to logo
+            if (product.image) {
+              imageUrl = product.image.startsWith('http') 
+                // Append a cache buster so browser fetch bypasses opaque caches
+                ? `${product.image}${product.image.includes('?') ? '&' : '?'}cb=${Date.now()}` 
+                : `${baseUrl}${product.image}`;
+            }
+
             return (
               <View key={idx} style={styles.productCard} wrap={false}>
                 <View style={styles.imageSection}>
