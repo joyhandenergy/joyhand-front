@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { productData, solutionLinks } from "@/data";
+import { solutionLinks } from "@/data";
 import ProductCard from "@/components/productCard/ProductCard";
 import Pagination from "@/components/pagination/Pagination";
 import { PiPackage } from "react-icons/pi";
@@ -11,13 +11,13 @@ import "./Products.css";
 
 const PRODUCTS_PER_PAGE = 12;
 
-export default function ProductsClient() {
+export default function ProductsClient({ initialProducts = [] }) {
   const searchParams = useSearchParams();
   const page = Number(searchParams.get("page")) || 1;
   const start = (page - 1) * PRODUCTS_PER_PAGE;
   const end = start + PRODUCTS_PER_PAGE;
-  const paginatedProducts = productData.slice(start, end);
-  const totalPages = Math.ceil(productData.length / PRODUCTS_PER_PAGE);
+  const paginatedProducts = initialProducts.slice(start, end);
+  const totalPages = Math.ceil(initialProducts.length / PRODUCTS_PER_PAGE);
 
   const sectionReveal = useScrollReveal();
   const gridReveal    = useScrollReveal();
@@ -59,7 +59,7 @@ export default function ProductsClient() {
         <div className="products-page__results-header">
           <p className="products-page__results-count">
             Showing <strong>{paginatedProducts.length}</strong> of{" "}
-            <strong>{productData.length}</strong> products
+            <strong>{initialProducts.length}</strong> products
           </p>
         </div>
 

@@ -1,9 +1,9 @@
-
-
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PiBatteryHigh, PiLightning, PiMotorcycle, PiFactory, PiPlug, PiBatteryCharging, PiDeviceMobile } from "react-icons/pi";
 import { productData } from "@/data";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
 import ProductGallery from "./ProductGallery";
 import ProductVideo from "./ProductVideo";
 import ProductActions from "./ProductActions";
@@ -13,6 +13,7 @@ import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import "../Products.css";
 
+export const revalidate = 3600; // Generate static page, re-check Sanity at most once per hour
 
 
 function getCategoryIcon(category) {
@@ -22,7 +23,7 @@ function getCategoryIcon(category) {
     case "electric-mobility": return <PiMotorcycle size={16} />;
     case "portable-power": return <PiPlug size={16} />;
     case "power-bank": return <PiBatteryCharging size={16} />;
-    case "phone-screen-protector": return <PiDeviceMobile size={16} />;
+    case "accessories": return <PiDeviceMobile size={16} />;
     default: return <PiFactory size={16} />;
   }
 }
@@ -34,7 +35,7 @@ function getCategoryDisplay(category) {
     case "electric-mobility": return "Electric Mobility Solutions";
     case "portable-power": return "Portable Power Stations";
     case "power-bank": return "Premium Power Banks";
-    case "phone-screen-protector": return "Screen Protection Solutions";
+    case "accessories": return "Tech & Solar Accessories";
     default: return "Energy Solution";
   }
 }
@@ -61,53 +62,8 @@ function getTypeDisplay(type) {
 
 // Key specs for right column
 function ProductKeySpecs({ product }) {
-  const { specifications, category } = product;
-  if (!specifications) return null;
-
-  let keySpecs = [];
-  if (category === "battery") {
-    keySpecs = [
-      { label: "Nominal Voltage", value: specifications.nominalVoltage },
-      { label: "Capacity", value: specifications.capacity || specifications.energy },
-      { label: "Energy", value: specifications.energy },
-      { label: "Cycle Life", value: specifications.cycleLife },
-    ];
-  } else if (category === "inverter") {
-    keySpecs = [
-      { label: "Power", value: specifications.power },
-      { label: "DC Input", value: specifications.dcInput },
-      { label: "AC Output", value: specifications.acOutput },
-      { label: "Efficiency", value: specifications.efficiency },
-    ];
-  } else if (category === "electric-mobility") {
-    keySpecs = [
-      { label: "Top Speed", value: specifications.maxSpeed || specifications.topSpeed },
-      { label: "Range", value: specifications.maxRange || specifications.mileage },
-      { label: "Motor", value: specifications.motor },
-      { label: "Battery", value: specifications.battery },
-    ];
-  } else if (category === "portable-power") {
-    keySpecs = [
-      { label: "Rated Power", value: specifications.ratedPower },
-      { label: "Battery Capacity", value: specifications.batteryCapacity },
-      { label: "Cycle Life", value: specifications.cycleLife },
-      { label: "UPS Support", value: specifications.upsFunction === "Supported" ? "Yes" : specifications.upsFunction || "Yes" },
-    ];
-  } else if (category === "power-bank") {
-    keySpecs = [
-      { label: "Capacity", value: specifications.capacity || specifications.batteryCapacity },
-      { label: "Output", value: specifications.totalOutput || specifications.usbCOutput },
-      { label: "Wireless", value: specifications.wirelessOutput ? `${specifications.wirelessOutput} MagSafe` : "No" },
-      { label: "Weight", value: specifications.weight },
-    ].filter(spec => spec.value && spec.value !== "No");
-  } else if (category === "phone-screen-protector") {
-    keySpecs = [
-      { label: "Material", value: specifications.material || "Tempered Glass" },
-      { label: "Hardness", value: specifications.hardness || "9H" },
-      { label: "Thickness", value: specifications.thickness || "0.33mm" },
-      { label: "Finish", value: specifications.finish || "Clear / Matte / Anti Spy" },
-    ].filter(spec => spec.value);
-  }
+  // If fetching from Sanity, we have a keySpecs array
+  const keySpecs = product.keySpecs || [];
 
   if (keySpecs.length === 0) return null;
 
@@ -116,9 +72,9 @@ function ProductKeySpecs({ product }) {
       <h3 className="product-details__key-specs-heading">Key Specifications</h3>
       <div className="product-details__key-specs-grid">
         {keySpecs.map((spec, idx) => (
-          <div key={idx} className="product-details__key-spec-item">
-            <span className="product-details__key-spec-label">{spec.label}</span>
-            <span className="product-details__key-spec-value">{spec.value}</span>
+          <div key={spec._key || idx} className="product-details__key-spec-item">
+            <span className="product-details__key-spec-label">{spec.specName}</span>
+            <span className="product-details__key-spec-value">{spec.specValue}</span>
           </div>
         ))}
       </div>
@@ -144,139 +100,20 @@ function ProductFeaturesCompact({ features }) {
 }
 
 function ProductSpecs({ product }) {
-  const { specifications, category, type } = product;
-  if (!specifications) return null;
+  // If fetching from Sanity, we have a fullSpecs array
+  const fullSpecs = product.fullSpecs || [];
 
-  const formatValue = (value) => {
-    if (!value) return null;
-    if (typeof value === 'string') return value;
-    if (typeof value === 'object') {
-      if (value['40HQ'] || value['20GP']) {
-        return `40'HQ: ${value['40HQ']} | 20'GP: ${value['20GP']}`;
-      }
-      return JSON.stringify(value);
-    }
-    return String(value);
-  };
-
-  let specsToShow = [];
-  if (category === "battery") {
-    specsToShow = [
-      { label: "Model", value: product.model },
-      { label: "Type", value: getTypeDisplay(type) },
-      { label: "Nominal Voltage", value: specifications.nominalVoltage },
-      { label: "Capacity", value: specifications.capacity || specifications.energy },
-      { label: "Energy", value: specifications.energy },
-      { label: "Cell Type", value: specifications.cellType },
-      { label: "BMS", value: specifications.bms },
-      { label: "Dimensions", value: specifications.dimensions },
-      { label: "Weight", value: specifications.weight },
-      { label: "Gross Weight", value: specifications.grossWeight },
-      { label: "Charge Current", value: specifications.chargeCurrent },
-      { label: "Discharge Current", value: specifications.dischargeCurrent },
-      { label: "Working Voltage", value: specifications.workingVoltage },
-      { label: "Cycle Life", value: specifications.cycleLife },
-      { label: "IP Rating", value: specifications.ipRating },
-      { label: "Cooling", value: specifications.cooling },
-    ];
-  } else if (category === "inverter") {
-    specsToShow = [
-      { label: "Model", value: product.model },
-      { label: "Type", value: getTypeDisplay(type) },
-      { label: "Power", value: specifications.power },
-      { label: "DC Input", value: specifications.dcInput },
-      { label: "AC Input", value: specifications.acInput },
-      { label: "AC Output", value: specifications.acOutput },
-      { label: "AC Charge Current", value: specifications.acChargeCurrent },
-      { label: "Max Charge Current", value: specifications.maxChargeCurrent },
-      { label: "MPPT Voltage Range", value: specifications.mpptVoltage },
-      { label: "Max PV Power", value: specifications.maxPvPower },
-      { label: "Topology", value: specifications.topology },
-      { label: "Efficiency", value: specifications.efficiency },
-      { label: "Dimensions", value: specifications.dimensions },
-      { label: "Weight", value: specifications.weight },
-      { label: "IP Rating", value: specifications.ipRating },
-      { label: "Parallel Support", value: specifications.parallelSupport },
-    ];
-  } else if (category === "electric-mobility") {
-    specsToShow = [
-      { label: "Model", value: product.model },
-      { label: "Type", value: getTypeDisplay(type) },
-      { label: "Motor", value: specifications.motor },
-      { label: "Battery", value: specifications.battery },
-      { label: "Top Speed", value: specifications.maxSpeed || specifications.topSpeed },
-      { label: "Range", value: specifications.mileage || specifications.maxRange },
-      { label: "Charging Time", value: specifications.chargingTime || specifications.rechargeTime },
-      { label: "Brake System", value: specifications.brake },
-      { label: "Tires", value: specifications.tyre || specifications.tyres },
-      { label: "Max Loading", value: specifications.maxLoading },
-      { label: "Weight", value: specifications.weight },
-      { label: "Dimensions", value: specifications.dimension },
-      { label: "Container Loading", value: specifications.containerLoading },
-    ];
-  } else if (category === "portable-power") {
-    specsToShow = [
-      { label: "Model", value: product.model },
-      { label: "Type", value: getTypeDisplay(type) },
-      { label: "Rated Power", value: specifications.ratedPower },
-      { label: "Peak Power", value: specifications.peakPower },
-      { label: "Battery Capacity", value: specifications.batteryCapacity },
-      { label: "Battery Chemistry", value: specifications.batteryChemistry },
-      { label: "Output Waveform", value: specifications.outputWaveform },
-      { label: "AC Output", value: specifications.acOutput },
-      { label: "DC Output", value: specifications.dcOutput },
-      { label: "USB Output", value: specifications.usbOutput },
-      { label: "Solar Input", value: specifications.solarInput },
-      { label: "AC Input", value: specifications.acInput },
-      { label: "Cycle Life", value: specifications.cycleLife },
-      { label: "UPS Function", value: specifications.upsFunction === "Supported" ? "Yes" : specifications.upsFunction },
-      { label: "Dimensions", value: specifications.productDimensions },
-      { label: "Weight", value: specifications.productWeight },
-    ];
-  } else if (category === "power-bank") {
-    specsToShow = [
-      { label: "Model", value: product.model },
-      { label: "Type", value: getTypeDisplay(type) },
-      { label: "Capacity", value: specifications.capacity || specifications.batteryCapacity },
-      { label: "Cell Type", value: specifications.cellType },
-      { label: "Dimensions", value: specifications.dimensions },
-      { label: "Material", value: specifications.material },
-      { label: "Weight", value: specifications.weight },
-      { label: "Indicator", value: specifications.indicator },
-      { label: "Wireless Output", value: specifications.wirelessOutput },
-      { label: "USB-C Output", value: specifications.usbCOutput },
-      { label: "USB-A Output", value: specifications.usbAOutput },
-      { label: "Built in Cables", value: specifications.builtInCables },
-      { label: "Input (USB-C)", value: specifications.input },
-      { label: "Total Output", value: specifications.totalOutput },
-      { label: "Cycle Life", value: specifications.cycleLife },
-    ];
-  } else if (category === "phone-screen-protector") {
-    specsToShow = [
-      { label: "Model", value: product.model },
-      { label: "Type", value: getTypeDisplay(type) },
-      { label: "Material", value: specifications.material || "Tempered Glass" },
-      { label: "Hardness", value: specifications.hardness || "9H" },
-      { label: "Thickness", value: specifications.thickness },
-      { label: "Compatibility", value: specifications.compatibility },
-      { label: "Finish", value: specifications.finish },
-      { label: "Anti Spy", value: specifications.antiSpy ? "Yes" : "No" },
-      { label: "Application", value: specifications.application },
-    ].filter(spec => spec.value);
-  }
-
-  specsToShow = specsToShow.filter(spec => spec.value);
-  if (specsToShow.length === 0) return null;
+  if (fullSpecs.length === 0) return null;
 
   return (
     <div className="product-details__specs">
       <h3 className="product-details__specs-heading">Technical Specifications</h3>
       <div className="product-details__specs-table-wrapper">
         <div className="product-details__specs-table">
-          {specsToShow.map((spec, idx) => (
-            <div key={idx} className="product-details__spec-row">
-              <span className="product-details__spec-label">{spec.label}</span>
-              <span className="product-details__spec-value">{formatValue(spec.value)}</span>
+          {fullSpecs.map((spec, idx) => (
+            <div key={spec._key || idx} className="product-details__spec-row">
+              <span className="product-details__spec-label">{spec.specName}</span>
+              <span className="product-details__spec-value">{spec.specValue}</span>
             </div>
           ))}
         </div>
@@ -330,7 +167,12 @@ import Script from "next/script";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const product = productData.find(p => p.slug === slug);
+  
+  // Fetch from Sanity
+  const sanityProduct = await client.fetch(`*[_type == "product" && slug.current == $slug][0]`, { slug });
+  const localProduct = productData.find(p => p.slug === slug);
+  const product = sanityProduct || localProduct;
+
   if (!product) return { title: "Product Not Found" };
 
   // ── Use dedicated pain-point SEO fields if available, else smart fallback ──
@@ -356,6 +198,13 @@ export async function generateMetadata({ params }) {
     "JoyHand factory direct",
   ].filter(Boolean);
 
+  let imageUrl = "/homeImg/businessModelImage001.jpg";
+  if (sanityProduct?.mainImage) {
+    imageUrl = urlFor(sanityProduct.mainImage).url();
+  } else if (localProduct?.image) {
+    imageUrl = localProduct.image;
+  }
+
   return {
     title,
     description,
@@ -366,7 +215,7 @@ export async function generateMetadata({ params }) {
       type: "website",
       images: [
         {
-          url: product.image || "/homeImg/businessModelImage001.jpg",
+          url: imageUrl,
           width: 800,
           height: 600,
           alt: `${product.name} – JoyHand Energy`,
@@ -379,7 +228,7 @@ export async function generateMetadata({ params }) {
       description,
     },
     alternates: {
-      canonical: `/products/${product.slug}`,
+      canonical: `/products/${product.slug?.current || product.slug}`,
     },
   };
 }
@@ -408,6 +257,14 @@ function buildFallbackDesc(product) {
 }
 
 export async function generateStaticParams() {
+  const sanityProducts = await client.fetch(`*[_type == "product"]{ "slug": slug.current }`);
+  
+  if (sanityProducts.length > 0) {
+    return sanityProducts.map((product) => ({
+      slug: product.slug,
+    }));
+  }
+
   return productData.map((product) => ({
     slug: product.slug,
   }));
@@ -415,14 +272,36 @@ export async function generateStaticParams() {
 
 export default async function ProductDetailsPage({ params }) {
   const { slug } = await params;
-  const product = productData.find(p => p.slug === slug);
-  if (!product) notFound();
+  
+  // Fetch from Sanity
+  const sanityProduct = await client.fetch(`*[_type == "product" && slug.current == $slug][0]`, { slug });
+  const localProduct = productData.find(p => p.slug === slug);
+  
+  if (!sanityProduct && !localProduct) notFound();
 
-  const images = product.gallery?.length ? product.gallery : [product.image];
+  // Prefer Sanity data, fallback to local data for images
+  const product = sanityProduct || localProduct;
+
+  let images = [];
+  if (sanityProduct?.gallery?.length) {
+    images = sanityProduct.gallery.map(img => urlFor(img).url());
+  } else if (sanityProduct?.mainImage) {
+    images = [urlFor(sanityProduct.mainImage).url()];
+  } else if (localProduct?.gallery?.length) {
+    images = localProduct.gallery;
+  } else if (localProduct?.image) {
+    images = [localProduct.image];
+  }
+
+  // Fallback if no images found
+  if (images.length === 0 || !images[0]) {
+    images = ["/homeImg/businessModelImage001.jpg"];
+  }
+
   const categoryDisplay = getCategoryDisplay(product.category);
   const categoryIcon = getCategoryIcon(product.category);
-  const typeDisplay = getTypeDisplay(product.type);
-  const videoId = product.youtubeVideoId || null;
+  const typeDisplay = getTypeDisplay(product.type || localProduct?.type);
+  const videoId = product.youtubeVideoId || localProduct?.youtubeVideoId || null;
 
   let solutionSlug = "";
   if (product.category === "battery") solutionSlug = "storage-batteries";
@@ -430,17 +309,29 @@ export default async function ProductDetailsPage({ params }) {
   else if (product.category === "electric-mobility") solutionSlug = "electric-mobility";
   else if (product.category === "portable-power") solutionSlug = "portable-power-stations";
   else if (product.category === "power-bank") solutionSlug = "power-banks";
-  else if (product.category === "phone-screen-protector") solutionSlug = "phone-screen-protectors";
+  else if (product.category === "accessories") solutionSlug = "accessories";
 
-  const plainTextDescription = typeof product.description === 'string' 
-    ? product.description 
-    : `Direct factory supply of ${product.name}. Request wholesale pricing for B2B importers.`;
+  // Handle Sanity block content description
+  let plainTextDescription = "";
+  if (typeof product.shortDescription === 'string') {
+    plainTextDescription = product.shortDescription;
+  } else if (typeof product.description === 'string') {
+    plainTextDescription = product.description;
+  } else if (Array.isArray(product.description)) {
+    plainTextDescription = product.description.map(b => b.children?.map(c => c.text).join('')).join('\n');
+  } else {
+    plainTextDescription = `Direct factory supply of ${product.name}. Request wholesale pricing for B2B importers.`;
+  }
 
-  const jsonLd = {
+  const jsonLdImageUrl = images[0]?.startsWith('http') 
+    ? images[0] 
+    : `https://www.joyhand.com${images[0]}`;
+
+  const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
-    "image": `https://www.joyhand.com${product.image}`,
+    "image": jsonLdImageUrl,
     "description": plainTextDescription.substring(0, 200),
     "brand": {
       "@type": "Brand",
@@ -464,12 +355,29 @@ export default async function ProductDetailsPage({ params }) {
     }
   };
 
+  const schemas = [productSchema];
+
+  if (product.faq && product.faq.length > 0) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": product.faq.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    });
+  }
+
   return (
     <main className="product-details">
       <Script
         id="product-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
       <div className="container">
         <Breadcrumbs 
@@ -491,7 +399,7 @@ export default async function ProductDetailsPage({ params }) {
               {product.model && <span className="product-details__model">Model: {product.model}</span>}
             </div>
             <h1 className="product-details__title">{product.name}</h1>
-            <p className="product-details__description">{product.description}</p>
+            <p className="product-details__description">{plainTextDescription}</p>
             <ProductKeySpecs product={product} />
             <ProductFeaturesCompact features={product.features} />
             <ProductActions category={product.category} />
@@ -511,11 +419,36 @@ export default async function ProductDetailsPage({ params }) {
           <ScrollRevealWrapper>
             <ProductFAQ product={product} />
           </ScrollRevealWrapper>
+          
+          {/* Related Products Section Wrapper */}
           <ScrollRevealWrapper>
-            <ProductRelated currentProductId={product.id} />
+            <RelatedProductsServerWrapper currentProductId={product.slug?.current || product.slug} category={product.category} />
           </ScrollRevealWrapper>
         </div>
       </div>
     </main>
   );
+}
+
+// Server Component wrapper to fetch related products so we don't pass all products down
+async function RelatedProductsServerWrapper({ currentProductId, category }) {
+  let relatedProducts = [];
+  try {
+    const query = `*[_type == "product" && category == $category && slug.current != $currentProductId][0...4]`;
+    relatedProducts = await client.fetch(query, { category, currentProductId });
+  } catch (error) {
+    console.error("Failed to fetch related products:", error);
+  }
+
+  // Normalize Sanity related products for the client component
+  const normalizedRelated = relatedProducts.map(p => ({
+    id: p.slug?.current,
+    slug: p.slug?.current,
+    name: p.name,
+    model: p.model,
+    category: p.category,
+    image: p.mainImage ? urlFor(p.mainImage).url() : "/images/placeholder.jpg",
+  }));
+
+  return <ProductRelated currentProductId={currentProductId} passedProducts={normalizedRelated} />;
 }

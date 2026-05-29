@@ -9,13 +9,14 @@ import { PiArrowRight } from "react-icons/pi";
 import "./HomeBlog.css";
 import SectionDecor from "../sectionDecor/SectionDecor";
 
-const HomeBlogSection = () => {
+const HomeBlogSection = ({ posts = null }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef(null);
   const autoPlayRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  const featuredPosts = blogPosts.slice(0, 5);
+  // Use passed posts from server component, fallback to local data if not provided
+  const featuredPosts = (posts && posts.length > 0 ? posts : blogPosts).slice(0, 5);
   const slideCount = featuredPosts.length;
 
   const [isInView, setIsInView] = useState(false);

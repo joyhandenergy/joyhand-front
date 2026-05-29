@@ -45,6 +45,11 @@ const categoryMeta = {
 };
 
 function getKeySpecs(product) {
+  // If it's a normalized Sanity product with keySpecs array
+  if (product.keySpecs && Array.isArray(product.keySpecs) && product.keySpecs.length > 0) {
+    return product.keySpecs.slice(0, 4).map(s => ({ label: s.specName, value: s.specValue }));
+  }
+
   const specs = [];
   const cat = product.category;
   const s = product.specifications || {};
@@ -73,8 +78,11 @@ function getKeySpecs(product) {
   return specs.slice(0, 4); // Strongly limit to 4 critical specs to save vertical height
 }
 
-export default function CatalogDocument({ category }) {
-  const filteredProducts = productData.filter(p => p.category === category);
+export default function CatalogDocument({ category, products = null }) {
+  // If products are passed via API, use them. Otherwise fallback to local productData.
+  const sourceData = products || productData;
+  const filteredProducts = sourceData.filter(p => p.category === category);
+  
   if (!categoryMeta[category] || filteredProducts.length === 0) {
     return <Document><Page><Text>No products found.</Text></Page></Document>;
   }

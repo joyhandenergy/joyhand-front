@@ -7,17 +7,57 @@ import InnovationShowcase from "@/components/innovation/InnovationShowcase";
 import TrustSignals from "@/components/trustSignals/TrustSignals";
 import GlobalNetwork from "@/components/globalNetwork/GlobalNetwork";
 import Script from "next/script";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import { blogPosts as localBlogPosts } from "@/data";
+
+export const revalidate = 3600;
 
 export const metadata = {
   title: "JoyHand Energy: Global OEM/ODM Manufacturer | Energy & E-Mobility",
-  description: "Competitive factory-direct pricing on LFP batteries, inverters, e-mobility & power stations. Direct export to emerging markets, including Lagos, Nairobi, and Dhaka. Get a quote in 24h.",
-  keywords: ["power solutions for unstable grids", "factory direct solar", "OEM battery manufacturer", "Nigeria export", "solar inverters B2B"],
+  description: "Competitive factory-direct pricing on LFP batteries, inverters, e-mobility, solar panels, and tech accessories. Direct export to emerging markets, including Lagos, Nairobi, and Dhaka. Get a quote in 24h.",
+  keywords: ["power solutions for unstable grids", "factory direct solar", "OEM battery manufacturer", "solar panels wholesale", "solar street lights", "solar inverters B2B"],
   alternates: {
     canonical: '/',
   }
 };
 
-export default function Home() {
+async function getFeaturedBlogPosts() {
+  let sanityPosts = [];
+  try {
+    const rawSanity = await client.fetch(`*[_type == "post"] | order(publishedAt desc)[0...5] {
+      _id,
+      title,
+      "slug": slug.current,
+      excerpt,
+      mainImage,
+      publishedAt,
+      readTime,
+      "category": categories[0]->title
+    }`);
+
+    sanityPosts = rawSanity.map((p) => ({
+      id: p._id,
+      title: p.title,
+      slug: p.slug,
+      excerpt: p.excerpt || "",
+      image: p.mainImage ? urlFor(p.mainImage).url() : "/images/placeholder.jpg",
+      date: p.publishedAt,
+      readTime: p.readTime || "5 min read",
+      category: p.category || "Energy Technology"
+    }));
+  } catch (error) {
+    console.error("Failed to fetch blog posts from Sanity:", error);
+  }
+
+  const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
+  const uniqueLocal = localBlogPosts.filter((p) => !sanitySlugs.has(p.slug));
+
+  return [...sanityPosts, ...uniqueLocal].slice(0, 5);
+}
+
+export default async function Home() {
+  const featuredPosts = await getFeaturedBlogPosts();
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -80,7 +120,7 @@ export default function Home() {
       <EnergyPlatforms />
       <GlobalNetwork />
       <CtaBanner />     
-      <HomeBlogSection />
+      <HomeBlogSection posts={featuredPosts} />
     </>
   );
 }

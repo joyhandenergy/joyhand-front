@@ -1,10 +1,14 @@
-import { blogPosts } from "@/data";
+import { blogPosts as localBlogPosts } from "@/data";
 import BlogCard from "@/components/blogCard/BlogCard";
 import PageHeader from "@/components/pageHeader/PageHeader";
 import SectionHeader from "@/components/sectionHeader/SectionHeader";
 import Script from "next/script";
 import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
 import "./blog.css";
+
+export const revalidate = 3600;
 
 export const metadata = {
   title: "B2B Energy Insights & Manufacturing Blog | JoyHand Energy",
@@ -15,7 +19,43 @@ export const metadata = {
   }
 };
 
-export default function BlogPage() {
+async function getBlogPosts() {
+  let sanityPosts = [];
+  try {
+    const rawSanity = await client.fetch(`*[_type == "post"] | order(publishedAt desc) {
+      _id,
+      title,
+      "slug": slug.current,
+      excerpt,
+      mainImage,
+      publishedAt,
+      readTime,
+      "category": categories[0]->title
+    }`);
+
+    sanityPosts = rawSanity.map((p) => ({
+      id: p._id,
+      title: p.title,
+      slug: p.slug,
+      excerpt: p.excerpt || "",
+      image: p.mainImage ? urlFor(p.mainImage).url() : "/images/placeholder.jpg",
+      date: p.publishedAt,
+      readTime: p.readTime || "5 min read",
+      category: p.category || "Energy Technology"
+    }));
+  } catch (error) {
+    console.error("Failed to fetch blog posts from Sanity:", error);
+  }
+
+  const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
+  const uniqueLocal = localBlogPosts.filter((p) => !sanitySlugs.has(p.slug));
+
+  return [...sanityPosts, ...uniqueLocal];
+}
+
+export default async function BlogPage() {
+  const allPosts = await getBlogPosts();
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -41,7 +81,7 @@ export default function BlogPage() {
       <PageHeader
         title="Technical Reports & Industry Insights"
         subtitle="Technical engineering reports, manufacturing updates, and global supply chain strategy for energy importers and distributors."
-        pageImage="/pageHeadImg/pageheader-blog1.jpg"  // update to a factory or lab image
+        pageImage="/pageHeadImg/pageheader-blog1.jpg"
       />
 
       <ScrollRevealWrapper as="section" className="blog-section">
@@ -53,8 +93,8 @@ export default function BlogPage() {
           />
 
           <div className="blog-grid">
-            {blogPosts.map((post, index) => (
-              <BlogCard key={post.id} post={post} priority={index < 4} />
+            {allPosts.map((post, index) => (
+              <BlogCard key={post.id || post.slug} post={post} priority={index < 4} />
             ))}
           </div>
         </div>

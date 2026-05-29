@@ -224,7 +224,7 @@ export default function ManufacturingClient() {
               <ul className="partner-facilities__list">
                 <li><PiCheckCircleFill /> LFP battery assembly (Grade A prismatic cells)</li>
                 <li><PiCheckCircleFill /> Solar inverter production (Tier 1 components)</li>
-                <li><PiCheckCircleFill /> Phone screen protectors (tempered glass, anti spy, matte)</li>
+                <li><PiCheckCircleFill /> Tech & Solar Accessories (Panels, Street Lights, Screen Protectors)</li>
                 <li><PiCheckCircleFill /> Portable power stations & power banks</li>
                 <li><PiCheckCircleFill /> Electric motorcycles & electric mobility platforms</li>
               </ul>

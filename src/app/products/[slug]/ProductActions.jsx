@@ -21,11 +21,16 @@ export default function ProductActions({ category }) {
     setIsGenerating(true);
     
     try {
+      // Fetch up-to-date products from our cached internal API
+      const res = await fetch(`/api/catalog/${category}`);
+      if (!res.ok) throw new Error("Failed to fetch catalog data");
+      const products = await res.json();
+
       // Dynamically import the PDF tools so they don't block initial page load
       const { pdf } = await import('@react-pdf/renderer');
       const CatalogDocument = (await import('@/components/CatalogDocument')).default;
       
-      const blob = await pdf(<CatalogDocument category={category} />).toBlob();
+      const blob = await pdf(<CatalogDocument category={category} products={products} />).toBlob();
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;

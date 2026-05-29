@@ -603,7 +603,6 @@
 ===================================================== */
 .values-section {
   padding: var(--spacing-5) 0;
-  background: var(--secondary-color-dark);
   position: relative;
   overflow: hidden;
 }
@@ -617,22 +616,13 @@
 .values-section::before {
   content: '';
   position: absolute;
-  top: -30px;
-  right: -30px;
-  width: 150px;
-  height: 150px;
-  background: var(--primary-color);
-  opacity: 0.03;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 127, 65, 0.03) 0%, transparent 70%);
   border-radius: 50%;
-}
-
-@media screen and (min-width: 768px) {
-  .values-section::before {
-    top: -50px;
-    right: -50px;
-    width: 200px;
-    height: 200px;
-  }
+  pointer-events: none;
 }
 
 .values-grid {
@@ -658,35 +648,28 @@
 
 .value-card {
   background: linear-gradient(145deg, #ffffff, #fff5ef);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: var(--spacing-4);
-  border-radius: var(--spacing-3);
+  padding: var(--spacing-5);
+  border-radius: 24px;
   text-align: center;
   transition: var(--transition);
-  box-shadow: 0 10px 30px rgba(18, 27, 45, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(18, 27, 45, 0.05);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 768px) {
   .value-card {
     padding: var(--spacing-5);
-    border-radius: var(--spacing-4);
+    border-radius: 24px;
   }
 }
 
 .value-card:hover,
 .value-card:active {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(255, 127, 65, 0.15);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
   border-color: var(--primary-color-light);
-  background: rgba(255, 255, 255, 0.9);
-}
-
-@media screen and (min-width: 768px) {
-  .value-card:hover {
-    transform: translateY(-10px);
-  }
 }
 
 .value-card__icon {

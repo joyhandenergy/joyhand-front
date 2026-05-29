@@ -5,29 +5,30 @@ import Link from "next/link";
 import Image from "next/image";
 import { productData } from "@/data";
 
-export default function ProductRelated({ currentProductId }) {
+export default function ProductRelated({ currentProductId, passedProducts = null }) {
   const relatedProducts = useMemo(() => {
-    // Filter out current product
+    // If Sanity related products are passed from the server component
+    if (passedProducts && passedProducts.length > 0) {
+      return passedProducts.slice(0, 4);
+    }
+
+    // Fallback logic for local development testing
     const otherProducts = productData.filter(p => p.id !== currentProductId);
     if (otherProducts.length === 0) return [];
 
-    // Create a seeded random function based on currentProductId
     const seededRandom = (seed) => {
       const x = Math.sin(seed) * 10000;
       return x - Math.floor(x);
     };
 
-    // Shuffle using seeded random (deterministic per product)
     const shuffled = [...otherProducts];
     for (let i = shuffled.length - 1; i > 0; i--) {
-      // Use product ID as seed to get consistent order for same product
       const seed = currentProductId.charCodeAt(0) || 1;
       const j = Math.floor(seededRandom(seed + i) * (i + 1));
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    // Return first 4 products
     return shuffled.slice(0, 4);
-  }, [currentProductId]);
+  }, [currentProductId, passedProducts]);
 
   if (relatedProducts.length === 0) return null;
 

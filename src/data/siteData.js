@@ -8,12 +8,11 @@ export const links = [
     href: "/products",
     subLinks: [
       { name: "Storage Batteries", href: "/products/solutions/storage-batteries" },
-      { name: "Solar Panels", href: "/products/solutions/solar-panels" },
       { name: "Solar Inverters", href: "/products/solutions/solar-inverters" },
       { name: "Portable Power Stations", href: "/products/solutions/portable-power-stations" },
       { name: "Electric Mobility", href: "/products/solutions/electric-mobility" },
       { name: "Power Banks", href: "/products/solutions/power-banks" },
-      { name: "Phone Screen Protectors", href: "/products/solutions/phone-screen-protectors" }
+      { name: "Hardware & Accessories", href: "/products/solutions/accessories" }
     ]
   },
   { name: "Manufacturing", href: "/manufacturing" },
@@ -41,7 +40,7 @@ export const partners = [
 // FOOTER DATA
 // ==============================
 export const footerData = {
-  brandDescription: "JoyHand is a direct factory manufacturer of storage batteries, solar power stations, solar panels, inverters, electric motorcycles, screen protectors, and complete solar solutions. We engineer reliable power systems for global markets.",
+  brandDescription: "JoyHand is a direct factory manufacturer of storage batteries, solar power stations, solar panels, inverters, electric motorcycles, accessories, and complete solar solutions. We engineer reliable power systems for global markets.",
   socialLinks: [
     { name: "YouTube", url: "https://www.youtube.com/@JoyHandSolar", icon: "youtube" },
     { name: "TikTok", url: "https://www.tiktok.com/@joyhandsolar", icon: "tiktok" },
@@ -51,12 +50,11 @@ export const footerData = {
   ],
   solutions: [
     { name: "Storage Batteries", path: "/products/solutions/storage-batteries" },
-    { name: "Solar Panels", path: "/products/solutions/solar-panels" },
     { name: "Solar Inverters", path: "/products/solutions/solar-inverters" },
     { name: "Portable Power Stations", path: "/products/solutions/portable-power-stations" },
     { name: "Electric Mobility", path: "/products/solutions/electric-mobility" },
     { name: "Power Banks", path: "/products/solutions/power-banks" },
-    { name: "Phone Screen Protectors", path: "/products/solutions/phone-screen-protectors" }
+    { name: "Hardware & Accessories", path: "/products/solutions/accessories" }
   ],
   company: [
     { name: "About Us", path: "/about-us" },
@@ -272,10 +270,10 @@ export const featuredCategories = [
   },
   {
     id: 6,
-    title: "Phone Screen Protectors",
-    slug: "phone-screen-protectors",
+    title: "Tech & Solar Accessories",
+    slug: "accessories",
     image: "/homeImg/energyPlatformImage06.jpg",
-    desc: "9H tempered glass and anti-spy films. Wholesale orders for electronics distributors.",
+    desc: "Wholesale solar panels, LED street lights, and mobile tech accessories engineered for global distributors.",
     sourceNote: "Accessories"
   }
 ];
@@ -368,9 +366,9 @@ export const aboutSectors = [
     tag: "E-Mobility"
   },
   {
-    title: "9H Screen Protectors",
-    desc: "Wholesale mobile accessories including tempered glass and anti-spy films. High-margin supply for tech distributors.",
-    features: ["9H Hardness", "Anti-Spy Options", "Bulk Packaging"],
+    title: "Tech & Solar Accessories",
+    desc: "Wholesale solar panels, LED street lights, and mobile tech accessories engineered for global distributors.",
+    features: ["Solar Panels", "LED Street Lights", "Screen Protectors"],
     img: "/aboutImg/aboutProductimg6.jpg",
     tag: "Accessories"
   }
@@ -620,12 +618,11 @@ export const contactFaqs = [
 // ==============================
 export const solutionLinks = [
   { slug: "storage-batteries", name: "Battery Storage" },
-  { slug: "solar-panels", name: "Solar Panels" },
   { slug: "solar-inverters", name: "Hybrid Inverters" },
   { slug: "portable-power-stations", name: "Portable Power" },
   { slug: "electric-mobility", name: "Electric Mobility" },
   { slug: "power-banks", name: "Power Banks" },
-  { slug: "phone-screen-protectors", name: "Phone Accessories" },
+  { slug: "accessories", name: "Hardware & Accessories" },
 ];
 
 export const solutionConfigs = {
@@ -664,12 +661,12 @@ export const solutionConfigs = {
     description: "High-volume power bank manufacturing. Direct wholesale supply for retail networks and telecom distributors in Nigeria & South Asia.",
     keywords: "power bank factory, fast charger manufacturer, bulk power banks, PD charging wholesale"
   },
-  "phone-screen-protectors": {
-    title: "Wholesale 9H Screen Protector Factory",
-    filterCategory: "phone-screen-protector",
+  "accessories": {
+    title: "Tech & Solar Accessories",
+    filterCategory: "accessories",
     image: "/homeImg/energyPlatformImage06.jpg",
-    description: "Direct factory for 9H tempered glass and anti-spy films. High-margin wholesale supply for global tech distributors. Request a sample today.",
-    keywords: "screen protector factory, tempered glass manufacturer, 9H screen guard bulk, mobile accessory manufacturing"
+    description: "Wholesale solar panels, LED street lights, and mobile tech accessories engineered for global distributors.",
+    keywords: "wholesale solar panels, LED street lights factory, tech accessories OEM, mobile accessories distributor"
   }
 };
 

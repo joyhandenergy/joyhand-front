@@ -17,7 +17,7 @@ const solutionLinks = [
   { slug: "portable-power-stations",  name: "Portable Power Stations" },
   { slug: "electric-mobility",        name: "E‑Mobility" },
   { slug: "power-banks",              name: "Power Banks" },
-  { slug: "phone-screen-protectors",  name: "Phone Screen Protectors" },
+  { slug: "accessories",              name: "Accessories" },
 ];
 
 export default function SolutionClient({ slug, config, allProducts }) {
@@ -29,28 +29,32 @@ export default function SolutionClient({ slug, config, allProducts }) {
   const totalPages = Math.ceil(allProducts.length / PRODUCTS_PER_PAGE);
   const isComingSoon = config.comingSoon === true;
 
-  const [isGenerating, setIsGenerating] = useState(false);
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
 
-  const downloadCatalog = async () => {
-    if (isGenerating) return;
-    setIsGenerating(true);
-    
+  const handleDownload = async () => {
+    if (isGeneratingPDF) return;
+    setIsGeneratingPDF(true);
     try {
+      // Fetch up-to-date products from our cached internal API
+      const res = await fetch(`/api/catalog/${config.filterCategory}`);
+      if (!res.ok) throw new Error("Failed to fetch catalog data");
+      const products = await res.json();
+
       const { pdf } = await import('@react-pdf/renderer');
       const CatalogDocument = (await import('@/components/CatalogDocument')).default;
       
-      const blob = await pdf(<CatalogDocument category={config.filterCategory} />).toBlob();
+      const blob = await pdf(<CatalogDocument category={config.filterCategory} products={products} />).toBlob();
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
       link.download = `joyhand-${config.filterCategory}-catalog.pdf`;
       link.click();
       URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("Failed to generate PDF locally:", error);
-      alert("Failed to generate catalog. Please try again.");
+    } catch (err) {
+      console.error("Failed to generate PDF:", err);
+      alert("Failed to generate catalog PDF. Please try again.");
     } finally {
-      setIsGenerating(false);
+      setIsGeneratingPDF(false);
     }
   };
 
@@ -119,13 +123,13 @@ export default function SolutionClient({ slug, config, allProducts }) {
                   <strong>{allProducts.length}</strong> {config.title.toLowerCase()} products
                 </p>
                 <button 
-                  onClick={downloadCatalog}
+                  onClick={handleDownload}
                   className="btn btn--outline-primary products-page__catalog-btn"
                   title={`Download PDF Catalog for ${config.title}`}
-                  disabled={isGenerating}
+                  disabled={isGeneratingPDF}
                 >
                   <PiFilePdf size={20} />
-                  <span>{isGenerating ? "Generating..." : "Download Full Catalog"}</span>
+                  <span>{isGeneratingPDF ? "Generating..." : "Download Full Catalog"}</span>
                 </button>
               </div>
 

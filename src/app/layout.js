@@ -23,15 +23,15 @@ export const metadata = {
     default: "Factory Direct Solar & Batteries | JoyHand Manufacturer",
     template: "%s | JoyHand Manufacturer",
   },
-  description: "Direct factory wholesale of LFP batteries, hybrid inverters, e-mobility solutions, portable power stations, and tempered glass screen protectors. Reliable power solutions for unstable grids in Nigeria and beyond.",
-  keywords: ["solar factory China", "OEM energy manufacturer", "wholesale LFP batteries", "ISO standard production", "B2B energy supplier", "portable power stations", "tempered glass screen protector"],
+  description: "Direct factory wholesale of LFP batteries, hybrid inverters, e-mobility solutions, portable power stations, solar panels, street lights, and tech accessories. Reliable power solutions for unstable grids in Nigeria and beyond.",
+  keywords: ["solar factory China", "OEM energy manufacturer", "wholesale LFP batteries", "ISO standard production", "B2B energy supplier", "portable power stations", "solar hardware", "solar street lights", "screen protectors"],
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: "JoyHand Energy | Direct Factory Partnership",
-    description: "Bypass middlemen. Scale your energy brand with industrial-grade production of solar solutions, portable power stations, and tempered glass screen protectors for Nigeria, Bangladesh, and South Asia.",
+    description: "Bypass middlemen. Scale your energy brand with industrial-grade production of solar solutions, portable power stations, solar hardware, and tech accessories for Nigeria, Bangladesh, and South Asia.",
     type: "website",
     siteName: "JoyHand Energy",
     locale: "en_US",

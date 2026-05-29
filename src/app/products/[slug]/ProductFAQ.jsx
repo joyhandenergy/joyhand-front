@@ -6,7 +6,7 @@ import { PiQuestion, PiCaretDown, PiCaretUp } from "react-icons/pi";
 export default function ProductFAQ({ product }) {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const faqs = [
+  const fallbackFaqs = [
     {
       question: "What is the minimum order quantity (MOQ)?",
       answer: "MOQ varies by product. Contact our sales team for a custom quote based on your volume requirements."
@@ -24,6 +24,8 @@ export default function ProductFAQ({ product }) {
       answer: "Standard lead time is 15-30 days depending on quantity. Expedited options available."
     }
   ];
+
+  const faqs = (product.faq && product.faq.length > 0) ? product.faq : fallbackFaqs;
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);

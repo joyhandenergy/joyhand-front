@@ -464,36 +464,36 @@
   }
   
   .innovation-card__title {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     margin-bottom: 6px;
   }
   
   .innovation-card__preview-text {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     padding-left: 8px;
   }
   
   .innovation-card__description-text {
-    font-size: 0.75rem;
-    line-height: 1.4;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
   
   .innovation-section__footer-text {
     padding: 10px 15px;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
   
   .innovation-section__badge {
-    font-size: 0.55rem;
+    font-size: 0.7rem;
     padding: 3px 8px;
   }
   
   .innovation-section__title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   
   .innovation-section__subtitle {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
   }
 
   /* Mobile ring adjustments */

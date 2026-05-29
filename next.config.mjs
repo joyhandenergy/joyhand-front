@@ -6,6 +6,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
     qualities: [70, 75, 85, 90, 100],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
+    ],
   },
 
   /* Security & Performance HTTP Headers */

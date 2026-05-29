@@ -6,11 +6,60 @@ import Link from "next/link";
 import Script from "next/script";
 import { PiCalendarBlank, PiUser, PiClock, PiArrowLeft, PiArrowRight, PiLinkedinLogo, PiTwitterLogo, PiLinkSimple, PiFactory, PiShieldCheck } from "react-icons/pi";
 import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import { PortableText } from "@portabletext/react";
 import "../blog.css";
+
+export const revalidate = 3600;
+
+async function getAllPosts() {
+  let sanityPosts = [];
+  try {
+    const rawSanity = await client.fetch(`*[_type == "post"] | order(publishedAt desc) {
+      _id,
+      title,
+      metaTitle,
+      metaDescription,
+      "slug": slug.current,
+      excerpt,
+      mainImage,
+      publishedAt,
+      readTime,
+      body,
+      gallery,
+      "category": categories[0]->title
+    }`);
+
+    sanityPosts = rawSanity.map((p) => ({
+      id: p._id,
+      title: p.title,
+      metaTitle: p.metaTitle,
+      metaDescription: p.metaDescription,
+      slug: p.slug,
+      excerpt: p.excerpt || "",
+      image: p.mainImage ? urlFor(p.mainImage).url() : "/images/placeholder.jpg",
+      date: p.publishedAt,
+      readTime: p.readTime || "5 min read",
+      category: p.category || "Energy Technology",
+      body: p.body,
+      gallery: p.gallery || [],
+      isSanity: true
+    }));
+  } catch (error) {
+    console.error("Failed to fetch blog posts from Sanity:", error);
+  }
+
+  const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
+  const uniqueLocal = blogPosts.filter((p) => !sanitySlugs.has(p.slug));
+
+  return [...sanityPosts, ...uniqueLocal];
+}
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const blogPost = blogPosts.find(
+  const allPosts = await getAllPosts();
+  const blogPost = allPosts.find(
     (post) => post.slug.toLowerCase().trim() === slug.toLowerCase().trim()
   );
 
@@ -21,7 +70,7 @@ export async function generateMetadata({ params }) {
   }
 
   const title = blogPost.metaTitle || `${blogPost.title} | JoyHand`;
-  const description = blogPost.metaDescription || blogPost.excerpt;
+  const description = blogPost.metaDescription || blogPost.excerpt || "JoyHand Energy intelligence blog.";
 
   return {
     title: title.substring(0, 60),
@@ -47,15 +96,17 @@ export async function generateMetadata({ params }) {
 }
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  const allPosts = await getAllPosts();
+  return allPosts.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export default async function BlogDetailsPage({ params }) {
   const { slug } = await params;
+  const allPosts = await getAllPosts();
 
-  const blogPost = blogPosts.find(
+  const blogPost = allPosts.find(
     (post) => post.slug.toLowerCase().trim() === slug.toLowerCase().trim()
   );
 
@@ -63,11 +114,11 @@ export default async function BlogDetailsPage({ params }) {
     notFound();
   }
 
-  const currentIndex = blogPosts.findIndex((p) => p.slug === slug);
-  const prevPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
-  const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null;
+  const currentIndex = allPosts.findIndex((p) => p.slug === slug);
+  const prevPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+  const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
 
-  const formattedDate = new Date().toLocaleDateString('en-US', {
+  const formattedDate = new Date(blogPost.date || new Date()).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
@@ -75,6 +126,7 @@ export default async function BlogDetailsPage({ params }) {
 
   // Simple parser for plain text content with headings
   const renderContent = (content) => {
+    if (!content) return null;
     return content.split('\n\n').map((block, index) => {
       // Check if block is likely a heading (short, no period at end)
       const isHeading = block.length < 60 && !block.trim().endsWith('.');
@@ -95,7 +147,7 @@ export default async function BlogDetailsPage({ params }) {
       },
       "headline": blogPost.title,
       "image": [
-        `https://www.joyhand.com${blogPost.image || "/homeImg/businessModelImage001.jpg"}`
+        blogPost.image?.startsWith('http') ? blogPost.image : `https://www.joyhand.com${blogPost.image || "/homeImg/businessModelImage001.jpg"}`
       ],
       "datePublished": blogPost.date ? new Date(blogPost.date).toISOString() : new Date().toISOString(),
       "dateModified": blogPost.date ? new Date(blogPost.date).toISOString() : new Date().toISOString(),
@@ -112,7 +164,7 @@ export default async function BlogDetailsPage({ params }) {
           "url": "https://www.joyhand.com/homeImg/businessModelImage001.jpg"
         }
       },
-      "description": blogPost.excerpt
+      "description": blogPost.excerpt || ""
     },
     {
       "@context": "https://schema.org",
@@ -194,7 +246,81 @@ export default async function BlogDetailsPage({ params }) {
                   <strong>Summary:</strong> {blogPost.excerpt}
                 </p>
               )}
-              {renderContent(blogPost.content)}
+              
+              {blogPost.isSanity && blogPost.body ? (
+               <div className="sanity-portable-text">
+                   <PortableText 
+                     value={blogPost.body} 
+                     components={{
+                        block: {
+                          normal: ({children}) => <p className="blog-details__paragraph">{children}</p>,
+                          h1: ({children}) => <h2 className="blog-details__heading h3">{children}</h2>,
+                          h2: ({children}) => <h2 className="blog-details__heading h3">{children}</h2>,
+                          h3: ({children}) => <h3 className="blog-details__heading h4">{children}</h3>,
+                          h4: ({children}) => <h4 className="blog-details__heading h5">{children}</h4>,
+                          blockquote: ({children}) => <blockquote className="blog-details__blockquote" style={{ borderLeft: "4px solid var(--accent)", paddingLeft: "1rem", margin: "1.5rem 0", fontStyle: "italic", color: "var(--text-light)" }}>{children}</blockquote>
+                        },
+                        types: {
+                          image: ({value}) => {
+                            if (!value?.asset?._ref) {
+                              return null;
+                            }
+                            return (
+                              <div className="blog-details__inline-image" style={{ margin: "2rem 0", borderRadius: "12px", overflow: "hidden" }}>
+                                <Image
+                                  src={urlFor(value).width(800).url()}
+                                  alt={value.alt || ' ' }
+                                  width={800}
+                                  height={450}
+                                  style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+                                />
+                              </div>
+                            )
+                          },
+                          inlineGallery: ({value}) => {
+                            if (!value?.images || value.images.length === 0) return null;
+                            return (
+                              <div className="blog-details__inline-gallery" style={{ margin: "2.5rem 0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
+                                {value.images.map((img, idx) => (
+                                  img.asset?._ref && (
+                                    <div key={idx} style={{ position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: "12px", overflow: "hidden" }}>
+                                      <Image
+                                        src={urlFor(img).width(500).url()}
+                                        alt={img.alt || `Inline gallery image ${idx + 1}`}
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                      />
+                                    </div>
+                                  )
+                                ))}
+                              </div>
+                            );
+                          }
+                        }
+                     }} 
+                   />
+                </div>
+              ) : (
+                renderContent(blogPost.content)
+              )}
+
+              {/* Add Gallery Rendering here if any images are provided */}
+              {blogPost.gallery && blogPost.gallery.length > 0 && (
+                <div className="blog-details__gallery" style={{ marginTop: "3rem", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1.5rem" }}>
+                  {blogPost.gallery.map((imgObj, idx) => (
+                    imgObj.asset && (
+                      <div key={idx} style={{ position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: "12px", overflow: "hidden" }}>
+                        <Image
+                          src={urlFor(imgObj).width(500).url()}
+                          alt={imgObj.alt || `Gallery image ${idx + 1}`}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                        />
+                      </div>
+                    )
+                  ))}
+                </div>
+              )}
             </div>
 
             <section className="blog-details__author-card">
@@ -215,7 +341,7 @@ export default async function BlogDetailsPage({ params }) {
                   <Link href={`/blog/${prevPost.slug}`} className="blog-details__nav-link blog-details__nav-link--prev">
                     <div className="blog-details__nav-thumb">
                       <Image 
-                        src={prevPost.image || "/images/pageHeadImg/factory-blog.jpg"} 
+                        src={prevPost.image || "/pageHeadImg/pageheader-blog1.jpg"} 
                         alt={prevPost.title}
                         width={120}
                         height={80}
@@ -236,7 +362,7 @@ export default async function BlogDetailsPage({ params }) {
                     </div>
                     <div className="blog-details__nav-thumb">
                       <Image 
-                        src={nextPost.image || "/images/pageHeadImg/factory-blog.jpg"} 
+                        src={nextPost.image || "/pageHeadImg/pageheader-blog1.jpg"} 
                         alt={nextPost.title}
                         width={120}
                         height={80}
@@ -290,7 +416,7 @@ export default async function BlogDetailsPage({ params }) {
                     <Link href="/about-us">ISO Quality Control Standards <PiArrowRight /></Link>
                   </li>
                   <li>
-                    <Link href="/contact-us">Global Logistics & Support <PiArrowRight /></Link>
+                    <Link href="/contact">Global Logistics & Support <PiArrowRight /></Link>
                   </li>
                 </ul>
               </div>
