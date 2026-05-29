@@ -166,9 +166,16 @@ main {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   :root {
     --header-height: 140px;
+  }
+}
+
+/* Landscape tablet / short screen fix */
+@media screen and (min-width: 1025px) and (max-height: 750px) {
+  :root {
+    --header-height: 100px;
   }
 }
 
@@ -326,7 +333,7 @@ p {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .grid--3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

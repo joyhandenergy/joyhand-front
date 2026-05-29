@@ -485,12 +485,12 @@
    DESKTOP - HORIZONTAL LAYOUT (1024px+)
    No scroll – content fits naturally
 ===================================================== */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .modal-container {
     max-width: 900px;
     padding: var(--spacing-4);
-    max-height: none;          /* Remove any height restriction */
-    overflow-y: visible;       /* No scroll */
+    max-height: 90vh;          /* Allow scrolling on short desktop screens */
+    overflow-y: auto;          /* Enable scroll if content overflows */
   }
   
   /* Split into two columns */

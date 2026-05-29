@@ -84,7 +84,7 @@
   align-items: center;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .hero__grid {
     grid-template-columns: 1.2fr 0.8fr;
     gap: var(--spacing-8);
@@ -212,7 +212,7 @@
   font-weight: 600;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .hero__desc {
     font-size: 1.125rem;
     line-height: 1.7;
@@ -362,7 +362,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .hero__stats-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-4);

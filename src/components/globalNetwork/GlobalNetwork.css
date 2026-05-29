@@ -9,7 +9,7 @@
   z-index: 1;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .global-network {
     padding: var(--spacing-10) 0;
   }
@@ -86,7 +86,7 @@
   transition: opacity 0.4s ease;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .global-network__map-wrapper {
     position: absolute;
     top: 0;

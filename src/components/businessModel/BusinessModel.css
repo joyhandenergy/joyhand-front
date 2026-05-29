@@ -26,7 +26,7 @@
   pointer-events: none;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .businessModel {
     padding: var(--spacing-10) 0;
   }
@@ -40,7 +40,7 @@
   z-index: 2;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .businessModel__container {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-8);

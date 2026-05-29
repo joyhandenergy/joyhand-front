@@ -336,7 +336,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .blog-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-6);

@@ -439,7 +439,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .products-page__grid {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-5);
@@ -544,6 +544,11 @@
   gap: var(--spacing-6);
   align-items: start;
   margin-bottom: var(--spacing-10);
+}
+
+.product-details__grid > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -666,6 +671,9 @@
 /* ── Info Panel ── */
 .product-details__info {
   width: 100%;
+  min-width: 0; /* Prevent CSS grid blowout on mobile */
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .product-details__meta {
@@ -725,6 +733,13 @@
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: var(--spacing-5);
+  text-align: left !important; /* Override global justify on mobile to prevent clipping */
+}
+
+@media (min-width: 768px) {
+  .product-details__description {
+    text-align: justify !important;
+  }
 }
 
 /* ── Key Specs Card ── */
@@ -775,6 +790,8 @@
   font-size: 1.05rem;
   font-weight: 800;
   color: var(--secondary-color);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ── Features Compact (right column) ── */
@@ -844,11 +861,15 @@
 @media (max-width: 480px) {
   .product-details__actions {
     flex-direction: column;
+    align-items: center;
     gap: var(--spacing-2);
   }
   .product-details__cta {
-    width: 100%;
+    width: 85%;
     flex: none;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    min-width: 0;
   }
 }
 

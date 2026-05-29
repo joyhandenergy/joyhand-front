@@ -456,7 +456,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .global-offices__grid {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-5);
@@ -595,7 +595,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .contact-info__grid {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-5);
@@ -877,7 +877,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .contact-map {
     height: 500px;
   }
@@ -969,7 +969,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .contact-map__title {
     font-size: 2.5rem;
   }
@@ -992,7 +992,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .contact-map__text {
     font-size: 1rem;
   }
@@ -1041,7 +1041,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .contact-faq__grid {
     gap: var(--spacing-6);
   }

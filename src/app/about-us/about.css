@@ -639,7 +639,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .values-grid {
     grid-template-columns: repeat(4, 1fr);
     margin-top: var(--spacing-6);
@@ -1117,7 +1117,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .testimonial-card {
     width: 40vw;
     max-width: 600px;
@@ -1440,7 +1440,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .abtCta-banner {
     padding-bottom: 80px;
     /* Matched to top padding for symmetry */

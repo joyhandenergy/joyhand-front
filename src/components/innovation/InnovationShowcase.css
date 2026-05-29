@@ -115,7 +115,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .innovation-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;

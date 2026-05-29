@@ -318,7 +318,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .qc-protocols__grid {
     grid-template-columns: repeat(4, 1fr);
     margin-top: var(--spacing-6);
@@ -521,7 +521,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .why-distributors__grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -620,7 +620,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .sourcing-process__grid {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-5);
