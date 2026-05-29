@@ -4,6 +4,7 @@ import { productData } from '@/data'; // fallback local data
 import { urlFor } from '@/sanity/lib/image';
 
 export const revalidate = 3600; // Cache for 1 hour
+export const runtime = 'edge';
 
 export async function GET(request, { params }) {
   const { category } = await params;
