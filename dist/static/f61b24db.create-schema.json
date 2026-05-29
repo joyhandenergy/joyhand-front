@@ -1,0 +1,642 @@
+[
+  {
+    "of": [
+      {
+        "lists": [
+          {
+            "value": "bullet",
+            "title": "Bullet"
+          }
+        ],
+        "marks": {
+          "annotations": [
+            {
+              "fields": [
+                {
+                  "validation": [
+                    {
+                      "level": "error",
+                      "rules": [
+                        {
+                          "flag": "uri",
+                          "constraint": {
+                            "options": {
+                              "scheme": [
+                                "/^http$/",
+                                "/^https$/"
+                              ],
+                              "allowRelative": false,
+                              "relativeOnly": false,
+                              "allowCredentials": false
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "name": "href",
+                  "type": "url",
+                  "title": "URL"
+                }
+              ],
+              "name": "link",
+              "type": "object",
+              "title": "URL"
+            }
+          ],
+          "decorators": [
+            {
+              "value": "strong",
+              "title": "Strong"
+            },
+            {
+              "value": "em",
+              "title": "Emphasis"
+            }
+          ]
+        },
+        "of": [],
+        "styles": [
+          {
+            "value": "normal",
+            "title": "Normal"
+          },
+          {
+            "value": "h1",
+            "title": "H1"
+          },
+          {
+            "value": "h2",
+            "title": "H2"
+          },
+          {
+            "value": "h3",
+            "title": "H3"
+          },
+          {
+            "value": "h4",
+            "title": "H4"
+          },
+          {
+            "value": "blockquote",
+            "title": "Quote"
+          }
+        ],
+        "type": "block"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternative Text"
+          }
+        ],
+        "type": "image"
+      },
+      {
+        "fields": [
+          {
+            "of": [
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "fields": [
+                  {
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Alternative Text"
+                  }
+                ],
+                "type": "image"
+              }
+            ],
+            "name": "images",
+            "type": "array"
+          }
+        ],
+        "type": "object",
+        "name": "inlineGallery",
+        "title": "Inline Image Gallery"
+      }
+    ],
+    "name": "blockContent",
+    "type": "array"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ]
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      }
+    ],
+    "name": "category",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "warning",
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 60
+              }
+            ],
+            "message": "Longer meta titles might be truncated by search engines."
+          }
+        ],
+        "description": "Used for SEO title. Keep it under 60 characters.",
+        "name": "metaTitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "warning",
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 160
+              }
+            ],
+            "message": "Longer meta descriptions might be truncated by search engines."
+          }
+        ],
+        "description": "Used for SEO description. Keep it under 160 characters.",
+        "name": "metaDescription",
+        "type": "text"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ]
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "description": "A short summary of the blog post, displayed in lists.",
+        "name": "excerpt",
+        "type": "text"
+      },
+      {
+        "description": "e.g., \"7 min read\"",
+        "name": "readTime",
+        "type": "string"
+      },
+      {
+        "to": [
+          {
+            "type": "author"
+          }
+        ],
+        "name": "author",
+        "type": "reference"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternative text"
+          }
+        ],
+        "name": "mainImage",
+        "type": "image"
+      },
+      {
+        "description": "Add extra photos here to automatically create a beautiful image gallery at the bottom of the post.",
+        "of": [
+          {
+            "options": {
+              "hotspot": true
+            },
+            "fields": [
+              {
+                "name": "alt",
+                "type": "string",
+                "title": "Alternative text"
+              }
+            ],
+            "type": "image"
+          }
+        ],
+        "name": "gallery",
+        "type": "array",
+        "title": "Image Gallery"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "category"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to category"
+          }
+        ],
+        "name": "categories",
+        "type": "array"
+      },
+      {
+        "name": "publishedAt",
+        "type": "datetime"
+      },
+      {
+        "name": "body",
+        "type": "blockContent",
+        "title": "Body Content"
+      }
+    ],
+    "name": "post",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "name"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ]
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "level": "error",
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "of": [],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "type": "block"
+          }
+        ],
+        "name": "bio",
+        "type": "array"
+      }
+    ],
+    "name": "author",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "name",
+        "type": "string",
+        "title": "Product Name"
+      },
+      {
+        "name": "model",
+        "type": "string",
+        "title": "Model / SKU"
+      },
+      {
+        "options": {
+          "source": "name"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ]
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Storage Battery",
+              "value": "battery"
+            },
+            {
+              "title": "Solar Inverter",
+              "value": "inverter"
+            },
+            {
+              "title": "Portable Power Station",
+              "value": "portable-power"
+            },
+            {
+              "title": "Power Bank",
+              "value": "power-bank"
+            },
+            {
+              "title": "E-Mobility",
+              "value": "electric-mobility"
+            },
+            {
+              "title": "Tech & Solar Accessories",
+              "value": "accessories"
+            }
+          ]
+        },
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "description": "Used for product cards and quick overviews.",
+        "name": "shortDescription",
+        "type": "text"
+      },
+      {
+        "name": "description",
+        "type": "blockContent",
+        "title": "Full Product Description"
+      },
+      {
+        "description": "Add the 6-8 most important specs here. These will be highlighted on the page and used for search snippets.",
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "specName",
+                "type": "string",
+                "title": "Specification Name (e.g., Battery Capacity)"
+              },
+              {
+                "name": "specValue",
+                "type": "string",
+                "title": "Value (e.g., 1000Wh)"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "keySpecs",
+        "type": "array",
+        "title": "Key Specifications (SEO Critical)"
+      },
+      {
+        "description": "All remaining technical specifications.",
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "specName",
+                "type": "string",
+                "title": "Specification Name"
+              },
+              {
+                "name": "specValue",
+                "type": "string",
+                "title": "Value"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "fullSpecs",
+        "type": "array",
+        "title": "Full Specifications Table"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "features",
+        "type": "array",
+        "title": "Key Features / Highlights"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alt Text (Crucial for Image SEO)"
+          }
+        ],
+        "name": "mainImage",
+        "type": "image",
+        "title": "Main Product Image"
+      },
+      {
+        "of": [
+          {
+            "options": {
+              "hotspot": true
+            },
+            "fields": [
+              {
+                "name": "alt",
+                "type": "string",
+                "title": "Alt Text"
+              }
+            ],
+            "type": "image"
+          }
+        ],
+        "name": "gallery",
+        "type": "array",
+        "title": "Product Gallery"
+      },
+      {
+        "name": "datasheet",
+        "type": "file",
+        "title": "Datasheet / Manual (PDF)"
+      },
+      {
+        "validation": [
+          {
+            "level": "warning",
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 60
+              }
+            ],
+            "message": "Keep under 60 characters"
+          }
+        ],
+        "name": "seoTitle",
+        "type": "string",
+        "title": "SEO Title"
+      },
+      {
+        "validation": [
+          {
+            "level": "warning",
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 160
+              }
+            ],
+            "message": "Keep under 160 characters"
+          }
+        ],
+        "name": "metaDescription",
+        "type": "text"
+      },
+      {
+        "description": "Adding FAQs generates rich snippets in Google search results, massively boosting click-through rates.",
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "question",
+                "type": "string"
+              },
+              {
+                "name": "answer",
+                "type": "text"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "faq",
+        "type": "array",
+        "title": "Product FAQs (For FAQ Schema Markup)"
+      }
+    ],
+    "name": "product",
+    "type": "document"
+  }
+]

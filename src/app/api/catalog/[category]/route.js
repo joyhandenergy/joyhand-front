@@ -35,10 +35,10 @@ export async function GET(request, { params }) {
     // Handle Image
     let imageUrl = '';
     if (p.mainImage) {
-      imageUrl = urlFor(p.mainImage).url();
+      imageUrl = urlFor(p.mainImage).format('jpg').url();
     } else if (p.image) {
       // old structure or direct string
-      imageUrl = typeof p.image === 'string' ? p.image : urlFor(p.image).url();
+      imageUrl = typeof p.image === 'string' ? p.image : urlFor(p.image).format('jpg').url();
     }
 
     return {
