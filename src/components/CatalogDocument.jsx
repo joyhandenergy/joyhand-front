@@ -98,7 +98,7 @@ export default function CatalogDocument({ category, products = null }) {
         
         <View style={styles.header} fixed>
           <View style={styles.logoContainer}>
-            <Image src={logoUrl} style={styles.logo} />
+            <Image src={`${baseUrl}/api/proxy-image?url=${encodeURIComponent(logoUrl)}`} style={styles.logo} />
           </View>
           <View style={styles.headerInfo}>
             <Text style={styles.headerTitle}>PRODUCT CATALOG</Text>
@@ -116,12 +116,16 @@ export default function CatalogDocument({ category, products = null }) {
             const keySpecs = getKeySpecs(product);
             
             // Handle missing images safely and fix CORS opaque response caching for Sanity CDN images
-            let imageUrl = logoUrl; // Fallback to logo
+            let imageUrl = `${baseUrl}/api/proxy-image?url=${encodeURIComponent(logoUrl)}`; // Fallback to proxied logo
+            
             if (product.image) {
-              imageUrl = product.image.startsWith('http') 
-                // Append a cache buster so browser fetch bypasses opaque caches
-                ? `${product.image}${product.image.includes('?') ? '&' : '?'}cb=${Date.now()}` 
+              const rawUrl = product.image.startsWith('http') 
+                ? product.image
                 : `${baseUrl}${product.image}`;
+                
+              // Route ALL images through our backend proxy to completely bypass browser CORS 
+              // and Cloudflare hotlink protection when generating the PDF
+              imageUrl = `${baseUrl}/api/proxy-image?url=${encodeURIComponent(rawUrl)}`;
             }
 
             return (
