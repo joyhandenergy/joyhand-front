@@ -47,6 +47,11 @@ export const metadata = {
   icons: {
     icon: "/icon.svg",
   },
+  verification: {
+    other: {
+      "p:domain_verify": "8e1200b137daa101c7a4206dca83a8a8",
+    },
+  },
 };
 
 export const viewport = {
