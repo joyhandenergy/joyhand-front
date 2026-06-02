@@ -9,6 +9,7 @@ import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
+import { ShareButtons, ScaleBrandButton } from "./BlogInteractiveElements";
 import "../blog.css";
 
 export const revalidate = 3600;
@@ -380,11 +381,7 @@ export default async function BlogDetailsPage({ params }) {
               {/* Share Buttons */}
               <div className="sidebar-share">
                 <span className="sidebar-share__label">Share Article</span>
-                <div className="sidebar-share__actions">
-                  <button className="sidebar-share__btn" aria-label="Share on LinkedIn"><PiLinkedinLogo /></button>
-                  <button className="sidebar-share__btn" aria-label="Share on Twitter"><PiTwitterLogo /></button>
-                  <button className="sidebar-share__btn" aria-label="Copy Link"><PiLinkSimple /></button>
-                </div>
+                <ShareButtons title={blogPost.title} slug={blogPost.slug} />
               </div>
 
               <div className="sidebar-card sidebar-card--primary">
@@ -395,9 +392,7 @@ export default async function BlogDetailsPage({ params }) {
                 <p className="sidebar-card__text">
                   Bypass intermediaries and scale your energy brand with our direct, standards-compliant production lines.
                 </p>
-                <Link href="/contact" className="sidebar-card__link-btn">
-                  Scale Your OEM Brand
-                </Link>
+                <ScaleBrandButton />
               </div>
 
               <div className="sidebar-card sidebar-card--outline">

@@ -291,11 +291,11 @@ export const ctaData = {
 // ==============================
 export const aboutTeam = [
   {
-    name: "Winper Du",
+    name: "Dui Wangpeng (Winper)",
     title: "CEO & Founder",
     image: "/aboutImg/joyhandleaders02.jpg",
     experience: "28+",
-    bio: "Winper leads our manufacturing strategy, focusing on direct factory output for energy distributors in Nigeria and South Asia."
+    bio: "As the Founder of JoyHand, Winper has dedicated over two decades to advancing energy storage and manufacturing. He drives our global strategy, ensuring direct, high-quality factory output for energy distributors in Nigeria and South Asia."
   },
   {
     name: "Li Ronghua",
