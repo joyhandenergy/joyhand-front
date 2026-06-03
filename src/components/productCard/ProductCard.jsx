@@ -44,7 +44,7 @@ const ProductCard = ({ product, priority = false }) => {
   }
 
   return (
-    <article className="product-card" itemScope itemType="https://schema.org/Product">
+    <article className="product-card">
       <Link
         href={`/products/${slug}`}
         className="product-card__inner"
@@ -60,7 +60,7 @@ const ProductCard = ({ product, priority = false }) => {
             className="product-card__img"
             priority={priority}
           />
-          <meta itemProp="image" content={image} />
+
 
           {/* Hover overlay */}
           <div className="product-card__overlay">
@@ -79,10 +79,10 @@ const ProductCard = ({ product, priority = false }) => {
         {/* ── Content Zone ── */}
         <div className="product-card__content">
           {/* Title */}
-          <h3 className="product-card__title" itemProp="name">{name}</h3>
+          <h3 className="product-card__title">{name}</h3>
 
           {/* Description */}
-          <p className="product-card__desc" itemProp="description">{description}</p>
+          <p className="product-card__desc">{description}</p>
 
           {/* Spec Tags */}
           {previewSpecs.length > 0 && (
