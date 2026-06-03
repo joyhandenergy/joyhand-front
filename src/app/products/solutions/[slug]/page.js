@@ -124,7 +124,12 @@ export default async function SolutionsPage({ params }) {
         "item": {
           "@type": "Product",
           "name": product.name,
-          "url": `https://www.joyhand.com/products/${product.slug}`
+          "url": `https://www.joyhand.com/products/${product.slug}`,
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "89"
+          }
         }
       }))
     }

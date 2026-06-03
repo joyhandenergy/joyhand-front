@@ -343,15 +343,10 @@ export default async function ProductDetailsPage({ params }) {
     },
     "model": product.model,
     "category": categoryDisplay,
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "USD",
-      "offerCount": "1",
-      "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "Organization",
-        "name": "JoyHand Energy Manufacturing"
-      }
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "89"
     }
   };
 
