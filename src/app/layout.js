@@ -80,6 +80,14 @@ export default function RootLayout({ children }) {
             });
           `}
         </Script>
+        
+        {/* Ahrefs Web Analytics */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="ZyFJuWwL2y8wD47Zr+Zddg"
+          strategy="afterInteractive"
+        />
+
         <PageLoader>
           <Header />
           <main>{children}</main>
