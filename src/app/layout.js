@@ -20,8 +20,8 @@ const GA_MEASUREMENT_ID = "G-NPVW8QGRQT";
 export const metadata = {
   metadataBase: new URL("https://www.joyhand.com"),
   title: {
-    default: "Factory Direct Solar & Batteries | JoyHand Manufacturer",
-    template: "%s | JoyHand Manufacturer",
+    default: "Factory Direct Solar & Batteries | JoyHand",
+    template: "%s | JoyHand",
   },
   description: "Direct factory wholesale of LFP batteries, hybrid inverters, e-mobility solutions, portable power stations, solar panels, street lights, and tech accessories. Reliable power solutions for unstable grids in Nigeria and beyond.",
   keywords: ["solar factory China", "OEM energy manufacturer", "wholesale LFP batteries", "ISO standard production", "B2B energy supplier", "portable power stations", "solar hardware", "solar street lights", "screen protectors"],
