@@ -7,7 +7,7 @@ import PageHeader from "@/components/pageHeader/PageHeader";
 import SectionHeader from "@/components/sectionHeader/SectionHeader";
 import SectionDecor from "@/components/sectionDecor/SectionDecor";
 import Link from "next/link";
-import PopUpModal from "@/components/contactForm/PopUpModal";
+import ManufacturingCta from "./ManufacturingCta";
 import "./manufacturing.css";
 import SuperRing from "@/components/superRing/SuperRing";
 
@@ -31,9 +31,6 @@ const ICON_MAP = {
 };
 
 export default function ManufacturingClient() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
 
   // Scroll reveal — one per section
   const introReveal      = useScrollReveal();
@@ -242,33 +239,7 @@ export default function ManufacturingClient() {
       </section>
 
       {/* CTA */}
-      <section ref={ctaReveal.ref} className={`services-cta reveal ${ctaReveal.isVisible ? 'is-visible' : ''}`}>
-        <div className="container">
-          <div className="services-cta__banner">
-            <div className="services-cta__content">
-              <div className="services-cta__text">
-                <h2 className="services-cta__title">Ready to Supply Your <br /> <span className="title--highlight">Local Market?</span></h2>
-                <p className="services-cta__subtitle">
-                  Lock in wholesale pricing and start your mass production run. Join the network of professional importers relying on JoyHand's manufacturing expertise.
-                </p>
-              </div>
-              <div className="services-cta__actions">
-                <button 
-                  onClick={openModal}
-                  className="btn btn--primary services-cta__btn"
-                >
-                  Start Your Project <PiArrowRight weight="bold" />
-                </button>
-                <Link href="/contact-us" className="btn btn--outline-light services-cta__btn">
-                  Contact Sales
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <PopUpModal isOpen={isModalOpen} onClose={closeModal} mode="quote" />
+      <ManufacturingCta ctaReveal={ctaReveal} />
     </main>
   );
 }
