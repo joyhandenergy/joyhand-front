@@ -173,12 +173,14 @@
   padding: 3px 9px;
   border-radius: 100px;
   border: 1px solid rgba(46, 196, 182, 0.15);
+  max-width: 100%;
 }
 
 .product-card__spec-label {
   font-weight: 600;
   /* Not 800 — subtle */
   color: var(--neutral-dark);
+  white-space: nowrap;
 }
 
 .product-card__spec-divider {
@@ -189,6 +191,9 @@
 .product-card__spec-value {
   color: var(--accent-color-dark);
   font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ── Footer ── */
@@ -532,7 +537,7 @@
    PRODUCT DETAILS PAGE — Premium B2B
 ===================================================== */
 .product-details {
-  padding: calc(var(--header-height) + var(--spacing-2)) 0 var(--spacing-10);
+  padding: calc(var(--header-height) + var(--spacing-6)) 0 var(--spacing-10);
   background: var(--neutral-white);
   overflow-x: hidden;
 }

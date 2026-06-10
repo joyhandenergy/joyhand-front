@@ -26,7 +26,7 @@ async function getAllProducts() {
     sanityProducts = rawSanity.map((p) => {
       let image = "/images/placeholder.jpg";
       try {
-        if (p.mainImage) image = urlFor(p.mainImage).url();
+        if (p.mainImage?.asset) image = urlFor(p.mainImage).url();
       } catch (e) {
         console.error("Image urlFor error", e);
       }
@@ -51,6 +51,7 @@ async function getAllProducts() {
         description: p.shortDescription || p.seoDescription || "",
         image: image,
         category: p.category,
+        type: p.type,
         specifications: specs,
       };
     });
@@ -61,7 +62,58 @@ async function getAllProducts() {
   const sanitySlugs = new Set(sanityProducts.map((p) => p.slug));
   const uniqueLocal = productData.filter((p) => !sanitySlugs.has(p.slug));
 
-  return [...sanityProducts, ...uniqueLocal];
+  const allMerged = [...sanityProducts, ...uniqueLocal];
+
+  // Group by category to mix them evenly
+  const groupedByCategory = {};
+  allMerged.forEach(p => {
+    const cat = p.category || 'other';
+    if (!groupedByCategory[cat]) groupedByCategory[cat] = [];
+    groupedByCategory[cat].push(p);
+  });
+
+  // Proportional mixing to balance categories based on their size
+  const totalProducts = allMerged.length;
+  const scoredProducts = [];
+
+  Object.keys(groupedByCategory).forEach(cat => {
+    let catItems = groupedByCategory[cat];
+    
+    // 1. Mix internally by type or image to avoid similar products clustering together
+    const groupedByType = {};
+    catItems.forEach(item => {
+      // Use type if available, otherwise fallback to image or name to group similar items
+      const subKey = item.type || item.image || item.name; 
+      if (!groupedByType[subKey]) groupedByType[subKey] = [];
+      groupedByType[subKey].push(item);
+    });
+
+    const mixedCatItems = [];
+    let addedSub = true;
+    while (addedSub) {
+      addedSub = false;
+      for (const t in groupedByType) {
+        if (groupedByType[t].length > 0) {
+          mixedCatItems.push(groupedByType[t].shift());
+          addedSub = true;
+        }
+      }
+    }
+    
+    catItems = mixedCatItems;
+    const catCount = catItems.length;
+    
+    // 2. Proportionally spread them across the whole catalog
+    catItems.forEach((item, index) => {
+      const targetIndex = (index + 0.5) * (totalProducts / catCount);
+      scoredProducts.push({ item, targetIndex });
+    });
+  });
+
+  // Sort by target index to interleave proportionally
+  scoredProducts.sort((a, b) => a.targetIndex - b.targetIndex);
+
+  return scoredProducts.map(sp => sp.item);
 }
 
 export default async function ProductsPage() {

@@ -57,7 +57,7 @@ async function getProductsForCategory(filterCategory) {
     sanityProducts = rawSanity.map((p) => {
       let image = "/images/placeholder.jpg";
       try {
-        if (p.mainImage) image = urlFor(p.mainImage).url();
+        if (p.mainImage?.asset) image = urlFor(p.mainImage).url();
       } catch (e) {
         console.error("Image urlFor error", e);
       }

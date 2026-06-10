@@ -199,7 +199,7 @@ export async function generateMetadata({ params }) {
   ].filter(Boolean);
 
   let imageUrl = "/homeImg/businessModelImage001.jpg";
-  if (sanityProduct?.mainImage) {
+  if (sanityProduct?.mainImage?.asset) {
     imageUrl = urlFor(sanityProduct.mainImage).url();
   } else if (localProduct?.image) {
     imageUrl = localProduct.image;
@@ -284,12 +284,13 @@ export default async function ProductDetailsPage({ params }) {
 
   let images = [];
   if (sanityProduct?.gallery?.length) {
-    images = sanityProduct.gallery.map(img => urlFor(img).url());
-  } else if (sanityProduct?.mainImage) {
+    images = sanityProduct.gallery.filter(img => img.asset).map(img => urlFor(img).url());
+  }
+  if (images.length === 0 && sanityProduct?.mainImage?.asset) {
     images = [urlFor(sanityProduct.mainImage).url()];
-  } else if (localProduct?.gallery?.length) {
+  } else if (images.length === 0 && localProduct?.gallery?.length) {
     images = localProduct.gallery;
-  } else if (localProduct?.image) {
+  } else if (images.length === 0 && localProduct?.image) {
     images = [localProduct.image];
   }
 
@@ -442,7 +443,7 @@ async function RelatedProductsServerWrapper({ currentProductId, category }) {
     name: p.name,
     model: p.model,
     category: p.category,
-    image: p.mainImage ? urlFor(p.mainImage).url() : "/images/placeholder.jpg",
+    image: p.mainImage?.asset ? urlFor(p.mainImage).url() : "/images/placeholder.jpg",
   }));
 
   return <ProductRelated currentProductId={currentProductId} passedProducts={normalizedRelated} />;

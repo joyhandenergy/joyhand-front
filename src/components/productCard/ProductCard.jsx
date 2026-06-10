@@ -22,7 +22,39 @@ const ProductCard = ({ product, priority = false }) => {
   const previewSpecs = [];
   if (specifications) {
     const push = (label, value) => {
-      if (value && previewSpecs.length < 2) previewSpecs.push({ label, value });
+      if (!value) return;
+
+      let displayValue = value;
+
+      // Handle JSON strings or objects
+      if (typeof value === 'object') {
+        const values = Object.values(value).filter(Boolean);
+        displayValue = values.length > 0 ? values[0] : "";
+      } else if (typeof value === 'string' && value.trim().startsWith('{')) {
+        try {
+          const parsed = JSON.parse(value);
+          const values = Object.values(parsed).filter(Boolean);
+          displayValue = values.length > 0 ? values[0] : value;
+        } catch (e) {
+          // ignore parsing errors
+        }
+      }
+
+      let strValue = String(displayValue);
+      
+      // If there are comma-separated values, just take the first one to keep it short
+      if (strValue.includes(',')) {
+        strValue = strValue.split(',')[0];
+      }
+
+      // Final truncate just in case
+      if (strValue.length > 25) {
+        strValue = strValue.substring(0, 25).trim() + '...';
+      }
+
+      if (strValue && previewSpecs.length < 2) {
+        previewSpecs.push({ label, value: strValue });
+      }
     };
 
     if (category === "battery") {
@@ -39,7 +71,7 @@ const ProductCard = ({ product, priority = false }) => {
       push("Capacity", specifications.batteryCapacity || specifications.capacity);
     } else if (category === "power-bank") {
       push("Capacity", specifications.capacity || specifications.batteryCapacity);
-      push("Output", specifications.totalOutput || specifications.usbCOutput);
+      push("Output", specifications.totalOutput || specifications.usbCOutput || specifications.output);
     }
   }
 

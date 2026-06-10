@@ -29,7 +29,7 @@ export const partners = [
   { id: 3, name: "mangotech", logo: "/homeImg/partner003.jpg" },
   { id: 4, name: "kemans", logo: "/homeImg/partner004.jpg" },
   { id: 5, name: "evps", logo: "/homeImg/parner05.jpg" },
-  { id: 6, name: "dodo", logo: "/homeImg/partner06.jpg" },
+  { id: 6, name: "Bodo", logo: "/homeImg/partner06.jpg" },
   { id: 7, name: "jinwantong", logo: "/homeImg/partner07.jpg" },
   { id: 8, name: "jike", logo: "/homeImg/partner08.jpg" },
   { id: 9, name: "meinaid", logo: "/homeImg/partner09.jpg" },

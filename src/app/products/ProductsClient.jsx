@@ -9,7 +9,7 @@ import { PiPackage } from "react-icons/pi";
 import { useScrollReveal } from "@/components/useScrollReveal";
 import "./Products.css";
 
-const PRODUCTS_PER_PAGE = 12;
+const PRODUCTS_PER_PAGE = 24;
 
 export default function ProductsClient({ initialProducts = [] }) {
   const searchParams = useSearchParams();

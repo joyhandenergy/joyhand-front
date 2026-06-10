@@ -39,7 +39,7 @@ async function getAllPosts() {
       metaDescription: p.metaDescription,
       slug: p.slug,
       excerpt: p.excerpt || "",
-      image: p.mainImage ? urlFor(p.mainImage).url() : "/images/placeholder.jpg",
+      image: p.mainImage?.asset ? urlFor(p.mainImage).url() : "/images/placeholder.jpg",
       date: p.publishedAt,
       readTime: p.readTime || "5 min read",
       category: p.category || "Energy Technology",

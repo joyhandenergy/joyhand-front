@@ -9,7 +9,7 @@ import Pagination from "@/components/pagination/Pagination";
 import { PiPackage, PiArrowRight, PiFilePdf } from "react-icons/pi";
 import { useScrollReveal } from "@/components/useScrollReveal";
 
-const PRODUCTS_PER_PAGE = 12;
+const PRODUCTS_PER_PAGE = 24;
 
 const solutionLinks = [
   { slug: "storage-batteries",        name: "Battery Storage" },

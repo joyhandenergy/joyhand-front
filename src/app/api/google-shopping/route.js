@@ -35,10 +35,10 @@ export async function GET() {
     
     const normalizedSanityProducts = sanityProducts.map(p => {
       let imageUrl = '';
-      if (p.mainImage) {
+      if (p.mainImage?.asset) {
         imageUrl = urlFor(p.mainImage).format('jpg').url();
       } else if (p.image) {
-        imageUrl = typeof p.image === 'string' ? p.image : urlFor(p.image).format('jpg').url();
+        imageUrl = typeof p.image === 'string' ? p.image : (p.image?.asset ? urlFor(p.image).format('jpg').url() : "");
       }
 
       return {
