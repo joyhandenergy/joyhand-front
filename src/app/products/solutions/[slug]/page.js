@@ -24,6 +24,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: title,
       description: description,
+      url: `https://www.joyhand.com/products/solutions/${slug}`,
       type: "website",
       images: [
         {

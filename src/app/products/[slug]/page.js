@@ -212,6 +212,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title,
       description,
+      url: `https://www.joyhand.com/products/${product.slug?.current || product.slug}`,
       type: "website",
       images: [
         {

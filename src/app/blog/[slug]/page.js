@@ -73,13 +73,17 @@ export async function generateMetadata({ params }) {
   const title = blogPost.metaTitle || `${blogPost.title} | JoyHand`;
   const description = blogPost.metaDescription || blogPost.excerpt || "JoyHand Energy intelligence blog.";
 
+  const truncatedTitle = title.substring(0, 60);
+  const truncatedDesc = description.substring(0, 160);
+
   return {
-    title: title.substring(0, 60),
-    description: description.substring(0, 160),
+    title: truncatedTitle,
+    description: truncatedDesc,
     keywords: [blogPost.category, "energy manufacturing insight", "OEM strategy", "B2B energy intelligence", "JoyHand technical report"],
     openGraph: {
-      title: title,
-      description: description,
+      title: truncatedTitle,
+      description: truncatedDesc,
+      url: `https://www.joyhand.com/blog/${blogPost.slug}`,
       type: "article",
       images: [
         {
