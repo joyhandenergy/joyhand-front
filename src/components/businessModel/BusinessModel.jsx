@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useTransition } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PiCube, PiMicroscope, PiBuildings, PiArrowRight } from "react-icons/pi";
@@ -20,6 +20,7 @@ export default function BusinessModel() {
   const [activeService, setActiveService] = useState(businessServices[0]);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -39,7 +40,9 @@ export default function BusinessModel() {
   }, []);
 
   const handleTabChange = (service) => {
-    setActiveService(service);
+    startTransition(() => {
+      setActiveService(service);
+    });
   };
 
   return (

@@ -43,6 +43,7 @@ export default function Hero() {
               alt="JoyHand manufacturing facility Guangzhou China"
               fill
               priority
+              unoptimized={true}
               sizes="100vw"
               className="hero__static-img"
             />
