@@ -10,7 +10,6 @@ import { featuredCategories } from "@/data";
 
 const EnergyPlatforms = () => {
   const sectionRef = useRef(null);
-  const [loadedImages, setLoadedImages] = useState({});
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -48,7 +47,6 @@ const EnergyPlatforms = () => {
                   fill
                   className="platform-card__image"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  onLoad={() => setLoadedImages(prev => ({ ...prev, [platform.id]: true }))}
                 />
                 <div className="platform-card__overlay"></div>
               </div>

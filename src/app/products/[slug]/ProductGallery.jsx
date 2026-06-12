@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, startTransition } from "react";
 import Image from "next/image";
 import { PiCaretLeft, PiCaretRight } from "react-icons/pi";
 
@@ -8,11 +8,15 @@ export default function ProductGallery({ images, productName }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    startTransition(() => {
+      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    });
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    startTransition(() => {
+      setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    });
   };
 
   return (
@@ -47,7 +51,7 @@ export default function ProductGallery({ images, productName }) {
               className={`product-details__strip-item ${
                 currentIndex === idx ? "product-details__strip-item--active" : ""
               }`}
-              onClick={() => setCurrentIndex(idx)}
+              onClick={() => startTransition(() => setCurrentIndex(idx))}
               aria-label={`View image ${idx + 1}`}
             >
               <Image 

@@ -2,21 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import { PiCaretRight } from "react-icons/pi";
 import SectionDecor from "../sectionDecor/SectionDecor";
 import SuperRing from "../superRing/SuperRing";
 import "./PageHeader.css";
 
 const PageHeader = ({ title, pageImage, subtitle, hideBreadcrumb = false }) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  // Fallback: If the image takes too long, show it anyway
-  useEffect(() => {
-    const timer = setTimeout(() => setImageLoaded(true), 2500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <section className={`page-header ${hideBreadcrumb ? "page-header--no-breadcrumb" : ""}`}>
       {/* Background Image Layer */}
@@ -28,8 +19,7 @@ const PageHeader = ({ title, pageImage, subtitle, hideBreadcrumb = false }) => {
           priority
           quality={90}
           sizes="100vw"
-          onLoad={() => setImageLoaded(true)}
-          className={`page-header__bg ${imageLoaded ? "page-header__bg--loaded" : ""}`}
+          className="page-header__bg"
         />
       </div>
 

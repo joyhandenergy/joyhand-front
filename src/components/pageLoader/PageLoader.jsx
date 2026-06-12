@@ -9,9 +9,9 @@ export default function PageLoader({ children }) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const minLoadTime = 1500; // Professional buffer
+    const minLoadTime = 500; // 0.5s buffer for a deliberate, premium feel
     const startTime = Date.now();
-    const safetyTimeout = 8000; // Prevent infinite loading
+    const safetyTimeout = 1200; // Never block the page for more than 1.2s!
 
     const handleComplete = () => {
       const elapsedTime = Date.now() - startTime;
@@ -19,7 +19,7 @@ export default function PageLoader({ children }) {
       
       setTimeout(() => {
         setProgress(100);
-        setTimeout(() => setLoading(false), 600); // Wait for CSS transition
+        setTimeout(() => setLoading(false), 400); // Wait for CSS transition (speed it up slightly)
       }, remainingTime);
     };
 

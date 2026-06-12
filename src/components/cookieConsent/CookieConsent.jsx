@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, startTransition } from "react";
 import Link from "next/link";
 import { PiCookieBold, PiXBold } from "react-icons/pi";
 import { cookieData } from "@/data";
@@ -26,14 +26,20 @@ export default function CookieConsent() {
     try {
       localStorage.setItem("joyhand_cookie_consent", "accepted");
     } catch (e) { }
-    closeBanner();
+    startTransition(() => {
+      closeBanner();
+    });
   };
 
   const closeBanner = () => {
-    setIsClosing(true);
+    startTransition(() => {
+      setIsClosing(true);
+    });
     setTimeout(() => {
-      setShow(false);
-      setIsClosing(false);
+      startTransition(() => {
+        setShow(false);
+        setIsClosing(false);
+      });
     }, 400); // Match CSS transition
   };
 

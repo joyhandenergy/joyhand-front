@@ -62,14 +62,12 @@
 .page-header__bg {
   object-fit: cover;
   object-position: center;
-  opacity: 0;
-  transform: scale(1.05);
-  transition: opacity 1.5s ease-in-out, transform 3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: pageHeaderBgZoom 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.page-header__bg--loaded {
-  opacity: 1;
-  transform: scale(1);
+@keyframes pageHeaderBgZoom {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 /* =====================================================
