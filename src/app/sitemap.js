@@ -1,6 +1,8 @@
 import { blogPosts, productData, solutionConfigs } from "@/data";
 import { client } from "@/sanity/lib/client";
 
+export const revalidate = 3600; // revalidate every hour
+
 export default async function sitemap() {
   const baseUrl = "https://www.joyhand.com";
 

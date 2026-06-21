@@ -194,6 +194,7 @@ export async function generateMetadata({ params }) {
     ...(categoryKeywords[product.category] || []),
     product.name,
     product.model,
+    ...(product.features || []),
     "B2B energy supplier Nigeria",
     "JoyHand factory direct",
   ].filter(Boolean);
@@ -349,7 +350,14 @@ export default async function ProductDetailsPage({ params }) {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "89"
-    }
+    },
+    ...(product.features && product.features.length > 0 && {
+      "additionalProperty": product.features.map(feature => ({
+        "@type": "PropertyValue",
+        "name": "Feature",
+        "value": feature
+      }))
+    })
   };
 
   const schemas = [productSchema];
