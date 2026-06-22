@@ -1,4 +1,5 @@
 import PageHeader from "@/components/pageHeader/PageHeader";
+import SafeEmail from "@/components/SafeEmail";
 import "../legal.css";
 
 export const metadata = {
@@ -69,7 +70,7 @@ export default function CookiePolicyPage() {
               If you have any questions regarding our cookie practices or your privacy rights, please reach out to our compliance team:
             </p>
             <div className="legal__contact-box">
-              <p>Email: <a href="mailto:sales@joyhand.com">sales@joyhand.com</a></p>
+              <p>Email: <SafeEmail email="sales@joyhand.com" fallback="sales@..." /></p>
               <p>Subject: Cookie Policy Inquiry</p>
             </div>
           </section>

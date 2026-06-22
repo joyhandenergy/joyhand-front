@@ -63,6 +63,11 @@ const ICON_MAP = {
 };
 
 export default function ContactClient() {
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Scroll reveal — one per section
   const formReveal    = useScrollReveal();
   const officesReveal = useScrollReveal();
@@ -237,7 +242,9 @@ export default function ContactClient() {
                 <div className="contact-card__icon">{manufacturingInquiries.icon}</div>
               </div>
               <h4 className="contact-card__title">{manufacturingInquiries.title}</h4>
-              <a href={manufacturingInquiries.link} className="contact-card__link">{manufacturingInquiries.content}</a>
+              <a href={mounted ? manufacturingInquiries.link : "#"} className="contact-card__link">
+                {mounted ? manufacturingInquiries.content : "sales@..."}
+              </a>
             </div>
 
             <div className="contact-card contact-card--navy">

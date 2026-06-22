@@ -1,4 +1,5 @@
 import PageHeader from "@/components/pageHeader/PageHeader";
+import SafeEmail from "@/components/SafeEmail";
 import "../legal.css";
 
 export const metadata = {
@@ -81,7 +82,7 @@ export default function TermsPage() {
             </p>
             <div className="legal__contact-box">
               <p><strong>JoyHand Energy Legal Department</strong></p>
-              <p>Email: <a href="mailto:sales@joyhand.com">sales@joyhand.com</a></p>
+              <p>Email: <SafeEmail email="sales@joyhand.com" fallback="sales@..." /></p>
               <p>Subject: Terms of Service Inquiry</p>
             </div>
           </section>

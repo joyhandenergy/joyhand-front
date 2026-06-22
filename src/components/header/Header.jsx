@@ -15,6 +15,11 @@ export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   
   const pathName = usePathname();
 
@@ -93,9 +98,9 @@ export default function Header() {
                 <PiPhone size={20} />
                 <span>{headerData.phone}</span>
               </a>
-              <a href={`mailto:${headerData.email}`} className="header__contact-item">
+              <a href={mounted ? `mailto:${headerData.email}` : "#"} className="header__contact-item">
                 <PiEnvelopeSimple size={20} />
-                <span>{headerData.email}</span>
+                <span>{mounted ? headerData.email : "Email Us"}</span>
               </a>
             </div>
           </div>
@@ -263,13 +268,13 @@ export default function Header() {
                     <span className="header__mobile-contact-value">{headerData.phone}</span>
                   </div>
                 </a>
-                <a href={`mailto:${headerData.email}`} className="header__mobile-contact-item">
+                <a href={mounted ? `mailto:${headerData.email}` : "#"} className="header__mobile-contact-item">
                   <div className="header__mobile-contact-icon">
                     <PiEnvelopeSimple size={24} />
                   </div>
                   <div className="header__mobile-contact-text">
                     <span className="header__mobile-contact-label">Email Us</span>
-                    <span className="header__mobile-contact-value">{headerData.email}</span>
+                    <span className="header__mobile-contact-value">{mounted ? headerData.email : "sales@..."}</span>
                   </div>
                 </a>
               </div>

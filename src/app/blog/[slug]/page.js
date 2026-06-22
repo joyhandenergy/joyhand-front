@@ -415,7 +415,7 @@ export default async function BlogDetailsPage({ params }) {
                     <Link href="/about-us">ISO Quality Control Standards <PiArrowRight /></Link>
                   </li>
                   <li>
-                    <Link href="/contact">Global Logistics & Support <PiArrowRight /></Link>
+                    <Link href="/contact-us">Global Logistics & Support <PiArrowRight /></Link>
                   </li>
                 </ul>
               </div>
