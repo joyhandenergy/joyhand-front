@@ -23,7 +23,7 @@ export const metadata = {
     default: "Factory Direct Solar & Batteries | JoyHand",
     template: "%s | JoyHand",
   },
-  description: "Direct factory wholesale of LFP batteries, hybrid inverters, e-mobility solutions, portable power stations, solar panels, street lights, and tech accessories. Reliable power solutions for unstable grids in Nigeria and beyond.",
+  description: "Factory wholesale of LFP batteries, hybrid inverters, solar panels, and e-mobility. Reliable off-grid power solutions for Nigeria and emerging markets globally.",
   keywords: ["solar factory China", "OEM energy manufacturer", "wholesale LFP batteries", "ISO standard production", "B2B energy supplier", "portable power stations", "solar hardware", "solar street lights", "screen protectors"],
   robots: {
     index: true,
@@ -65,12 +65,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${outfit.variable}`}>
       <body suppressHydrationWarning={true} className="antialiased">
-        {/* Google Analytics 4 - loads after page is interactive */}
+        {/* Google Analytics 4 - loads after page is idle */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -84,8 +84,8 @@ export default function RootLayout({ children }) {
         {/* Ahrefs Web Analytics */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
-          data-key="ZyFJuWwL2y8wD47Zr+Zddg"
-          strategy="afterInteractive"
+          data-key="acHr8q4yFmOA8zPCD+g9Jg"
+          strategy="lazyOnload"
         />
 
         <PageLoader>

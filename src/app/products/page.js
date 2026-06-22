@@ -10,8 +10,8 @@ import "./Products.css";
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "Wholesale Energy, E-Mobility & Tech Accessories | JoyHand Energy Catalog",
-  description: "Explore factory-direct LFP batteries, hybrid inverters, portable power stations, e-mobility, solar panels, and tech accessories. Flexible B2B MOQs and global shipping to ports like Lagos and Dhaka.",
+  title: "Wholesale Energy & E-Mobility Catalog | JoyHand Factory",
+  description: "Explore factory-direct LFP batteries, hybrid inverters, solar panels & tech accessories. Flexible B2B MOQs & global shipping to ports like Lagos and Dhaka.",
   keywords: ["energy storage", "hybrid inverters", "solar hardware", "solar street lights", "portable power stations", "wholesale power banks", "B2B energy products"],
   alternates: {
     canonical: '/products',

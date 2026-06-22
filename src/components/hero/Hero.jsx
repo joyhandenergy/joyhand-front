@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { PiArrowRight, PiMouseSimple, PiLightningFill, PiFactory, PiCertificate, PiUsers } from "react-icons/pi";
@@ -17,20 +17,6 @@ const STAT_ICONS = {
 
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const videoRef = useRef(null);
-
-  // Lazy load video for better LCP
-  useEffect(() => {
-    const loadVideo = () => {
-      if (videoRef.current && !videoLoaded) {
-        videoRef.current.load();
-        setVideoLoaded(true);
-      }
-    };
-    const timer = setTimeout(loadVideo, 1500);
-    return () => clearTimeout(timer);
-  }, [videoLoaded]);
 
   return (
     <>
@@ -49,13 +35,12 @@ export default function Hero() {
             />
           </div>
           <video
-            ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
-            preload="none"
-            className={`hero__video ${videoLoaded ? "hero__video--loaded" : ""}`}
+            preload="auto"
+            className="hero__video hero__video--loaded"
             poster="/videos/heroImg/hero-poster.jpg"
           >
             <source src="/videos/heroImg/joyhand-hero-video.mp4" type="video/mp4" />

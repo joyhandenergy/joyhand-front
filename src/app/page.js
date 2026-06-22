@@ -14,8 +14,8 @@ import { blogPosts as localBlogPosts } from "@/data";
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "JoyHand Energy: Global OEM/ODM Manufacturer | Energy & E-Mobility",
-  description: "Competitive factory-direct pricing on LFP batteries, inverters, e-mobility, solar panels, and tech accessories. Direct export to emerging markets, including Lagos, Nairobi, and Dhaka. Get a quote in 24h.",
+  title: "JoyHand Energy: OEM/ODM Manufacturer | Energy & E-Mobility",
+  description: "Factory-direct pricing on LFP batteries, inverters, solar panels & e-mobility. Direct export to emerging markets like Lagos & Dhaka. Get a B2B quote in 24h!",
   keywords: ["power solutions for unstable grids", "factory direct solar", "OEM battery manufacturer", "solar panels wholesale", "solar street lights", "solar inverters B2B"],
   alternates: {
     canonical: '/',
