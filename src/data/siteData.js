@@ -42,9 +42,9 @@ export const partners = [
 export const footerData = {
   brandDescription: "JoyHand is a direct factory manufacturer of storage batteries, solar power stations, solar panels, inverters, electric motorcycles, accessories, and complete solar solutions. We engineer reliable power systems for global markets.",
   socialLinks: [
-    { name: "YouTube", url: "https://www.youtube.com/@JoyHandSolar", icon: "youtube" },
-    { name: "TikTok", url: "https://www.tiktok.com/@joyhandsolar", icon: "tiktok" },
-    { name: "Facebook", url: "https://www.facebook.com/JoyHandEnergy", icon: "facebook" },
+    { name: "YouTube", url: "https://www.youtube.com/@joyhandenergy", icon: "youtube" },
+    { name: "TikTok", url: "https://www.tiktok.com/@joyhandenergy", icon: "tiktok" },
+    { name: "Facebook", url: "https://www.facebook.com/joyhandenergy", icon: "facebook" },
     { name: "Instagram", url: "https://www.instagram.com/joyhandenergy/", icon: "instagram" },
     { name: "Pinterest", url: "https://www.pinterest.com/joyhandenergy/", icon: "pinterest" }
   ],

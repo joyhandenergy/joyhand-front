@@ -22,7 +22,7 @@ export default function ProductVideo({ videoId, productName = "this product" }) 
             <h4 className="product-details__tech-title">Engineering Perfection</h4>
 
             <Link
-              href="https://www.youtube.com/@JoyHandEnergy"
+              href="https://www.youtube.com/@joyhandenergy"
               target="_blank"
               rel="noopener noreferrer"
               className="product-details__tech-link"
