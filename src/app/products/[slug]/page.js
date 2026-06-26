@@ -411,23 +411,31 @@ export default async function ProductDetailsPage({ params }) {
           </ScrollRevealWrapper>
         </div>
         <div className="product-details__full-content">
-          <ScrollRevealWrapper>
-            <ProductSpecs product={product} />
-          </ScrollRevealWrapper>
-          <ScrollRevealWrapper>
-            <ProductApplications applications={product.applications} />
-          </ScrollRevealWrapper>
-          <ScrollRevealWrapper className="product-details__bottom-grid">
-            <ProductCertifications certifications={product.certifications} />
-            <ProductWarranty warranty={product.warranty} />
-          </ScrollRevealWrapper>
+          {product.fullSpecs && product.fullSpecs.length > 0 && (
+            <ScrollRevealWrapper>
+              <ProductSpecs product={product} />
+            </ScrollRevealWrapper>
+          )}
+          
+          {product.applications && product.applications.length > 0 && (
+            <ScrollRevealWrapper>
+              <ProductApplications applications={product.applications} />
+            </ScrollRevealWrapper>
+          )}
+          
+          {((product.certifications && product.certifications.length > 0) || product.warranty) && (
+            <ScrollRevealWrapper className="product-details__bottom-grid">
+              {product.certifications && product.certifications.length > 0 && <ProductCertifications certifications={product.certifications} />}
+              {product.warranty && <ProductWarranty warranty={product.warranty} />}
+            </ScrollRevealWrapper>
+          )}
+
           <ScrollRevealWrapper>
             <ProductFAQ product={product} />
           </ScrollRevealWrapper>
-          
           {/* Related Products Section Wrapper */}
           <ScrollRevealWrapper>
-            <RelatedProductsServerWrapper currentProductId={product.slug?.current || product.slug} category={product.category} />
+            <RelatedProductsServerWrapper currentProductId={product.slug?.current || product.slug} />
           </ScrollRevealWrapper>
         </div>
       </div>
@@ -436,11 +444,21 @@ export default async function ProductDetailsPage({ params }) {
 }
 
 // Server Component wrapper to fetch related products so we don't pass all products down
-async function RelatedProductsServerWrapper({ currentProductId, category }) {
+async function RelatedProductsServerWrapper({ currentProductId }) {
   let relatedProducts = [];
   try {
-    const query = `*[_type == "product" && category == $category && slug.current != $currentProductId][0...4]`;
-    relatedProducts = await client.fetch(query, { category, currentProductId });
+    // Fetch a large pool from ALL categories, excluding the current product
+    const query = `*[_type == "product" && slug.current != $currentProductId]
+      { _id, name, model, category, slug, mainImage }`;
+    const pool = await client.fetch(query, { currentProductId });
+
+    // Fisher-Yates shuffle — gives true random order on every server render
+    const arr = [...pool];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    relatedProducts = arr.slice(0, 12);
   } catch (error) {
     console.error("Failed to fetch related products:", error);
   }
@@ -456,4 +474,4 @@ async function RelatedProductsServerWrapper({ currentProductId, category }) {
   }));
 
   return <ProductRelated currentProductId={currentProductId} passedProducts={normalizedRelated} />;
-}
+}

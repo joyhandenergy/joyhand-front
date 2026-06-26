@@ -1,0 +1,722 @@
+[
+  {
+    "_type": "product",
+    "productName": "AI Smart Voice Recorder",
+    "modelSKU": "HB989",
+    "slug": {
+      "_type": "slug",
+      "current": "ai-smart-voice-recorder"
+    },
+    "category": "E-Mobility",
+    "shortDescription": "AI voice recorder – one‑touch, 32GB storage, intelligent assistant. For wholesale buyers.",
+    "fullProductDescription": "AI voice recorder – one‑touch, 32GB storage, intelligent assistant. For wholesale buyers.",
+    "keySpecifications": [
+      {
+        "label": "Recording",
+        "value": "One‑touch start"
+      },
+      {
+        "label": "AI Assistant",
+        "value": "Smart transcription"
+      },
+      {
+        "label": "Storage",
+        "value": "32GB Micro SD (included)"
+      },
+      {
+        "label": "Interface",
+        "value": "Type-C"
+      },
+      {
+        "label": "Battery",
+        "value": "Built‑in (USB‑C charge)"
+      },
+      {
+        "label": "Plug & Play",
+        "value": "Yes"
+      }
+    ],
+    "fullSpecificationsTable": [
+      {
+        "label": "Function",
+        "value": "Voice recorder + AI assistant"
+      },
+      {
+        "label": "Storage",
+        "value": "32GB Micro SD"
+      },
+      {
+        "label": "Recording Format",
+        "value": "WAV / MP3"
+      },
+      {
+        "label": "AI Features",
+        "value": "Transcription, summarization"
+      },
+      {
+        "label": "Power",
+        "value": "Built‑in battery (Type‑C charge)"
+      },
+      {
+        "label": "Dimensions",
+        "value": "85×25×10mm"
+      }
+    ],
+    "keyFeatures": [
+      "One‑touch record – capture meetings instantly",
+      "AI transcription – convert speech to text",
+      "32GB storage – hours of recordings",
+      "Compact – clip onto your notebook"
+    ],
+    "mainImage": {
+      "asset": {
+        "_ref": "image-placeholder"
+      },
+      "alt": "AI smart voice recorder wholesale"
+    },
+    "gallery": [],
+    "seoTitle": "AI Smart Voice Recorder 32GB Wholesale | JoyHand",
+    "metaDescription": "AI voice recorder – one‑touch, 32GB, transcription. Smart recording for wholesale and bulk distribution.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "15‑in‑1 TS4 Docking Station",
+    "modelSKU": "HB414",
+    "slug": {
+      "_type": "slug",
+      "current": "15-in-1-ts4-docking-station"
+    },
+    "category": "E-Mobility",
+    "shortDescription": "15‑in‑1 dock – Thunderbolt 4, HDMI, DP, triple 4K@60, SD4.0, PD. Premium for global B2B supply.",
+    "fullProductDescription": "15‑in‑1 dock – Thunderbolt 4, HDMI, DP, triple 4K@60, SD4.0, PD. Premium for global B2B supply.",
+    "keySpecifications": [
+      {
+        "label": "Thunderbolt 4",
+        "value": "Host + downstream (40G, 5V3A)"
+      },
+      {
+        "label": "HDMI+DP",
+        "value": "7680×4320@30Hz each"
+      },
+      {
+        "label": "USB-A",
+        "value": "1×10G + 1×5G + 2×480M"
+      },
+      {
+        "label": "USB-C",
+        "value": "1×10Gbps"
+      },
+      {
+        "label": "SD/TF",
+        "value": "UHS‑II 4.0 (220MB/s read)"
+      },
+      {
+        "label": "PD Charging",
+        "value": "135W (DC‑in)"
+      }
+    ],
+    "fullSpecificationsTable": [
+      {
+        "label": "Ports",
+        "value": "2×TBT4 (host+down), HDMI, DP, 1×USB-C 10G, 1×USB-A 10G, 1×USB-A 5G, 2×USB-A 2.0, RJ45, SD/TF 4.0, Audio, Power switch"
+      },
+      {
+        "label": "Max Video",
+        "value": "Triple 4K@60Hz (via TBT+HDMI+DP)"
+      },
+      {
+        "label": "SD Speed",
+        "value": "Read ≥220MB/s, Write ≥110MB/s"
+      },
+      {
+        "label": "Ethernet",
+        "value": "1000Mbps"
+      },
+      {
+        "label": "Power",
+        "value": "DC 135W (PD to host)"
+      },
+      {
+        "label": "Cable",
+        "value": "Thunderbolt 4 – 0.6m"
+      }
+    ],
+    "keyFeatures": [
+      "Thunderbolt 4 – 40G ultra‑fast",
+      "Triple 4K 60Hz – ultimate multitasking",
+      "UHS‑II SD 4.0 – pro‑grade media ingest",
+      "135W power – drive even the most demanding laptops"
+    ],
+    "mainImage": {
+      "asset": {
+        "_ref": "image-placeholder"
+      },
+      "alt": "15-in-1 TS4 docking station B2B"
+    },
+    "gallery": [],
+    "seoTitle": "15-in-1 TS4 Dock Thunderbolt 4 Wholesale | JoyHand",
+    "metaDescription": "15-in-1 TS4 dock – TBT4, triple 4K, SD4.0, 135W. Premium docking for global distributors and retailers.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "USB4 40G Dock (Goshen Ridge)",
+    "modelSKU": "HB794",
+    "slug": {
+      "_type": "slug",
+      "current": "usb4-40g-dock-goshen-ridge"
+    },
+    "category": "E-Mobility",
+    "shortDescription": "USB4 40G dock – 8K video, 10G ports, 2.5? (actually 1G) + PD140W. For OEM/ODM partnerships.",
+    "fullProductDescription": "USB4 40G dock – 8K video, 10G ports, 1G Ethernet, PD140W. For OEM/ODM partnerships.",
+    "keySpecifications": [
+      {
+        "label": "USB4 Speed",
+        "value": "40Gbps"
+      },
+      {
+        "label": "HDMI",
+        "value": "2× 4K@60Hz"
+      },
+      {
+        "label": "USB-C",
+        "value": "1×10G data"
+      },
+      {
+        "label": "USB-A",
+        "value": "2×10G + 2×480M"
+      },
+      {
+        "label": "Ethernet",
+        "value": "1Gbps"
+      },
+      {
+        "label": "PD Charging",
+        "value": "140W (100W to host)"
+      }
+    ],
+    "fullSpecificationsTable": [
+      {
+        "label": "Ports",
+        "value": "USB4 host, 2×HDMI 2.0, RJ45, 1×USB-C 10G, 2×USB-A 10G, 2×USB-A 2.0, Audio, PD 3.1"
+      },
+      {
+        "label": "Video",
+        "value": "Dual 4K@60Hz"
+      },
+      {
+        "label": "Ethernet",
+        "value": "1000Mbps"
+      },
+      {
+        "label": "Charging",
+        "value": "PD 140W (100W to host)"
+      },
+      {
+        "label": "Chipset",
+        "value": "Goshen Ridge"
+      },
+      {
+        "label": "Cable",
+        "value": "0.6m Type-C coaxial"
+      }
+    ],
+    "keyFeatures": [
+      "USB4 40G – blazing fast",
+      "Dual 4K 60Hz – perfect for creative work",
+      "10G USB ports – quick file transfers",
+      "140W PD – charge high‑power laptops"
+    ],
+    "mainImage": {
+      "asset": {
+        "_ref": "image-placeholder"
+      },
+      "alt": "USB4 40G Goshen Ridge dock OEM ODM"
+    },
+    "gallery": [],
+    "seoTitle": "USB4 40G Dock Dual 4K Wholesale | JoyHand",
+    "metaDescription": "USB4 40G dock – dual 4K, 10G ports, PD140W. High‑speed docking for enterprise deployments.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "11‑in‑1 Laptop Stand Docking Station",
+    "modelSKU": "HB707",
+    "slug": {
+      "_type": "slug",
+      "current": "11-in-1-laptop-stand-docking-station"
+    },
+    "category": "E-Mobility",
+    "shortDescription": "Laptop stand + 11‑in‑1 dock – dual HDMI 4K, RJ45, 4×USB, audio, PD. Ergonomic for bulk corporate orders.",
+    "fullProductDescription": "Laptop stand + 11‑in‑1 dock – dual HDMI 4K, RJ45, 4×USB, audio, PD. Ergonomic for bulk corporate orders.",
+    "keySpecifications": [
+      {
+        "label": "HDMI",
+        "value": "2× 4K@60Hz"
+      },
+      {
+        "label": "Ethernet",
+        "value": "RJ45 1Gbps"
+      },
+      {
+        "label": "USB-A",
+        "value": "3× 5Gbps"
+      },
+      {
+        "label": "USB-C",
+        "value": "1× 5Gbps"
+      },
+      {
+        "label": "Card Reader",
+        "value": "SD/TF 3.0"
+      },
+      {
+        "label": "PD Charging",
+        "value": "100W"
+      }
+    ],
+    "fullSpecificationsTable": [
+      {
+        "label": "Ports",
+        "value": "2×HDMI 2.0, RJ45, 3×USB-A 3.0, USB-C 3.0, SD/TF, Audio, PD"
+      },
+      {
+        "label": "Display",
+        "value": "Dual 4K@60Hz"
+      },
+      {
+        "label": "Ethernet",
+        "value": "Gigabit"
+      },
+      {
+        "label": "Data Speed",
+        "value": "5Gbps"
+      },
+      {
+        "label": "Charging",
+        "value": "PD 100W (85W to host)"
+      },
+      {
+        "label": "Stand Features",
+        "value": "Ergonomic height, foldable"
+      }
+    ],
+    "keyFeatures": [
+      "Laptop stand + dock – improve posture and connectivity",
+      "Dual 4K 60Hz – expand workspace",
+      "Gigabit Ethernet – stable wired network",
+      "100W PD – charge while working"
+    ],
+    "mainImage": {
+      "asset": {
+        "_ref": "image-placeholder"
+      },
+      "alt": "11-in-1 laptop stand docking station bulk"
+    },
+    "gallery": [],
+    "seoTitle": "11-in-1 Laptop Stand Dock Dual 4K B2B | JoyHand",
+    "metaDescription": "Laptop stand + 11-in-1 dock – dual 4K, RJ45, PD100W. Ergonomic docking for bulk corporate orders.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "8‑in‑1 PD3.1 Mini Dock (Built‑in Cable)",
+    "modelSKU": "HB887",
+    "slug": {
+      "_type": "slug",
+      "current": "8-in-1-pd3-1-mini-dock-builtin-cable"
+    },
+    "category": "E-Mobility",
+    "shortDescription": "8‑in‑1 mini dock – 8K HDMI, 5G/480M ports, SD/TF, RJ45, PD140W. Compact for wholesale buyers.",
+    "fullProductDescription": "8‑in‑1 mini dock – 8K HDMI, 5G/480M ports, SD/TF, RJ45, PD140W. Compact for wholesale buyers.",
+    "keySpecifications": [
+      {
+        "label": "HDMI",
+        "value": "8K@30Hz"
+      },
+      {
+        "label": "USB-C",
+        "value": "2× 5Gbps"
+      },
+      {
+        "label": "USB-A",
+        "value": "2× 480Mbps"
+      },
+      {
+        "label": "Card Reader",
+        "value": "SD/TF 3.0"
+      },
+      {
+        "label": "Ethernet",
+        "value": "1Gbps"
+      },
+      {
+        "label": "PD Charging",
+        "value": "140W (120W to host)"
+      }
+    ],
+    "fullSpecificationsTable": [
+      {
+        "label": "Ports",
+        "value": "HDMI 2.1 (8K), 2×USB-C 3.0 (5G), 2×USB-A 2.0, SD/TF 3.0, RJ45, PD 3.1"
+      },
+      {
+        "label": "HDMI Resolution",
+        "value": "8K@30Hz / 4K@60Hz"
+      },
+      {
+        "label": "Ethernet",
+        "value": "1000Mbps"
+      },
+      {
+        "label": "Charging",
+        "value": "PD 140W (120W to host)"
+      },
+      {
+        "label": "Cable",
+        "value": "Built‑in Type-C"
+      },
+      {
+        "label": "Dimensions",
+        "value": "110×40×12mm"
+      }
+    ],
+    "keyFeatures": [
+      "8K HDMI – future‑ready video",
+      "PD 140W – fast charge even power‑hungry laptops",
+      "Built‑in cable – no extra dongle",
+      "Compact – slips into your sleeve"
+    ],
+    "mainImage": {
+      "asset": {
+        "_ref": "image-placeholder"
+      },
+      "alt": "8-in-1 PD3.1 mini dock wholesale"
+    },
+    "gallery": [],
+    "seoTitle": "8-in-1 PD3.1 Mini Dock 8K Wholesale | JoyHand",
+    "metaDescription": "8-in-1 mini dock – 8K HDMI, PD140W, built‑in cable. Compact docking for wholesale buyers.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "HUB · Recorder · AI Assistant All‑in‑One",
+    "modelSKU": "HB988",
+    "slug": {
+      "_type": "slug",
+      "current": "hub-recorder-ai-assistant-all-in-one"
+    },
+    "category": "E-Mobility",
+    "shortDescription": "USB‑C hub + recorder + AI + 500mAh battery – portable. Record and connect in global B2B supply.",
+    "fullProductDescription": "USB‑C hub + recorder + AI + 500mAh battery – portable. Record and connect in global B2B supply.",
+    "keySpecifications": [
+      {
+        "label": "USB-C Hub",
+        "value": "1× 5Gbps"
+      },
+      {
+        "label": "PD Charging",
+        "value": "100W (85W pass‑through)"
+      },
+      {
+        "label": "Recording",
+        "value": "AI‑enhanced, 32GB storage"
+      },
+      {
+        "label": "Battery",
+        "value": "500mAh (portable use)"
+      },
+      {
+        "label": "AI Features",
+        "value": "Transcription, summarization"
+      },
+      {
+        "label": "Plug & Play",
+        "value": "Yes"
+      }
+    ],
+    "fullSpecificationsTable": [
+      {
+        "label": "Function",
+        "value": "USB-C hub + voice recorder + AI"
+      },
+      {
+        "label": "Hub Port",
+        "value": "USB-C 3.0 (5Gbps)"
+      },
+      {
+        "label": "PD",
+        "value": "100W (85W to laptop)"
+      },
+      {
+        "label": "Storage",
+        "value": "32GB Micro SD"
+      },
+      {
+        "label": "Battery",
+        "value": "500mAh (portable recording)"
+      },
+      {
+        "label": "Dimensions",
+        "value": "90×35×12mm"
+      }
+    ],
+    "keyFeatures": [
+      "3‑in‑1: hub, recorder, AI assistant",
+      "500mAh battery – record without laptop power",
+      "100W PD – charge your laptop",
+      "AI transcription – convert voice to text"
+    ],
+    "mainImage": {
+      "asset": {
+        "_ref": "image-placeholder"
+      },
+      "alt": "HUB recorder AI assistant all-in-one B2B"
+    },
+    "gallery": [],
+    "seoTitle": "HUB Recorder AI Assistant All-in-One Wholesale | JoyHand",
+    "metaDescription": "USB-C hub + recorder + AI + 500mAh battery. Portable productivity for global distributors and retailers.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "16‑in‑1 Dock Dual 4K Monitor",
+    "modelSKU": "HB798",
+    "slug": {
+      "_type": "slug",
+      "current": "16-in-1-dock-dual-4k-monitor"
+    },
+    "category": "E-Mobility",
+    "shortDescription": "16‑in‑1 dock – dual 4K HDMI, 18W phone charging, 7 USB ports, PD100W. For OEM/ODM partnerships.",
+    "fullProductDescription": "16‑in‑1 dock – dual 4K HDMI, 18W phone charging, 7 USB ports, PD100W. For OEM/ODM partnerships.",
+    "keySpecifications": [
+      {
+        "label": "HDMI",
+        "value": "2× 4K@60Hz (single 8K@30Hz)"
+      },
+      {
+        "label": "USB-A",
+        "value": "4×5G + 2×480M"
+      },
+      {
+        "label": "USB-C",
+        "value": "1×5G + 1×18W phone charge"
+      },
+      {
+        "label": "Ethernet",
+        "value": "1Gbps"
+      },
+      {
+        "label": "Card Reader",
+        "value": "SD/TF 3.0"
+      },
+      {
+        "label": "PD Charging",
+        "value": "100W (72W to host)"
+      }
+    ],
+    "fullSpecificationsTable": [
+      {
+        "label": "Ports",
+        "value": "2×HDMI 2.0, 4×USB-A 3.0, 2×USB-A 2.0, 1×USB-C 3.0, 1×USB-C 18W, RJ45, SD/TF, Audio, PD"
+      },
+      {
+        "label": "Display",
+        "value": "Dual 4K@60Hz / Single 8K@30Hz"
+      },
+      {
+        "label": "Ethernet",
+        "value": "1000Mbps"
+      },
+      {
+        "label": "USB Speed",
+        "value": "5Gbps (3.0) / 480M (2.0)"
+      },
+      {
+        "label": "Phone Charge",
+        "value": "18W USB-C"
+      },
+      {
+        "label": "PD",
+        "value": "100W (72W to host)"
+      }
+    ],
+    "keyFeatures": [
+      "16 ports – the ultimate desktop dock",
+      "Dual 4K 60Hz – spread your workflow",
+      "18W USB-C – fast charge your phone",
+      "SD/TF 3.0 – transfer media quickly"
+    ],
+    "mainImage": {
+      "asset": {
+        "_ref": "image-placeholder"
+      },
+      "alt": "16-in-1 dock dual 4K OEM ODM"
+    },
+    "gallery": [],
+    "seoTitle": "16-in-1 Dock Dual 4K 18W Phone Charge Wholesale | JoyHand",
+    "metaDescription": "16-in-1 dock – dual 4K, 18W phone charge, 7 USB, PD100W. All-in-one for OEM/ODM partnerships.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "Laptop Stand with Detachable Magnetic Hub",
+    "modelSKU": "HB724 / HB736 / HB737 / HB889",
+    "slug": {
+      "_type": "slug",
+      "current": "laptop-stand-with-detachable-magnetic-hub"
+    },
+    "category": "E-Mobility",
+    "shortDescription": "Laptop stand + detachable hub – HDMI, USB, RJ45, PD. 360° rotation. Ergonomic for global B2B supply.",
+    "fullProductDescription": "Laptop stand + detachable hub – HDMI, USB, RJ45, PD. 360° rotation. Ergonomic for global B2B supply.",
+    "keySpecifications": [
+      {
+        "label": "Ports (varies)",
+        "value": "HDMI 2.0, USB-A 3.0, USB-C 3.0, RJ45, PD 100W"
+      },
+      {
+        "label": "HDMI",
+        "value": "1 or 2 (4K@60Hz)"
+      },
+      {
+        "label": "USB-A",
+        "value": "1–2 (5Gbps)"
+      },
+      {
+        "label": "USB-C",
+        "value": "1–2 (5Gbps)"
+      },
+      {
+        "label": "SD/TF (HB736)",
+        "value": "3.0 (optional)"
+      },
+      {
+        "label": "Rotation",
+        "value": "360° base"
+      }
+    ],
+    "fullSpecificationsTable": [
+      {
+        "label": "Models",
+        "value": "HB724 (1HDMI+2A+1C+RJ45+PD), HB736 (adds SD/TF), HB737 (2HDMI+1A+2C+RJ45+PD), HB889 (1HDMI+2A+1C+RJ45+PD)"
+      },
+      {
+        "label": "HDMI",
+        "value": "4K@60Hz (1 or 2)"
+      },
+      {
+        "label": "Data Speed",
+        "value": "5Gbps (USB 3.0)"
+      },
+      {
+        "label": "Ethernet",
+        "value": "1000Mbps"
+      },
+      {
+        "label": "PD",
+        "value": "100W (85W to host)"
+      },
+      {
+        "label": "Stand",
+        "value": "Magnetic detachable hub, 360° rotation"
+      }
+    ],
+    "keyFeatures": [
+      "Ergonomic stand – reduce neck and back strain",
+      "Detachable magnetic hub – use hub alone or with stand",
+      "360° rotating base – flexible viewing angles",
+      "Up to dual 4K 60Hz – expand your workspace"
+    ],
+    "mainImage": {
+      "asset": {
+        "_ref": "image-placeholder"
+      },
+      "alt": "Laptop stand with detachable magnetic hub B2B"
+    },
+    "gallery": [],
+    "seoTitle": "Laptop Stand with Magnetic Hub 4K Wholesale | JoyHand",
+    "metaDescription": "Laptop stand + detachable hub – dual 4K, RJ45, PD100W. Ergonomic docking for global B2B supply.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "3‑in‑1 Qi2 Wireless Charger",
+    "modelSKU": "HB630",
+    "slug": {
+      "_type": "slug",
+      "current": "3-in-1-qi2-wireless-charger"
+    },
+    "category": "E-Mobility",
+    "shortDescription": "Qi2 3‑in‑1 charger – 15W phone, 5W earbuds, 5W watch. Fast wireless for wholesale buyers.",
+    "fullProductDescription": "Qi2 3‑in‑1 charger – 15W phone, 5W earbuds, 5W watch. Fast wireless for wholesale buyers.",
+    "keySpecifications": [
+      {
+        "label": "Phone Output",
+        "value": "Qi2 MPP 15W"
+      },
+      {
+        "label": "Earphone Output",
+        "value": "BPP 5W"
+      },
+      {
+        "label": "Watch Output",
+        "value": "5W"
+      },
+      {
+        "label": "Input",
+        "value": "5V/3A, 9V/2A, 12V/3A"
+      },
+      {
+        "label": "Lighting",
+        "value": "Built‑in LED"
+      },
+      {
+        "label": "Plug & Play",
+        "value": "Yes"
+      }
+    ],
+    "fullSpecificationsTable": [
+      {
+        "label": "Phone Pad",
+        "value": "Qi2 MPP – 15W max"
+      },
+      {
+        "label": "Earphone Pad",
+        "value": "BPP – 5W"
+      },
+      {
+        "label": "Watch Pad",
+        "value": "5W"
+      },
+      {
+        "label": "Input Voltage",
+        "value": "5V/3A, 9V/2A, 12V/3A"
+      },
+      {
+        "label": "Indicator",
+        "value": "LED lighting"
+      },
+      {
+        "label": "Dimensions",
+        "value": "150×80×15mm"
+      }
+    ],
+    "keyFeatures": [
+      "Qi2 certified – fast and safe charging",
+      "Charge phone, earbuds, and watch simultaneously",
+      "LED lighting – see charging status at a glance",
+      "Compact design – fits on any desk"
+    ],
+    "mainImage": {
+      "asset": {
+        "_ref": "image-placeholder"
+      },
+      "alt": "3-in-1 Qi2 wireless charger wholesale"
+    },
+    "gallery": [],
+    "seoTitle": "3-in-1 Qi2 Wireless Charger 15W Wholesale | JoyHand",
+    "metaDescription": "Qi2 3-in-1 charger – 15W phone, 5W earbuds, 5W watch. Fast wireless for wholesale buyers.",
+    "faqs": []
+  }
+]

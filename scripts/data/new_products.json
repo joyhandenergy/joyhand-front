@@ -1,0 +1,1018 @@
+[
+  {
+    "_type": "product",
+    "productName": "M.2 NVMe 40Gbps SSD Enclosure",
+    "modelSKU": "HB744 / HB815",
+    "slug": { "_type": "slug", "current": "m-2-nvme-40gbps-ssd-enclosure" },
+    "category": "E-Mobility",
+    "shortDescription": "40Gbps M.2 NVMe SSD enclosure with PD 3.0, Type-C. Superfast backup for global B2B supply.",
+    "fullProductDescription": "40Gbps M.2 NVMe SSD enclosure with PD 3.0, Type-C. Superfast backup for global B2B supply.",
+    "keySpecifications": [
+      { "label": "Interface", "value": "Type-C to PCIe 32Gbps" },
+      { "label": "Max Speed", "value": "40Gbps theoretical" },
+      { "label": "Power Delivery", "value": "PD 3.0" },
+      { "label": "Compatibility", "value": "M.2 NVMe SSD" },
+      { "label": "Plug & Play", "value": "Yes" },
+      { "label": "OS Support", "value": "Windows / Mac / Linux" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Interface", "value": "Type C to PCIe 3.0 x4" },
+      { "label": "Data Transfer Rate", "value": "Up to 32Gbps (PCIE) / 40Gbps (USB4)" },
+      { "label": "PD Version", "value": "3.0" },
+      { "label": "Supported SSD", "value": "M.2 NVMe (2230/2242/2260/2280)" },
+      { "label": "Cable", "value": "Built-in Type-C" },
+      { "label": "Dimensions", "value": "120×35×12mm" }
+    ],
+    "keyFeatures": [
+      "40Gbps ultra-fast data transfer – edit 4K videos on the go",
+      "Plug and play – no drivers needed",
+      "PD 3.0 passthrough charging while transferring",
+      "Compact aluminium housing – durable for field work"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "M.2 NVMe 40Gbps SSD enclosure B2B"
+    },
+    "gallery": [],
+    "seoTitle": "M.2 NVMe 40Gbps SSD Enclosure Wholesale | JoyHand",
+    "metaDescription": "40Gbps M.2 NVMe SSD enclosure – PD 3.0, Type-C. Fast backup for laptops in global distributors and retailers.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "iPhone 15 Magnetic SSD Enclosure",
+    "modelSKU": "HB808 / HB809",
+    "slug": { "_type": "slug", "current": "iphone-15-magnetic-ssd-enclosure" },
+    "category": "E-Mobility",
+    "shortDescription": "Magnetic SSD enclosure for iPhone 15 – plug & play, compact. Expand storage in OEM/ODM partnerships.",
+    "fullProductDescription": "Magnetic SSD enclosure for iPhone 15 – plug & play, compact. Expand storage in OEM/ODM partnerships.",
+    "keySpecifications": [
+      { "label": "Compatibility", "value": "iPhone 15 / 15 Pro / 15 Pro Max" },
+      { "label": "Interface", "value": "Type-C" },
+      { "label": "Magnetic Force", "value": "Strong MagSafe grip" },
+      { "label": "SSD Support", "value": "M.2 NVMe/SATA" },
+      { "label": "Plug & Play", "value": "Yes" },
+      { "label": "Material", "value": "Aluminium + magnets" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Connection", "value": "USB-C (10Gbps)" },
+      { "label": "Magnetic Mount", "value": "Compatible with MagSafe" },
+      { "label": "Max SSD Capacity", "value": "2TB" },
+      { "label": "File System", "value": "ExFAT / FAT32 / NTFS" },
+      { "label": "Power", "value": "Bus-powered (no external battery)" },
+      { "label": "Dimensions", "value": "65×35×10mm" }
+    ],
+    "keyFeatures": [
+      "Snap onto iPhone 15 – record ProRes video directly to SSD",
+      "10Gbps speed – seamless 4K video editing",
+      "Works with laptops too – dual-purpose",
+      "Slim, lightweight – carry in your pocket"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "iPhone 15 magnetic SSD enclosure OEM ODM"
+    },
+    "gallery": [],
+    "seoTitle": "iPhone 15 Magnetic SSD Enclosure Wholesale | JoyHand",
+    "metaDescription": "Magnetic SSD enclosure for iPhone 15 – 10Gbps, compact. Expand storage in OEM/ODM partnerships, Nepal.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "7-in-1 4K 60Hz Gen2 Hub",
+    "modelSKU": "HB790",
+    "slug": { "_type": "slug", "current": "7-in-1-4k-60hz-gen2-hub" },
+    "category": "E-Mobility",
+    "shortDescription": "7‑in‑1 USB-C hub – 4K HDMI, 2×USB-C 10G, SD/TF, PD100W. Reliable for bulk corporate orders.",
+    "fullProductDescription": "7‑in‑1 USB-C hub – 4K HDMI, 2×USB-C 10G, SD/TF, PD100W. Reliable for bulk corporate orders.",
+    "keySpecifications": [
+      { "label": "HDMI", "value": "4K@60Hz" },
+      { "label": "USB-C Data", "value": "2× 10Gbps" },
+      { "label": "USB-A", "value": "1× 10Gbps" },
+      { "label": "Card Reader", "value": "SD/TF 3.0" },
+      { "label": "PD Charging", "value": "100W input" },
+      { "label": "Plug & Play", "value": "Yes" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "HDMI 2.0, 2×USB-C 3.2 (10G), USB-A 3.2 (10G), SD/TF, PD 3.0" },
+      { "label": "Max Resolution", "value": "3840×2160@60Hz" },
+      { "label": "Data Speed", "value": "10Gbps (USB-C/A)" },
+      { "label": "Card Speed", "value": "UHS-I" },
+      { "label": "Charging", "value": "PD 100W (85W pass-through)" },
+      { "label": "Cable", "value": "Integrated Type-C" }
+    ],
+    "keyFeatures": [
+      "Single cable expands laptop to 7 ports",
+      "4K 60Hz HDMI – perfect for presentations",
+      "100W PD charging – keeps laptop powered",
+      "SD/TF 3.0 – quick photo/video transfer"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "7-in-1 4K 60Hz Gen2 hub bulk"
+    },
+    "gallery": [],
+    "seoTitle": "7-in-1 4K 60Hz USB-C Hub B2B | JoyHand",
+    "metaDescription": "7-in-1 USB-C hub – 4K HDMI, 10G ports, SD/TF, PD100W. Ideal for bulk corporate orders, Uganda.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "10-in-1 4K 60Hz Gen2 Hub",
+    "modelSKU": "HB427",
+    "slug": { "_type": "slug", "current": "10-in-1-4k-60hz-gen2-hub" },
+    "category": "E-Mobility",
+    "shortDescription": "10‑in‑1 USB-C hub – 4K HDMI, RJ45, 10G ports, SD/TF, PD100W. Essential for wholesale buyers.",
+    "fullProductDescription": "10‑in‑1 USB-C hub – 4K HDMI, RJ45, 10G ports, SD/TF, PD100W. Essential for wholesale buyers.",
+    "keySpecifications": [
+      { "label": "HDMI", "value": "4K@60Hz" },
+      { "label": "Ethernet", "value": "RJ45 1Gbps" },
+      { "label": "USB-C Data", "value": "2× 10Gbps" },
+      { "label": "USB-A", "value": "2×10G + 2×5G" },
+      { "label": "Card Reader", "value": "SD/TF 3.0" },
+      { "label": "PD Charging", "value": "100W" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "HDMI, RJ45, 2×USB-C 3.2 (10G), 2×USB-A 3.2 (10G), 2×USB-A 3.0 (5G), SD/TF, PD" },
+      { "label": "HDMI Resolution", "value": "4K@60Hz" },
+      { "label": "Ethernet", "value": "Gigabit" },
+      { "label": "Card Slot", "value": "SD/TF 3.0 dual read" },
+      { "label": "Charging", "value": "PD 100W (85W to host)" },
+      { "label": "Cable", "value": "0.3m attached" }
+    ],
+    "keyFeatures": [
+      "10 ports – all you need for a mobile office",
+      "4K 60Hz + Gigabit Ethernet for stable work",
+      "10Gbps data ports – transfer large files fast",
+      "100W PD – charge laptop and peripherals"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "10-in-1 4K 60Hz Gen2 hub wholesale"
+    },
+    "gallery": [],
+    "seoTitle": "10-in-1 4K 60Hz USB-C Hub Wholesale | JoyHand",
+    "metaDescription": "10-in-1 USB-C hub – 4K HDMI, RJ45, 10G ports, PD100W. Perfect for wholesale buyers, Zambia.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "6‑in‑1 Steam Deck Docking Station",
+    "modelSKU": "HB441",
+    "slug": { "_type": "slug", "current": "6-in-1-steam-deck-docking-station" },
+    "category": "E-Mobility",
+    "shortDescription": "6‑in‑1 dock for Steam Deck – HDMI, RJ45, 3×USB, PD100W. Play and charge in global B2B supply.",
+    "fullProductDescription": "6‑in‑1 dock for Steam Deck – HDMI, RJ45, 3×USB, PD100W. Play and charge in global B2B supply.",
+    "keySpecifications": [
+      { "label": "HDMI", "value": "4K@60Hz" },
+      { "label": "Ethernet", "value": "RJ45 1Gbps" },
+      { "label": "USB-A", "value": "3× USB 3.0 (5Gbps)" },
+      { "label": "PD Charging", "value": "100W" },
+      { "label": "Compatibility", "value": "Steam Deck / Switch / Laptops" },
+      { "label": "Patent", "value": "ZL 2021 3 0534369.1" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "HDMI 2.0, RJ45, 3×USB-A 3.0, PD" },
+      { "label": "HDMI Max", "value": "4K@60Hz" },
+      { "label": "Ethernet Speed", "value": "1000Mbps" },
+      { "label": "USB Speed", "value": "5Gbps each" },
+      { "label": "Charging", "value": "PD 100W (85W to host)" },
+      { "label": "Dimensions", "value": "120×60×20mm" }
+    ],
+    "keyFeatures": [
+      "Official Steam Deck compatible – play on big screen",
+      "Gigabit Ethernet – lag‑free online gaming",
+      "PD 100W – keeps your device charged",
+      "Compact and stable – anti‑slip base"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "6-in-1 Steam Deck docking station B2B"
+    },
+    "gallery": [],
+    "seoTitle": "Steam Deck Docking Station 6-in-1 Wholesale | JoyHand",
+    "metaDescription": "6-in-1 Steam Deck dock – HDMI 4K, RJ45, 3 USB, PD100W. Gaming and charging in global B2B supply.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "80G SSD Enclosure with Cooling Fan",
+    "modelSKU": "HB888",
+    "slug": { "_type": "slug", "current": "80g-ssd-enclosure-with-cooling-fan" },
+    "category": "E-Mobility",
+    "shortDescription": "80Gbps SSD enclosure – supports 8TB M.2 NVMe, USB4 V2, active fan. Durable for OEM/ODM partnerships.",
+    "fullProductDescription": "80Gbps SSD enclosure – supports 8TB M.2 NVMe, USB4 V2, active fan. Durable for OEM/ODM partnerships.",
+    "keySpecifications": [
+      { "label": "Speed", "value": "80Gbps theoretical" },
+      { "label": "Compatibility", "value": "USB4 V2 / V1 / TBT4 / MFDP" },
+      { "label": "SSD Support", "value": "2230/2242/2260/2280 M.2 NVMe" },
+      { "label": "Max Capacity", "value": "8TB" },
+      { "label": "Cooling", "value": "Active fan + heatsink" },
+      { "label": "Interface", "value": "Type-C" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Theoretical Speed", "value": "Up to 80Gbps" },
+      { "label": "USB Standard", "value": "USB4 V2 / V1 / Thunderbolt 4" },
+      { "label": "Supported SSD Sizes", "value": "2230 / 2242 / 2260 / 2280" },
+      { "label": "Max Capacity", "value": "8TB" },
+      { "label": "Cooling", "value": "Active fan (quiet operation)" },
+      { "label": "Material", "value": "Aluminium alloy" }
+    ],
+    "keyFeatures": [
+      "80Gbps speed – edit 8K videos directly from SSD",
+      "Active cooling – prevents thermal throttling",
+      "Supports all M.2 NVMe sizes – future‑proof",
+      "USB4 / Thunderbolt 4 compatible – universal"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "80G SSD enclosure cooling fan OEM ODM"
+    },
+    "gallery": [],
+    "seoTitle": "80G SSD Enclosure 8TB USB4 Wholesale | JoyHand",
+    "metaDescription": "80Gbps SSD enclosure – 8TB M.2 NVMe, active fan, USB4 V2. High-speed storage for OEM/ODM partnerships.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "7‑in‑1 Dual 4K Hub",
+    "modelSKU": "HB929",
+    "slug": { "_type": "slug", "current": "7-in-1-dual-4k-hub" },
+    "category": "E-Mobility",
+    "shortDescription": "7‑in‑1 hub – dual 4K HDMI, RJ45, 2×USB, USB‑C, PD100W. Ideal for bulk corporate orders.",
+    "fullProductDescription": "7‑in‑1 hub – dual 4K HDMI, RJ45, 2×USB, USB‑C, PD100W. Ideal for bulk corporate orders.",
+    "keySpecifications": [
+      { "label": "HDMI", "value": "2× 4K@60Hz" },
+      { "label": "Ethernet", "value": "RJ45 1Gbps" },
+      { "label": "USB-A", "value": "2× USB 3.0 (5Gbps)" },
+      { "label": "USB-C", "value": "1× 3.0 (5Gbps)" },
+      { "label": "PD Charging", "value": "100W" },
+      { "label": "Dual Display", "value": "Yes (MST/SST)" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "2×HDMI 2.0, RJ45, 2×USB-A 3.0, USB-C 3.0, PD" },
+      { "label": "Resolution", "value": "Dual 4K@60Hz" },
+      { "label": "Ethernet", "value": "Gigabit" },
+      { "label": "Data Speed", "value": "5Gbps (USB-A/C)" },
+      { "label": "Charging", "value": "PD 100W (85W pass-through)" },
+      { "label": "Cable", "value": "Integrated 0.2m" }
+    ],
+    "keyFeatures": [
+      "Dual 4K 60Hz – expand productivity",
+      "Gigabit Ethernet – stable network connection",
+      "100W PD – power your laptop and accessories",
+      "Plug and play – no driver required"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "7-in-1 dual 4K hub bulk"
+    },
+    "gallery": [],
+    "seoTitle": "7-in-1 Dual 4K USB-C Hub B2B | JoyHand",
+    "metaDescription": "7-in-1 hub – dual 4K HDMI, RJ45, PD100W. Multi‑display for bulk corporate orders, South Africa.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "6‑in‑1 4K 60Hz Gen2 Hub",
+    "modelSKU": "HB792",
+    "slug": { "_type": "slug", "current": "6-in-1-4k-60hz-gen2-hub" },
+    "category": "E-Mobility",
+    "shortDescription": "6‑in‑1 USB-C hub – 4K HDMI, RJ45, 2×USB‑C 10G, USB‑A 10G, PD100W. For wholesale buyers.",
+    "fullProductDescription": "6‑in‑1 USB-C hub – 4K HDMI, RJ45, 2×USB‑C 10G, USB‑A 10G, PD100W. For wholesale buyers.",
+    "keySpecifications": [
+      { "label": "HDMI", "value": "4K@60Hz" },
+      { "label": "Ethernet", "value": "RJ45 1Gbps" },
+      { "label": "USB-C Data", "value": "2× 10Gbps" },
+      { "label": "USB-A Data", "value": "1× 10Gbps" },
+      { "label": "PD Charging", "value": "100W" },
+      { "label": "Plug & Play", "value": "Yes" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "HDMI 2.0, RJ45, 2×USB-C 3.2 (10G), USB-A 3.2 (10G), PD" },
+      { "label": "HDMI Resolution", "value": "4K@60Hz" },
+      { "label": "Ethernet", "value": "1000Mbps" },
+      { "label": "Data Speed", "value": "10Gbps" },
+      { "label": "Charging", "value": "PD 100W (85W to host)" },
+      { "label": "Cable", "value": "Fixed Type-C" }
+    ],
+    "keyFeatures": [
+      "6 essential ports in one compact hub",
+      "4K HDMI + Gigabit Ethernet – reliable work",
+      "10Gbps data – superfast file transfers",
+      "100W PD – charge while connected"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "6-in-1 4K 60Hz Gen2 hub wholesale"
+    },
+    "gallery": [],
+    "seoTitle": "6-in-1 4K 60Hz USB-C Hub Wholesale | JoyHand",
+    "metaDescription": "6-in-1 USB-C hub – 4K HDMI, RJ45, 10G ports, PD100W. Essential for wholesale buyers, Zambia.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "10‑in‑1 8K Hub",
+    "modelSKU": "HB469",
+    "slug": { "_type": "slug", "current": "10-in-1-8k-hub" },
+    "category": "E-Mobility",
+    "shortDescription": "10‑in‑1 hub – 8K HDMI 2.1, DP, RJ45, 10G ports, SD/TF, PD100W. Future‑proof for global B2B supply.",
+    "fullProductDescription": "10‑in‑1 hub – 8K HDMI 2.1, DP, RJ45, 10G ports, SD/TF, PD100W. Future‑proof for global B2B supply.",
+    "keySpecifications": [
+      { "label": "HDMI", "value": "8K@30Hz (HDMI 2.1)" },
+      { "label": "DisplayPort", "value": "DP 1.2" },
+      { "label": "Ethernet", "value": "RJ45 1Gbps" },
+      { "label": "USB Ports", "value": "1×5G, 1×10G, 2×10G USB-C" },
+      { "label": "Card Reader", "value": "SD/TF 3.0" },
+      { "label": "PD Charging", "value": "100W" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "HDMI 2.1, DP 1.2, RJ45, USB-A 3.0 (5G), USB-A 3.2 (10G), 2×USB-C 3.2 (10G), SD/TF, PD" },
+      { "label": "Max Resolution", "value": "8K@30Hz (HDMI) / 4K@60Hz (DP)" },
+      { "label": "Ethernet", "value": "Gigabit" },
+      { "label": "Data Speed", "value": "Up to 10Gbps" },
+      { "label": "Charging", "value": "PD 100W (85W to host)" },
+      { "label": "Cable", "value": "0.3m attached" }
+    ],
+    "keyFeatures": [
+      "8K HDMI 2.1 – next‑gen display ready",
+      "DP 1.2 – dual high‑res monitors",
+      "10Gbps ports – future‑proof data transfers",
+      "SD/TF 3.0 – fast media import"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "10-in-1 8K hub B2B"
+    },
+    "gallery": [],
+    "seoTitle": "10-in-1 8K HDMI 2.1 Hub Wholesale | JoyHand",
+    "metaDescription": "10-in-1 hub – 8K HDMI 2.1, DP, 10G ports, PD100W. Next‑gen connectivity for global B2B supply.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "15‑in‑1 Triple‑Display Hub",
+    "modelSKU": "HB783",
+    "slug": { "_type": "slug", "current": "15-in-1-triple-display-hub" },
+    "category": "E-Mobility",
+    "shortDescription": "15‑in‑1 hub – triple display (2×HDMI+DP), RJ45, 6×USB, audio, PD. For OEM/ODM partnerships.",
+    "fullProductDescription": "15‑in‑1 hub – triple display (2×HDMI+DP), RJ45, 6×USB, audio, PD. For OEM/ODM partnerships.",
+    "keySpecifications": [
+      { "label": "Display", "value": "2×HDMI + DP (triple output)" },
+      { "label": "Ethernet", "value": "RJ45 1Gbps" },
+      { "label": "USB Ports", "value": "2×USB3.0, USB-C, 3×USB2.0" },
+      { "label": "Card Reader", "value": "SD/TF 2.0" },
+      { "label": "Audio", "value": "3.5mm jack" },
+      { "label": "PD Charging", "value": "100W" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "2×HDMI, DP, 2×USB-A 3.0, USB-C, RJ45, 3×USB-A 2.0, SD/TF, Audio, PD" },
+      { "label": "Display Max", "value": "Triple 4K@60Hz" },
+      { "label": "Ethernet", "value": "1000Mbps" },
+      { "label": "USB Speed", "value": "5Gbps (3.0) / 480Mbps (2.0)" },
+      { "label": "Charging", "value": "PD 100W" },
+      { "label": "Cable", "value": "Detachable Type-C" }
+    ],
+    "keyFeatures": [
+      "Triple display – expand to 3 monitors",
+      "15 ports – ultimate docking solution",
+      "Gigabit Ethernet + audio – full workstation",
+      "100W PD – power all devices"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "15-in-1 triple-display hub OEM ODM"
+    },
+    "gallery": [],
+    "seoTitle": "15-in-1 Triple Display USB-C Hub Wholesale | JoyHand",
+    "metaDescription": "15-in-1 hub – triple 4K, RJ45, 6 USB, audio, PD100W. Ultimate dock for enterprise deployments.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "4‑in‑1 M.2 SSD Dock",
+    "modelSKU": "HB777",
+    "slug": { "_type": "slug", "current": "4-in-1-m-2-ssd-dock" },
+    "category": "E-Mobility",
+    "shortDescription": "4‑in‑1 M.2 SSD dock – 2×USB‑A 10G, USB‑C 10G, M.2 slot. Expand storage in bulk corporate orders.",
+    "fullProductDescription": "4‑in‑1 M.2 SSD dock – 2×USB‑A 10G, USB‑C 10G, M.2 slot. Expand storage in bulk corporate orders.",
+    "keySpecifications": [
+      { "label": "USB-A", "value": "2× 10Gbps" },
+      { "label": "USB-C", "value": "1× 10Gbps" },
+      { "label": "M.2 Slot", "value": "NVMe/SATA" },
+      { "label": "Power", "value": "Type-C 5V" },
+      { "label": "Plug & Play", "value": "Yes" },
+      { "label": "Compatibility", "value": "Windows / Mac / Linux" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "2×USB-A 3.2 (10G), USB-C 3.2 (10G), M.2 SSD slot" },
+      { "label": "M.2 Support", "value": "NVMe / SATA (2230/2242/2260/2280)" },
+      { "label": "Data Speed", "value": "10Gbps" },
+      { "label": "Power Input", "value": "USB-C 5V (bus-powered)" },
+      { "label": "Dimensions", "value": "85×40×12mm" },
+      { "label": "Cable", "value": "Detachable Type-C" }
+    ],
+    "keyFeatures": [
+      "Add M.2 SSD + 3 high‑speed ports",
+      "10Gbps – fast file access",
+      "Compact dock – fits in any bag",
+      "No external power needed"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "4-in-1 M.2 SSD dock bulk"
+    },
+    "gallery": [],
+    "seoTitle": "4-in-1 M.2 SSD Dock 10Gbps B2B | JoyHand",
+    "metaDescription": "4-in-1 M.2 SSD dock – 2 USB-A, USB-C 10G, M.2 slot. Portable storage for bulk corporate orders, Nigeria.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "Dual Protocol HDMI/DP Adapter",
+    "modelSKU": "HB901",
+    "slug": { "_type": "slug", "current": "dual-protocol-hdmi-dp-adapter" },
+    "category": "E-Mobility",
+    "shortDescription": "Type‑C to HDMI/DP 4K@60Hz adapter – dual protocol. Reliable for wholesale buyers.",
+    "fullProductDescription": "Type‑C to HDMI/DP 4K@60Hz adapter – dual protocol. Reliable for wholesale buyers.",
+    "keySpecifications": [
+      { "label": "Output", "value": "HDMI / DP (female)" },
+      { "label": "Resolution", "value": "4K@60Hz" },
+      { "label": "Interface", "value": "Type-C (male)" },
+      { "label": "Plug & Play", "value": "Yes" },
+      { "label": "Compatibility", "value": "Any USB-C device" },
+      { "label": "Cable Length", "value": "0.15m" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Connector", "value": "Type-C male to HDMI + DP female" },
+      { "label": "Max Resolution", "value": "3840×2160@60Hz" },
+      { "label": "HDMI Version", "value": "2.0" },
+      { "label": "DP Version", "value": "1.2" },
+      { "label": "Power", "value": "Bus-powered" },
+      { "label": "OS Support", "value": "Windows / Mac / Chrome" }
+    ],
+    "keyFeatures": [
+      "Choose HDMI or DP – one adapter for both",
+      "4K 60Hz – crisp video quality",
+      "Ultra‑compact – carry in your pocket",
+      "No drivers – instant connection"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "Dual protocol HDMI DP adapter wholesale"
+    },
+    "gallery": [],
+    "seoTitle": "Dual Protocol HDMI DP Adapter 4K Wholesale | JoyHand",
+    "metaDescription": "Type-C to HDMI/DP 4K@60Hz adapter – dual output. Versatile for wholesale and bulk distribution.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "10‑in‑1 Dual 4K Hub",
+    "modelSKU": "HB470",
+    "slug": { "_type": "slug", "current": "10-in-1-dual-4k-hub" },
+    "category": "E-Mobility",
+    "shortDescription": "10‑in‑1 hub – dual 4K HDMI, RJ45, 10G ports, SD/TF, PD100W. For global B2B supply.",
+    "fullProductDescription": "10‑in‑1 hub – dual 4K HDMI, RJ45, 10G ports, SD/TF, PD100W. For global B2B supply.",
+    "keySpecifications": [
+      { "label": "HDMI", "value": "2× 4K@60Hz" },
+      { "label": "Ethernet", "value": "RJ45 1Gbps" },
+      { "label": "USB-A", "value": "1×5G + 1×10G" },
+      { "label": "USB-C", "value": "2× 10Gbps" },
+      { "label": "Card Reader", "value": "SD/TF 3.0" },
+      { "label": "PD Charging", "value": "100W" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "2×HDMI 2.0, RJ45, USB-A 3.0 (5G), USB-A 3.2 (10G), 2×USB-C 3.2 (10G), SD/TF, PD" },
+      { "label": "Display", "value": "Dual 4K@60Hz" },
+      { "label": "Ethernet", "value": "Gigabit" },
+      { "label": "Data Speed", "value": "10Gbps (USB-C/A)" },
+      { "label": "Charging", "value": "PD 100W (85W to host)" },
+      { "label": "Cable", "value": "0.3m attached" }
+    ],
+    "keyFeatures": [
+      "Dual 4K 60Hz – ideal for traders and analysts",
+      "Gigabit Ethernet – reliable internet",
+      "10Gbps ports – lightning‑fast file transfers",
+      "SD/TF 3.0 – quick media import"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "10-in-1 dual 4K hub B2B"
+    },
+    "gallery": [],
+    "seoTitle": "10-in-1 Dual 4K USB-C Hub Wholesale | JoyHand",
+    "metaDescription": "10-in-1 hub – dual 4K HDMI, RJ45, 10G ports, PD100W. Productivity for global distributors and retailers.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "Dual Display Hub (Mac OS MST)",
+    "modelSKU": "HB757",
+    "slug": { "_type": "slug", "current": "dual-display-hub-mac-os-mst" },
+    "category": "E-Mobility",
+    "shortDescription": "Dual HDMI hub – RJ45, USB‑A/C, 2×USB2.0, PD. Optimised for Mac OS MST in OEM/ODM partnerships.",
+    "fullProductDescription": "Dual HDMI hub – RJ45, USB‑A/C, 2×USB2.0, PD. Optimised for Mac OS MST in OEM/ODM partnerships.",
+    "keySpecifications": [
+      { "label": "HDMI", "value": "2× (MST support)" },
+      { "label": "Ethernet", "value": "RJ45 1Gbps" },
+      { "label": "USB-A", "value": "1×3.0 + 2×2.0" },
+      { "label": "USB-C", "value": "1×3.0" },
+      { "label": "PD Charging", "value": "100W" },
+      { "label": "OS", "value": "Mac OS / Windows" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "2×HDMI, RJ45, USB-A 3.0, USB-C 3.0, 2×USB-A 2.0, PD" },
+      { "label": "Display", "value": "Dual 4K@60Hz (MST)" },
+      { "label": "Ethernet", "value": "Gigabit" },
+      { "label": "USB Speed", "value": "5Gbps (3.0) / 480Mbps (2.0)" },
+      { "label": "Charging", "value": "PD 100W" },
+      { "label": "Cable", "value": "Integrated Type-C" }
+    ],
+    "keyFeatures": [
+      "Mac OS MST support – dual monitors on Mac",
+      "Gigabit Ethernet – stable connection",
+      "PD 100W – charge while working",
+      "Compact design – fits in any setup"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "Dual display hub Mac MST OEM ODM"
+    },
+    "gallery": [],
+    "seoTitle": "Dual Display Hub Mac MST Wholesale | JoyHand",
+    "metaDescription": "Dual HDMI hub – MST support, RJ45, PD100W. Perfect for Mac users in enterprise deployments.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "USB‑C 4/5‑Port Hub (10Gbps)",
+    "modelSKU": "HB443 / HB444",
+    "slug": { "_type": "slug", "current": "usb-c-4-5-port-hub-10gbps" },
+    "category": "E-Mobility",
+    "shortDescription": "4‑port / 5‑port USB‑C hub – all 10Gbps. Expand connectivity in bulk corporate orders.",
+    "fullProductDescription": "4‑port / 5‑port USB‑C hub – all 10Gbps. Expand connectivity in bulk corporate orders.",
+    "keySpecifications": [
+      { "label": "Ports (HB443)", "value": "2×USB-C + 2×USB-A (10G)" },
+      { "label": "Ports (HB444)", "value": "3×USB-C + 1×USB-A (10G)" },
+      { "label": "Speed", "value": "10Gbps each" },
+      { "label": "Interface", "value": "Type-C" },
+      { "label": "Plug & Play", "value": "Yes" },
+      { "label": "Power", "value": "Bus-powered" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "HB443 Ports", "value": "2×USB-C 3.2 (10G), 2×USB-A 3.2 (10G)" },
+      { "label": "HB444 Ports", "value": "3×USB-C 3.2 (10G), 1×USB-A 3.2 (10G)" },
+      { "label": "Speed", "value": "10Gbps per port" },
+      { "label": "Chipset", "value": "VL / Realtek" },
+      { "label": "Power", "value": "Bus-powered via Type-C" },
+      { "label": "Cable", "value": "Detachable 0.2m" }
+    ],
+    "keyFeatures": [
+      "All ports at 10Gbps – no speed bottlenecks",
+      "Choose 4 or 5 ports to match your needs",
+      "Compact and lightweight – travel friendly",
+      "Works with laptops, tablets, phones"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "USB-C 4-5 port 10Gbps hub bulk"
+    },
+    "gallery": [],
+    "seoTitle": "USB-C 4/5 Port 10Gbps Hub B2B | JoyHand",
+    "metaDescription": "4/5‑port USB-C hub – all 10Gbps. Expand connectivity in bulk corporate orders, South Africa.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "5‑in‑1 4K 60Hz Hub (100W/140W PD)",
+    "modelSKU": "HB434 / HB956",
+    "slug": { "_type": "slug", "current": "5-in-1-4k-60hz-hub-100w-140w-pd" },
+    "category": "E-Mobility",
+    "shortDescription": "5‑in‑1 hub – 4K HDMI, 2×USB, USB‑C, PD 100‑140W. Compact for wholesale buyers.",
+    "fullProductDescription": "5‑in‑1 hub – 4K HDMI, 2×USB, USB‑C, PD 100‑140W. Compact for wholesale buyers.",
+    "keySpecifications": [
+      { "label": "HDMI", "value": "4K@60Hz" },
+      { "label": "USB-A", "value": "2× 5Gbps" },
+      { "label": "USB-C", "value": "1× 5Gbps" },
+      { "label": "PD Charging", "value": "100W / 140W (model dependent)" },
+      { "label": "Plug & Play", "value": "Yes" },
+      { "label": "Dimensions", "value": "80×45×12mm" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "HDMI 2.0, 2×USB-A 3.0, USB-C 3.0, PD" },
+      { "label": "HDMI Resolution", "value": "4K@60Hz" },
+      { "label": "Data Speed", "value": "5Gbps" },
+      { "label": "PD Versions", "value": "HB434: 100W / HB956: 140W" },
+      { "label": "Power Supply", "value": "Bus-powered + PD input" },
+      { "label": "Cable", "value": "Integrated Type-C" }
+    ],
+    "keyFeatures": [
+      "5 essential ports in a tiny footprint",
+      "4K 60Hz – crisp presentations",
+      "PD 100W or 140W – fast charging",
+      "Perfect for ultrabooks and tablets"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "5-in-1 4K 60Hz hub wholesale"
+    },
+    "gallery": [],
+    "seoTitle": "5-in-1 4K 60Hz USB-C Hub Wholesale | JoyHand",
+    "metaDescription": "5-in-1 hub – 4K HDMI, 2 USB, PD 100-140W. Compact docking for wholesale buyers, Zambia.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "HDMI 2.1 8K/60Hz Converter",
+    "modelSKU": "HB336",
+    "slug": { "_type": "slug", "current": "hdmi-2-1-8k-60hz-converter" },
+    "category": "E-Mobility",
+    "shortDescription": "HDMI 2.1 converter – 8K@60Hz, HDR. Future‑ready for global B2B supply.",
+    "fullProductDescription": "HDMI 2.1 converter – 8K@60Hz, HDR. Future‑ready for global B2B supply.",
+    "keySpecifications": [
+      { "label": "Resolution", "value": "8K@60Hz / 4K@120Hz" },
+      { "label": "HDMI Version", "value": "2.1" },
+      { "label": "HDR", "value": "Yes" },
+      { "label": "Plug & Play", "value": "Yes" },
+      { "label": "Interface", "value": "HDMI male / female" },
+      { "label": "Cable Length", "value": "0.2m" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Standard", "value": "HDMI 2.1" },
+      { "label": "Max Resolution", "value": "7680×4320@60Hz" },
+      { "label": "Color Depth", "value": "10‑bit / 12‑bit" },
+      { "label": "HDR", "value": "HDR10 / Dolby Vision" },
+      { "label": "Audio", "value": "eARC support" },
+      { "label": "Power", "value": "Bus‑powered" }
+    ],
+    "keyFeatures": [
+      "8K 60Hz – ultra‑high‑definition video",
+      "HDMI 2.1 – supports next‑gen consoles and TVs",
+      "HDR – vibrant colours and contrast",
+      "Simple plug‑and‑play adapter"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "HDMI 2.1 8K 60Hz converter B2B"
+    },
+    "gallery": [],
+    "seoTitle": "HDMI 2.1 8K 60Hz Converter Wholesale | JoyHand",
+    "metaDescription": "HDMI 2.1 converter – 8K@60Hz, HDR. Future‑ready for global distributors and retailers.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "High‑Speed SD/TF Card Reader",
+    "modelSKU": "AD054 / HB080",
+    "slug": { "_type": "slug", "current": "high-speed-sd-tf-card-reader" },
+    "category": "E-Mobility",
+    "shortDescription": "SD/TF 3.0/4.0 card reader – UHS‑II, CF support. Fast media transfer for OEM/ODM partnerships.",
+    "fullProductDescription": "SD/TF 3.0/4.0 card reader – UHS‑II, CF support. Fast media transfer for OEM/ODM partnerships.",
+    "keySpecifications": [
+      { "label": "Card Support", "value": "SD / TF / CF (HB080)" },
+      { "label": "Speed", "value": "UHS‑II (4.0)" },
+      { "label": "Interface", "value": "Type-C / USB-A" },
+      { "label": "Read Speed", "value": "≥220MB/s" },
+      { "label": "Write Speed", "value": "≥110MB/s" },
+      { "label": "Plug & Play", "value": "Yes" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Models", "value": "AD054 (SD/TF 3.0), HB080 (CF+SD/TF 4.0)" },
+      { "label": "UHS Standard", "value": "UHS‑II" },
+      { "label": "Max Read (HB080)", "value": "≥220MB/s" },
+      { "label": "Max Write (HB080)", "value": "≥110MB/s" },
+      { "label": "Connector", "value": "Type-C (HB080) / USB-A (AD054)" },
+      { "label": "OS", "value": "Windows / Mac / Linux" }
+    ],
+    "keyFeatures": [
+      "UHS‑II – superfast photo/video transfers",
+      "Supports CF (HB080) – professional cameras",
+      "Dual connector – Type-C or USB-A",
+      "Compact – keep in your camera bag"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "High-speed SD TF card reader OEM ODM"
+    },
+    "gallery": [],
+    "seoTitle": "UHS-II SD TF Card Reader Wholesale | JoyHand",
+    "metaDescription": "UHS-II SD/TF card reader – 220MB/s read, CF support. Fast media transfer for OEM/ODM partnerships.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "10/11‑Port USB Hub (5Gbps)",
+    "modelSKU": "HB436 / HB437",
+    "slug": { "_type": "slug", "current": "10-11-port-usb-hub-5gbps" },
+    "category": "E-Mobility",
+    "shortDescription": "10‑port (4A+3C+5V) / 11‑port (7A+C) USB hub – 5Gbps. Power multiple devices in bulk corporate orders.",
+    "fullProductDescription": "10‑port (4A+3C+5V) / 11‑port (7A+C) USB hub – 5Gbps. Power multiple devices in bulk corporate orders.",
+    "keySpecifications": [
+      { "label": "HB436 Ports", "value": "4×USB-A + 3×USB-C + 1×USB-C 5V" },
+      { "label": "HB437 Ports", "value": "7×USB-A + 1×USB-C 5V" },
+      { "label": "Speed", "value": "5Gbps (USB 3.0)" },
+      { "label": "Power", "value": "Type-C 5V (bus/supply)" },
+      { "label": "Plug & Play", "value": "Yes" },
+      { "label": "Cable", "value": "Detachable Type-C / USB-A" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Model HB436", "value": "4×USB-A 3.0, 3×USB-C 3.0, 1×USB-C 5V" },
+      { "label": "Model HB437", "value": "7×USB-A 3.0, 1×USB-C 5V" },
+      { "label": "Speed", "value": "5Gbps per port" },
+      { "label": "Power Input", "value": "USB-C / USB-A (5V)" },
+      { "label": "Chipset", "value": "VIA / Genesys" },
+      { "label": "Dimensions", "value": "100×45×15mm" }
+    ],
+    "keyFeatures": [
+      "Massive port count – connect all your peripherals",
+      "5Gbps speed – good for everyday use",
+      "Dual input options – Type-C or USB-A",
+      "Compact and stable – no driver needed"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "10-11 port USB hub bulk"
+    },
+    "gallery": [],
+    "seoTitle": "10/11 Port USB Hub 5Gbps B2B | JoyHand",
+    "metaDescription": "10/11‑port USB hub – 5Gbps, multiple A/C ports. Power many devices in bulk corporate orders, Nigeria.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "65W GaN Charger with 4K Hub",
+    "modelSKU": "HB459",
+    "slug": { "_type": "slug", "current": "65w-gan-charger-with-4k-hub" },
+    "category": "E-Mobility",
+    "shortDescription": "65W GaN charger + 3‑in‑1 hub (USB‑C, USB‑A, 4K HDMI). Charge and display in wholesale buyers.",
+    "fullProductDescription": "65W GaN charger + 3‑in‑1 hub (USB‑C, USB‑A, 4K HDMI). Charge and display in wholesale buyers.",
+    "keySpecifications": [
+      { "label": "Power", "value": "65W GaN" },
+      { "label": "HDMI", "value": "4K@60Hz" },
+      { "label": "USB-C", "value": "1× (data + charge)" },
+      { "label": "USB-A", "value": "1× 480Mbps" },
+      { "label": "Cable", "value": "0.6m Type-C to Type-C" },
+      { "label": "Plug & Play", "value": "Yes" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Output", "value": "65W GaN (USB-C PD)" },
+      { "label": "Hub Ports", "value": "1×USB-C, 1×USB-A 2.0, 1×HDMI 2.0" },
+      { "label": "HDMI Resolution", "value": "4K@60Hz" },
+      { "label": "USB Speed", "value": "480Mbps (USB-A)" },
+      { "label": "Cable Length", "value": "0.6m" },
+      { "label": "Dimensions", "value": "75×60×30mm" }
+    ],
+    "keyFeatures": [
+      "2‑in‑1: charger + HDMI hub – save sockets",
+      "65W GaN – fast charge laptops and phones",
+      "4K 60Hz – present or extend display",
+      "Compact GaN design – portable"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "65W GaN charger 4K hub wholesale"
+    },
+    "gallery": [],
+    "seoTitle": "65W GaN Charger 4K Hub Wholesale | JoyHand",
+    "metaDescription": "65W GaN charger + 4K HDMI hub – charge and display. Compact for wholesale buyers, Zambia.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "Type‑C Switch – 8K 60Hz + 10G + PD 140W",
+    "modelSKU": "HB949",
+    "slug": { "_type": "slug", "current": "type-c-switch-8k-60hz-10g-pd140w" },
+    "category": "E-Mobility",
+    "shortDescription": "Type‑C switch (2‑in‑1 / 1‑in‑2) – 8K 60Hz, 10G data, PD 140W. Versatile for global B2B supply.",
+    "fullProductDescription": "Type‑C switch (2‑in‑1 / 1‑in‑2) – 8K 60Hz, 10G data, PD 140W. Versatile for global B2B supply.",
+    "keySpecifications": [
+      { "label": "Mode", "value": "2 in 1 out / 1 in 2 out" },
+      { "label": "Video", "value": "8K@60Hz" },
+      { "label": "Data", "value": "10Gbps" },
+      { "label": "PD Charging", "value": "140W (5/3A)" },
+      { "label": "Interface", "value": "Type-C" },
+      { "label": "Plug & Play", "value": "Yes" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Function", "value": "Bi‑directional Type‑C switch" },
+      { "label": "Max Video", "value": "8K@60Hz" },
+      { "label": "Data Rate", "value": "10Gbps" },
+      { "label": "Power Delivery", "value": "PD 3.1 – 140W" },
+      { "label": "Compatibility", "value": "USB4 / TBT4 / DP Alt" },
+      { "label": "Cable", "value": "Detachable Type-C" }
+    ],
+    "keyFeatures": [
+      "Switch between devices – share one monitor",
+      "8K 60Hz – future‑ready video",
+      "140W PD – fast charge laptops",
+      "10G data – high‑speed transfers"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "Type-C switch 8K 60Hz PD140W B2B"
+    },
+    "gallery": [],
+    "seoTitle": "Type-C Switch 8K 60Hz PD140W Wholesale | JoyHand",
+    "metaDescription": "Type-C switch – 8K 60Hz, 10G, PD140W. Share display/charge in global distributors and retailers.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "Ethernet Converter with PD",
+    "modelSKU": "HB099 / HB059 / HB086",
+    "slug": { "_type": "slug", "current": "ethernet-converter-with-pd" },
+    "category": "E-Mobility",
+    "shortDescription": "Type‑C to RJ45 Ethernet – 1G/2.5G with PD. Stable wired network for OEM/ODM partnerships.",
+    "fullProductDescription": "Type‑C to RJ45 Ethernet – 1G/2.5G with PD. Stable wired network for OEM/ODM partnerships.",
+    "keySpecifications": [
+      { "label": "Ethernet Speed", "value": "1Gbps / 2.5Gbps" },
+      { "label": "PD Charging", "value": "100W (HB099)" },
+      { "label": "Interface", "value": "Type-C" },
+      { "label": "Plug & Play", "value": "Yes" },
+      { "label": "Compatibility", "value": "Windows / Mac / Linux" },
+      { "label": "Cable", "value": "Detachable" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Models", "value": "HB099 (1G+PD), HB059 (2.5G), HB086 (2.5G)" },
+      { "label": "Ethernet", "value": "10/100/1000/2500 Mbps" },
+      { "label": "PD", "value": "100W (HB099 only)" },
+      { "label": "Chipset", "value": "Realtek RTL8156 / RTL8153" },
+      { "label": "Power", "value": "Bus-powered (HB059/086) / PD (HB099)" },
+      { "label": "Dimensions", "value": "65×35×15mm" }
+    ],
+    "keyFeatures": [
+      "2.5G Ethernet – faster than Gigabit",
+      "PD 100W – charge while connected (HB099)",
+      "No driver needed – plug and play",
+      "Compact – carry in your laptop bag"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "Ethernet converter with PD OEM ODM"
+    },
+    "gallery": [],
+    "seoTitle": "2.5G Ethernet Converter with PD Wholesale | JoyHand",
+    "metaDescription": "Type-C to 2.5G Ethernet converter – PD available. Wired networking for enterprise deployments.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "Pro Grade Meeting Assistant (HDMI)",
+    "modelSKU": "HB985 / HB987",
+    "slug": { "_type": "slug", "current": "pro-grade-meeting-assistant-hdmi" },
+    "category": "E-Mobility",
+    "shortDescription": "Meeting hub + recorder + AI assistant – 1/2 HDMI, SD, USB, PD100W. For bulk corporate orders.",
+    "fullProductDescription": "Meeting hub + recorder + AI assistant – 1/2 HDMI, SD, USB, PD100W. For bulk corporate orders.",
+    "keySpecifications": [
+      { "label": "HDMI", "value": "1× (HB985) / 2× (HB987) 4K@60Hz" },
+      { "label": "Micro SD", "value": "3.0 (32GB included)" },
+      { "label": "USB-A", "value": "2× 5Gbps (HB987)" },
+      { "label": "USB-C", "value": "1× 5Gbps (HB987)" },
+      { "label": "PD Charging", "value": "100W (85W pass-through)" },
+      { "label": "AI Features", "value": "Recorder + assistant button" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports (HB985)", "value": "1×HDMI 2.0, Micro SD 3.0, PD 3.0" },
+      { "label": "Ports (HB987)", "value": "2×HDMI 2.0, 2×USB-A 3.0, USB-C 3.0, Micro SD, PD" },
+      { "label": "Resolution", "value": "4K@60Hz" },
+      { "label": "Storage", "value": "32GB Micro SD included" },
+      { "label": "Charging", "value": "PD 100W (85W to laptop)" },
+      { "label": "Colors", "value": "Black / White / Gray / Silver" }
+    ],
+    "keyFeatures": [
+      "One‑touch recording – capture meetings instantly",
+      "AI assistant – smart transcription and notes",
+      "4K HDMI – crisp presentations",
+      "PD 100W – keep laptop charged",
+      "Includes 32GB Micro SD – start right away"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "Pro Grade Meeting Assistant with AI bulk"
+    },
+    "gallery": [],
+    "seoTitle": "Meeting Assistant with AI 4K HDMI B2B | JoyHand",
+    "metaDescription": "Meeting hub + recorder + AI – 4K HDMI, PD100W. Smart presentations for bulk corporate orders, Nigeria.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "Thunderbolt 5 Docking Station (80G)",
+    "modelSKU": "HB822",
+    "slug": { "_type": "slug", "current": "thunderbolt-5-docking-station-80g" },
+    "category": "E-Mobility",
+    "shortDescription": "14‑in‑1 TB5 dock – 80G, 8K HDMI/DP, 2.5GbE, PD140W. Ultimate for wholesale buyers.",
+    "fullProductDescription": "14‑in‑1 TB5 dock – 80G, 8K HDMI/DP, 2.5GbE, PD140W. Ultimate for wholesale buyers.",
+    "keySpecifications": [
+      { "label": "Host Interface", "value": "Thunderbolt 5 (80G)" },
+      { "label": "Downstream TB5", "value": "2× (8K@60Hz + 15/30W)" },
+      { "label": "HDMI", "value": "8K@30Hz" },
+      { "label": "DP", "value": "8K@30Hz" },
+      { "label": "Ethernet", "value": "2.5GbE with PXE" },
+      { "label": "PD Charging", "value": "140W (DC 180W adapter)" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "1×TBT5 host, 2×TBT5 down, 1×HDMI 8K, 1×DP 8K, 2×USB-C 10G, 1×USB-A 10G, 1×USB-A 5G, SD/TF 4.0, 2.5GbE, Audio, Power switch" },
+      { "label": "Max Video", "value": "8K@30Hz (HDMI/DP)" },
+      { "label": "Ethernet", "value": "2.5Gbps" },
+      { "label": "Charging", "value": "PD 3.1 – 140W to host" },
+      { "label": "Power Adapter", "value": "DC 180W" },
+      { "label": "Security", "value": "2× Lock slots" }
+    ],
+    "keyFeatures": [
+      "80G Thunderbolt 5 – fastest docking station",
+      "Dual 8K displays – future‑prook",
+      "2.5GbE – ultra‑fast networking",
+      "140W PD – power any laptop",
+      "SD/TF 4.0 – 220MB/s read"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "Thunderbolt 5 docking station 80G wholesale"
+    },
+    "gallery": [],
+    "seoTitle": "Thunderbolt 5 80G Docking Station Wholesale | JoyHand",
+    "metaDescription": "14-in-1 TB5 dock – 80G, 8K, 2.5GbE, PD140W. Ultimate docking for wholesale and bulk distribution.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "14‑in‑1 Docking Station (Advance DC)",
+    "modelSKU": "HB824",
+    "slug": { "_type": "slug", "current": "14-in-1-docking-station-advance-dc" },
+    "category": "E-Mobility",
+    "shortDescription": "14‑in‑1 dock – choose 3 from 5 displays (HDMI/DP), 10G ports, PD98W. For global B2B supply.",
+    "fullProductDescription": "14‑in‑1 dock – choose 3 from 5 displays (HDMI/DP), 10G ports, PD98W. For global B2B supply.",
+    "keySpecifications": [
+      { "label": "Displays", "value": "Choose 3 from 5 (3×HDMI + 2×DP)" },
+      { "label": "Resolution", "value": "4K@60Hz" },
+      { "label": "USB-C", "value": "1×10G + 1×5G" },
+      { "label": "USB-A", "value": "2× 5Gbps" },
+      { "label": "Ethernet", "value": "1Gbps" },
+      { "label": "PD Charging", "value": "98W (DC 135W)" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Ports", "value": "3×HDMI 2.0, 2×DP 1.2, 2×USB-C (10G/5G), 2×USB-A 5G, RJ45, Audio, Power switch" },
+      { "label": "Display Max", "value": "Triple 4K@60Hz" },
+      { "label": "Ethernet", "value": "1000Mbps" },
+      { "label": "Charging", "value": "PD 3.0 – 98W to host" },
+      { "label": "Adapter", "value": "DC 135W" },
+      { "label": "Security", "value": "2× Lock slots" }
+    ],
+    "keyFeatures": [
+      "Flexible triple display – choose any 3 ports",
+      "4K 60Hz on all outputs",
+      "Gigabit Ethernet + audio – complete workstation",
+      "98W PD – power laptops and peripherals"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "14-in-1 docking station advance DC B2B"
+    },
+    "gallery": [],
+    "seoTitle": "14-in-1 Docking Station Triple 4K Wholesale | JoyHand",
+    "metaDescription": "14-in-1 dock – choose 3 from 5 displays, 4K60, PD98W. Versatile docking for global B2B supply.",
+    "faqs": []
+  },
+  {
+    "_type": "product",
+    "productName": "Wireless HDMI Extender 4K",
+    "modelSKU": "HB961 / HB742",
+    "slug": { "_type": "slug", "current": "wireless-hdmi-extender-4k" },
+    "category": "E-Mobility",
+    "shortDescription": "4K wireless HDMI extender – 15‑30m, low latency 100ms, plug & play. Perfect for OEM/ODM partnerships.",
+    "fullProductDescription": "4K wireless HDMI extender – 15‑30m, low latency 100ms, plug & play. Perfect for OEM/ODM partnerships.",
+    "keySpecifications": [
+      { "label": "Resolution", "value": "4K@60Hz (HB961) / 4K@15-20Hz (HB742)" },
+      { "label": "Distance", "value": "15m (HB742) / 30m (HB961)" },
+      { "label": "Latency", "value": "≤100ms" },
+      { "label": "TX Power", "value": "Type-C + PD 100W" },
+      { "label": "RX Power", "value": "HDMI + Type-C 5V" },
+      { "label": "Plug & Play", "value": "Yes (no WiFi/driver)" }
+    ],
+    "fullSpecificationsTable": [
+      { "label": "Models", "value": "HB961 (4K60), HB742 (4K15-20)" },
+      { "label": "Transmission Distance", "value": "15m (HB742) / 30m (HB961)" },
+      { "label": "Latency", "value": "<100ms" },
+      { "label": "TX Power", "value": "PD 100W (Type-C)" },
+      { "label": "RX Power", "value": "5V via Type-C" },
+      { "label": "Switch Control", "value": "On/Off display (TX)" }
+    ],
+    "keyFeatures": [
+      "Wireless 4K – no HDMI cable clutter",
+      "100ms latency – real‑time viewing",
+      "PD 100W – charge source device",
+      "Plug and play – no setup required"
+    ],
+    "mainImage": {
+      "asset": { "_ref": "image-placeholder" },
+      "alt": "Wireless HDMI extender 4K OEM ODM"
+    },
+    "gallery": [],
+    "seoTitle": "4K Wireless HDMI Extender 30m Wholesale | JoyHand",
+    "metaDescription": "4K wireless HDMI extender – 30m, 100ms latency, PD. Wireless presentations in OEM/ODM partnerships.",
+    "faqs": []
+  }
+]
