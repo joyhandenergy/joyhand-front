@@ -42,6 +42,7 @@ const categoryMeta = {
   "electric-mobility": { name: "E-Mobility Solutions", desc: "Sustainable urban transportation. High-torque electric motors and long-range battery packs designed for commercial logistics and personal mobility." },
   "portable-power": { name: "Portable Energy Hubs", desc: "Production-ready portable power solutions. High-capacity LFP cells and pure sine wave technology for reliable off-grid energy anywhere." },
   "power-bank": { name: "Mobile Energy Solutions", desc: "Premium consumer tech chargers. Ultra-fast PD charging, wireless integration, and ruggedized designs for global distribution." },
+  "accessories": { name: "Tech & Solar Accessories", desc: "Wholesale solar panels, LED street lights, and mobile tech accessories engineered for global distributors." },
 };
 
 function getKeySpecs(product) {
