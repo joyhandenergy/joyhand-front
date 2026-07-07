@@ -10,11 +10,25 @@ import "./Products.css";
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "Wholesale Energy & E-Mobility Catalog | JoyHand Factory",
+  title: "JoyHand Wholesale Products | LFP Batteries, Inverters & E-Mobility",
   description: "Explore factory-direct LFP batteries, hybrid inverters, solar panels & tech accessories. Flexible B2B MOQs & global shipping to ports like Lagos and Dhaka.",
-  keywords: ["energy storage", "hybrid inverters", "solar hardware", "solar street lights", "portable power stations", "wholesale power banks", "B2B energy products"],
+  keywords: ["wholesale LFP batteries", "solar inverters B2B", "factory direct portable power", "E-mobility batteries OEM", "power banks bulk supply", "tech accessories distribution"],
   alternates: {
     canonical: '/products',
+  },
+  openGraph: {
+    title: "JoyHand Wholesale Products | LFP Batteries, Inverters & E-Mobility",
+    description: "Explore factory-direct LFP batteries, hybrid inverters, solar panels & tech accessories. Flexible B2B MOQs & global shipping to ports like Lagos and Dhaka.",
+    url: "https://www.joyhand.com/products",
+    type: "website",
+    images: [
+      {
+        url: "/homeImg/energyPlatformImage01.jpg", 
+        width: 1200,
+        height: 630,
+        alt: "JoyHand Wholesale Products",
+      },
+    ],
   }
 };
 
@@ -22,7 +36,7 @@ async function getAllProducts() {
   let sanityProducts = [];
   try {
     const rawSanity = await client.fetch(`*[_type == "product"]`);
-    
+
     sanityProducts = rawSanity.map((p) => {
       let image = "/images/placeholder.jpg";
       try {
@@ -78,12 +92,12 @@ async function getAllProducts() {
 
   Object.keys(groupedByCategory).forEach(cat => {
     let catItems = groupedByCategory[cat];
-    
+
     // 1. Mix internally by type or image to avoid similar products clustering together
     const groupedByType = {};
     catItems.forEach(item => {
       // Use type if available, otherwise fallback to image or name to group similar items
-      const subKey = item.type || item.image || item.name; 
+      const subKey = item.type || item.image || item.name;
       if (!groupedByType[subKey]) groupedByType[subKey] = [];
       groupedByType[subKey].push(item);
     });
@@ -99,10 +113,10 @@ async function getAllProducts() {
         }
       }
     }
-    
+
     catItems = mixedCatItems;
     const catCount = catItems.length;
-    
+
     // 2. Proportionally spread them across the whole catalog
     catItems.forEach((item, index) => {
       const targetIndex = (index + 0.5) * (totalProducts / catCount);
@@ -137,10 +151,10 @@ export default async function ProductsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <PageHeader 
+      <PageHeader
         title="Product We Manufacture"
         subtitle="Energy storage, power conversion, mobile power, and electric mobility solutions – direct from our factory."
-        pageImage="/pageHeadImg/pageheader-products.jpg"
+        pageImage="/pageHeadImg/pageheader-products.webp"
       />
       <Suspense fallback={<div className="container mt-3">Loading products...</div>}>
         <ProductsClient initialProducts={allProducts} />

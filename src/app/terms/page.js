@@ -4,7 +4,14 @@ import "../legal.css";
 
 export const metadata = {
   title: "Terms of Service | JoyHand Energy",
-  description: "Read the terms and conditions governing the use of JoyHand’s website and manufacturing services.",
+  description: "Read the comprehensive terms and conditions governing the use of JoyHand Energy’s website, B2B wholesale manufacturing services, and global export operations.",
+  alternates: { canonical: '/terms' },
+  openGraph: {
+    title: "Terms of Service | JoyHand Energy",
+    description: "Read the comprehensive terms and conditions governing the use of JoyHand Energy’s website, B2B wholesale manufacturing services, and global export operations.",
+    url: "https://www.joyhand.com/terms",
+    type: "website",
+  },
   robots: {
     index: false,
     follow: false,

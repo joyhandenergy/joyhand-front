@@ -19,6 +19,20 @@ export const metadata = {
   keywords: ["power solutions for unstable grids", "factory direct solar", "OEM battery manufacturer", "solar panels wholesale", "solar street lights", "solar inverters B2B"],
   alternates: {
     canonical: '/',
+  },
+  openGraph: {
+    title: "JoyHand Energy: OEM/ODM Manufacturer",
+    description: "Factory-direct pricing on LFP batteries, inverters, solar panels & e-mobility. Direct export to emerging markets like Lagos & Dhaka. Get a B2B quote in 24h!",
+    url: "https://www.joyhand.com/",
+    type: "website",
+    images: [
+      {
+        url: "/homeImg/businessModelImage001.jpg", 
+        width: 1200,
+        height: 630,
+        alt: "JoyHand ISO 9001:2015 Manufacturing Facility",
+      },
+    ],
   }
 };
 
@@ -119,7 +133,7 @@ export default async function Home() {
       <InnovationShowcase />
       <EnergyPlatforms />
       <GlobalNetwork />
-      <CtaBanner />     
+      <CtaBanner />
       <HomeBlogSection posts={featuredPosts} />
     </>
   );

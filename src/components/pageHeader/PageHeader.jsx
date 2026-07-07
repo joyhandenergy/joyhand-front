@@ -17,6 +17,7 @@ const PageHeader = ({ title, pageImage, subtitle, hideBreadcrumb = false }) => {
           alt={`${title} - JOYHAND Energy`}
           fill
           priority
+          fetchPriority="high"
           quality={90}
           sizes="100vw"
           className="page-header__bg"

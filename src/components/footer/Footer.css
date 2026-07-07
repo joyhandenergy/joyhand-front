@@ -74,6 +74,7 @@
 .footer__logo-img {
   width: 150px;
   height: auto;
+  aspect-ratio: 250 / 83;
   display: block;
 }
 

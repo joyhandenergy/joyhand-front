@@ -328,6 +328,17 @@ export default async function BlogDetailsPage({ params }) {
               )}
             </div>
 
+            {/* Added explicit internal linking block for SEO */}
+            <div className="blog-details__internal-links" style={{ padding: "2rem 0", borderTop: "1px solid var(--border-light)", borderBottom: "1px solid var(--border-light)", margin: "3rem 0" }}>
+              <h4 style={{ marginBottom: "1rem" }}>Continue Exploring JoyHand</h4>
+              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                <Link href="/products" className="btn btn--outline btn--sm">View Storage Solutions</Link>
+                <Link href="/manufacturing" className="btn btn--outline btn--sm">OEM Manufacturing</Link>
+                <Link href="/blog" className="btn btn--outline btn--sm">More Technical Articles</Link>
+                <Link href="/contact-us" className="btn btn--outline btn--sm">Contact the Factory</Link>
+              </div>
+            </div>
+
             <section className="blog-details__author-card">
               <div className="author-card__avatar">
                 <PiUser />

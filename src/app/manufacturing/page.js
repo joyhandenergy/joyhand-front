@@ -1,11 +1,25 @@
 import ManufacturingClient from "./ManufacturingClient";
 
 export const metadata = {
-  title: "OEM/ODM Energy Manufacturing & Logistics | JoyHand Factory",
+  title: "OEM & ODM Energy Manufacturing | JoyHand Factory",
   description: "End-to-end OEM/ODM production for energy storage & solar hardware. We handle batch testing, customs, and direct shipping to Lagos & Karachi. Get a sample.",
-  keywords: ["OEM manufacturing", "ODM engineering", "solar panels factory", "solar street light production", "battery assembly", "batch testing energy", "customs clearance logistics", "wholesale production China"],
+  keywords: ["OEM energy storage", "ODM solar manufacturer", "custom battery assembly", "LFP cell grading", "ISO standard energy factory", "B2B container export"],
   alternates: {
     canonical: '/manufacturing',
+  },
+  openGraph: {
+    title: "OEM & ODM Energy Manufacturing | JoyHand Factory",
+    description: "End-to-end OEM/ODM production for energy storage & solar hardware. We handle batch testing, customs, and direct shipping to Lagos & Karachi. Get a sample.",
+    url: "https://www.joyhand.com/manufacturing",
+    type: "website",
+    images: [
+      {
+        url: "/serviceImg/serviceoem.jpg", 
+        width: 1200,
+        height: 630,
+        alt: "JoyHand Factory OEM Line",
+      },
+    ],
   }
 };
 

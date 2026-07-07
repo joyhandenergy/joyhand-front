@@ -117,12 +117,13 @@ export default function Header() {
               prefetch={true}
             >
               <Image
-                src="/images/logos/joyhand-logo.png"
+                src="/images/logos/joyhand-logo.webp"
                 alt="JoyHand"
                 width={250}
                 height={83}
                 className="header__logo-img"
                 priority
+                fetchPriority="high"
                 style={{ height: "auto" }}
               />
             </Link>
