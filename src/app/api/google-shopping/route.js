@@ -3,7 +3,7 @@ import { client } from '@/sanity/lib/client';
 import { productData } from '@/data'; // local fallback data
 import { urlFor } from '@/sanity/lib/image';
 
-export const revalidate = 3600; // Cache for 1 hour
+// Edge API
 export const runtime = 'edge';
 
 // Helper function to escape XML special characters

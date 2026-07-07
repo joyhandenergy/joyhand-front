@@ -13,7 +13,7 @@ import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import "../Products.css";
 
-export const revalidate = 3600; // Generate static page, re-check Sanity at most once per hour
+export const dynamicParams = false;
 
 
 function getCategoryIcon(category) {

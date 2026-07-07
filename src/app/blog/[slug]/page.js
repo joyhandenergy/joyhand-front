@@ -12,7 +12,7 @@ import { PortableText } from "@portabletext/react";
 import { ShareButtons, ScaleBrandButton } from "./BlogInteractiveElements";
 import "../blog.css";
 
-export const revalidate = 3600;
+export const dynamicParams = false;
 
 async function getAllPosts() {
   let sanityPosts = [];

@@ -11,7 +11,7 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { blogPosts as localBlogPosts } from "@/data";
 
-export const revalidate = 3600;
+// Static
 
 export const metadata = {
   title: "JoyHand Energy: OEM/ODM Manufacturer | Energy & E-Mobility",

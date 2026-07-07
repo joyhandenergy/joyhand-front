@@ -1,0 +1,250 @@
+.catalog-download-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg, #f8f9fc);
+  /* Added more top padding to clear the fixed header */
+  padding: 8rem 2rem 4rem 2rem;
+}
+
+.catalog-download-container {
+  width: 100%;
+  max-width: 900px; /* Increased for two-column layout */
+}
+
+/* ── Builder Form Styles ── */
+.catalog-builder-card,
+.catalog-download-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+.catalog-builder-card {
+  border-left: 6px solid #2ec4b6; /* Innovation Teal */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .catalog-builder-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.catalog-download-card {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.catalog-builder-left {
+  text-align: left;
+}
+
+.catalog-builder-header {
+  margin-bottom: 1rem;
+}
+
+.catalog-builder-icon {
+  font-size: 2.5rem;
+  color: #2ec4b6;
+  margin-bottom: 1rem;
+}
+
+.catalog-builder-title {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #121b2d;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.catalog-builder-desc {
+  font-size: 1rem;
+  color: #6c727f;
+  line-height: 1.6;
+}
+
+.catalog-builder-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-builder-actions-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.catalog-builder-select-all {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #6c727f;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.catalog-builder-select-all:hover {
+  color: #121b2d;
+}
+
+.catalog-builder-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on the right side for compactness */
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.catalog-builder-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid #eaedf2;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  background: white;
+}
+
+.catalog-builder-checkbox-label:hover {
+  border-color: #2ec4b6;
+  background: rgba(46, 196, 182, 0.03);
+}
+
+.catalog-builder-checkbox-label.selected {
+  border-color: #ff7f41;
+  background: rgba(255, 127, 65, 0.05);
+  box-shadow: 0 2px 8px rgba(255, 127, 65, 0.1);
+}
+
+.catalog-builder-checkbox {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #ff7f41;
+  cursor: pointer;
+}
+
+.catalog-builder-checkbox-text {
+  font-weight: 600;
+  color: #121b2d;
+  font-size: 0.95rem;
+}
+
+.catalog-builder-submit-btn {
+  width: 100%;
+  display: block;
+  background: #ff7f41;
+  color: white;
+  padding: 1.25rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 2rem;
+}
+
+.catalog-builder-submit-btn:hover:not(:disabled) {
+  background: #e66a2e;
+  transform: translateY(-2px);
+}
+
+.catalog-builder-submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ── Download Status Styles ── */
+.catalog-download-icon-wrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.catalog-download-icon {
+  font-size: 4rem;
+}
+
+.catalog-download-icon.spinner {
+  color: #ff7f41;
+  animation: spin 1.5s linear infinite;
+}
+
+.catalog-download-icon.success {
+  color: #2ec4b6;
+}
+
+.catalog-download-icon.error {
+  color: #ef476f;
+}
+
+.catalog-download-title {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #121b2d;
+  margin-bottom: 1rem;
+}
+
+.catalog-download-desc {
+  font-size: 1.1rem;
+  color: #6c727f;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.catalog-download-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.catalog-download-btn {
+  display: inline-block;
+  background: #ff7f41;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.catalog-download-btn:hover {
+  background: #e66a2e;
+  transform: translateY(-2px);
+}
+
+.catalog-download-btn.secondary {
+  background: #eaedf2;
+  color: #121b2d;
+}
+
+.catalog-download-btn.secondary:hover {
+  background: #d8dce3;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

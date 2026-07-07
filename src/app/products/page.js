@@ -7,7 +7,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { productData } from "@/data";
 import "./Products.css";
 
-export const revalidate = 3600;
+// Static
 
 export const metadata = {
   title: "JoyHand Wholesale Products | LFP Batteries, Inverters & E-Mobility",

@@ -9,7 +9,7 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import "./blog.css";
 
-export const revalidate = 3600;
+// Static
 
 export const metadata = {
   title: "Manufacturing Intel & Energy Insights | JoyHand Blog",

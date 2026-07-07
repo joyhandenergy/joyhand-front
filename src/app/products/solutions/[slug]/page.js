@@ -7,7 +7,7 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import "../../Products.css";
 
-export const revalidate = 3600;
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
