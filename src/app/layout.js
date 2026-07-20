@@ -31,7 +31,7 @@ export const metadata = {
   },
   openGraph: {
     title: "JoyHand Energy | Direct Factory Partnership",
-    description: "Bypass middlemen. Scale your energy brand with industrial-grade production of solar solutions, portable power stations, solar hardware, and tech accessories for Nigeria, Bangladesh, and South Asia.",
+    description: "Scale your energy brand with our industrial-grade production of solar solutions, portable power stations, and tech accessories for Nigeria, Bangladesh & Asia.",
     type: "website",
     siteName: "JoyHand Energy",
     locale: "en_US",

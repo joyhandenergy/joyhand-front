@@ -19,8 +19,9 @@ export async function generateMetadata({ params }) {
   const title = baseTitle.length > 60 ? baseTitle.substring(0, 57) + "..." : baseTitle;
   
   let description = config.description.length > 160 ? config.description.substring(0, 157) + "..." : config.description;
-  if (description.length < 120) {
-    description += " Contact us to request a direct factory quote for B2B wholesale distribution and global import needs.";
+  if (description.length < 70) {
+    description += " Request a factory-direct B2B wholesale quote today.";
+    if (description.length > 160) description = description.substring(0, 157) + "...";
   }
 
   return {

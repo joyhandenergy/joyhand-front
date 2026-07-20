@@ -5,11 +5,11 @@ import "../legal.css";
 
 export const metadata = {
   title: "Privacy Policy | JoyHand Energy",
-  description: "Learn how JoyHand Energy collects, uses, and protects your personal and B2B corporate information when you use our website, online platforms, and OEM manufacturing services.",
+  description: "Learn how JoyHand Energy collects, uses, and protects your personal and B2B corporate information when using our website and OEM manufacturing services.",
   alternates: { canonical: '/privacy' },
   openGraph: {
     title: "Privacy Policy | JoyHand Energy",
-    description: "Learn how JoyHand Energy collects, uses, and protects your personal and B2B corporate information when you use our website, online platforms, and OEM manufacturing services.",
+    description: "Learn how JoyHand Energy collects, uses, and protects your personal and B2B corporate information when using our website and OEM manufacturing services.",
     url: "https://www.joyhand.com/privacy",
     type: "website",
   },

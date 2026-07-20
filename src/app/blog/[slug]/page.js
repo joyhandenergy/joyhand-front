@@ -76,8 +76,9 @@ export async function generateMetadata({ params }) {
   const finalTitle = title.length > 60 ? title.substring(0, 57) + "..." : title;
   
   let finalDescription = description.length > 160 ? description.substring(0, 157) + "..." : description;
-  if (finalDescription.length < 120) {
-    finalDescription += " Read our latest technical insights and B2B manufacturing updates for wholesale energy distributors.";
+  if (finalDescription.length < 70) {
+    finalDescription += " Read our latest B2B energy insights and manufacturing updates.";
+    if (finalDescription.length > 160) finalDescription = finalDescription.substring(0, 157) + "...";
   }
 
   return {

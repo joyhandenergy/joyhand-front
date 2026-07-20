@@ -10,14 +10,14 @@ import "./Products.css";
 // Static
 
 export const metadata = {
-  title: "JoyHand Wholesale Products | LFP Batteries, Inverters & E-Mobility",
+  title: "Wholesale LFP Batteries, Inverters & E-Mobility | JoyHand",
   description: "Explore factory-direct LFP batteries, hybrid inverters, solar panels & tech accessories. Flexible B2B MOQs & global shipping to ports like Lagos and Dhaka.",
   keywords: ["wholesale LFP batteries", "solar inverters B2B", "factory direct portable power", "E-mobility batteries OEM", "power banks bulk supply", "tech accessories distribution"],
   alternates: {
     canonical: '/products',
   },
   openGraph: {
-    title: "JoyHand Wholesale Products | LFP Batteries, Inverters & E-Mobility",
+    title: "Wholesale LFP Batteries, Inverters & E-Mobility | JoyHand",
     description: "Explore factory-direct LFP batteries, hybrid inverters, solar panels & tech accessories. Flexible B2B MOQs & global shipping to ports like Lagos and Dhaka.",
     url: "https://www.joyhand.com/products",
     type: "website",

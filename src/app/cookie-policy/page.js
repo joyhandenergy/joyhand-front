@@ -4,11 +4,11 @@ import "../legal.css";
 
 export const metadata = {
   title: "Cookie Policy | JoyHand Energy",
-  description: "Understand how JoyHand Energy uses cookies, tracking technologies, and analytics to improve your B2B browsing experience and provide personalized manufacturing insights.",
+  description: "Understand how JoyHand Energy uses cookies and tracking technologies to improve your B2B browsing experience and provide personalized manufacturing insights.",
   alternates: { canonical: '/cookie-policy' },
   openGraph: {
     title: "Cookie Policy | JoyHand Energy",
-    description: "Understand how JoyHand Energy uses cookies, tracking technologies, and analytics to improve your B2B browsing experience and provide personalized manufacturing insights.",
+    description: "Understand how JoyHand Energy uses cookies and tracking technologies to improve your B2B browsing experience and provide personalized manufacturing insights.",
     url: "https://www.joyhand.com/cookie-policy",
     type: "website",
   },

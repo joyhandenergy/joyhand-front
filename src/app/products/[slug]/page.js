@@ -184,8 +184,9 @@ export async function generateMetadata({ params }) {
 
   let description = (product.metaDescription || fallbackDesc);
   let finalDescription = description.length > 160 ? description.substring(0, 157) + "..." : description;
-  if (finalDescription.length < 120) {
-    finalDescription += " Contact us today to request a direct factory B2B quote for wholesale distribution in your region.";
+  if (finalDescription.length < 70) {
+    finalDescription += " Request a factory-direct B2B wholesale quote today.";
+    if (finalDescription.length > 160) finalDescription = finalDescription.substring(0, 157) + "...";
   }
 
   // Category-specific keyword banks for richer indexing
