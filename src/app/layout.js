@@ -68,9 +68,9 @@ export default function RootLayout({ children }) {
         {/* Google Analytics 4 - loads after page is idle */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="lazyOnload">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="acHr8q4yFmOA8zPCD+g9Jg"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
 
         <PageLoader>

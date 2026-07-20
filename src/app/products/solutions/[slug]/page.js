@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getProductsByCategory, solutionConfigs } from "@/data";
 import SolutionClient from "./solutionClient";
+import PageHeader from "@/components/pageHeader/PageHeader";
 import Script from "next/script";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
@@ -14,8 +15,13 @@ export async function generateMetadata({ params }) {
   const config = solutionConfigs[slug];
   if (!config) return { title: "Category Not Found" };
   
-  const title = `${config.title} | JoyHand`.substring(0, 60);
-  const description = config.description.substring(0, 160);
+  const baseTitle = `${config.title} | JoyHand`;
+  const title = baseTitle.length > 60 ? baseTitle.substring(0, 57) + "..." : baseTitle;
+  
+  let description = config.description.length > 160 ? config.description.substring(0, 157) + "..." : config.description;
+  if (description.length < 120) {
+    description += " Contact us to request a direct factory quote for B2B wholesale distribution and global import needs.";
+  }
 
   return {
     title: title,
@@ -137,15 +143,20 @@ export default async function SolutionsPage({ params }) {
   };
 
   return (
-    <>
+    <main className="products-page">
       <Script
         id="solution-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <PageHeader
+        title={config.title}
+        subtitle={config.description}
+        pageImage={config.image}
+      />
       <Suspense fallback={<div className="container mt-3">Loading solutions...</div>}>
         <SolutionClient slug={slug} config={config} allProducts={allProducts} />
       </Suspense>
-    </>
+    </main>
   );
 }

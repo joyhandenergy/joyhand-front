@@ -12,6 +12,7 @@ export default function CatalogDownloadPage() {
   return (
     <>
       <Header />
+      <h1 className="visually-hidden" style={{ display: 'none' }}>Catalog Download</h1>
       <Suspense fallback={<div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading...</div>}>
         <CatalogDownloadClient />
       </Suspense>

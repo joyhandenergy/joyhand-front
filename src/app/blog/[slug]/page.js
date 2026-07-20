@@ -73,16 +73,20 @@ export async function generateMetadata({ params }) {
   const title = blogPost.metaTitle || `${blogPost.title} | JoyHand`;
   const description = blogPost.metaDescription || blogPost.excerpt || "JoyHand Energy intelligence blog.";
 
-  const truncatedTitle = title.substring(0, 60);
-  const truncatedDesc = description.substring(0, 160);
+  const finalTitle = title.length > 60 ? title.substring(0, 57) + "..." : title;
+  
+  let finalDescription = description.length > 160 ? description.substring(0, 157) + "..." : description;
+  if (finalDescription.length < 120) {
+    finalDescription += " Read our latest technical insights and B2B manufacturing updates for wholesale energy distributors.";
+  }
 
   return {
-    title: truncatedTitle,
-    description: truncatedDesc,
+    title: finalTitle,
+    description: finalDescription,
     keywords: [blogPost.category, "energy manufacturing insight", "OEM strategy", "B2B energy intelligence", "JoyHand technical report"],
     openGraph: {
-      title: truncatedTitle,
-      description: truncatedDesc,
+      title: finalTitle,
+      description: finalDescription,
       url: `https://www.joyhand.com/blog/${blogPost.slug}`,
       type: "article",
       images: [

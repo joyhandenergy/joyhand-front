@@ -179,8 +179,14 @@ export async function generateMetadata({ params }) {
   const fallbackTitle = buildFallbackTitle(product);
   const fallbackDesc  = buildFallbackDesc(product);
 
-  const title       = (product.seoTitle       || fallbackTitle).substring(0, 60);
-  const description = (product.metaDescription || fallbackDesc ).substring(0, 160);
+  const title       = (product.seoTitle       || fallbackTitle);
+  const finalTitle  = title.length > 60 ? title.substring(0, 57) + "..." : title;
+
+  let description = (product.metaDescription || fallbackDesc);
+  let finalDescription = description.length > 160 ? description.substring(0, 157) + "..." : description;
+  if (finalDescription.length < 120) {
+    finalDescription += " Contact us today to request a direct factory B2B quote for wholesale distribution in your region.";
+  }
 
   // Category-specific keyword banks for richer indexing
   const categoryKeywords = {
@@ -207,12 +213,12 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title,
-    description,
+    title: finalTitle,
+    description: finalDescription,
     keywords,
     openGraph: {
-      title,
-      description,
+      title: finalTitle,
+      description: finalDescription,
       url: `https://www.joyhand.com/products/${product.slug?.current || product.slug}`,
       type: "website",
       images: [
@@ -226,8 +232,8 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: finalTitle,
+      description: finalDescription,
     },
     alternates: {
       canonical: `/products/${product.slug?.current || product.slug}`,
@@ -248,14 +254,15 @@ function buildFallbackTitle(product) {
 }
 
 function buildFallbackDesc(product) {
+  const modelText = product.model ? ` (${product.model})` : "";
   const descMap = {
-    battery:          `Factory-direct ${product.name} (${product.model}) – LiFePO4 chemistry, 6000+ cycles. Wholesale backup battery for homes, SMEs, and telecom in Lagos and Nairobi.`,
-    inverter:         `${product.name} (${product.model}) – auto-switch solar, battery & grid during grid failures. CE certified. B2B wholesale pricing for global distributors.`,
-    "electric-mobility": `${product.name} (${product.model}) – eliminate petrol costs for delivery fleets in Karachi and Dhaka. CE certified, bulk import pricing available.`,
-    "portable-power": `${product.name} (${product.model}) – LiFePO4 power station with pure sine wave. Emergency backup for homes and businesses during frequent power cuts.`,
-    "power-bank":     `${product.name} (${product.model}) – stay connected through regional blackouts. CE/FCC certified. B2B wholesale pricing for African and Asian distributors.`,
+    battery:          `Factory-direct ${product.name}${modelText} – LiFePO4 chemistry, 6000+ cycles. Wholesale backup battery for homes, SMEs, and telecom in Lagos and Nairobi.`,
+    inverter:         `${product.name}${modelText} – auto-switch solar, battery & grid during grid failures. CE certified. B2B wholesale pricing for global distributors.`,
+    "electric-mobility": `${product.name}${modelText} – eliminate petrol costs for delivery fleets in Karachi and Dhaka. CE certified, bulk import pricing available.`,
+    "portable-power": `${product.name}${modelText} – LiFePO4 power station with pure sine wave. Emergency backup for homes and businesses during frequent power cuts.`,
+    "power-bank":     `${product.name}${modelText} – stay connected through regional blackouts. CE/FCC certified. B2B wholesale pricing for African and Asian distributors.`,
   };
-  return descMap[product.category] || `JoyHand ${product.name} (${product.model}) – factory-direct energy solution. Request B2B wholesale pricing for emerging markets.`;
+  return descMap[product.category] || `JoyHand ${product.name}${modelText} – factory-direct energy solution. Request B2B wholesale pricing for emerging markets.`;
 }
 
 export async function generateStaticParams() {

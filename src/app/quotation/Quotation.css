@@ -1,0 +1,147 @@
+.quotation-page {
+  min-height: 100vh;
+  background-color: var(--color-bg, #f8f9fc);
+  padding: 8rem 2rem 4rem 2rem;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.quotation-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.quotation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.quotation-title {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #121b2d;
+}
+
+.quotation-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ff7f41;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.quotation-download-btn:hover {
+  background: #e66a2e;
+  transform: translateY(-2px);
+}
+
+.quotation-download-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.quotation-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.quotation-card-header {
+  border-bottom: 2px solid #eaedf2;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.quotation-company-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #121b2d;
+  margin-bottom: 0.5rem;
+}
+
+.quotation-meta {
+  color: #6c727f;
+  font-size: 0.95rem;
+}
+
+.quotation-section {
+  margin-top: 3rem;
+}
+
+.quotation-section:first-child {
+  margin-top: 0;
+}
+
+.quotation-section-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #121b2d;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quotation-terms {
+  background: rgba(46, 196, 182, 0.05);
+  border-left: 4px solid #2ec4b6;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.9rem;
+  color: #121b2d;
+}
+
+.quotation-table-wrapper {
+  overflow-x: auto;
+}
+
+.quotation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.quotation-table th,
+.quotation-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eaedf2;
+}
+
+.quotation-table th {
+  background-color: #f8f9fc;
+  font-weight: 600;
+  color: #121b2d;
+}
+
+.quotation-table tr:last-child td {
+  border-bottom: none;
+}
+
+.price-cell {
+  font-weight: 700;
+  color: #ff7f41;
+}
+
+.quotation-footer {
+  text-align: center;
+  color: #6c727f;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eaedf2;
+}

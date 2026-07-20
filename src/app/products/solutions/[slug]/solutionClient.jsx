@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import ProductCard from "@/components/productCard/ProductCard";
-import PageHeader from "@/components/pageHeader/PageHeader";
 import Pagination from "@/components/pagination/Pagination";
 import { PiPackage, PiArrowRight, PiFilePdf } from "react-icons/pi";
 import { useScrollReveal } from "@/components/useScrollReveal";
@@ -62,12 +61,7 @@ export default function SolutionClient({ slug, config, allProducts }) {
   const gridReveal    = useScrollReveal();
 
   return (
-    <main className="products-page">
-      <PageHeader
-        title={config.title}
-        subtitle={config.description}
-        pageImage={config.image}
-      />
+    <>
 
       <section ref={sectionReveal.ref} className={`products-page__section reveal ${sectionReveal.isVisible ? 'is-visible' : ''}`}>
         <div className="container">
@@ -164,6 +158,6 @@ export default function SolutionClient({ slug, config, allProducts }) {
 
         </div>
       </section>
-    </main>
+    </>
   );
 }
