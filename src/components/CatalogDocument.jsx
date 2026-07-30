@@ -99,7 +99,7 @@ export default function CatalogDocument({ category, products = null }) {
         
         <View style={styles.header} fixed>
           <View style={styles.logoContainer}>
-            <Image src={`${baseUrl}/api/proxy-image?url=${encodeURIComponent(logoUrl)}`} style={styles.logo} />
+            <Image src={`${baseUrl}/api/proxy-image?url=${encodeURIComponent(logoUrl)}`} alt="JoyHand Energy Logo" style={styles.logo} />
           </View>
           <View style={styles.headerInfo}>
             <Text style={styles.headerTitle}>PRODUCT CATALOG</Text>
@@ -132,7 +132,7 @@ export default function CatalogDocument({ category, products = null }) {
             return (
               <View key={idx} style={styles.productCard} wrap={false}>
                 <View style={styles.imageSection}>
-                  <Image src={imageUrl} style={styles.productImage} />
+                  <Image src={imageUrl} alt={product.name} style={styles.productImage} />
                 </View>
                 <View style={styles.detailsSection}>
                   <View style={styles.productHeader}>

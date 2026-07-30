@@ -290,7 +290,44 @@ export default async function ProductDetailsPage({ params }) {
   if (!sanityProduct && !localProduct) notFound();
 
   // Prefer Sanity data, fallback to local data for images
-  const product = sanityProduct || localProduct;
+  const rawProduct = sanityProduct || localProduct;
+  const product = JSON.parse(JSON.stringify(rawProduct));
+
+  // Enforce requested warranties and life cycles
+  let targetWarranty = "";
+  let targetLifeCycle = "";
+
+  if (["battery", "portable-power", "power-bank"].includes(product.category)) {
+    targetWarranty = "5 Years";
+    if (product.category === "battery" || product.category === "portable-power") {
+      targetLifeCycle = "6000 Cycles";
+    }
+  } else if (product.category === "inverter") {
+    targetWarranty = "2 Years";
+  } else if (product.category === "solar-panel" || (product.name && product.name.toLowerCase().includes("solar panel"))) {
+    targetWarranty = "15 Years";
+  }
+
+  if (targetWarranty) {
+    product.warranty = targetWarranty;
+    if (!product.keySpecs) product.keySpecs = [];
+    const hasWarranty = product.keySpecs.find(s => s.specName.toLowerCase().includes('warranty'));
+    if (hasWarranty) {
+      hasWarranty.specValue = targetWarranty;
+    } else {
+      product.keySpecs.push({ _key: 'auto-warranty', specName: "Warranty", specValue: targetWarranty });
+    }
+  }
+
+  if (targetLifeCycle) {
+    if (!product.keySpecs) product.keySpecs = [];
+    const hasCycle = product.keySpecs.find(s => s.specName.toLowerCase().includes('cycle'));
+    if (hasCycle) {
+      hasCycle.specValue = targetLifeCycle;
+    } else {
+      product.keySpecs.push({ _key: 'auto-cycle', specName: "Cycle Life", specValue: targetLifeCycle });
+    }
+  }
 
   let images = [];
   if (sanityProduct?.gallery?.length) {

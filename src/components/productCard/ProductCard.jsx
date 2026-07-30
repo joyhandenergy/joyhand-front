@@ -75,6 +75,21 @@ const ProductCard = ({ product, priority = false }) => {
     }
   }
 
+  // Enforce requested warranties and life cycles on card
+  let targetWarranty = "";
+  let targetLifeCycle = "";
+
+  if (["battery", "portable-power", "power-bank"].includes(category)) {
+    targetWarranty = "5 Years";
+    if (category === "battery" || category === "portable-power") {
+      targetLifeCycle = "6000 Cycles";
+    }
+  } else if (category === "inverter") {
+    targetWarranty = "2 Years";
+  } else if (category === "solar-panel" || (name && name.toLowerCase().includes("solar panel"))) {
+    targetWarranty = "15 Years";
+  }
+
   return (
     <article className="product-card">
       <Link
@@ -117,17 +132,22 @@ const ProductCard = ({ product, priority = false }) => {
           <p className="product-card__desc">{description}</p>
 
           {/* Spec Tags */}
-          {previewSpecs.length > 0 && (
-            <ul className="product-card__specs">
-              {previewSpecs.map((spec, i) => (
-                <li key={i} className="product-card__spec">
-                  <span className="product-card__spec-label">{spec.label}</span>
-                  <span className="product-card__spec-divider">·</span>
-                  <span className="product-card__spec-value">{spec.value}</span>
-                </li>
-              ))}
-            </ul>
-          )}
+          <ul className="product-card__specs">
+            {previewSpecs.map((spec, i) => (
+              <li key={i} className="product-card__spec">
+                <span className="product-card__spec-label">{spec.label}</span>
+                <span className="product-card__spec-divider">·</span>
+                <span className="product-card__spec-value">{spec.value}</span>
+              </li>
+            ))}
+            {targetLifeCycle && (
+              <li className="product-card__spec">
+                <span className="product-card__spec-label">Cycle Life</span>
+                <span className="product-card__spec-divider">·</span>
+                <span className="product-card__spec-value">{targetLifeCycle}</span>
+              </li>
+            )}
+          </ul>
         </div>
       </Link>
 
@@ -142,8 +162,14 @@ const ProductCard = ({ product, priority = false }) => {
           <PiArrowRight className="product-card__btn-arrow" />
         </Link>
         <div className="product-card__trust">
-          <PiShieldCheck />
-          <span>OEM Ready</span>
+          {targetWarranty && (
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', marginRight: '10px' }}>
+              <PiShieldCheck /> {targetWarranty}
+            </span>
+          )}
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+            <PiShieldCheck /> OEM Ready
+          </span>
         </div>
       </div>
     </article>
