@@ -65,12 +65,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${outfit.variable}`}>
       <body suppressHydrationWarning={true} className="antialiased">
-        {/* Google Analytics 4 - loads after page is idle */}
+        {/* Google Analytics 4 - loads completely idly */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="acHr8q4yFmOA8zPCD+g9Jg"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         <PageLoader>

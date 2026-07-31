@@ -9,9 +9,9 @@ export default function PageLoader({ children }) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const minLoadTime = 500; // 0.5s buffer for a deliberate, premium feel
+    const minLoadTime = 200; // 0.2s buffer for a deliberate, premium feel
     const startTime = Date.now();
-    const safetyTimeout = 1200; // Never block the page for more than 1.2s!
+    const safetyTimeout = 600; // Never block the page for more than 0.6s!
 
     const handleComplete = () => {
       const elapsedTime = Date.now() - startTime;
@@ -25,7 +25,7 @@ export default function PageLoader({ children }) {
 
     // Deep Asset Tracking
     const trackAssets = () => {
-      const images = Array.from(document.images);
+      const images = Array.from(document.images).filter(img => img.fetchPriority === "high" || img.getAttribute("priority"));
       const totalAssets = images.length;
       let loadedAssets = 0;
 
@@ -60,8 +60,8 @@ export default function PageLoader({ children }) {
 
     // Initial simulation for a smooth start
     const interval = setInterval(() => {
-      setProgress(prev => (prev < 90 ? prev + 2 : prev));
-    }, 100);
+      setProgress(prev => (prev < 90 ? prev + 5 : prev));
+    }, 50);
 
     // Safety fallback
     const timer = setTimeout(handleComplete, safetyTimeout);
@@ -87,12 +87,13 @@ export default function PageLoader({ children }) {
             {/* Animated Logo */}
             <div className="page-loader__logo-wrapper">
               <Image
-                src="/images/logos/joyhand-logo.png"
+                src="/images/logos/joyhand-logo.webp"
                 alt="JoyHand"
                 width={250}
                 height={83}
                 className="page-loader__logo"
                 priority
+                fetchPriority="high"
                 style={{ width: "auto", height: "auto" }}
               />
             </div>
@@ -101,7 +102,7 @@ export default function PageLoader({ children }) {
             <div className="page-loader__bar-container">
               <div 
                 className="page-loader__bar" 
-                style={{ width: `${progress}%` }}
+                style={{ transform: `scaleX(${progress / 100})` }}
               ></div>
             </div>
 

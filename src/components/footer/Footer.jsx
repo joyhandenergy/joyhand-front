@@ -48,16 +48,12 @@ export default function Footer() {
             <Image 
               src="/images/logos/joyhand-logo.webp" 
               className="footer__logo-img"
-              alt="JoyHand – Premium Battery & E‑Mobility Manufacturer"
+              alt="JoyHand"
               width={250} 
               height={83} 
-              priority 
-              fetchPriority="high"
               style={{ 
                 filter: "brightness(0) invert(1)", 
-                display: "block",
-                height: "auto",
-                aspectRatio: "250 / 83"
+                height: "auto" 
               }}
             />
           </Link>

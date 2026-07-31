@@ -95,7 +95,6 @@ export default function BusinessModel() {
               className="businessModel__image"
               sizes="(max-width: 768px) 100vw, 50vw"
               quality={85}
-              priority
             />
             <div className="businessModel__image-overlay"></div>
           </div>
@@ -103,7 +102,6 @@ export default function BusinessModel() {
           <div className="businessModel__image-card businessModel__image-card--dynamic" key={activeService.id}>
             <Image
               src={activeService.image}
-              priority={activeService.id === businessServices[0].id}
               alt={activeService.imageAlt || "Manufacturing service"}
               fill
               className="businessModel__image"

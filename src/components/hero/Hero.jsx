@@ -25,10 +25,11 @@ export default function Hero() {
         <div className="hero__background">
           <div className="hero__static-bg" aria-hidden="true">
             <Image
-              src="/videos/heroImg/hero-poster.jpg"
+              src="/videos/heroImg/hero-poster.webp"
               alt="JoyHand manufacturing facility Guangzhou China"
               fill
               priority
+              fetchPriority="high"
               unoptimized={true}
               sizes="100vw"
               className="hero__static-img"
@@ -41,7 +42,7 @@ export default function Hero() {
             playsInline
             preload="auto"
             className="hero__video hero__video--loaded"
-            poster="/videos/heroImg/hero-poster.jpg"
+            poster="/videos/heroImg/hero-poster.webp"
           >
             <source src="/videos/heroImg/joyhand-hero-video.mp4" type="video/mp4" />
           </video>

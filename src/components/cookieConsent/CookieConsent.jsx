@@ -23,23 +23,37 @@ export default function CookieConsent() {
   }, []);
 
   const handleAccept = () => {
-    try {
-      localStorage.setItem("joyhand_cookie_consent", "accepted");
-    } catch (e) { }
-    startTransition(() => {
-      closeBanner();
-    });
+    // 1. Immediate UI update: Remove startTransition to make this high-priority
+    setIsClosing(true);
+    
+    // 2. Yield to main thread for paint, then do non-critical background work
+    setTimeout(() => {
+      requestIdleCallback(() => {
+        try {
+          // localStorage is synchronous and can block the main thread; do it idly
+          localStorage.setItem("joyhand_cookie_consent", "accepted");
+          
+          // 3. Analytics initialization or other heavy background tasks would go here
+          // ensuring they are delayed until after the UI has responded.
+          window.dispatchEvent(new Event('cookie_consent_accepted'));
+        } catch (e) { }
+      });
+    }, 50);
+
+    // 4. Remove component from DOM after CSS transition finishes
+    setTimeout(() => {
+      setShow(false);
+      setIsClosing(false);
+    }, 400); // Match CSS transition
   };
 
   const closeBanner = () => {
-    startTransition(() => {
-      setIsClosing(true);
-    });
+    // Immediate UI update
+    setIsClosing(true);
+    
     setTimeout(() => {
-      startTransition(() => {
-        setShow(false);
-        setIsClosing(false);
-      });
+      setShow(false);
+      setIsClosing(false);
     }, 400); // Match CSS transition
   };
 

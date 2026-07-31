@@ -43,6 +43,7 @@
   padding: 4px 12px;
   border-radius: 50px;
   border: 1px solid rgba(46, 196, 182, 0.3);
+  min-height: 28px; /* Prevents CLS */
 }
 
 .header__trust-badge-text {

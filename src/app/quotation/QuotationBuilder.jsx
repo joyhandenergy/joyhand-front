@@ -313,8 +313,51 @@ export default function QuotationBuilder({ initialProducts = [] }) {
         currentRowIdx++;
       }
 
-      // Add Footer text
+      // Add Bank Details Header
       currentRowIdx += 2;
+      sheet.mergeCells(`A${currentRowIdx}:J${currentRowIdx}`);
+      const bankHeader = sheet.getCell(`A${currentRowIdx}`);
+      bankHeader.value = 'PAYMENT INSTRUCTIONS';
+      bankHeader.font = { bold: true, size: 12, color: { argb: colors.secondary } };
+      bankHeader.alignment = { horizontal: 'left', vertical: 'middle' };
+      currentRowIdx++;
+
+      // Row for Bank Details
+      sheet.getRow(currentRowIdx).height = 140;
+      
+      sheet.mergeCells(`A${currentRowIdx}:E${currentRowIdx}`);
+      const hkBank = sheet.getCell(`A${currentRowIdx}`);
+      hkBank.value = "FPS / CHATS / SWIFT Payment\n" +
+                     "Account number: 88800006422277\n" +
+                     "Account name: GUANGZHOU JOYHAND IMPORT EXPORT CO.,Ltd.\n" +
+                     "SWIFT/BIC code: WIHBHKHHXXX\n" +
+                     "Bank name: OCBC Hong Kong Branch\n" +
+                     "Bank address: 161 Queen's Road Central, Central, Hong Kong (China)\n" +
+                     "Bank code: 035\n" +
+                     "Notes: Include [Buyer Name] [Invoice Number] [Product] in memo";
+      hkBank.font = { size: 10 };
+      hkBank.alignment = { horizontal: 'left', vertical: 'top', wrapText: true, indent: 1 };
+      hkBank.border = { top: { style: 'thin' }, left: { style: 'thin' }, bottom: { style: 'thin' }, right: { style: 'thin' } };
+      hkBank.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF8F9FC' } };
+
+      sheet.mergeCells(`F${currentRowIdx}:J${currentRowIdx}`);
+      const ngBank = sheet.getCell(`F${currentRowIdx}`);
+      ngBank.value = "NIP Payment\n" +
+                     "Account number: 1988119690\n" +
+                     "Account name: FW -GUANGZHOU JOYHAND IMPORT EXPORT CO.,Ltd.\n" +
+                     "Bank name: Access Bank\n" +
+                     "Bank address: 14/15, Prince Alaba Abiodun, Oniru Road, Victoria Island, Lagos, Nigeria\n" +
+                     "Country/region: Nigeria\n" +
+                     "Notes: This collection account only supports NGN collection in Nigeria.\n" +
+                     "Include [Buyer Name] [Invoice Number] [Product] in memo.";
+      ngBank.font = { size: 10 };
+      ngBank.alignment = { horizontal: 'left', vertical: 'top', wrapText: true, indent: 1 };
+      ngBank.border = { top: { style: 'thin' }, left: { style: 'thin' }, bottom: { style: 'thin' }, right: { style: 'thin' } };
+      ngBank.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF8F9FC' } };
+      currentRowIdx++;
+
+      // Add Footer text
+      currentRowIdx += 1;
       sheet.mergeCells(`A${currentRowIdx}:J${currentRowIdx}`);
       const footerCell = sheet.getCell(`A${currentRowIdx}`);
       footerCell.value = 'Prices subject to order volume. Contact sales@joyhand.com for a formal quotation.';

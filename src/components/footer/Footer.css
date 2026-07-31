@@ -74,7 +74,6 @@
 .footer__logo-img {
   width: 150px;
   height: auto;
-  aspect-ratio: 250 / 83;
   display: block;
 }
 
@@ -374,10 +373,6 @@
     max-width: 600px;
   }
 
-  .footer__logo-img {
-    width: 160px;
-  }
-
   .footer__bottom-container {
     flex-direction: row;
     flex-wrap: wrap;
@@ -464,9 +459,9 @@
 }
 
 /* =====================================================
-   SMALL MOBILE (480px and below)
+   SMALL MOBILE (768px and below to match Header)
 ===================================================== */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .footer__logo-img {
     width: 145px;
   }
