@@ -2,6 +2,7 @@ import { blogPosts, productData, solutionConfigs } from "@/data";
 import { client } from "@/sanity/lib/client";
 
 // Cloudflare Pages requires strict static generation
+export const revalidate = 3600; // Update sitemap every hour
 
 export default async function sitemap() {
   const baseUrl = "https://www.joyhand.com";
