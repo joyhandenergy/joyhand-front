@@ -265,6 +265,30 @@ const nextConfig = {
       { source: "/products/powerbank-outage-5000mah-ledslim", destination: "/products/slim-powerbank-5000mah-led", permanent: true },
       { source: "/products/powerbank-outage-10000mah-digital", destination: "/products/powerbank-10000mah-wireless", permanent: true },
       { source: "/products/powerbank-outage-stand-cables", destination: "/products/powerbank-stand-cables", permanent: true },
+      
+      // Basic Info Pages
+      { source: "/about", destination: "/about-us", permanent: true },
+      { source: "/contact", destination: "/contact-us", permanent: true },
+      { source: "/terms-of-service", destination: "/terms", permanent: true },
+      { source: "/shipping", destination: "/terms", permanent: true },
+      { source: "/return-policy", destination: "/terms", permanent: true },
+      
+      // Old Scooter/Bike pages to main products page
+      { source: "/category/eScooters-c124119061", destination: "/products", permanent: true },
+      { source: "/category/eScooter-parts", destination: "/products", permanent: true },
+      { source: "/category/eScooters", destination: "/products", permanent: true },
+      { source: "/category/JY-13X-p422276023", destination: "/products", permanent: true },
+      { source: "/product/Electric-Bicycle-Barcelona-JY-BCL", destination: "/products", permanent: true },
+      { source: "/product/JY-13X", destination: "/products", permanent: true },
+      { source: "/product/JY-S358", destination: "/products", permanent: true },
+      { source: "/product/JY-R7", destination: "/products", permanent: true },
+      { source: "/product/JY-S700", destination: "/products", permanent: true },
+      { source: "/product/JY-11X", destination: "/products", permanent: true },
+      { source: "/product/JY-R2", destination: "/products", permanent: true },
+      { source: "/product/Pure-Solar-Scooter-JY-PS01", destination: "/products", permanent: true },
+      { source: "/product/JY-R4", destination: "/products", permanent: true },
+      { source: "/product/All-Terrain-Electric-Skate-Board-JY-AT5", destination: "/products", permanent: true },
+      { source: "/product/Electric-Harley-Scooter-JY-Q5-with-front-shock-absorber-lamp", destination: "/products", permanent: true },
     ];
   },
 

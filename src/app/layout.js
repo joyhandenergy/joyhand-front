@@ -45,7 +45,7 @@ export const metadata = {
     ],
   },
   icons: {
-    icon: "/icon.svg",
+    icon: "/images/logos/joyhand.icon.png",
   },
   verification: {
     other: {

@@ -10,6 +10,7 @@ import { urlFor } from "@/sanity/lib/image";
 import "./blog.css";
 
 // Static
+export const revalidate = 60;
 
 export const metadata = {
   title: "Manufacturing Intel & Energy Insights | JoyHand Blog",

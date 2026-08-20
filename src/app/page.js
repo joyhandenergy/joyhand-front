@@ -12,6 +12,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { blogPosts as localBlogPosts } from "@/data";
 
 // Static
+export const revalidate = 60;
 
 export const metadata = {
   title: "JoyHand Energy: OEM/ODM Manufacturer | Energy & E-Mobility",

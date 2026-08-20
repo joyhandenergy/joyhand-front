@@ -12,7 +12,8 @@ import { PortableText } from "@portabletext/react";
 import { ShareButtons, ScaleBrandButton } from "./BlogInteractiveElements";
 import "../blog.css";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = 60;
 
 async function getAllPosts() {
   let sanityPosts = [];
@@ -81,10 +82,19 @@ export async function generateMetadata({ params }) {
     if (finalDescription.length > 160) finalDescription = finalDescription.substring(0, 157) + "...";
   }
 
+  // Generate dynamic keywords from the title for highly relevant SEO
+  const titleKeywords = blogPost.title
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .split(' ')
+    .filter(word => word.length > 3 && !["with", "this", "that", "from", "your", "what", "which", "when"].includes(word));
+    
+  const dynamicKeywords = [...new Set([blogPost.category, ...titleKeywords, "wholesale", "B2B", "JoyHand", "energy manufacturing"])];
+
   return {
     title: finalTitle,
     description: finalDescription,
-    keywords: [blogPost.category, "energy manufacturing insight", "OEM strategy", "B2B energy intelligence", "JoyHand technical report"],
+    keywords: dynamicKeywords,
     openGraph: {
       title: finalTitle,
       description: finalDescription,

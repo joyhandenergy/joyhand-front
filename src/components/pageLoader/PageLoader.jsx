@@ -9,18 +9,12 @@ export default function PageLoader({ children }) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const minLoadTime = 200; // 0.2s buffer for a deliberate, premium feel
-    const startTime = Date.now();
     const safetyTimeout = 600; // Never block the page for more than 0.6s!
 
     const handleComplete = () => {
-      const elapsedTime = Date.now() - startTime;
-      const remainingTime = Math.max(0, minLoadTime - elapsedTime);
-      
-      setTimeout(() => {
-        setProgress(100);
-        setTimeout(() => setLoading(false), 400); // Wait for CSS transition (speed it up slightly)
-      }, remainingTime);
+      setProgress(100);
+      // Wait a tiny bit (150ms) for the progress bar to visually hit 100% before fading out
+      setTimeout(() => setLoading(false), 150); 
     };
 
     // Deep Asset Tracking
