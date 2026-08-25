@@ -38,7 +38,7 @@ export default async function sitemap() {
 
   // 3. Product Category / Solutions Pages
   const solutionRoutes = Object.keys(solutionConfigs).map((slug) => ({
-    url: `${baseUrl}/products/solutions/${slug}`,
+    url: `${baseUrl}/products/category/${slug}`,
     lastModified: new Date().toISOString(),
     changeFrequency: "weekly",
     priority: 0.8,

@@ -76,7 +76,33 @@ async function getAllProducts() {
   const sanitySlugs = new Set(sanityProducts.map((p) => p.slug));
   const uniqueLocal = productData.filter((p) => !sanitySlugs.has(p.slug));
 
-  const allMerged = [...sanityProducts, ...uniqueLocal];
+  // ── Scrub African references for consumer tech categories to focus on US/EU ──
+  const replacePatterns = (text) => {
+    if (!text || typeof text !== 'string') return text;
+    return text
+      .replace(/Uganda premium capacity bulk\.,/gi, 'USA/EU premium capacity bulk.')
+      .replace(/Uganda no grid needed\.,/gi, 'USA/EU premium tech.')
+      .replace(/Uganda off-grid storage\.,/gi, 'USA/EU market.')
+      .replace(/Uganda constant connect/gi, 'USA/EU fast connectivity')
+      .replace(/South Africa, Uganda/gi, 'USA, Europe')
+      .replace(/Nigeria, Kenya/gi, 'USA, Europe')
+      .replace(/Lagos and Nairobi/gi, 'New York and London')
+      .replace(/African and Asian/gi, 'American and European')
+      .replace(/Uganda/gi, 'Europe')
+      .replace(/South Africa/gi, 'USA')
+      .replace(/Nigeria/gi, 'USA')
+      .replace(/Kenya/gi, 'Europe');
+  };
+
+  const allMerged = [...sanityProducts, ...uniqueLocal].map(p => {
+    if (['accessories'].includes(p.category)) {
+      return {
+        ...p,
+        description: replacePatterns(p.description)
+      };
+    }
+    return p;
+  });
 
   // Group by category to mix them evenly
   const groupedByCategory = {};

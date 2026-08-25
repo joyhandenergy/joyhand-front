@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getProductsByCategory, solutionConfigs } from "@/data";
-import SolutionClient from "./solutionClient";
+import CategoryClient from "./CategoryClient";
 import PageHeader from "@/components/pageHeader/PageHeader";
 import Script from "next/script";
 import { client } from "@/sanity/lib/client";
@@ -14,10 +14,10 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const config = solutionConfigs[slug];
   if (!config) return { title: "Category Not Found" };
-  
+
   const baseTitle = `${config.title} | JoyHand`;
   const title = baseTitle.length > 60 ? baseTitle.substring(0, 57) + "..." : baseTitle;
-  
+
   let description = config.description.length > 160 ? config.description.substring(0, 157) + "..." : config.description;
   if (description.length < 70) {
     description += " Request a factory-direct B2B wholesale quote today.";
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: title,
       description: description,
-      url: `https://www.joyhand.com/products/solutions/${slug}`,
+      url: `https://www.joyhand.com/products/category/${slug}`,
       type: "website",
       images: [
         {
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }) {
       ],
     },
     alternates: {
-      canonical: `/products/solutions/${slug}`,
+      canonical: `/products/category/${slug}`,
     }
   };
 }
@@ -60,7 +60,7 @@ async function getProductsForCategory(filterCategory) {
       `*[_type == "product" && category == $filterCategory]`,
       { filterCategory }
     );
-    
+
     // Map Sanity schema to match local ProductCard expectations
     sanityProducts = rawSanity.map((p) => {
       let image = "/images/placeholder.jpg";
@@ -113,7 +113,35 @@ export default async function SolutionsPage({ params }) {
   const config = solutionConfigs[slug];
   if (!config) notFound();
 
-  const allProducts = await getProductsForCategory(config.filterCategory);
+  let allProducts = await getProductsForCategory(config.filterCategory);
+
+  // ── Scrub African references for consumer tech categories to focus on US/EU ──
+  const replacePatterns = (text) => {
+    if (!text || typeof text !== 'string') return text;
+    return text
+      .replace(/Uganda premium capacity bulk\.,/gi, 'USA/EU premium capacity bulk.')
+      .replace(/Uganda no grid needed\.,/gi, 'USA/EU premium tech.')
+      .replace(/Uganda off-grid storage\.,/gi, 'USA/EU market.')
+      .replace(/Uganda constant connect/gi, 'USA/EU fast connectivity')
+      .replace(/South Africa, Uganda/gi, 'USA, Europe')
+      .replace(/Nigeria, Kenya/gi, 'USA, Europe')
+      .replace(/Lagos and Nairobi/gi, 'New York and London')
+      .replace(/African and Asian/gi, 'American and European')
+      .replace(/Uganda/gi, 'Europe')
+      .replace(/South Africa/gi, 'USA')
+      .replace(/Nigeria/gi, 'USA')
+      .replace(/Kenya/gi, 'Europe');
+  };
+
+  allProducts = allProducts.map(p => {
+    if (['accessories'].includes(p.category)) {
+      return {
+        ...p,
+        description: replacePatterns(p.description)
+      };
+    }
+    return p;
+  });
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -154,9 +182,11 @@ export default async function SolutionsPage({ params }) {
         title={config.title}
         subtitle={config.description}
         pageImage={config.image}
+        parentLink="/products"
+        parentLabel="Products"
       />
-      <Suspense fallback={<div className="container mt-3">Loading solutions...</div>}>
-        <SolutionClient slug={slug} config={config} allProducts={allProducts} />
+      <Suspense fallback={<div className="container mt-3">Loading catalog...</div>}>
+        <CategoryClient slug={slug} config={config} allProducts={allProducts} />
       </Suspense>
     </main>
   );

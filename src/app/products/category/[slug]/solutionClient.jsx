@@ -83,7 +83,7 @@ export default function SolutionClient({ slug, config, allProducts }) {
               {solutionLinks.map((cat) => (
                 <Link
                   key={cat.slug}
-                  href={`/products/solutions/${cat.slug}`}
+                  href={`/products/category/${cat.slug}`}
                   className={`products-page__category-link ${
                     slug === cat.slug ? "products-page__category-link--active" : ""
                   }`}
@@ -137,7 +137,7 @@ export default function SolutionClient({ slug, config, allProducts }) {
                 <Pagination
                   currentPage={page}
                   totalPages={totalPages}
-                  baseUrl={`/products/solutions/${slug}`}
+                  baseUrl={`/products/category/${slug}`}
                 />
               )}
             </>

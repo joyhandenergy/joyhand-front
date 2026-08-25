@@ -61,6 +61,29 @@ function getTypeDisplay(type) {
 }
 
 // Key specs for right column
+function SpecValueDisplay({ value }) {
+  if (typeof value !== 'string') return <>{value}</>;
+  
+  if (value.trim().startsWith('{') && value.trim().endsWith('}')) {
+    try {
+      const parsed = JSON.parse(value);
+      return (
+        <span style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', fontSize: '0.9em' }}>
+          {Object.entries(parsed).map(([k, v]) => (
+            <span key={k}>
+              <strong>{k}:</strong> {v}
+            </span>
+          ))}
+        </span>
+      );
+    } catch (e) {
+      // Not valid JSON, just return value
+    }
+  }
+  
+  return <>{value}</>;
+}
+
 function ProductKeySpecs({ product }) {
   // If fetching from Sanity, we have a keySpecs array
   const keySpecs = product.keySpecs || [];
@@ -74,7 +97,9 @@ function ProductKeySpecs({ product }) {
         {keySpecs.map((spec, idx) => (
           <div key={spec._key || idx} className="product-details__key-spec-item">
             <span className="product-details__key-spec-label">{spec.specName}</span>
-            <span className="product-details__key-spec-value">{spec.specValue}</span>
+            <span className="product-details__key-spec-value">
+              <SpecValueDisplay value={spec.specValue} />
+            </span>
           </div>
         ))}
       </div>
@@ -113,7 +138,9 @@ function ProductSpecs({ product }) {
           {fullSpecs.map((spec, idx) => (
             <div key={spec._key || idx} className="product-details__spec-row">
               <span className="product-details__spec-label">{spec.specName}</span>
-              <span className="product-details__spec-value">{spec.specValue}</span>
+              <span className="product-details__spec-value">
+                <SpecValueDisplay value={spec.specValue} />
+              </span>
             </div>
           ))}
         </div>
@@ -171,9 +198,11 @@ export async function generateMetadata({ params }) {
   // Fetch from Sanity
   const sanityProduct = await client.fetch(`*[_type == "product" && slug.current == $slug][0]`, { slug });
   const localProduct = productData.find(p => p.slug === slug);
-  const product = sanityProduct || localProduct;
+  let product = sanityProduct || localProduct;
 
   if (!product) return { title: "Product Not Found" };
+
+  product = applyUsEuPivot(JSON.parse(JSON.stringify(product)));
 
   // ── Use dedicated pain-point SEO fields if available, else smart fallback ──
   const fallbackTitle = buildFallbackTitle(product);
@@ -242,6 +271,65 @@ export async function generateMetadata({ params }) {
   };
 }
 
+// ── Scrub African references for consumer tech categories to focus on US/EU ──
+function applyUsEuPivot(product) {
+  if (!product || !["accessories"].includes(product.category)) return product;
+
+  const replacePatterns = (text) => {
+    if (!text || typeof text !== 'string') return text;
+    return text
+      .replace(/Uganda premium capacity bulk\.,/gi, 'USA/EU premium capacity bulk.')
+      .replace(/Uganda no grid needed\.,/gi, 'USA/EU premium tech.')
+      .replace(/Uganda off-grid storage\.,/gi, 'USA/EU market.')
+      .replace(/Uganda constant connect/gi, 'USA/EU fast connectivity')
+      .replace(/South Africa, Uganda/gi, 'USA, Europe')
+      .replace(/Nigeria, Kenya/gi, 'USA, Europe')
+      .replace(/Lagos and Nairobi/gi, 'New York and London')
+      .replace(/African and Asian/gi, 'American and European')
+      .replace(/Uganda/gi, 'Europe')
+      .replace(/South Africa/gi, 'USA')
+      .replace(/Nigeria/gi, 'USA')
+      .replace(/Kenya/gi, 'Europe');
+  };
+
+  if (product.shortDescription) product.shortDescription = replacePatterns(product.shortDescription);
+  if (product.fullProductDescription) product.fullProductDescription = replacePatterns(product.fullProductDescription);
+  if (product.metaDescription) product.metaDescription = replacePatterns(product.metaDescription);
+  if (product.seoTitle) product.seoTitle = replacePatterns(product.seoTitle);
+  
+  if (product.description && Array.isArray(product.description)) {
+    product.description = product.description.map(block => {
+      if (block.children) {
+        block.children = block.children.map(child => ({
+          ...child,
+          text: replacePatterns(child.text)
+        }));
+      }
+      return block;
+    });
+  }
+
+  if (product.features && Array.isArray(product.features)) {
+    product.features = product.features.map(f => replacePatterns(f));
+  }
+  if (product.keySpecs && Array.isArray(product.keySpecs)) {
+    product.keySpecs = product.keySpecs.map(spec => ({
+      ...spec,
+      specName: replacePatterns(spec.specName),
+      specValue: replacePatterns(spec.specValue)
+    }));
+  }
+  if (product.fullSpecs && Array.isArray(product.fullSpecs)) {
+    product.fullSpecs = product.fullSpecs.map(spec => ({
+      ...spec,
+      specName: replacePatterns(spec.specName),
+      specValue: replacePatterns(spec.specValue)
+    }));
+  }
+
+  return product;
+}
+
 // ── Fallback builders – category-aware pain-point copy ────────────────────
 function buildFallbackTitle(product) {
   const painMap = {
@@ -261,7 +349,7 @@ function buildFallbackDesc(product) {
     inverter:         `${product.name}${modelText} – auto-switch solar, battery & grid during grid failures. CE certified. B2B wholesale pricing for global distributors.`,
     "electric-mobility": `${product.name}${modelText} – eliminate petrol costs for delivery fleets in Karachi and Dhaka. CE certified, bulk import pricing available.`,
     "portable-power": `${product.name}${modelText} – LiFePO4 power station with pure sine wave. Emergency backup for homes and businesses during frequent power cuts.`,
-    "power-bank":     `${product.name}${modelText} – stay connected through regional blackouts. CE/FCC certified. B2B wholesale pricing for African and Asian distributors.`,
+    "power-bank":     `${product.name}${modelText} – stay connected anywhere. CE/FCC certified. B2B wholesale pricing for global distributors.`,
   };
   return descMap[product.category] || `JoyHand ${product.name}${modelText} – factory-direct energy solution. Request B2B wholesale pricing for emerging markets.`;
 }
@@ -291,7 +379,7 @@ export default async function ProductDetailsPage({ params }) {
 
   // Prefer Sanity data, fallback to local data for images
   const rawProduct = sanityProduct || localProduct;
-  const product = JSON.parse(JSON.stringify(rawProduct));
+  const product = applyUsEuPivot(JSON.parse(JSON.stringify(rawProduct)));
 
   // Enforce requested warranties and life cycles
   let targetWarranty = "";
@@ -433,7 +521,7 @@ export default async function ProductDetailsPage({ params }) {
         <Breadcrumbs 
           items={[
             { label: "Products", link: "/products" },
-            { label: categoryDisplay, link: `/products/solutions/${solutionSlug}` }
+            { label: categoryDisplay, link: `/products/category/${solutionSlug}` }
           ]} 
           currentTitle={product.name} 
         />

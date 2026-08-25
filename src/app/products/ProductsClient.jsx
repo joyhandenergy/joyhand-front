@@ -46,7 +46,7 @@ export default function ProductsClient({ initialProducts = [] }) {
             {solutionLinks.map((cat) => (
               <Link
                 key={cat.slug}
-                href={`/products/solutions/${cat.slug}`}
+                href={`/products/category/${cat.slug}`}
                 className="products-page__category-link"
               >
                 {cat.name}

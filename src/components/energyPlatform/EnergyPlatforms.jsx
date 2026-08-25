@@ -39,7 +39,7 @@ const EnergyPlatforms = () => {
             className="platform-card"
             style={{ transitionDelay: `${index * 0.1}s` }}
           >
-            <Link href={`/products/solutions/${platform.slug}`} className="platform-card__link" aria-label={`View details for ${platform.title}`}>
+            <Link href={`/products/category/${platform.slug}`} className="platform-card__link" aria-label={`View details for ${platform.title}`}>
               <div className="platform-card__image-wrapper">
                 <Image
                   src={platform.image}

@@ -49,6 +49,9 @@ const nextConfig = {
   /* 301 Redirects — old slugs → final short pain-point slugs */
   async redirects() {
     return [
+      // SEO Migration for Category URLs
+      { source: "/products/solutions/:slug*", destination: "/products/category/:slug*", permanent: true },
+      
       { source: "/products/wall-mount-battery-51-2v-200ah", destination: "/products/lfp-battery-10kwh", permanent: true },
       { source: "/products/wall-mount-battery-51-2v-300ah", destination: "/products/lfp-battery-15kwh", permanent: true },
       { source: "/products/mobile-battery-pack-51-2v-400ah-ls", destination: "/products/mobile-battery-20kwh", permanent: true },

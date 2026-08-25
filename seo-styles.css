@@ -1,0 +1,103 @@
+/* =====================================================
+   CATEGORY SEO CONTENT BLOCK
+===================================================== */
+.products-page__seo-block {
+  margin-top: 4rem;
+  margin-bottom: 0; /* Let the parent section padding handle bottom space */
+  padding: 3rem;
+  background: var(--neutral-white, #ffffff);
+  border-radius: 32px;
+  border: 1px solid rgba(18, 27, 45, 0.06);
+  box-shadow: 0 10px 30px rgba(18, 27, 45, 0.04);
+  color: var(--neutral-medium, #6b7280);
+  text-align: left;
+}
+
+.products-page__seo-block h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--secondary-color, #121b2d);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.products-page__seo-block h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--secondary-color, #121b2d);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.products-page__seo-block p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.products-page__seo-block strong {
+  color: var(--primary-color, #ff7f41);
+  font-weight: 700;
+}
+
+.products-page__seo-block ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.products-page__seo-block li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.products-page__seo-block li::before {
+  content: "•";
+  color: var(--primary-color, #ff7f41);
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -4px;
+}
+
+@media (max-width: 768px) {
+  .products-page__seo-block {
+    padding: 1.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0; /* Remove extra space above footer */
+    border-radius: 20px;
+    text-align: left;
+  }
+  .products-page__seo-block h2 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  .products-page__seo-block h3 {
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+  }
+  .products-page__seo-block p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+  .products-page__seo-block ul {
+    margin-bottom: 1rem;
+  }
+  .products-page__seo-block li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+}
