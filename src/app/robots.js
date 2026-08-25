@@ -9,6 +9,7 @@ export default function robots() {
           "/privacy",
           "/terms",
           "/cookie-policy",
+          "/studio/",
         ],
       },
     ],

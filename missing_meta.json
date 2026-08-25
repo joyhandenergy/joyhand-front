@@ -1,0 +1,176 @@
+[
+  {
+    "_id": "imported-product-55",
+    "category": "power-bank",
+    "model": "TK15",
+    "name": "TK15 Aluminum Wireless Power Bank"
+  },
+  {
+    "_id": "imported-product-56",
+    "category": "power-bank",
+    "model": "T18-µò░µÿ╛",
+    "name": "T18 Digital Wireless Power Bank with Stand"
+  },
+  {
+    "_id": "imported-product-57",
+    "category": "power-bank",
+    "model": "T18-τü»µÿ╛∩╝ê3C∩╝ë",
+    "name": "T18 LED 3C Power Bank with Cables"
+  },
+  {
+    "_id": "imported-product-58",
+    "category": "power-bank",
+    "model": "T16-τü»µÿ╛∩╝ê3C∩╝ë",
+    "name": "T16 LED 3C Power Bank with Cables"
+  },
+  {
+    "_id": "imported-product-59",
+    "category": "power-bank",
+    "model": "T6-τü»µÿ╛",
+    "name": "T6 LED Power Bank"
+  },
+  {
+    "_id": "imported-product-60",
+    "category": "power-bank",
+    "model": "SDR031",
+    "name": "SDR031 10000mAh LED Power Bank"
+  },
+  {
+    "_id": "imported-product-61",
+    "category": "power-bank",
+    "model": "SDR032",
+    "name": "SDR032 10000mAh DualΓÇæCell Power Bank"
+  },
+  {
+    "_id": "imported-product-62",
+    "category": "power-bank",
+    "model": "HW032",
+    "name": "HW032 Magnetic Power Bank"
+  },
+  {
+    "_id": "imported-product-63",
+    "category": "power-bank",
+    "model": "HW031",
+    "name": "HW031 20000mAh HighΓÇæCapacity Power Bank"
+  },
+  {
+    "_id": "imported-product-64",
+    "category": "power-bank",
+    "model": "Solar 4ΓÇæCable",
+    "name": "4ΓÇæCable Solar Power Bank 20000mAh"
+  },
+  {
+    "_id": "imported-product-65",
+    "category": "power-bank",
+    "model": "Hand Crank Series",
+    "name": "Hand Crank Solar Power Bank"
+  },
+  {
+    "_id": "imported-product-66",
+    "category": "power-bank",
+    "model": "Emergency Radio",
+    "name": "Emergency Solar Radio with Hand Crank"
+  },
+  {
+    "_id": "imported-product-67",
+    "category": "power-bank",
+    "model": "Metal Series",
+    "name": "Metal Solar Power Bank"
+  },
+  {
+    "_id": "imported-product-68",
+    "category": "power-bank",
+    "model": "Rugged 3ΓÇæUSB",
+    "name": "Rugged 3ΓÇæUSB Solar Power Bank"
+  },
+  {
+    "_id": "imported-product-69",
+    "category": "power-bank",
+    "model": "Rugged Detachable",
+    "name": "Rugged Solar Power Bank with Detachable Cables"
+  },
+  {
+    "_id": "imported-product-70",
+    "category": "power-bank",
+    "model": "MagSafe Solar",
+    "name": "MagSafe Wireless Solar Power Bank"
+  },
+  {
+    "_id": "imported-product-71",
+    "category": "power-bank",
+    "model": "Mini MagSafe",
+    "name": "Mini MagSafe Solar Power Bank"
+  },
+  {
+    "_id": "imported-product-72",
+    "category": "power-bank",
+    "model": "UltraΓÇæSlim",
+    "name": "UltraΓÇæSlim Solar Power Bank"
+  },
+  {
+    "_id": "imported-product-73",
+    "category": "power-bank",
+    "model": "Budget Solar",
+    "name": "Budget Solar Power Bank"
+  },
+  {
+    "_id": "imported-product-74",
+    "category": "power-bank",
+    "model": "Solar Torch",
+    "name": "Solar Power Bank with LED Torch"
+  },
+  {
+    "_id": "imported-product-75",
+    "category": "power-bank",
+    "model": "Basic Solar",
+    "name": "Basic Solar Power Bank 20000mAh"
+  },
+  {
+    "_id": "imported-product-76",
+    "category": "power-bank",
+    "model": "IP6 Waterproof",
+    "name": "IP6 Waterproof Solar Power Bank"
+  },
+  {
+    "_id": "imported-product-77",
+    "category": "power-bank",
+    "model": "IP55 Series",
+    "name": "IP55 Waterproof Solar Power Bank"
+  },
+  {
+    "_id": "imported-product-78",
+    "category": "power-bank",
+    "model": "IP66 Lantern",
+    "name": "IP66 Waterproof Solar Power Bank with Lantern"
+  },
+  {
+    "_id": "imported-product-79",
+    "category": "power-bank",
+    "model": "Folding Solar",
+    "name": "Folding Solar Power Bank"
+  },
+  {
+    "_id": "imported-product-80",
+    "category": "power-bank",
+    "model": "Wireless Solar",
+    "name": "Wireless Solar Power Bank"
+  },
+  {
+    "_id": "imported-product-81",
+    "category": "power-bank",
+    "model": "Lantern Solar",
+    "name": "Camping Lantern Solar Power Bank"
+  },
+  {
+    "_id": "imported-product-82",
+    "category": "power-bank",
+    "model": "3ΓÇæMode Lantern",
+    "name": "3ΓÇæMode Solar Lantern Power Bank"
+  },
+  {
+    "_id": "imported-product-83",
+    "category": "power-bank",
+    "model": "Solar Speaker",
+    "name": "Solar Bluetooth Speaker"
+  }
+]

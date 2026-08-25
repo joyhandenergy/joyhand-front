@@ -1,0 +1,3344 @@
+[
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-55",
+    "_rev": "QR3knQwiU7hQ2mmjtK4bZO",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T09:59:51Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "3gs4nun1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2typp1bi",
+            "_type": "span",
+            "marks": [],
+            "text": "10000mAh aluminium power bank with 15W wireless charging and USBΓÇæC PD. UltraΓÇæthin 9mm design, Zambia no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "UltraΓÇæslim 9mm aluminium body",
+      "15W wireless charging",
+      "USBΓÇæC PD fast charging",
+      "LED battery indicator",
+      "Multiple colour options"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "6ofz99",
+        "specName": "wirelessOutput",
+        "specValue": "5W/7.5W/10W/15W"
+      },
+      {
+        "_key": "dft09k",
+        "specName": "usbCOutput",
+        "specValue": "5V/3A, 9V/2A, 12V/1.5A"
+      },
+      {
+        "_key": "vwixz",
+        "specName": "input",
+        "specValue": "USBΓÇæC: 5V/3A, 9V/2.22A, 12V/1.67A (20W)"
+      },
+      {
+        "_key": "1wrlxh",
+        "specName": "weight",
+        "specValue": "~200g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "l2ze5",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-1a36640dec1f5aabeea2db336234f02c4e62d1a4-1029x772-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "0a04zo",
+        "specName": "capacity",
+        "specValue": "10000mAh"
+      },
+      {
+        "_key": "og0xhb",
+        "specName": "cellType",
+        "specValue": "706074 LiΓÇæion"
+      },
+      {
+        "_key": "vxcs6",
+        "specName": "dimensions",
+        "specValue": "102 ├ù 63 ├ù 9 mm"
+      },
+      {
+        "_key": "2f08k",
+        "specName": "material",
+        "specValue": "Aluminium + paint"
+      },
+      {
+        "_key": "16ze6d",
+        "specName": "colors",
+        "specValue": "Silver, blue, grey"
+      },
+      {
+        "_key": "i7g2c",
+        "specName": "indicator",
+        "specValue": "LED lights"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-1a36640dec1f5aabeea2db336234f02c4e62d1a4-1029x772-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "TK15",
+    "name": "TK15 Aluminum Wireless Power Bank",
+    "seoTitle": "",
+    "shortDescription": "10000mAh aluminium power bank with 15W wireless charging and USBΓÇæC PD. UltraΓÇæthin 9mm design, Zambia no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "powerbank-outage-magsafe-aluminum"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-56",
+    "_rev": "QR3knQwiU7hQ2mmjtK4bhO",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T09:59:53Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "3vzwkj27",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "dgbm9kr4",
+            "_type": "span",
+            "marks": [],
+            "text": "10000mAh power bank with digital display, integrated USBΓÇæC/Lightning cables, foldable stand, and 3ΓÇæinΓÇæ1 wireless charging, Nepal no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "Digital percentage display",
+      "BuiltΓÇæin USBΓÇæC and Lightning cables",
+      "Foldable stand for handsΓÇæfree viewing",
+      "3ΓÇæinΓÇæ1 wireless charging",
+      "22.5W USBΓÇæC fast charging"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "o5hd6g",
+        "specName": "wirelessOutput",
+        "specValue": "2.5W/5W/7.5W/10W/15W (3ΓÇæinΓÇæ1)"
+      },
+      {
+        "_key": "26bblh",
+        "specName": "builtInCables",
+        "specValue": "USBΓÇæC (5V/3A, 9V/2A, 12V/1.5A), Lightning (5V/2.4A)"
+      },
+      {
+        "_key": "gqsjwb",
+        "specName": "usbCOutput",
+        "specValue": "5V/3A, 9V/2A, 12V/1.5A"
+      },
+      {
+        "_key": "593mff",
+        "specName": "input",
+        "specValue": "USBΓÇæC: 5V/3A, 9V/2.22A, 10V/2.25A, 12V/1.67A (22.5W)"
+      },
+      {
+        "_key": "0zbnst",
+        "specName": "weight",
+        "specValue": "~300g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "q5b1pe",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-d81e1e14b207080ade9ac64d7769e8a588c4fde8-1440x1080-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "odm7n",
+        "specName": "capacity",
+        "specValue": "10000mAh"
+      },
+      {
+        "_key": "h146hc",
+        "specName": "cellType",
+        "specValue": "146074 LiΓÇæion"
+      },
+      {
+        "_key": "bfqdrd",
+        "specName": "dimensions",
+        "specValue": "108 ├ù 64.7 ├ù 21 mm"
+      },
+      {
+        "_key": "jvi5wr",
+        "specName": "material",
+        "specValue": "ABS+PC + zinc alloy stand + builtΓÇæin cables"
+      },
+      {
+        "_key": "hd30fj",
+        "specName": "colors",
+        "specValue": "Black, white"
+      },
+      {
+        "_key": "bpit61",
+        "specName": "indicator",
+        "specValue": "Digital numeric display"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-d81e1e14b207080ade9ac64d7769e8a588c4fde8-1440x1080-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "T18-µò░µÿ╛",
+    "name": "T18 Digital Wireless Power Bank with Stand",
+    "seoTitle": "",
+    "shortDescription": "10000mAh power bank with digital display, integrated USBΓÇæC/Lightning cables, foldable stand, and 3ΓÇæinΓÇæ1 wireless charging, Nepal no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "powerbank-outage-wireless-stand"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-57",
+    "_rev": "4smu7Ks5k1PWjXUh4yAMRK",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T09:59:54Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "hutyr9de",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "jdc7ov0l",
+            "_type": "span",
+            "marks": [],
+            "text": "10000mAh power bank with LED indicator, builtΓÇæin USBΓÇæC/Lightning cables, foldable stand, and 3ΓÇæinΓÇæ1 wireless charging, Myanmar no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "BuiltΓÇæin USBΓÇæC and Lightning cables",
+      "Foldable stand",
+      "3ΓÇæinΓÇæ1 wireless charging",
+      "LED battery indicator",
+      "22.5W USBΓÇæC fast charging"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "k2xr8",
+        "specName": "wirelessOutput",
+        "specValue": "2.5W/5W/7.5W/10W/15W (3ΓÇæinΓÇæ1)"
+      },
+      {
+        "_key": "7x5d38",
+        "specName": "builtInCables",
+        "specValue": "USBΓÇæC (5V/3A, 9V/2A, 12V/1.5A), Lightning (5V/2.4A)"
+      },
+      {
+        "_key": "i5cdjh",
+        "specName": "usbCOutput",
+        "specValue": "5V/3A, 9V/2A, 12V/1.5A"
+      },
+      {
+        "_key": "u311wi",
+        "specName": "input",
+        "specValue": "USBΓÇæC: 5V/3A, 9V/2.22A, 10V/2.25A, 12V/1.67A (22.5W)"
+      },
+      {
+        "_key": "05pcke",
+        "specName": "weight",
+        "specValue": "~280g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "t2cda",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-683fcc03f1af062438a5e0c6e24bc18a33d26e03-800x800-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "n0x3g4",
+        "specName": "capacity",
+        "specValue": "10000mAh"
+      },
+      {
+        "_key": "flvzor",
+        "specName": "cellType",
+        "specValue": "706074 LiΓÇæion"
+      },
+      {
+        "_key": "4mclub",
+        "specName": "dimensions",
+        "specValue": "102 ├ù 63 ├ù 9 mm"
+      },
+      {
+        "_key": "pk1cnh",
+        "specName": "material",
+        "specValue": "ABS+PC + zinc alloy stand + builtΓÇæin cables"
+      },
+      {
+        "_key": "oywv4e",
+        "specName": "colors",
+        "specValue": "Black, white"
+      },
+      {
+        "_key": "62zos6",
+        "specName": "indicator",
+        "specValue": "LED lights"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-683fcc03f1af062438a5e0c6e24bc18a33d26e03-800x800-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "T18-τü»µÿ╛∩╝ê3C∩╝ë",
+    "name": "T18 LED 3C Power Bank with Cables",
+    "seoTitle": "",
+    "shortDescription": "10000mAh power bank with LED indicator, builtΓÇæin USBΓÇæC/Lightning cables, foldable stand, and 3ΓÇæinΓÇæ1 wireless charging, Myanmar no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "powerbank-outage-led-3ports"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-58",
+    "_rev": "v8p3KAncgjT5f7voAEODNr",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T09:59:56Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "hkwsyu1e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "lc4xasri",
+            "_type": "span",
+            "marks": [],
+            "text": "10000mAh power bank with LED indicator, builtΓÇæin USBΓÇæC/Lightning cables, and 15W wireless charging. USBΓÇæA output also available, PNG no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "BuiltΓÇæin USBΓÇæC cable (input/output)",
+      "15W wireless charging",
+      "USBΓÇæA QC3.0 fast charging",
+      "LED battery indicator",
+      "Foldable stand (integrated)"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "scqy5h",
+        "specName": "wirelessOutput",
+        "specValue": "5W/7.5W/10W/15W"
+      },
+      {
+        "_key": "s68asb",
+        "specName": "builtInCables",
+        "specValue": "USBΓÇæC (5V/3A, 9V/2.22A, 10V/2.25A, 12V/1.67A)"
+      },
+      {
+        "_key": "b5vvh",
+        "specName": "usbAOutput",
+        "specValue": "5V/3A, 5V/4.5A, 9V/2A, 12V/1.5A (QC 22.5W)"
+      },
+      {
+        "_key": "har05i",
+        "specName": "usbCOutput",
+        "specValue": "5V/3A, 9V/2A, 12V/1.5A"
+      },
+      {
+        "_key": "pid8j6",
+        "specName": "input",
+        "specValue": "USBΓÇæC: 5V/3A, 9V/2.22A, 10V/2.25A, 12V/1.67A (22.5W)"
+      },
+      {
+        "_key": "k62zfl",
+        "specName": "weight",
+        "specValue": "~290g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "yoknic",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-8efbae9fd1f43b01c4c743d106db0450a3a2cf75-1154x866-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "pc6xpi",
+        "specName": "capacity",
+        "specValue": "10000mAh"
+      },
+      {
+        "_key": "fn8p7",
+        "specName": "cellType",
+        "specValue": "146074 LiΓÇæion"
+      },
+      {
+        "_key": "m53t6m",
+        "specName": "dimensions",
+        "specValue": "110 ├ù 70 ├ù 23 mm"
+      },
+      {
+        "_key": "ipfey",
+        "specName": "material",
+        "specValue": "ABS+PC + zinc alloy stand + builtΓÇæin cables"
+      },
+      {
+        "_key": "gjcemg",
+        "specName": "colors",
+        "specValue": "Black, white"
+      },
+      {
+        "_key": "32p3l",
+        "specName": "indicator",
+        "specValue": "LED lights"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-8efbae9fd1f43b01c4c743d106db0450a3a2cf75-1154x866-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "T16-τü»µÿ╛∩╝ê3C∩╝ë",
+    "name": "T16 LED 3C Power Bank with Cables",
+    "seoTitle": "",
+    "shortDescription": "10000mAh power bank with LED indicator, builtΓÇæin USBΓÇæC/Lightning cables, and 15W wireless charging. USBΓÇæA output also available, PNG no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "powerbank-outage-led-tripleusb"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-59",
+    "_rev": "QR3knQwiU7hQ2mmjtK4c1O",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T09:59:57Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "33g0q6e9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1143q0as",
+            "_type": "span",
+            "marks": [],
+            "text": "10000mAh power bank with LED indicator, 15W wireless charging, and USBΓÇæA + USBΓÇæC outputs. Compact design, Nigeria no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "Foldable leather strap/stand",
+      "15W wireless charging",
+      "USBΓÇæC PD and USBΓÇæA QC3.0",
+      "10000mAh capacity",
+      "LED indicator"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "ps7smk",
+        "specName": "wirelessOutput",
+        "specValue": "5W/7.5W/10W/15W"
+      },
+      {
+        "_key": "1cpqtp",
+        "specName": "usbCOutput",
+        "specValue": "5V/3A, 9V/2A, 12V/1.5A"
+      },
+      {
+        "_key": "sr5g57",
+        "specName": "usbAOutput",
+        "specValue": "5V/3A, 5V/4.5A, 9V/2A, 12V/1.5A (QC 22.5W)"
+      },
+      {
+        "_key": "7v1s0g",
+        "specName": "input",
+        "specValue": "USBΓÇæC: 5V/3A, 9V/2.22A, 10V/2.25A, 12V/1.67A (22.5W)"
+      },
+      {
+        "_key": "ewfrc7",
+        "specName": "weight",
+        "specValue": "~280g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "cx3bdi",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-18431d0ddc3f8a7002b37e13703df727457bcc69-744x744-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "u9pbd",
+        "specName": "capacity",
+        "specValue": "10000mAh"
+      },
+      {
+        "_key": "ooj57",
+        "specName": "cellType",
+        "specValue": "126280/1376074 LiΓÇæion"
+      },
+      {
+        "_key": "omt62p",
+        "specName": "dimensions",
+        "specValue": "110 ├ù 70 ├ù 23 mm"
+      },
+      {
+        "_key": "nr4he",
+        "specName": "material",
+        "specValue": "ABS+PC + foldable leather stand"
+      },
+      {
+        "_key": "2r15c",
+        "specName": "colors",
+        "specValue": "Black, white"
+      },
+      {
+        "_key": "85y6v",
+        "specName": "indicator",
+        "specValue": "LED lights"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-18431d0ddc3f8a7002b37e13703df727457bcc69-744x744-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "T6-τü»µÿ╛",
+    "name": "T6 LED Power Bank",
+    "seoTitle": "",
+    "shortDescription": "10000mAh power bank with LED indicator, 15W wireless charging, and USBΓÇæA + USBΓÇæC outputs. Compact design, Nigeria no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "powerbank-outage-led-compact"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-60",
+    "_rev": "v8p3KAncgjT5f7voAEOE8b",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T09:59:59Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "1x22w4ug",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ph3nd6cz",
+            "_type": "span",
+            "marks": [],
+            "text": "10000mAh power bank with LED indicator, 15W wireless charging, and USBΓÇæA + USBΓÇæC outputs. Slim 23mm design, Kenya no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "15W wireless charging",
+      "USBΓÇæC PD 18W",
+      "USBΓÇæA QC 22.5W",
+      "Multiple colour options",
+      "LED battery indicator"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "e9texk",
+        "specName": "wirelessOutput",
+        "specValue": "5W/7.5W/10W/15W"
+      },
+      {
+        "_key": "0n9zrb",
+        "specName": "usbCOutput",
+        "specValue": "5V/3A, 9V/2A (PD 18W)"
+      },
+      {
+        "_key": "lbh5wc",
+        "specName": "usbAOutput",
+        "specValue": "5V/3A, 9V/2A, 10V/2.25A, 12V/1.5A (QC 22.5W)"
+      },
+      {
+        "_key": "l188h",
+        "specName": "input",
+        "specValue": "USBΓÇæC: 5V/3A, 9V/2.22A, 12V/1.67A (20W)"
+      },
+      {
+        "_key": "7ocfv9",
+        "specName": "weight",
+        "specValue": "~270g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "cs0qd",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-4a176491dd014427bb3aa366ea29958b755f2cab-712x763-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "wdxa2p",
+        "specName": "capacity",
+        "specValue": "10000mAh"
+      },
+      {
+        "_key": "aiv1zo",
+        "specName": "cellType",
+        "specValue": "146074 LiΓÇæion"
+      },
+      {
+        "_key": "awz0ar",
+        "specName": "dimensions",
+        "specValue": "110 ├ù 70 ├ù 23 mm"
+      },
+      {
+        "_key": "t8zqq9",
+        "specName": "material",
+        "specValue": "ABS+PC"
+      },
+      {
+        "_key": "osqted",
+        "specName": "colors",
+        "specValue": "Black, white, blue"
+      },
+      {
+        "_key": "np2kpo",
+        "specName": "indicator",
+        "specValue": "LED lights"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-4a176491dd014427bb3aa366ea29958b755f2cab-712x763-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "SDR031",
+    "name": "SDR031 10000mAh LED Power Bank",
+    "seoTitle": "",
+    "shortDescription": "10000mAh power bank with LED indicator, 15W wireless charging, and USBΓÇæA + USBΓÇæC outputs. Slim 23mm design, Kenya no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "powerbank-blackout-10000mah-led"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-61",
+    "_rev": "v8p3KAncgjT5f7voAEOF01",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:00Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "071p3fkp",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1oicqfwi",
+            "_type": "span",
+            "marks": [],
+            "text": "10000mAh dualΓÇæcell power bank with LED indicator, 15W wireless charging, and fast USBΓÇæA/USBΓÇæC outputs, Pakistan no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "10000mAh dual cells",
+      "15W wireless charging",
+      "USBΓÇæC PD 18W",
+      "USBΓÇæA QC 22.5W",
+      "LED indicator"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "8gf278",
+        "specName": "wirelessOutput",
+        "specValue": "5W/7.5W/10W/15W"
+      },
+      {
+        "_key": "lc0fq",
+        "specName": "usbCOutput",
+        "specValue": "5V/3A, 9V/2A (PD 18W)"
+      },
+      {
+        "_key": "dehokq",
+        "specName": "usbAOutput",
+        "specValue": "5V/3A, 9V/2A, 10V/2.25A, 12V/1.5A (QC 22.5W)"
+      },
+      {
+        "_key": "sgdl2",
+        "specName": "input",
+        "specValue": "USBΓÇæC: 5V/3A, 9V/2.22A, 12V/1.67A (20W)"
+      },
+      {
+        "_key": "yjvj5",
+        "specName": "weight",
+        "specValue": "~270g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "h6goc4",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-24d81d6e665a786f253a2fe005117eb8411f2eee-699x470-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "zklji",
+        "specName": "capacity",
+        "specValue": "10000mAh"
+      },
+      {
+        "_key": "w06i4w",
+        "specName": "cellType",
+        "specValue": "126280/1376074 LiΓÇæion"
+      },
+      {
+        "_key": "62ptfk",
+        "specName": "dimensions",
+        "specValue": "110 ├ù 70 ├ù 23 mm"
+      },
+      {
+        "_key": "1y363k",
+        "specName": "material",
+        "specValue": "ABS+PC"
+      },
+      {
+        "_key": "wumzso",
+        "specName": "colors",
+        "specValue": "Black, white, blue"
+      },
+      {
+        "_key": "zjk6rp",
+        "specName": "indicator",
+        "specValue": "LED lights"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-24d81d6e665a786f253a2fe005117eb8411f2eee-699x470-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "SDR032",
+    "name": "SDR032 10000mAh DualΓÇæCell Power Bank",
+    "seoTitle": "",
+    "shortDescription": "10000mAh dualΓÇæcell power bank with LED indicator, 15W wireless charging, and fast USBΓÇæA/USBΓÇæC outputs, Pakistan no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "powerbank-blackout-10000mah-dual"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-62",
+    "_rev": "v8p3KAncgjT5f7voAEOGSA",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:02Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "t9dbag1z",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "qcmej3aq",
+            "_type": "span",
+            "marks": [],
+            "text": "10000mAh magnetic power bank in pastel colours, with 15W wireless charging and USBΓÇæC PD. Compact and stylish, Bangladesh no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "Magnetic attachment for iPhone",
+      "15W wireless charging",
+      "22.5W USBΓÇæC PD",
+      "Stylish pastel colours",
+      "Compact 19mm thickness"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "bu535",
+        "specName": "wirelessOutput",
+        "specValue": "15W"
+      },
+      {
+        "_key": "tlyvq",
+        "specName": "usbCOutput",
+        "specValue": "5V/3A, 9V/2.2A, 12V/1.65A, 10V/2.25A (PD 22.5W)"
+      },
+      {
+        "_key": "54vce",
+        "specName": "input",
+        "specValue": "USBΓÇæC: 5V/3A, 9V/2A, 12V/1.5A (18W)"
+      },
+      {
+        "_key": "clxtzc",
+        "specName": "weight",
+        "specValue": "~240g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "ro4wra",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-8346a4d0cd46bd28f9125c2a1c92aaed15cdb59a-731x731-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "v3jk4",
+        "specName": "capacity",
+        "specValue": "10000mAh"
+      },
+      {
+        "_key": "w1gsua",
+        "specName": "cellType",
+        "specValue": "146074 LiΓÇæion"
+      },
+      {
+        "_key": "22cbi",
+        "specName": "dimensions",
+        "specValue": "102 ├ù 66 ├ù 19 mm"
+      },
+      {
+        "_key": "w038v4",
+        "specName": "material",
+        "specValue": "ABS+PC"
+      },
+      {
+        "_key": "hu643",
+        "specName": "colors",
+        "specValue": "White, pink, purple"
+      },
+      {
+        "_key": "s7xim",
+        "specName": "indicator",
+        "specValue": "LED lights"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-8346a4d0cd46bd28f9125c2a1c92aaed15cdb59a-731x731-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "HW032",
+    "name": "HW032 Magnetic Power Bank",
+    "seoTitle": "",
+    "shortDescription": "10000mAh magnetic power bank in pastel colours, with 15W wireless charging and USBΓÇæC PD. Compact and stylish, Bangladesh no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "powerbank-blackout-magnetic-pink"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-63",
+    "_rev": "4smu7Ks5k1PWjXUh4yAPcJ",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:04Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "ymnl2rn4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "wwaxc733",
+            "_type": "span",
+            "marks": [],
+            "text": "UltraΓÇæhigh capacity 20000mAh power bank with builtΓÇæin cables, 15W wireless charging, and dual outputs, India no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "Massive 20000mAh capacity",
+      "BuiltΓÇæin USBΓÇæC and Lightning cables",
+      "15W wireless charging",
+      "USBΓÇæA QC 22.5W output",
+      "4 colour options"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "ihghl",
+        "specName": "wirelessOutput",
+        "specValue": "15W"
+      },
+      {
+        "_key": "5eiev",
+        "specName": "builtInCables",
+        "specValue": "USBΓÇæC (5V/3A, 9V/2.2A, 12V/1.65A), Lightning (5V/2.4A)"
+      },
+      {
+        "_key": "my8mwf",
+        "specName": "usbAOutput",
+        "specValue": "5V/3A, 9V/2A, 12V/1.5A, 10V/2.25A (QC 22.5W)"
+      },
+      {
+        "_key": "r5laio",
+        "specName": "usbInputOutput",
+        "specValue": "USBΓÇæC: 5V/3A, 9V/2A, 12V/1.5A, 10V/2.25A (22.5W)"
+      },
+      {
+        "_key": "cxmdac",
+        "specName": "weight",
+        "specValue": "~450g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "kcaso",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-cbcdd94cfd37ff8150025c556fe82f954d92a8b2-800x800-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "7w73tu",
+        "specName": "capacity",
+        "specValue": "20000mAh"
+      },
+      {
+        "_key": "tmadm",
+        "specName": "cellType",
+        "specValue": "1376074 ├ù2 LiΓÇæion"
+      },
+      {
+        "_key": "30ba3",
+        "specName": "dimensions",
+        "specValue": "109 ├ù 69 ├ù 35 mm"
+      },
+      {
+        "_key": "7hal0f",
+        "specName": "material",
+        "specValue": "ABS+PC"
+      },
+      {
+        "_key": "88nf09",
+        "specName": "colors",
+        "specValue": "Black, white, blue, pink"
+      },
+      {
+        "_key": "yz2t1k",
+        "specName": "indicator",
+        "specValue": "LED lights"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-cbcdd94cfd37ff8150025c556fe82f954d92a8b2-800x800-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "HW031",
+    "name": "HW031 20000mAh HighΓÇæCapacity Power Bank",
+    "seoTitle": "",
+    "shortDescription": "UltraΓÇæhigh capacity 20000mAh power bank with builtΓÇæin cables, 15W wireless charging, and dual outputs, India no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "powerbank-blackout-20000mah"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-64",
+    "_rev": "v8p3KAncgjT5f7voAEOOxg",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:05Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "wl9xn1q0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "jdooiqan",
+            "_type": "span",
+            "marks": [],
+            "text": "20000mAh solar power bank with 4 builtΓÇæin cables (USBΓÇæC, Micro, Lightning, USBΓÇæA), PD20W fast charging, and 360ΓÇæ480LM flashlight, Ghana no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "4 builtΓÇæin cables ΓÇô no extra cables needed",
+      "PD20W and SCP22.5W fast charging",
+      "1.6ΓÇæ1.65W solar panel",
+      "HighΓÇæbrightness 360ΓÇæ480LM flashlight",
+      "V0 flameΓÇæretardant casing"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "mvuwlf",
+        "specName": "ledLight",
+        "specValue": "360ΓÇæ480LM"
+      },
+      {
+        "_key": "3y422c",
+        "specName": "dimensions",
+        "specValue": "173ΓÇæ183 ├ù 84ΓÇæ96 ├ù 25ΓÇæ39 mm"
+      },
+      {
+        "_key": "aj7d1i",
+        "specName": "material",
+        "specValue": "ABS+PC (V0), silicone, TPU"
+      },
+      {
+        "_key": "vt3azc",
+        "specName": "weight",
+        "specValue": "500ΓÇæ560g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "pj03om",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-35186048669975f15495ead567e1b7414c29834c-419x400-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "u4j0s8",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-d9fd33a9594e4f7790e2bb361e4c8255b3c58560-404x403-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "tv1qdr",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-56233be28eac9f5745e2799f77c098825a1fe948-402x450-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "omi19c",
+        "specName": "capacity",
+        "specValue": "20000mAh / 74Wh"
+      },
+      {
+        "_key": "w69esf",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "14s5b",
+        "specName": "solarPanel",
+        "specValue": "1.6ΓÇæ1.65W (5.5V/290ΓÇæ300mA)"
+      },
+      {
+        "_key": "djd8vc",
+        "specName": "icType",
+        "specValue": "IP5356"
+      },
+      {
+        "_key": "jfz2k7",
+        "specName": "output",
+        "specValue": "{\"typeC\":\"5V/3A, 9V/2.22A, 12V/1.66A (PD20W)\",\"usbA1\":\"5V/4.5A, 5V/3A, 9V/2A, 12V/1.5A (SCP22.5W)\",\"usbA2\":\"5V/2.1A\",\"builtInMicro\":\"5V/2.1A\",\"builtInTypeC\":\"5V/3A, 9V/2.22A, 12V/1.66A (PD20W)\",\"builtInLightning\":\"5V/2.4A\"}"
+      },
+      {
+        "_key": "bc2gbi",
+        "specName": "input",
+        "specValue": "{\"typeC\":\"5V/3A, 9V/2.2A, 12V/1.5A (PD18W)\",\"builtInUSBA\":\"5V/3A, 9V/2A, 12V/1.5A (QC18W)\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-56233be28eac9f5745e2799f77c098825a1fe948-402x450-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Solar 4ΓÇæCable",
+    "name": "4ΓÇæCable Solar Power Bank 20000mAh",
+    "seoTitle": "",
+    "shortDescription": "20000mAh solar power bank with 4 builtΓÇæin cables (USBΓÇæC, Micro, Lightning, USBΓÇæA), PD20W fast charging, and 360ΓÇæ480LM flashlight, Ghana no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-20000mah-cables"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-65",
+    "_rev": "v8p3KAncgjT5f7voAEOPbk",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:07Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "3l0t7sqi",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d92dyliq",
+            "_type": "span",
+            "marks": [],
+            "text": "20000mAh solar power bank with hand crank generator, 4 builtΓÇæin cables, PD20W fast charging, and 480LM flashlight, Tanzania no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "Hand crank generator for emergency power",
+      "20000mAh high capacity",
+      "4 builtΓÇæin cables",
+      "PD20W fast charging",
+      "480LM LED flashlight"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "74ntdf",
+        "specName": "input",
+        "specValue": "{\"typeC\":\"5V/3A, 9V/2.2A, 12V/1.5A (PD18W)\",\"builtInUSBA\":\"5V/3A, 9V/2A, 12V/1.5A (QC18W)\",\"handCrank\":\"5V/400mA\"}"
+      },
+      {
+        "_key": "l5k4ym",
+        "specName": "ledLight",
+        "specValue": "480LM"
+      },
+      {
+        "_key": "uzsth",
+        "specName": "dimensions",
+        "specValue": "173.2├ù84├ù42.2mm"
+      },
+      {
+        "_key": "fojiob",
+        "specName": "material",
+        "specValue": "ABS+PC (V0), silicone, TPU"
+      },
+      {
+        "_key": "yjxgr",
+        "specName": "weight",
+        "specValue": "580g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "pvrm6r",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-b8782f9ceac4e35536bd0582bc41f1c3dda24b47-503x503-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "tv01fj",
+        "specName": "capacity",
+        "specValue": "20000mAh / 74Wh"
+      },
+      {
+        "_key": "z8mct4",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "l02c1c",
+        "specName": "solarPanel",
+        "specValue": "1.65W (5.5V/300mA)"
+      },
+      {
+        "_key": "poaft",
+        "specName": "handCrank",
+        "specValue": "5V/400mA"
+      },
+      {
+        "_key": "obmwqw",
+        "specName": "icType",
+        "specValue": "IP5356"
+      },
+      {
+        "_key": "wgdhtq",
+        "specName": "output",
+        "specValue": "{\"typeC\":\"5V/3A, 9V/2.22A, 12V/1.66A (PD20W)\",\"usbA1\":\"5V/4.5A, 5V/3A, 9V/2A, 12V/1.5A (SCP22.5W)\",\"usbA2\":\"5V/2.1A\",\"builtInMicro\":\"5V/2.1A\",\"builtInTypeC\":\"5V/3A, 9V/2.22A, 12V/1.66A (PD20W)\",\"builtInLightning\":\"5V/2.4A\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-b8782f9ceac4e35536bd0582bc41f1c3dda24b47-503x503-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Hand Crank Series",
+    "name": "Hand Crank Solar Power Bank",
+    "seoTitle": "",
+    "shortDescription": "20000mAh solar power bank with hand crank generator, 4 builtΓÇæin cables, PD20W fast charging, and 480LM flashlight, Tanzania no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-handcrank"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-66",
+    "_rev": "QR3knQwiU7hQ2mmjtK4eUO",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:08Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "y3tg1u07",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "rs8vrro6",
+            "_type": "span",
+            "marks": [],
+            "text": "MultiΓÇæfunction emergency radio with solar panel, hand crank, 5000mAh battery, AM/FM radio, SOS alarm, compass, and LED lights, Uganda no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "AM/FM radio with hand crank power",
+      "5000mAh backup battery",
+      "Solar panel for emergency charging",
+      "Two LED lights (120LM near, 500LM far)",
+      "SOS alarm and compass included"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "yp79rh",
+        "specName": "radio",
+        "specValue": "{\"fm\":\"76ΓÇæ108 MHz\",\"am\":\"52ΓÇæ170 KHz\"}"
+      },
+      {
+        "_key": "rwl09wc",
+        "specName": "ledLight",
+        "specValue": "{\"near\":\"1W / 120LM\",\"far\":\"6W / 500LM\"}"
+      },
+      {
+        "_key": "n7eapa",
+        "specName": "speakerPower",
+        "specValue": "4╬⌐/3W"
+      },
+      {
+        "_key": "vfzp4m",
+        "specName": "dimensions",
+        "specValue": "134├ù94├ù46mm"
+      },
+      {
+        "_key": "1scqnx",
+        "specName": "material",
+        "specValue": "ABS+PC (V0)"
+      },
+      {
+        "_key": "ytfro",
+        "specName": "weight",
+        "specValue": "300g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "6nl2mr",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-dcba6f0c0ca4fcde9f6fc215bad8fa03acc318b9-528x528-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "rrwkw",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-892acacfd6edf83bb5879e22720aaea7cdd5ef42-500x500-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "yq7w4",
+        "specName": "capacity",
+        "specValue": "5000mAh / 18.5Wh"
+      },
+      {
+        "_key": "rnci1c",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "71dvj",
+        "specName": "solarCharging",
+        "specValue": "5.5V/40mA"
+      },
+      {
+        "_key": "jnu0xs",
+        "specName": "handCrank",
+        "specValue": "5V/400mA"
+      },
+      {
+        "_key": "bxw4kj",
+        "specName": "input",
+        "specValue": "{\"typeC\":\"5V/2A\"}"
+      },
+      {
+        "_key": "m96oj",
+        "specName": "output",
+        "specValue": "{\"usbA\":\"5V/2.1A\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-892acacfd6edf83bb5879e22720aaea7cdd5ef42-500x500-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Emergency Radio",
+    "name": "Emergency Solar Radio with Hand Crank",
+    "seoTitle": "",
+    "shortDescription": "MultiΓÇæfunction emergency radio with solar panel, hand crank, 5000mAh battery, AM/FM radio, SOS alarm, compass, and LED lights, Uganda no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-emergency-radio"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-67",
+    "_rev": "QR3knQwiU7hQ2mmjtK4egO",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:10Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "lmo5166j",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "p3jl8ug9",
+            "_type": "span",
+            "marks": [],
+            "text": "MetalΓÇæcased solar power bank with 16000ΓÇæ20000mAh, builtΓÇæin cables, and LED torch, Zambia no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "Metal casing for durability",
+      "16000ΓÇæ20000mAh capacity",
+      "BuiltΓÇæin Micro and USBΓÇæA input cable",
+      "20LM LED torch",
+      "Simple and rugged"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "dux0rf",
+        "specName": "ledLight",
+        "specValue": "0.2W / 20LM"
+      },
+      {
+        "_key": "5r0aya",
+        "specName": "dimensions",
+        "specValue": "152├ù78├ù28mm"
+      },
+      {
+        "_key": "e4nmmm",
+        "specName": "material",
+        "specValue": "Metal + ABS+PC (V0)"
+      },
+      {
+        "_key": "gxcrff",
+        "specName": "weight",
+        "specValue": "350g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "fe9tws",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-737c826ff80de84226a8c81204ced0fe7f01e15d-483x497-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "x3f42",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-b3786c903c50ddaa6719630a67d0392c77a2a446-497x497-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "am0hmt",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-dac9b29f968c16cffa90b9bab4778da8b0de99ed-503x503-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "p852gof",
+        "specName": "capacity",
+        "specValue": "16000ΓÇæ20000mAh / 59ΓÇæ74Wh"
+      },
+      {
+        "_key": "ahcc8",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "vytl1m",
+        "specName": "solarPanel",
+        "specValue": "1.2W (5.5V/220mA)"
+      },
+      {
+        "_key": "mmovxn",
+        "specName": "icType",
+        "specValue": "MP5216"
+      },
+      {
+        "_key": "6xw29f",
+        "specName": "input",
+        "specValue": "{\"micro\":\"5V/2A\",\"typeC\":\"5V/2A\",\"builtInUSBA\":\"5V/2A\"}"
+      },
+      {
+        "_key": "xhbjh",
+        "specName": "output",
+        "specValue": "{\"usbA\":\"5V/2.1A\",\"builtInMicro\":\"5V/2.1A\",\"builtInTypeC\":\"5V/2.1A\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-dac9b29f968c16cffa90b9bab4778da8b0de99ed-503x503-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Metal Series",
+    "name": "Metal Solar Power Bank",
+    "seoTitle": "",
+    "shortDescription": "MetalΓÇæcased solar power bank with 16000ΓÇæ20000mAh, builtΓÇæin cables, and LED torch, Zambia no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-metal-outdoor"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-68",
+    "_rev": "4smu7Ks5k1PWjXUh4yATLY",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:12Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "tmnrvz9j",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "czcq3rlv",
+            "_type": "span",
+            "marks": [],
+            "text": "Rugged 20000mAh solar power bank with 3 USB outputs, 1.54W solar panel, and 100LM LED torch, Nepal no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "20000mAh high capacity",
+      "Three USBΓÇæA ports",
+      "1.54W solar panel",
+      "100LM LED torch",
+      "Rugged construction"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "af44iq",
+        "specName": "ledLight",
+        "specValue": "0.8W / 100LM"
+      },
+      {
+        "_key": "kf2qye",
+        "specName": "dimensions",
+        "specValue": "172.8├ù87.2├ù25.7mm"
+      },
+      {
+        "_key": "shmybv",
+        "specName": "material",
+        "specValue": "ABS+PC (V0)"
+      },
+      {
+        "_key": "exdn1n",
+        "specName": "weight",
+        "specValue": "480g"
+      },
+      {
+        "_key": "pltid9",
+        "specName": "colors",
+        "specValue": "Black-red, all black, black-blue, black-orange"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "8skeo",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-6afc083fb101f737809abbd2ac777f556cdfe1a6-509x509-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "erwj0f",
+        "specName": "capacity",
+        "specValue": "20000mAh / 74Wh"
+      },
+      {
+        "_key": "0hqed",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "nfrr9a",
+        "specName": "solarPanel",
+        "specValue": "1.54W (5.5V/280mA), 156.5├ù71├ù1.6mm"
+      },
+      {
+        "_key": "dgm12h",
+        "specName": "icType",
+        "specValue": "MP5216"
+      },
+      {
+        "_key": "0v0jdq",
+        "specName": "input",
+        "specValue": "{\"typeC\":\"5V/2A\",\"micro\":\"5V/2A\"}"
+      },
+      {
+        "_key": "8pw3hu",
+        "specName": "output",
+        "specValue": "{\"usbA1\":\"5V/2.1A\",\"usbA2\":\"5V/2.1A\",\"usbA3\":\"5V/2.1A\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-6afc083fb101f737809abbd2ac777f556cdfe1a6-509x509-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Rugged 3ΓÇæUSB",
+    "name": "Rugged 3ΓÇæUSB Solar Power Bank",
+    "seoTitle": "",
+    "shortDescription": "Rugged 20000mAh solar power bank with 3 USB outputs, 1.54W solar panel, and 100LM LED torch, Nepal no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-rugged-3usb"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-69",
+    "_rev": "v8p3KAncgjT5f7voAEORhx",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:13Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "evfogavi",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "42lvkmtk",
+            "_type": "span",
+            "marks": [],
+            "text": "20000mAh rugged solar power bank with detachable USBΓÇæC, Micro, Lightning cables and 360LM torch, Myanmar no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "20000mAh capacity",
+      "Three detachable cables",
+      "1.54W solar panel",
+      "360LM highΓÇæbrightness torch"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "l4tsd",
+        "specName": "ledLight",
+        "specValue": "3W / 360LM"
+      },
+      {
+        "_key": "ymqvgq",
+        "specName": "dimensions",
+        "specValue": "172├ù87├ù29mm"
+      },
+      {
+        "_key": "htsmk3i",
+        "specName": "weight",
+        "specValue": "520g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "hvoah9",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-82a100dba3c0a559d82bd7af6653f96a6d66a379-408x453-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "fq9clj",
+        "specName": "capacity",
+        "specValue": "20000mAh / 74Wh"
+      },
+      {
+        "_key": "a3q4qt",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "x0mzg",
+        "specName": "solarPanel",
+        "specValue": "1.54W (5.5V/280mA), 156.5├ù71├ù1.6mm"
+      },
+      {
+        "_key": "3uqaqg",
+        "specName": "icType",
+        "specValue": "MP5216"
+      },
+      {
+        "_key": "rzp7f",
+        "specName": "input",
+        "specValue": "{\"typeC\":\"5V/2A\",\"micro\":\"5V/2A\"}"
+      },
+      {
+        "_key": "r9wrd",
+        "specName": "output",
+        "specValue": "{\"usbA1\":\"5V/2.1A\",\"usbA2\":\"5V/2.1A\",\"detachableMicro\":\"5V/2.1A\",\"detachableLightning\":\"5V/2.1A\",\"detachableTypeC\":\"5V/2.1A\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-82a100dba3c0a559d82bd7af6653f96a6d66a379-408x453-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Rugged Detachable",
+    "name": "Rugged Solar Power Bank with Detachable Cables",
+    "seoTitle": "",
+    "shortDescription": "20000mAh rugged solar power bank with detachable USBΓÇæC, Micro, Lightning cables and 360LM torch, Myanmar no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-rugged-cables"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-70",
+    "_rev": "4smu7Ks5k1PWjXUh4yAVVj",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:15Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "gzzp1w28",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "swigmcsi",
+            "_type": "span",
+            "marks": [],
+            "text": "10000mAh MagSafe compatible solar power bank with 15W wireless charging, 20W PD, and 0.55W solar panel, PNG no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "10000mAh capacity",
+      "15W MagSafe wireless charging",
+      "20W PD and 22.5W SCP fast charging",
+      "0.55W solar trickle panel",
+      "UltraΓÇæcompact 22mm thick"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "buxbg3",
+        "specName": "dimensions",
+        "specValue": "108├ù69├ù22mm"
+      },
+      {
+        "_key": "l7g19m",
+        "specName": "weight",
+        "specValue": "208g"
+      },
+      {
+        "_key": "qv3xdk",
+        "specName": "material",
+        "specValue": "ABS+PC (V0)"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "mi3fz",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-3f2b9b1e35fafb7426e47de04366617cf51743e8-497x497-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "xw1fpe",
+        "specName": "capacity",
+        "specValue": "10000mAh / 37Wh"
+      },
+      {
+        "_key": "owrkl",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "1ahq1",
+        "specName": "solarPanel",
+        "specValue": "0.55W (5.5V/100mA)"
+      },
+      {
+        "_key": "7och49",
+        "specName": "icType",
+        "specValue": "Injoinic 5568"
+      },
+      {
+        "_key": "jdg23s",
+        "specName": "input",
+        "specValue": "{\"typeC\":\"5V/2A, 9V/2A\"}"
+      },
+      {
+        "_key": "82i2dg",
+        "specName": "output",
+        "specValue": "{\"typeC\":\"5V/3A, 9V/2.22A, 12V/1.67A (PD20W)\",\"usbA\":\"5V/3A, 9V/2A, 12V/1.5A, 5V/4.5A (SCP22.5W)\",\"wireless\":\"15W\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-3f2b9b1e35fafb7426e47de04366617cf51743e8-497x497-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "MagSafe Solar",
+    "name": "MagSafe Wireless Solar Power Bank",
+    "seoTitle": "",
+    "shortDescription": "10000mAh MagSafe compatible solar power bank with 15W wireless charging, 20W PD, and 0.55W solar panel, PNG no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-magsafe-10000mah"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-71",
+    "_rev": "v8p3KAncgjT5f7voAEOSq4",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:16Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "ugaw0gds",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "nhtwk1eb",
+            "_type": "span",
+            "marks": [],
+            "text": "UltraΓÇæcompact 5000mAh MagSafe solar power bank with 15W wireless charging, 20W PD, and 0.55W solar panel, Nigeria no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "5000mAh ultraΓÇæcompact",
+      "15W MagSafe wireless",
+      "20W PD and 22.5W SCP",
+      "0.55W solar trickle",
+      "Pocketable"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "wyr1um",
+        "specName": "dimensions",
+        "specValue": "108├ù69├ù22mm"
+      },
+      {
+        "_key": "h9s53h",
+        "specName": "weight",
+        "specValue": "130g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "u2f31e",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-f2c7ad77ba18052764ca70efd6f14bef94580d52-531x531-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "njelvg",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-6e1a2299996858bb79d0e01a56027d20e45942fa-509x509-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "rbq4kw",
+        "specName": "capacity",
+        "specValue": "5000mAh / 18.5Wh"
+      },
+      {
+        "_key": "9xbw9",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "v5pg",
+        "specName": "solarPanel",
+        "specValue": "0.55W (5.5V/100mA)"
+      },
+      {
+        "_key": "4n2bgf",
+        "specName": "icType",
+        "specValue": "Injoinic 5568"
+      },
+      {
+        "_key": "yqd79",
+        "specName": "input",
+        "specValue": "{\"typeC\":\"5V/2A, 9V/2A\"}"
+      },
+      {
+        "_key": "abocas",
+        "specName": "output",
+        "specValue": "{\"typeC\":\"5V/3A, 9V/2.22A, 12V/1.67A (PD20W)\",\"usbA\":\"5V/3A, 9V/2A, 12V/1.5A, 5V/4.5A (SCP22.5W)\",\"wireless\":\"15W\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-6e1a2299996858bb79d0e01a56027d20e45942fa-509x509-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Mini MagSafe",
+    "name": "Mini MagSafe Solar Power Bank",
+    "seoTitle": "",
+    "shortDescription": "UltraΓÇæcompact 5000mAh MagSafe solar power bank with 15W wireless charging, 20W PD, and 0.55W solar panel, Nigeria no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-magsafe-mini"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-72",
+    "_rev": "v8p3KAncgjT5f7voAEOUfa",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:19Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "brvolrf0",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "c10kcj7z",
+            "_type": "span",
+            "marks": [],
+            "text": "UltraΓÇæslim 10000mAh solar power bank with builtΓÇæin USBΓÇæC, Micro, Lightning cables and digital display, Kenya no grid needed., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "10000mAh in ultraΓÇæslim 26mm design",
+      "BuiltΓÇæin USBΓÇæC, Micro, Lightning cables",
+      "LED digital display",
+      "Simple and affordable"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "wc2k2",
+        "specName": "dimensions",
+        "specValue": "88├ù78├ù26mm"
+      },
+      {
+        "_key": "1v0nxu",
+        "specName": "weight",
+        "specValue": "277g"
+      },
+      {
+        "_key": "eiei0s",
+        "specName": "material",
+        "specValue": "ABS"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "md94bg",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-a3210666628c7a5d91459c174b74c350110eee68-506x506-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "oksdv",
+        "specName": "capacity",
+        "specValue": "10000mAh / 37Wh"
+      },
+      {
+        "_key": "m7vzin",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "uu42ts",
+        "specName": "solarPanel",
+        "specValue": "0.55W (5.5V/100mA)"
+      },
+      {
+        "_key": "ur7bo",
+        "specName": "icType",
+        "specValue": "Injoinic 5306"
+      },
+      {
+        "_key": "m5zvy",
+        "specName": "input",
+        "specValue": "{\"micro\":\"5V/2A\",\"typeC\":\"5V/2A\",\"builtInUSBA\":\"5V/2A\"}"
+      },
+      {
+        "_key": "n1wq6r",
+        "specName": "output",
+        "specValue": "{\"usbA1\":\"5V/2.1A\",\"usbA2\":\"5V/2.1A\",\"builtInTypeC\":\"5V/2.1A\",\"builtInMicro\":\"5V/2.1A\",\"builtInLightning\":\"5V/2.1A\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-d18af930fd0c3416741adf70754ba016b54ca0a4-390x331-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "UltraΓÇæSlim",
+    "name": "UltraΓÇæSlim Solar Power Bank",
+    "seoTitle": "",
+    "shortDescription": "UltraΓÇæslim 10000mAh solar power bank with builtΓÇæin USBΓÇæC, Micro, Lightning cables and digital display, Kenya no grid needed., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-ultraslim"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-73",
+    "_rev": "v8p3KAncgjT5f7voAEOWbm",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:20Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "fy6zv8wx",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b1572v10",
+            "_type": "span",
+            "marks": [],
+            "text": "CostΓÇæeffective 18000mAh solar power bank with 1.4W solar panel and dual USB outputs, fast mobile charging., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "18000mAh high capacity",
+      "1.4W solar panel",
+      "Two 2.1A USB ports",
+      "Affordable"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "ubrl1",
+        "specName": "dimensions",
+        "specValue": "142├ù72├ù27mm"
+      },
+      {
+        "_key": "ybfov2",
+        "specName": "weight",
+        "specValue": "430g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "4wfiga",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-aab995a9dba2f1fa8ba0f4716efc837944aeb4f4-483x600-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "eqfd4p",
+        "specName": "capacity",
+        "specValue": "18000mAh / 66.6Wh"
+      },
+      {
+        "_key": "9qaut6",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "dzubkn",
+        "specName": "solarPanel",
+        "specValue": "1.4W (5.5V/250mA), 122.6├ù52.6├ù1.6mm"
+      },
+      {
+        "_key": "s4eeed",
+        "specName": "icType",
+        "specValue": "MP5016"
+      },
+      {
+        "_key": "yd6hg",
+        "specName": "input",
+        "specValue": "{\"micro\":\"5V/2A\",\"typeC\":\"5V/2A\"}"
+      },
+      {
+        "_key": "injt7n",
+        "specName": "output",
+        "specValue": "{\"usbA1\":\"5V/2.1A\",\"usbA2\":\"5V/2.1A\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-aab995a9dba2f1fa8ba0f4716efc837944aeb4f4-483x600-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Budget Solar",
+    "name": "Budget Solar Power Bank",
+    "seoTitle": "",
+    "shortDescription": "CostΓÇæeffective 18000mAh solar power bank with 1.4W solar panel and dual USB outputs, fast mobile charging., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-budget-18000mah"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-74",
+    "_rev": "v8p3KAncgjT5f7voAEOXqZ",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:22Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "tbu032ie",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9y5r57xx",
+            "_type": "span",
+            "marks": [],
+            "text": "15000mAh solar power bank with 0.8W solar panel, 50LM LED torch, and dual USB outputs, fast mobile charging., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "15000mAh capacity",
+      "0.8W solar panel",
+      "50LM LED torch",
+      "Two USB outputs"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "f6l2ce",
+        "specName": "ledLight",
+        "specValue": "0.4W / 50LM"
+      },
+      {
+        "_key": "dp4ovj",
+        "specName": "dimensions",
+        "specValue": "154├ù73├ù21mm"
+      },
+      {
+        "_key": "5lq1t6",
+        "specName": "weight",
+        "specValue": "360g"
+      },
+      {
+        "_key": "7rcklc",
+        "specName": "color",
+        "specValue": "Black"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "ev10pp",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-5cc54784fd970506eeead48a4b9e3eba91dee702-488x488-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "tnm3y",
+        "specName": "capacity",
+        "specValue": "15000mAh / 55.5Wh"
+      },
+      {
+        "_key": "hu977",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "8hvino",
+        "specName": "solarPanel",
+        "specValue": "0.8W (5V/160mA), 129.3├ù55.2├ù1.6mm"
+      },
+      {
+        "_key": "8zoqd",
+        "specName": "icType",
+        "specValue": "MP5016"
+      },
+      {
+        "_key": "pvrts",
+        "specName": "input",
+        "specValue": "{\"micro\":\"5V/2A\",\"typeC\":\"5V/2A\"}"
+      },
+      {
+        "_key": "nky21",
+        "specName": "output",
+        "specValue": "{\"usbA1\":\"5V/2.1A\",\"usbA2\":\"5V/2.1A\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-5cc54784fd970506eeead48a4b9e3eba91dee702-488x488-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Solar Torch",
+    "name": "Solar Power Bank with LED Torch",
+    "seoTitle": "",
+    "shortDescription": "15000mAh solar power bank with 0.8W solar panel, 50LM LED torch, and dual USB outputs, fast mobile charging., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-torch-15000mah"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-75",
+    "_rev": "4smu7Ks5k1PWjXUh4yAgW2",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:23Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "tcn492zi",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "bdbhrr47",
+            "_type": "span",
+            "marks": [],
+            "text": "Simple 20000mAh solar power bank with 0.88W solar panel and dual USB outputs. Some models include a stronger LED torch, fast mobile charging., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "20000mAh capacity",
+      "0.88W solar panel",
+      "Two USB outputs",
+      "V0 flameΓÇæretardant casing",
+      "Optional strong LED torch"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "cnofiv",
+        "specName": "ledLight",
+        "specValue": "20ΓÇæ360LM (depends on variant)"
+      },
+      {
+        "_key": "oal10o",
+        "specName": "dimensions",
+        "specValue": "142├ù69├ù17ΓÇæ29mm"
+      },
+      {
+        "_key": "wpafy",
+        "specName": "weight",
+        "specValue": "234ΓÇæ455g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "ce7ztb",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-f91d6d66551cab30e6117b4ee3422ddcd4d38bff-491x491-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "tvt51m",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-a80a74bb6e57391aeec0d2656a2796b5229a4c43-516x516-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "397itq",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-a1ba65c3596b9689deb9444ef29831a8ccb551f1-500x500-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "o0bfyf",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-45b501472c716175a91ab18d52b8bc903ee1e1f5-500x500-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "u7izh",
+        "specName": "capacity",
+        "specValue": "20000mAh / 74Wh"
+      },
+      {
+        "_key": "z1kh0u",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "xm1eoh",
+        "specName": "solarPanel",
+        "specValue": "0.88W (5.5V/160mA), 127.6├ù54.1├ù1.6mm"
+      },
+      {
+        "_key": "9gqjrc",
+        "specName": "icType",
+        "specValue": "MP5216"
+      },
+      {
+        "_key": "txxc3",
+        "specName": "input",
+        "specValue": "{\"micro\":\"5V/2.1A\",\"typeC\":\"5V/2.1A\"}"
+      },
+      {
+        "_key": "udzee",
+        "specName": "output",
+        "specValue": "{\"usbA1\":\"5V/2.1A\",\"usbA2\":\"5V/2.1A\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-fecf7ac810997a9ea935884e906efd636c3f0e0c-413x413-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Basic Solar",
+    "name": "Basic Solar Power Bank 20000mAh",
+    "seoTitle": "",
+    "shortDescription": "Simple 20000mAh solar power bank with 0.88W solar panel and dual USB outputs. Some models include a stronger LED torch, fast mobile charging., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-basic-20000mah"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-76",
+    "_rev": "QR3knQwiU7hQ2mmjtK4hTO",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:26Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "0cojhgy3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "jfc364n4",
+            "_type": "span",
+            "marks": [],
+            "text": "IP6 waterproof 20000mAh solar power bank with 1.6W solar panel, 15W wireless charging, PD20W, and 360LM torch, Uganda premium capacity bulk., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "IP6 waterproof rating",
+      "15W wireless and 20W PD fast charging",
+      "1.6W solar panel",
+      "360LM highΓÇæpower torch",
+      "Three USB outputs"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "0374kl",
+        "specName": "output",
+        "specValue": "{\"usbA1\":\"5V/3A, 9V/2A, 10V/2.25A, 12V/1.5A (SCP22.5W)\",\"usbA2\":\"5V/3A\",\"usbA3\":\"5V/3A\",\"typeC\":\"5V/3A, 9V/2.22A, 12V/1.66A (PD20W)\",\"wireless\":\"15W\"}"
+      },
+      {
+        "_key": "e7ny0n",
+        "specName": "ledLight",
+        "specValue": "3W / 360LM"
+      },
+      {
+        "_key": "2h0l6t",
+        "specName": "dimensions",
+        "specValue": "178├ù93├ù30mm"
+      },
+      {
+        "_key": "kqg1w",
+        "specName": "weight",
+        "specValue": "530g"
+      },
+      {
+        "_key": "1opc4z",
+        "specName": "colors",
+        "specValue": "Black-red, all black, black-blue, black-orange, black-green"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "99uhdg",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-39aee99ab60a0d515c695acd9e03c9c66fee96e8-503x503-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "84gncg",
+        "specName": "capacity",
+        "specValue": "20000mAh / 74Wh"
+      },
+      {
+        "_key": "ms44ip",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "p5k7se",
+        "specName": "solarPanel",
+        "specValue": "1.6W (5.5V/290mA), 150.8├ù71.3├ù1.6mm"
+      },
+      {
+        "_key": "b25wct",
+        "specName": "icType",
+        "specValue": "IP5356"
+      },
+      {
+        "_key": "ifblpn",
+        "specName": "waterproof",
+        "specValue": "IP6"
+      },
+      {
+        "_key": "osmt1",
+        "specName": "input",
+        "specValue": "{\"typeC\":\"5V/3A, 9V/2A, 12V/1.5A (PD18W)\",\"micro\":\"5V/2A, 9V/2A, 12V/1.5A (QC18W)\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-39aee99ab60a0d515c695acd9e03c9c66fee96e8-503x503-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "IP6 Waterproof",
+    "name": "IP6 Waterproof Solar Power Bank",
+    "seoTitle": "",
+    "shortDescription": "IP6 waterproof 20000mAh solar power bank with 1.6W solar panel, 15W wireless charging, PD20W, and 360LM torch, Uganda premium capacity bulk., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-waterproof-ip6"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-77",
+    "_rev": "v8p3KAncgjT5f7voAEOahW",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:27Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "pwt4r4j3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "sij4elhf",
+            "_type": "span",
+            "marks": [],
+            "text": "IP55 waterΓÇæresistant 15000ΓÇæ16000mAh solar power bank with 1.65W solar panel, dual 360LM torches, and optional 5W wireless charging, Zambia premium capacity bulk., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "IP55 waterΓÇæresistant",
+      "Dual 360LM LED torches",
+      "1.65W solar panel",
+      "5W wireless charging (YD-819W)",
+      "15000ΓÇæ16000mAh capacity"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "2m22dj",
+        "specName": "output",
+        "specValue": "{\"usbA1\":\"5V/2.1A\",\"usbA2\":\"5V/2.1A\",\"wireless\":\"5W (YD-819W only)\"}"
+      },
+      {
+        "_key": "v92wjq",
+        "specName": "ledLight",
+        "specValue": "3W / 360LM (dual torches)"
+      },
+      {
+        "_key": "vwvdp",
+        "specName": "dimensions",
+        "specValue": "177├ù88├ù25.6mm"
+      },
+      {
+        "_key": "2gzwkd",
+        "specName": "weight",
+        "specValue": "450g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "wt6an",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-81e75c74e891d9cc05ca99512600d55e3b9d1673-381x381-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "7pxu",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-ede55c56d41239561ba3eab0ed713eb428b441f6-469x469-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "wgtpkn",
+        "specName": "capacity",
+        "specValue": "15000ΓÇæ16000mAh / 55ΓÇæ59Wh"
+      },
+      {
+        "_key": "e2ois",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "50edbc",
+        "specName": "solarPanel",
+        "specValue": "1.65W (5.5V/300mA), 159.2├ù74.4├ù1.6mm"
+      },
+      {
+        "_key": "4yqayo",
+        "specName": "icType",
+        "specValue": "IP5306"
+      },
+      {
+        "_key": "yzfg0q",
+        "specName": "waterproof",
+        "specValue": "IP55"
+      },
+      {
+        "_key": "kudff",
+        "specName": "input",
+        "specValue": "{\"typeC\":\"5V/2A\",\"micro\":\"5V/2A\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-ede55c56d41239561ba3eab0ed713eb428b441f6-469x469-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "IP55 Series",
+    "name": "IP55 Waterproof Solar Power Bank",
+    "seoTitle": "",
+    "shortDescription": "IP55 waterΓÇæresistant 15000ΓÇæ16000mAh solar power bank with 1.65W solar panel, dual 360LM torches, and optional 5W wireless charging, Zambia premium capacity bulk., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-waterproof-ip55"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-78",
+    "_rev": "QR3knQwiU7hQ2mmjtK4iBO",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:29Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "oi7bchay",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "pw3by8f5",
+            "_type": "span",
+            "marks": [],
+            "text": "IP66 waterproof 20000mAh solar power bank with 430LM camping lantern, wireless charging, and 20W PD on fast version, Nepal premium capacity bulk., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "IP66 dustΓÇætight and water jets resistant",
+      "20000mAh with 20W PD and 10W wireless (fast model)",
+      "430LM camping lantern",
+      "1.6W highΓÇæefficiency solar panel",
+      "Rugged aluminium alloy accents"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "v8cl4m",
+        "specName": "output",
+        "specValue": "{\"usbA1\":\"5V/3A, 9V/2A, 12V/1.5A (QC18W)\",\"usbA2\":\"5V/3A, 9V/2A, 12V/1.5A (QC18W)\",\"typeC\":\"5V/3A, 9V/2.22A, 12V/1.67A (PD20W on i26wLQ)\",\"wireless\":\"5ΓÇæ10W\"}"
+      },
+      {
+        "_key": "yby2hs",
+        "specName": "ledLight",
+        "specValue": "3.6W / 430LM"
+      },
+      {
+        "_key": "rkxb2",
+        "specName": "dimensions",
+        "specValue": "200├ù130├ù32mm"
+      },
+      {
+        "_key": "o6vii",
+        "specName": "weight",
+        "specValue": "565g"
+      },
+      {
+        "_key": "n0eaio",
+        "specName": "material",
+        "specValue": "ABS+PC (V0), TPU, silicone, aluminium alloy"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "kjakew",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-f69e15121829e02ab4d60323322fdc4b6e2b6a13-388x388-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "p2692m",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-512a031ff0f12f23f8a7a85aebcd949cfb55e6c6-488x488-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "y2n1pr",
+        "specName": "capacity",
+        "specValue": "20000mAh / 74Wh"
+      },
+      {
+        "_key": "ah0u36",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "s7dnlh",
+        "specName": "solarPanel",
+        "specValue": "1.6W (5.5V/290mA), 150.8├ù71.3├ù1.6mm"
+      },
+      {
+        "_key": "krel7",
+        "specName": "icType",
+        "specValue": "IP5328 (PD20W on i26wLQ)"
+      },
+      {
+        "_key": "f4iw1b",
+        "specName": "waterproof",
+        "specValue": "IP66"
+      },
+      {
+        "_key": "lwpun9",
+        "specName": "input",
+        "specValue": "{\"micro\":\"5V/3A, 9V/2A\",\"typeC\":\"5V/3A, 9V/2A\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-512a031ff0f12f23f8a7a85aebcd949cfb55e6c6-488x488-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "IP66 Lantern",
+    "name": "IP66 Waterproof Solar Power Bank with Lantern",
+    "seoTitle": "",
+    "shortDescription": "IP66 waterproof 20000mAh solar power bank with 430LM camping lantern, wireless charging, and 20W PD on fast version, Nepal premium capacity bulk., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-lantern-ip66"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-79",
+    "_rev": "QR3knQwiU7hQ2mmjtK4iiO",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:30Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "t3540xr1",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "b3qy7s5c",
+            "_type": "span",
+            "marks": [],
+            "text": "Foldable 3ΓÇæ4 panel solar power bank with 15000ΓÇæ20000mAh, LED torch, and fast charging (PD20W on select models), Myanmar premium capacity bulk., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "Foldable multiΓÇæpanel solar array (5.5ΓÇæ7W)",
+      "15000ΓÇæ20000mAh capacity",
+      "LED torch (150ΓÇæ680LM)",
+      "PD20W fast charging on select models",
+      "Wireless charging on some models"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "qrthn5f",
+        "specName": "ledLight",
+        "specValue": "150ΓÇæ680LM (1ΓÇæ3 LEDs)"
+      },
+      {
+        "_key": "cemv4e",
+        "specName": "dimensions",
+        "specValue": "Folded: 162ΓÇæ180 ├ù 86ΓÇæ105 ├ù 27ΓÇæ45 mm"
+      },
+      {
+        "_key": "dzeh0a",
+        "specName": "material",
+        "specValue": "ABS+PC (V0) + TPU + silicone"
+      },
+      {
+        "_key": "cxfjpf",
+        "specName": "weight",
+        "specValue": "580ΓÇæ630g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "x2ppbr",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-d91d7b27b73ca34ad362a8b81e9a8b85b2aa4613-489x331-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "loijpd",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-21d5097aab69542ad3d56af8bd9bffd16a015e1c-512x491-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "5wt9s",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-42a612b62ea74f700a7559b5fb177234747df962-503x503-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "m67pgj",
+        "specName": "capacity",
+        "specValue": "15000ΓÇæ20000mAh / 55ΓÇæ74Wh"
+      },
+      {
+        "_key": "90zy94",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "9djneb",
+        "specName": "solarPanel",
+        "specValue": "5.5ΓÇæ7W (5.5V/1.0ΓÇæ1.3A), 3ΓÇæ4 panels"
+      },
+      {
+        "_key": "lyjww",
+        "specName": "icType",
+        "specValue": "IP5306, IP5328, SW6206 or IP5356"
+      },
+      {
+        "_key": "wn8dck",
+        "specName": "output",
+        "specValue": "{\"usbA\":\"5V/2.1A or 5V/3A, 9V/2A (fast)\",\"typeC\":\"5V/3A, 9V/2.22A, 12V/1.66A (PD20W on fast models)\",\"wireless\":\"5ΓÇæ10W on some models\"}"
+      },
+      {
+        "_key": "54zcx8",
+        "specName": "input",
+        "specValue": "TypeΓÇæC: 5V/2A to 20W PD"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-2bd59edcdc6de609d63562cf5d837eafd7bf8a02-522x522-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Folding Solar",
+    "name": "Folding Solar Power Bank",
+    "seoTitle": "",
+    "shortDescription": "Foldable 3ΓÇæ4 panel solar power bank with 15000ΓÇæ20000mAh, LED torch, and fast charging (PD20W on select models), Myanmar premium capacity bulk., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-folding"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-80",
+    "_rev": "2CDM5abavGW7BZXaxLLI88",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:32Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "2zfjpgdh",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "uv3j90pt",
+            "_type": "span",
+            "marks": [],
+            "text": "Solar power bank with 5W wireless charging, 0.88W solar panel, and dual USB outputs. Available in 8000ΓÇæ15000mAh, PNG premium capacity bulk., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "5W wireless charging",
+      "0.88W solar panel",
+      "Dual USBΓÇæA outputs",
+      "Compact design"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "w1kpl",
+        "specName": "dimensions",
+        "specValue": "170├ù111├ù40ΓÇæ48mm"
+      },
+      {
+        "_key": "m1o21o",
+        "specName": "weight",
+        "specValue": "470ΓÇæ580g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "ov7lmx",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-f34c43317369d00ba583fe38f1e6b7c779c8cc68-497x497-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "8ypd0g",
+        "specName": "capacity",
+        "specValue": "8000ΓÇæ15000mAh / 29ΓÇæ55Wh"
+      },
+      {
+        "_key": "kei18t",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "ofnpxc",
+        "specName": "solarPanel",
+        "specValue": "0.88W (5.5V/160mA), 153.8├ù79.4mm"
+      },
+      {
+        "_key": "fzeskd",
+        "specName": "icType",
+        "specValue": "IP5306"
+      },
+      {
+        "_key": "yapzrg",
+        "specName": "input",
+        "specValue": "TypeΓÇæC: 5V/2A or Micro: 5V/2A"
+      },
+      {
+        "_key": "0xp3v",
+        "specName": "output",
+        "specValue": "{\"usbA1\":\"5V/2.1A\",\"usbA2\":\"5V/2.1A\",\"wireless\":\"5W\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-de647055a0c67aacb1b1fccb07dcd7d0c63c2446-534x534-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Wireless Solar",
+    "name": "Wireless Solar Power Bank",
+    "seoTitle": "",
+    "shortDescription": "Solar power bank with 5W wireless charging, 0.88W solar panel, and dual USB outputs. Available in 8000ΓÇæ15000mAh, PNG premium capacity bulk., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-wireless"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-81",
+    "_rev": "v8p3KAncgjT5f7voAEOd7l",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:34Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "d4m6s68l",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "xdaicdwi",
+            "_type": "span",
+            "marks": [],
+            "text": "20000mAh solar power bank with 430LM camping lantern, wireless charging (5ΓÇæ10W), and IP55 water resistance, Nigeria premium capacity bulk., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "20000mAh with 430LM lantern",
+      "IP55 water resistant",
+      "5ΓÇæ10W wireless charging",
+      "20W PD fast charging (F16WQ)",
+      "1.6W solar panel"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "2341pa",
+        "specName": "output",
+        "specValue": "{\"usbA1\":\"5V/2.1ΓÇæ3A\",\"usbA2\":\"5V/2.1ΓÇæ3A\",\"typeC\":\"5V/3.1A to PD20W\",\"wireless\":\"5ΓÇæ10W\"}"
+      },
+      {
+        "_key": "0c6gmn",
+        "specName": "ledLight",
+        "specValue": "430LM"
+      },
+      {
+        "_key": "lxgxso",
+        "specName": "dimensions",
+        "specValue": "191├ù117├ù25mm"
+      },
+      {
+        "_key": "1zmf5q",
+        "specName": "weight",
+        "specValue": "405g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "bzsq0q8",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-41d817e9ccccd6eedcb8a4e639a812281a12b6cb-494x494-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "sf7xqx",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-7d15a22a3c562eaa324473bab9d738c50a62aaee-494x494-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "gkllp",
+        "specName": "capacity",
+        "specValue": "20000mAh / 74Wh"
+      },
+      {
+        "_key": "r6889l",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "jhca5c",
+        "specName": "solarPanel",
+        "specValue": "1.6W (5.5V/290mA), 150.8├ù71.3├ù1.6mm"
+      },
+      {
+        "_key": "bp3ia9",
+        "specName": "icType",
+        "specValue": "IP5328 (PD20W on F16WQ)"
+      },
+      {
+        "_key": "rucq9",
+        "specName": "waterproof",
+        "specValue": "IP55"
+      },
+      {
+        "_key": "ljt28f",
+        "specName": "input",
+        "specValue": "{\"micro\":\"5V/2ΓÇæ3A\",\"typeC\":\"5V/3A\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-7d15a22a3c562eaa324473bab9d738c50a62aaee-494x494-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Lantern Solar",
+    "name": "Camping Lantern Solar Power Bank",
+    "seoTitle": "",
+    "shortDescription": "20000mAh solar power bank with 430LM camping lantern, wireless charging (5ΓÇæ10W), and IP55 water resistance, Nigeria premium capacity bulk., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-camping-lantern"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-82",
+    "_rev": "v8p3KAncgjT5f7voAEOeCX",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:35Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "bo9vyrww",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "vmnd7a4u",
+            "_type": "span",
+            "marks": [],
+            "text": "20000mAh solar power bank with 3ΓÇæmode 430LM lantern, 5W wireless charging, and 1.6W solar panel, Kenya premium capacity bulk., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "20000mAh capacity",
+      "3ΓÇæmode lantern (high/low/off)",
+      "5W wireless charging",
+      "1.6W solar panel"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "30kkua",
+        "specName": "ledLight",
+        "specValue": "430LM (3 modes)"
+      },
+      {
+        "_key": "4mrqal",
+        "specName": "dimensions",
+        "specValue": "175├ù93├ù24.5mm"
+      },
+      {
+        "_key": "rt7b",
+        "specName": "weight",
+        "specValue": "430g"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "q90oy",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-277f096e230425df5396be1eee451b2566039e00-525x538-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "ft5pj",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-53291e6a0be5f47a14cd73a9e53c18c48b46af55-484x500-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "g89e6h",
+        "specName": "capacity",
+        "specValue": "20000mAh / 74Wh"
+      },
+      {
+        "_key": "4dgqb",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "jjody",
+        "specName": "solarPanel",
+        "specValue": "1.6W (5.5V/290mA), 150.8├ù71.3├ù1.6mm"
+      },
+      {
+        "_key": "lst08g",
+        "specName": "icType",
+        "specValue": "IP5328"
+      },
+      {
+        "_key": "gduiui",
+        "specName": "input",
+        "specValue": "{\"typeC\":\"5V/3A, 9V/2A\",\"micro\":\"5V/2A\"}"
+      },
+      {
+        "_key": "04dns7",
+        "specName": "output",
+        "specValue": "{\"usbA1\":\"5V/2.1A\",\"usbA2\":\"5V/2.1A\",\"wireless\":\"5W\"}"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-53291e6a0be5f47a14cd73a9e53c18c48b46af55-484x500-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "3ΓÇæMode Lantern",
+    "name": "3ΓÇæMode Solar Lantern Power Bank",
+    "seoTitle": "",
+    "shortDescription": "20000mAh solar power bank with 3ΓÇæmode 430LM lantern, 5W wireless charging, and 1.6W solar panel, Kenya premium capacity bulk., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-lantern-3mode"
+    }
+  },
+  {
+    "_createdAt": "2026-05-29T04:10:10Z",
+    "_id": "imported-product-83",
+    "_rev": "v8p3KAncgjT5f7voAEOfUf",
+    "_type": "product",
+    "_updatedAt": "2026-06-08T10:00:37Z",
+    "category": "power-bank",
+    "description": [
+      {
+        "_key": "79tx7ng9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d4g1e34x",
+            "_type": "span",
+            "marks": [],
+            "text": "Solar Bluetooth speaker with 5000mAh battery, 6W├ù2 speakers, TF card slot, and USBΓÇæA output for phone charging, Pakistan premium capacity bulk., charge during outages"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "features": [
+      "Solar powered rechargeable speaker",
+      "Bluetooth V4.2 with 10ΓÇæ15m range",
+      "6W├ù2 sound with bass radiator",
+      "5000mAh battery ΓÇô also charges phones",
+      "TF card slot for offline music"
+    ],
+    "fullSpecs": [
+      {
+        "_key": "qeymd",
+        "specName": "tfCardSupport",
+        "specValue": "Up to 128GB"
+      },
+      {
+        "_key": "b71msd",
+        "specName": "input",
+        "specValue": "{\"typeC\":\"5V/2A\"}"
+      },
+      {
+        "_key": "yxlr2a",
+        "specName": "output",
+        "specValue": "{\"usbA\":\"5V/2.1A\"}"
+      },
+      {
+        "_key": "i4h7io",
+        "specName": "dimensions",
+        "specValue": "200├ù85├ù82mm"
+      },
+      {
+        "_key": "pdahbw",
+        "specName": "material",
+        "specValue": "ABS + TPU"
+      },
+      {
+        "_key": "p1ftqq",
+        "specName": "weight",
+        "specValue": "480g"
+      },
+      {
+        "_key": "wl5din",
+        "specName": "color",
+        "specValue": "Black"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "lsaer",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-06717f5eb9d08ab16e20b181f758e66915773845-420x319-jpg",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "tbgeh",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-bf33f14297b312c39dc35677a1c723623a7646ac-408x291-jpg",
+          "_type": "reference"
+        }
+      }
+    ],
+    "keySpecs": [
+      {
+        "_key": "weq80o",
+        "specName": "capacity",
+        "specValue": "5000mAh (max)"
+      },
+      {
+        "_key": "h21axo",
+        "specName": "batteryType",
+        "specValue": "AΓÇægrade polymer LiΓÇæion"
+      },
+      {
+        "_key": "3tqx0q",
+        "specName": "solarPanel",
+        "specValue": "1.5W (164├ù49mm), monocrystalline"
+      },
+      {
+        "_key": "4ywvn",
+        "specName": "speakerPower",
+        "specValue": "6W├ù2 + bass radiator"
+      },
+      {
+        "_key": "0hlst5",
+        "specName": "bluetoothVersion",
+        "specValue": "V4.2, range 10ΓÇæ15m"
+      },
+      {
+        "_key": "tht61u",
+        "specName": "audioFormats",
+        "specValue": "APE/MP3/WMA/WAV/FLAC"
+      }
+    ],
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-bf33f14297b312c39dc35677a1c723623a7646ac-408x291-jpg",
+        "_type": "reference"
+      }
+    },
+    "metaDescription": "",
+    "model": "Solar Speaker",
+    "name": "Solar Bluetooth Speaker",
+    "seoTitle": "",
+    "shortDescription": "Solar Bluetooth speaker with 5000mAh battery, 6W├ù2 speakers, TF card slot, and USBΓÇæA output for phone charging, Pakistan premium capacity bulk., charge during outages",
+    "slug": {
+      "_type": "slug",
+      "current": "solar-powerbank-bluetooth-speaker"
+    }
+  }
+]

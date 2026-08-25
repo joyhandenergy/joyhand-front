@@ -213,7 +213,7 @@ export async function generateMetadata({ params }) {
 
   let description = (product.metaDescription || fallbackDesc);
   let finalDescription = description.length > 160 ? description.substring(0, 157) + "..." : description;
-  if (finalDescription.length < 70) {
+  if (finalDescription.length < 110) {
     finalDescription += " Request a factory-direct B2B wholesale quote today.";
     if (finalDescription.length > 160) finalDescription = finalDescription.substring(0, 157) + "...";
   }
@@ -350,6 +350,7 @@ function buildFallbackDesc(product) {
     "electric-mobility": `${product.name}${modelText} – eliminate petrol costs for delivery fleets in Karachi and Dhaka. CE certified, bulk import pricing available.`,
     "portable-power": `${product.name}${modelText} – LiFePO4 power station with pure sine wave. Emergency backup for homes and businesses during frequent power cuts.`,
     "power-bank":     `${product.name}${modelText} – stay connected anywhere. CE/FCC certified. B2B wholesale pricing for global distributors.`,
+    "accessories":    `${product.name}${modelText} – premium factory-direct tech & energy accessories. Engineered for high performance in global markets. B2B wholesale pricing available.`,
   };
   return descMap[product.category] || `JoyHand ${product.name}${modelText} – factory-direct energy solution. Request B2B wholesale pricing for emerging markets.`;
 }
