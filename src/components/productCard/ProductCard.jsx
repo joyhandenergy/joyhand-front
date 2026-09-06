@@ -163,11 +163,11 @@ const ProductCard = ({ product, priority = false }) => {
         </Link>
         <div className="product-card__trust">
           {targetWarranty && (
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', marginRight: '10px' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', marginRight: '6px' }}>
               <PiShieldCheck /> {targetWarranty}
             </span>
           )}
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px' }}>
             <PiShieldCheck /> OEM Ready
           </span>
         </div>
