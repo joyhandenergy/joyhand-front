@@ -84,8 +84,8 @@ export default function RootLayout({ children }) {
         {/* Ahrefs Web Analytics */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
-          data-key="acHr8q4yFmOA8zPCD+g9Jg"
-          strategy="lazyOnload"
+          data-key="ZyFJuWwL2y8wD47Zr+Zddg"
+          strategy="afterInteractive"
         />
 
         <PageLoader>
