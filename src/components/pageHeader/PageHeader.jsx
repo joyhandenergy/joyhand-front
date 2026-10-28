@@ -7,7 +7,7 @@ import SectionDecor from "../sectionDecor/SectionDecor";
 import SuperRing from "../superRing/SuperRing";
 import "./PageHeader.css";
 
-const PageHeader = ({ title, pageImage, subtitle, hideBreadcrumb = false, parentLink = null, parentLabel = null }) => {
+const PageHeader = ({ title, pageImage, subtitle, hideBreadcrumb = false, parentLink = null, parentLabel = null, breadcrumbCurrent = null }) => {
   return (
     <section className={`page-header ${hideBreadcrumb ? "page-header--no-breadcrumb" : ""}`}>
       {/* Background Image Layer */}
@@ -63,7 +63,7 @@ const PageHeader = ({ title, pageImage, subtitle, hideBreadcrumb = false, parent
 
               <PiCaretRight className="page-header__breadcrumb-icon" />
               <span className="page-header__breadcrumb-current" aria-current="page">
-                {title}
+                {breadcrumbCurrent || title}
               </span>
             </nav>
           )}

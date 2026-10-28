@@ -64,6 +64,9 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${outfit.variable}`}>
+      <head>
+        <link rel="alternate" type="text/markdown" title="LLMs.txt" href="/llms.txt" />
+      </head>
       <body suppressHydrationWarning={true} className="antialiased">
         {/* Google Analytics 4 - loads completely idly */}
         <Script

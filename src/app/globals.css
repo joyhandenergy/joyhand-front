@@ -104,6 +104,10 @@ main {
   /* 81px */
   --spacing-10: 5rem;
   /* 90px */
+  --spacing-11: 5.5rem;
+  /* 99px */
+  --spacing-12: 6rem;
+  /* 108px */
 
   /* Typography - Based on 18px root */
   --font-size-base: 1rem;

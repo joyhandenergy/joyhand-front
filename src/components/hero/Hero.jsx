@@ -56,20 +56,22 @@ export default function Hero() {
             <div className="hero__content">
               <div className="hero__badge-wrapper">
                 <span className="hero__badge">
-                  <PiLightningFill className="hero__badge-icon" />
-                  China Factory | OEM & ODM
+                  <PiLightningFill className="hero__badge-icon" /> China Factory | OEM & ODM Production
                 </span>
               </div>
 
               <h1 className="hero__title">
-                <span className="hero__title-line">Reliable Power for</span>
-                <span className="hero__title-line hero__title-line--highlight">
-                  Unstable Grids
+                <span className="hero__title-line">Reliable Power &</span>
+                <span className="hero__title-line">
+                  Electric{' '}
+                  <span className="hero__title-line--highlight">
+                    Scooter Manufacturing
+                  </span>
                 </span>
               </h1>
 
               <p className="hero__desc">
-                From LFP batteries and solar inverters to e-mobility solutions and power banks; we manufacture and export directly to Nigeria, Bangladesh, Kenya, Pakistan, and across Africa & South Asia. Operating under ISO 9001:2015 standards. Products meet CE, UL, and UN38.3 requirements.
+                From LiFePO4 batteries and solar inverters to electric motorcycles, dirt bikes, solar panels, and power stations; we are a direct China-based manufacturer and supplier. Operating under ISO 9001:2015 standards, we engineer hardware built to meet CE, UL, and UN38.3 specifications based on your market requirements.
               </p>
 
               <div className="hero__actions">
@@ -80,13 +82,13 @@ export default function Hero() {
                   onClick={() => setIsModalOpen(true)}
                   className="btn btn--outline-light"
                 >
-                  Request a Quote
+                  Request a Factory Quote
                 </button>
               </div>
 
               <div className="hero__trust">
                 <div className="hero__trust-dot"></div>
-                <span>Factory pricing | White‑label ready | Global logistics</span>
+                <span>Factory pricing | White-label ready | Global logistics</span>
               </div>
             </div>
 

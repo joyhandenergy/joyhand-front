@@ -11,12 +11,12 @@ import { useScrollReveal } from "@/components/useScrollReveal";
 const PRODUCTS_PER_PAGE = 24;
 
 const solutionLinks = [
-  { slug: "storage-batteries",        name: "Battery Storage" },
+  { slug: "solar-batteries",          name: "Solar Batteries" },
   { slug: "solar-inverters",          name: "Hybrid Inverters" },
   { slug: "portable-power-stations",  name: "Portable Power Stations" },
-  { slug: "electric-mobility",        name: "E‑Mobility" },
+  { slug: "electric-motorcycles",      name: "Electric Motorcycles" },
   { slug: "power-banks",              name: "Power Banks" },
-  { slug: "accessories",              name: "Accessories" },
+  { slug: "solar-accessories",        name: "Solar Accessories" },
 ];
 
 export default function SolutionClient({ slug, config, allProducts }) {

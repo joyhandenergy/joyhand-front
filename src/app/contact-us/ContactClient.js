@@ -29,7 +29,6 @@ import {
   contactFeatures, 
   contactFaqs 
 } from "@/data";
-import Script from "next/script";
 
 const globalSupport = {
   icon: <Phone size={22} />,
@@ -75,59 +74,17 @@ export default function ContactClient() {
   const mapReveal     = useScrollReveal();
   const faqReveal     = useScrollReveal();
   const bottomReveal  = useScrollReveal();
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "JoyHand Energy Global Sales",
-    "description": "Direct factory contact for B2B wholesale inquiries regarding LFP batteries, solar inverters, and electric mobility manufacturing in facilities operating under ISO standards.",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "JoyHand Energy",
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+86-186-0202-1144",
-          "contactType": "sales",
-          "email": "sales@joyhand.com",
-          "areaServed": ["Global", "NG", "PK", "BD", "KE"],
-          "availableLanguage": "en"
-        }
-      ]
-    }
-  };
-
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": contactFaqs.map((faq) => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
 
   return (
     <main className="contact-page">
-      <Script
-        id="contact-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
       <PageHeader
-        title="Direct Factory Sales & Support"
-        subtitle="Request a wholesale quote directly from our manufacturing hub. 24 hour response for global B2B importers."
+        title="Direct Factory Quotes & OEM Inquiries"
+        subtitle="Connect directly with our Guangzhou manufacturing team. Request wholesale container pricing and custom OEM specifications with a guaranteed 24-hour response."
         pageImage="/pageHeadImg/pageheader-contact01.jpg"
+        breadcrumbCurrent="Contact Us"
       />
 
-      {/* ================= INQUIRY SECTION ================= */}
+      {/* ================= SECTION 1: INQUIRY SECTION (TOP PRIORITY) ================= */}
       <section ref={formReveal.ref} className={`contact-form-section reveal ${formReveal.isVisible ? 'is-visible' : ''}`}>
         <SectionDecor type="accent" count={4} />
         <div className="container contact-form-section__grid">
@@ -157,7 +114,7 @@ export default function ContactClient() {
               <div className="form-terminal__header">
                 <div className="form-terminal__status">
                   <span className="form-terminal__dot"></span>
-                  MANUFACTURING INTAKE
+                  MANUFACTURING INTAKE (Priority response for volume inquiries)
                 </div>
                 <Zap size={16} className="form-terminal__bolt" />
               </div>
@@ -190,13 +147,13 @@ export default function ContactClient() {
         </div>
       </section>
 
-      {/* ================= GLOBAL OFFICES SECTION ================= */}
+      {/* ================= SECTION 2: GLOBAL OFFICES SECTION ================= */}
       <section ref={officesReveal.ref} className={`global-offices reveal ${officesReveal.isVisible ? 'is-visible' : ''}`}>
         <div className="container">
           <SectionHeader
-            badge="Our Global Presence"
+            badge="OUR GLOBAL PRESENCE"
             title="Offices Around the World"
-            subtitle="Serving distributors across four continents with local expertise and global reach"
+            subtitle="Serving distributors across four continents with local expertise and global reach."
             align="center"
             theme="light"
           />
@@ -214,7 +171,7 @@ export default function ContactClient() {
         </div>
       </section>
 
-      {/* ================= CONTACT CARDS (NFC STYLE) ================= */}
+      {/* ================= SECTION 3: DIRECT CONTACT INFO ================= */}
       <section ref={infoReveal.ref} className={`contact-info reveal ${infoReveal.isVisible ? 'is-visible' : ''}`}>
         <SectionDecor type="primary" count={1} />
         <SuperRing type="primary" size="1400px" thickness="40px" top="50%" left="50%" translateX="-50%" translateY="-50%" opacity={0.06} />
@@ -222,7 +179,7 @@ export default function ContactClient() {
         <SuperRing type="accent" size="900px" thickness="40px" top="85%" left="30%" translateX="-50%" translateY="-50%" opacity={0.05} />
         <div className="container">
           <SectionHeader
-            badge="Get in Touch"
+            badge="GET IN TOUCH"
             title="Global Support & Inquiries"
             center
           />
@@ -289,10 +246,15 @@ export default function ContactClient() {
         />
       </section>
 
-      {/* ================= FAQ SNIPPET ================= */}
+      {/* ================= SECTION 4: FAQ (SEO & TRUST) ================= */}
       <section ref={faqReveal.ref} className={`contact-faq reveal ${faqReveal.isVisible ? 'is-visible' : ''}`}>
         <SectionDecor type="accent" count={4} />
         <div className="container">
+          <SectionHeader
+            badge="FREQUENTLY ASKED QUESTIONS"
+            title="Common Inquiries"
+            align="center"
+          />
           <div className="contact-faq__grid">
             {contactFaqs.map((faq, idx) => (
               <div key={idx} className="contact-faq__item">
@@ -304,16 +266,22 @@ export default function ContactClient() {
         </div>
       </section>
 
-      {/* ================= ADDITIONAL CTA ================= */}
+      {/* ================= SECTION 5: DIRECT PHONE CTA (BOTTOM BANNER) ================= */}
       <section ref={bottomReveal.ref} className={`contact-bottom-cta reveal ${bottomReveal.isVisible ? 'is-visible' : ''}`}>
         <SectionDecor type="primary" count={1} />
         <div className="container">
           <div className="contact-bottom-cta__wrapper">
             <div className="contact-bottom-cta__content">
               <MessageCircle size={32} className="contact-bottom-cta__icon" />
-              <h3 className="contact-bottom-cta__title">Prefer to <span className="title--highlight">talk?</span></h3>
+              <h2 className="contact-bottom-cta__title">
+                Prefer to <span className="title--highlight">Talk?</span>
+              </h2>
               <p className="contact-bottom-cta__text">
-                Call our global support line at <a href="tel:+8618602021144" className="contact-bottom-cta__phone">+86 186 0202 1144</a>
+                Call our global support line at{" "}
+                <a href="tel:+8618602021144" className="contact-bottom-cta__phone">
+                  +86 186 0202 1144
+                </a>{" "}
+                to speak directly with a sales engineer.
               </p>
             </div>
           </div>

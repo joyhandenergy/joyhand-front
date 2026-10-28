@@ -6,12 +6,12 @@ import { urlFor } from '@/sanity/lib/image';
 export const runtime = 'edge';
 
 const categoryMeta = {
-  battery:            { name: "Storage Batteries",       fileName: "Storage-Batteries" },
+  battery:            { name: "Solar Batteries",         fileName: "Solar-Batteries" },
   inverter:           { name: "Solar Inverters",         fileName: "Solar-Inverters" },
   "portable-power":   { name: "Portable Power Stations", fileName: "Portable-Power-Stations" },
-  "electric-mobility":{ name: "Electric Mobility",       fileName: "Electric-Mobility" },
+  "electric-mobility":{ name: "Electric Motorcycles",    fileName: "Electric-Motorcycles" },
   "power-bank":       { name: "Power Banks",             fileName: "Power-Banks" },
-  accessories:        { name: "Tech & Solar Accessories", fileName: "Tech-Accessories" },
+  accessories:        { name: "Solar & Tech Accessories", fileName: "Solar-Accessories" },
 };
 
 const VALID_CATEGORIES = Object.keys(categoryMeta);

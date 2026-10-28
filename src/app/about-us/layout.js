@@ -1,9 +1,18 @@
 export const metadata = {
-  title: "The Factory Behind Resilient Energy",
-  description: "Since 1998, JoyHand has engineered premium LFP energy storage and off-grid solutions. Discover our manufacturing capabilities aligned with ISO 9001:2015.",
-  keywords: ["solar manufacturer profile", "LFP battery factory history", "off-grid energy engineers", "direct energy supplier China", "OEM energy storage company"],
+  title: {
+    absolute: "About JoyHand | China Battery & E-Motorcycle Factory",
+  },
+  description: "Discover JoyHand: a 28-year China factory manufacturing LiFePO4 batteries, electric motorcycles & solar hardware. See our facility, leadership & standards.",
+  keywords: [
+    "JoyHand factory",
+    "JoyHand battery manufacturer",
+    "who owns JoyHand",
+    "Guangzhou battery factory",
+    "28-year manufacturing heritage",
+    "e-motorcycle factory China"
+  ],
   alternates: {
-    canonical: '/about-us',
+    canonical: 'https://www.joyhand.com/about-us',
   }
 };
 

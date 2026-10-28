@@ -15,15 +15,24 @@ import { blogPosts as localBlogPosts } from "@/data";
 export const revalidate = 60;
 
 export const metadata = {
-  title: "JoyHand Energy: OEM/ODM Manufacturer | Energy & E-Mobility",
-  description: "Factory-direct pricing on LFP batteries, inverters, solar panels & e-mobility. Direct export to emerging markets like Lagos & Dhaka. Get a B2B quote in 24h!",
-  keywords: ["power solutions for unstable grids", "factory direct solar", "OEM battery manufacturer", "solar panels wholesale", "solar street lights", "solar inverters B2B"],
+  title: {
+    absolute: "LiFePO4 Battery, E-Scooter & Solar OEM Manufacturer | JoyHand",
+  },
+  description: "China-based factory & supplier of LiFePO4 batteries, electric motorcycles, solar panels & inverters. We offer OEM/ODM manufacturing to global standards.",
+  keywords: [
+    "LiFePO4 battery manufacturer",
+    "electric scooter supplier",
+    "OEM manufacturing",
+    "battery factory China",
+    "wholesale power solutions",
+    "B2B hardware factory"
+  ],
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.joyhand.com/',
   },
   openGraph: {
-    title: "JoyHand Energy: OEM/ODM Manufacturer",
-    description: "Factory-direct pricing on LFP batteries, inverters, solar panels & e-mobility. Direct export to emerging markets like Lagos & Dhaka. Get a B2B quote in 24h!",
+    title: "LiFePO4 Battery, E-Scooter & Solar OEM Manufacturer | JoyHand",
+    description: "China-based factory & supplier of LiFePO4 batteries, electric motorcycles, solar panels & inverters. We offer OEM/ODM manufacturing to global standards.",
     url: "https://www.joyhand.com/",
     type: "website",
     images: [
@@ -80,7 +89,7 @@ export default async function Home() {
       "name": "JoyHand Energy",
       "url": "https://www.joyhand.com",
       "logo": "https://www.joyhand.com/homeImg/businessModelImage001.jpg",
-      "description": "Direct factory manufacturer of premium energy storage systems, solar inverters, and electric mobility solutions operating under ISO 9001:2015 standards.",
+      "description": "China-based factory and supplier of LiFePO4 batteries, electric motorcycles, solar panels, and inverters offering OEM and ODM manufacturing to global standards.",
       "address": [
         {
           "@type": "PostalAddress",
@@ -98,14 +107,11 @@ export default async function Home() {
         "@type": "ContactPoint",
         "telephone": "+86-186-0202-1144",
         "contactType": "wholesale sales",
-        "areaServed": ["NG", "PK", "BD", "KE", "ZA", "US", "AU"],
         "availableLanguage": "en"
       },
       "hasCertification": [
-        "Tested for ISO 9001:2015 compliance",
-        "Products meet CE requirements",
-        "UL tested safety standards",
-        "UN38.3 compliant shipping"
+        "ISO 9001:2015",
+        "Manufacturing capabilities align with CE, UL, and UN38.3 standards"
       ]
     },
     {

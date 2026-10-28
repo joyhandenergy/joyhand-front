@@ -80,9 +80,9 @@ const InnovationShowcase = () => {
 
           <div className="container innovation-section__hero-content">
             <SectionHeader 
-              badge="Compliance Standards"
+              badge="Compliance & Quality"
               title="Standards That Open Borders"
-              subtitle="Every product is tested according to ISO, CE, UL, and UN38.3 standards. Full testing documentation included with every shipment."
+              subtitle="Every product is manufactured and tested according to ISO, CE, UL, and UN38.3 specifications. Full testing documentation is provided upon request."
               align="center"
               light
             />
@@ -119,7 +119,7 @@ const InnovationShowcase = () => {
 
         <div className="innovation-section__footer">
           <p className="innovation-section__footer-text">
-            Verify our global compliance standards.
+            Verify our manufacturing standards.
             <Link href="/contact-us" className="innovation-section__footer-link">
               Request Documents <PiArrowRight />
             </Link>

@@ -1839,3 +1839,343 @@
     transform: none;
   }
 }
+
+/* =====================================================
+   SECTION 1: WHAT WE DO NOT DO CALLOUT
+===================================================== */
+.about-not-box {
+  margin: var(--spacing-3) 0;
+  padding: 1.25rem 1.5rem;
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-left: 4px solid #ef4444;
+  border-radius: var(--radius-md, 8px);
+}
+
+.about-not-box__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-not-box__icon {
+  color: #ef4444;
+  flex-shrink: 0;
+}
+
+.about-not-box__badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #dc2626;
+  text-transform: uppercase;
+}
+
+.about-not-box__text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--neutral-dark, #1e293b);
+  margin-bottom: 0 !important;
+}
+
+.about-intro__actions {
+  margin-top: 1.5rem;
+}
+
+/* =====================================================
+   SECTION 2: VERIFIABLE PROOF (THE FACTORY FLOOR)
+===================================================== */
+.factory-floor {
+  position: relative;
+  padding: var(--spacing-6) 0;
+  overflow: hidden;
+  background-color: var(--neutral-white);
+  background-image:
+    radial-gradient(rgba(18, 27, 45, 0.07) 0.6px, transparent 0.6px);
+  background-size: 22px 22px;
+  z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .factory-floor {
+    padding: var(--spacing-8) 0;
+  }
+}
+
+.factory-floor__container {
+  position: relative;
+  z-index: 2;
+}
+
+.factory-floor__subheading {
+  max-width: 680px;
+  margin: 0.75rem auto var(--spacing-5);
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--neutral-medium);
+  line-height: 1.65;
+  text-wrap: balance;
+}
+
+.factory-floor__grid {
+  list-style: none !important;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-3);
+  counter-reset: none;
+}
+
+@media screen and (min-width: 640px) {
+  .factory-floor__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .factory-floor__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-3);
+  }
+}
+
+.factory-floor__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: var(--neutral-white);
+  border: 1px solid rgba(18, 27, 45, 0.06);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(18, 27, 45, 0.05);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease;
+}
+
+.factory-floor__card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 127, 65, 0.25);
+  box-shadow: 0 24px 50px rgba(18, 27, 45, 0.1);
+}
+
+.factory-floor__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--secondary-color);
+}
+
+/* Navy fade so the step number stays readable on any photo */
+.factory-floor__image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18, 27, 45, 0.75) 0%, rgba(18, 27, 45, 0) 45%);
+  pointer-events: none;
+}
+
+.factory-floor__img {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.factory-floor__card:hover .factory-floor__img {
+  transform: scale(1.06);
+}
+
+/* Same pill as .market-badge in Core Production */
+.factory-floor__tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  background: var(--primary-color);
+  color: var(--neutral-white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border-radius: 50px;
+  box-shadow: 0 6px 16px rgba(255, 127, 65, 0.35);
+}
+
+.factory-floor__step {
+  position: absolute;
+  left: 18px;
+  bottom: 12px;
+  z-index: 2;
+  font-family: var(--font-family-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--neutral-white);
+  letter-spacing: -0.02em;
+}
+
+.factory-floor__body {
+  position: relative;
+  flex-grow: 1;
+  padding: var(--spacing-3) var(--spacing-3) var(--spacing-4);
+}
+
+/* Teal accent bar, echoes the brand gradient border used site-wide */
+.factory-floor__body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--spacing-3);
+  width: 40px;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color-dark));
+  transition: width 0.4s ease;
+}
+
+.factory-floor__card:hover .factory-floor__body::before {
+  width: 80px;
+}
+
+.factory-floor__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--secondary-color);
+  margin: 0 0 0.5rem;
+}
+
+.factory-floor__caption {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--neutral-medium);
+  margin: 0 !important;
+}
+
+/* =====================================================
+   SECTION 7: INTERNAL LINKING (THE EXIT PATH)
+===================================================== */
+.about-exit {
+  position: relative;
+  padding: var(--spacing-6) 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .about-exit {
+    padding: var(--spacing-8) 0;
+  }
+}
+
+.about-exit__subheading {
+  max-width: 700px;
+  margin: 0.75rem auto 2.5rem;
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--neutral-medium, #64748b);
+  line-height: 1.6;
+}
+
+.about-exit__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+  .about-exit__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.about-exit__card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: var(--radius-lg, 12px);
+  padding: 2.25rem 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.about-exit__card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-color, #0284c7);
+  box-shadow: 0 16px 32px rgba(2, 132, 199, 0.12);
+}
+
+.about-exit__badge {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary-color, #0284c7);
+  background: rgba(2, 132, 199, 0.08);
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-exit__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.1) 0%, rgba(14, 165, 233, 0.05) 100%);
+  color: var(--primary-color, #0284c7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.about-exit__card:hover .about-exit__icon {
+  transform: scale(1.1);
+  background: var(--primary-color, #0284c7);
+  color: #ffffff;
+}
+
+.about-exit__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--neutral-dark, #0f172a);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.about-exit__desc {
+  font-size: 0.92rem;
+  color: var(--neutral-medium, #64748b);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.about-exit__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary-color, #0284c7);
+  text-decoration: none;
+  transition: gap 0.2s ease, color 0.2s ease;
+  margin-top: auto;
+}
+
+.about-exit__link:hover {
+  gap: 0.75rem;
+  color: #0369a1;
+}

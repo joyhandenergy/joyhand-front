@@ -1,15 +1,24 @@
 import ManufacturingClient from "./ManufacturingClient";
 
 export const metadata = {
-  title: "OEM & ODM Energy Manufacturing | JoyHand Factory",
-  description: "End-to-end OEM/ODM production for energy storage & solar hardware. We handle batch testing, customs, and direct shipping to Lagos & Karachi. Get a sample.",
-  keywords: ["OEM energy storage", "ODM solar manufacturer", "custom battery assembly", "LFP cell grading", "ISO standard energy factory", "B2B container export"],
+  title: {
+    absolute: "Custom Lithium Battery & E-Motorcycle OEM | JoyHand",
+  },
+  description: "End-to-end OEM/ODM production for custom lithium batteries, e-motorcycles & solar hardware. We handle custom engineering, batch testing & global export.",
+  keywords: [
+    "custom lithium battery OEM",
+    "custom e-motorcycle production",
+    "custom solar assembly",
+    "battery cell grading",
+    "ISO 9001 production line",
+    "B2B factory export"
+  ],
   alternates: {
-    canonical: '/manufacturing',
+    canonical: 'https://www.joyhand.com/manufacturing',
   },
   openGraph: {
-    title: "OEM & ODM Energy Manufacturing | JoyHand Factory",
-    description: "End-to-end OEM/ODM production for energy storage & solar hardware. We handle batch testing, customs, and direct shipping to Lagos & Karachi. Get a sample.",
+    title: "Custom Lithium Battery & E-Motorcycle OEM | JoyHand",
+    description: "End-to-end OEM/ODM production for custom lithium batteries, e-motorcycles & solar hardware. We handle custom engineering, batch testing & global export.",
     url: "https://www.joyhand.com/manufacturing",
     type: "website",
     images: [
@@ -17,7 +26,7 @@ export const metadata = {
         url: "/serviceImg/serviceoem.jpg", 
         width: 1200,
         height: 630,
-        alt: "JoyHand Factory OEM Line",
+        alt: "JoyHand Custom Lithium Battery & E-Motorcycle OEM Line",
       },
     ],
   }

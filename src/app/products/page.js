@@ -4,21 +4,30 @@ import ProductsClient from "./ProductsClient";
 import Script from "next/script";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
-import { productData } from "@/data";
+import { productData, productsCatalogData } from "@/data";
 import "./Products.css";
 
 // Static
 
 export const metadata = {
-  title: "Wholesale LFP Batteries, Inverters & E-Mobility | JoyHand",
-  description: "Explore factory-direct LFP batteries, hybrid inverters, solar panels & tech accessories. Flexible B2B MOQs & global shipping to ports like Lagos and Dhaka.",
-  keywords: ["wholesale LFP batteries", "solar inverters B2B", "factory direct portable power", "E-mobility batteries OEM", "power banks bulk supply", "tech accessories distribution"],
+  title: {
+    absolute: "Factory-Direct Wholesale Catalog | JoyHand Energy",
+  },
+  description: "Direct-from-factory catalog of Grade-A LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar hardware. Flexible MOQs and wholesale container pricing for global B2B buyers.",
+  keywords: [
+    "wholesale LiFePO4 batteries",
+    "wholesale electric motorcycles",
+    "factory direct batteries",
+    "B2B product catalog",
+    "wholesale solar panels",
+    "hybrid inverters wholesale"
+  ],
   alternates: {
-    canonical: '/products',
+    canonical: 'https://www.joyhand.com/products',
   },
   openGraph: {
-    title: "Wholesale LFP Batteries, Inverters & E-Mobility | JoyHand",
-    description: "Explore factory-direct LFP batteries, hybrid inverters, solar panels & tech accessories. Flexible B2B MOQs & global shipping to ports like Lagos and Dhaka.",
+    title: "Factory-Direct Wholesale Catalog | JoyHand Energy",
+    description: "Direct-from-factory catalog of Grade-A LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar hardware. Flexible MOQs and wholesale container pricing for global B2B buyers.",
     url: "https://www.joyhand.com/products",
     type: "website",
     images: [
@@ -26,7 +35,7 @@ export const metadata = {
         url: "/homeImg/energyPlatformImage01.jpg", 
         width: 1200,
         height: 630,
-        alt: "JoyHand Wholesale Products",
+        alt: "JoyHand Wholesale LiFePO4 Batteries & Electric Scooters",
       },
     ],
   }
@@ -162,11 +171,13 @@ export default async function ProductsPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "JoyHand Wholesale Product Catalog",
-    "description": "Comprehensive catalog of OEM/ODM energy storage systems, hybrid inverters, electric mobility, and mobile accessories manufactured by JoyHand.",
+    "name": "Wholesale LFP Batteries & Electric Scooters | JoyHand",
+    "description": "Comprehensive catalog of wholesale LFP batteries, electric scooters, motorcycles, hybrid inverters, and solar hardware manufactured by JoyHand.",
+    "url": "https://www.joyhand.com/products",
     "publisher": {
       "@type": "Organization",
-      "name": "JoyHand Energy Manufacturing"
+      "name": "JoyHand Energy Manufacturing",
+      "url": "https://www.joyhand.com"
     }
   };
 
@@ -178,9 +189,10 @@ export default async function ProductsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageHeader
-        title="Product We Manufacture"
-        subtitle="Energy storage, power conversion, mobile power, and electric mobility solutions – direct from our factory."
-        pageImage="/pageHeadImg/pageheader-products.webp"
+        title={productsCatalogData.header.title}
+        subtitle={productsCatalogData.header.subtitle}
+        pageImage={productsCatalogData.header.image}
+        breadcrumbCurrent="Products"
       />
       <Suspense fallback={<div className="container mt-3">Loading products...</div>}>
         <ProductsClient initialProducts={allProducts} />

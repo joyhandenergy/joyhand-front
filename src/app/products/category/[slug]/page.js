@@ -15,35 +15,33 @@ export async function generateMetadata({ params }) {
   const config = solutionConfigs[slug];
   if (!config) return { title: "Category Not Found" };
 
-  const baseTitle = `${config.title} | JoyHand`;
-  const title = baseTitle.length > 60 ? baseTitle.substring(0, 57) + "..." : baseTitle;
-
-  let description = config.description.length > 160 ? config.description.substring(0, 157) + "..." : config.description;
-  if (description.length < 110) {
-    description += " Request a factory-direct B2B wholesale quote today.";
-    if (description.length > 160) description = description.substring(0, 157) + "...";
-  }
+  const title = config.pageTitle || `${config.title} | JoyHand`;
+  const description = config.metaDescription || config.description;
+  const canonical = config.canonicalUrl || `https://www.joyhand.com/products/category/${slug}`;
+  const keywords = config.metaKeywords || config.keywords;
 
   return {
-    title: title,
+    title: {
+      absolute: title,
+    },
     description: description,
-    keywords: config.keywords,
+    keywords: keywords,
     openGraph: {
       title: title,
       description: description,
-      url: `https://www.joyhand.com/products/category/${slug}`,
+      url: canonical,
       type: "website",
       images: [
         {
-          url: "/homeImg/businessModelImage001.jpg",
+          url: config.image || "/homeImg/businessModelImage001.jpg",
           width: 1200,
           height: 630,
-          alt: config.title,
+          alt: title,
         },
       ],
     },
     alternates: {
-      canonical: `/products/category/${slug}`,
+      canonical: canonical,
     }
   };
 }
@@ -173,17 +171,18 @@ export default async function SolutionsPage({ params }) {
 
   return (
     <main className="products-page">
-      <Script
+      <script
         id="solution-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageHeader
-        title={config.title}
-        subtitle={config.description}
+        title={config.h1Title || config.title}
+        subtitle={config.heroSubtitle || config.description}
         pageImage={config.image}
         parentLink="/products"
         parentLabel="Products"
+        breadcrumbCurrent={config.breadcrumbBadge || config.title}
       />
       <Suspense fallback={<div className="container mt-3">Loading catalog...</div>}>
         <CategoryClient slug={slug} config={config} allProducts={allProducts} />

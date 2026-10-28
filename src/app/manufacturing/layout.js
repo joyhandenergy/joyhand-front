@@ -1,9 +1,18 @@
 export const metadata = {
-  title: "End-to-End OEM Production & Container Export",
-  description: "Scale your energy supply chain. We provide custom battery assembly, inverter engineering, and direct container export for global B2B importers at JoyHand.",
-  keywords: ["OEM battery production", "solar inverter factory", "container consolidation Guangzhou", "energy products wholesale Africa", "ODM energy engineering"],
+  title: {
+    absolute: "Custom Lithium Battery & E-Motorcycle OEM | JoyHand",
+  },
+  description: "End-to-end OEM/ODM production for custom lithium batteries, e-motorcycles & solar hardware. We handle custom engineering, batch testing & global export.",
+  keywords: [
+    "custom lithium battery OEM",
+    "custom e-motorcycle production",
+    "custom solar assembly",
+    "battery cell grading",
+    "ISO 9001 production line",
+    "B2B factory export"
+  ],
   alternates: {
-    canonical: '/manufacturing',
+    canonical: 'https://www.joyhand.com/manufacturing',
   }
 };
 

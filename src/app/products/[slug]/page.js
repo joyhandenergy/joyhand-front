@@ -441,12 +441,12 @@ export default async function ProductDetailsPage({ params }) {
   const videoId = product.youtubeVideoId || localProduct?.youtubeVideoId || null;
 
   let solutionSlug = "";
-  if (product.category === "battery") solutionSlug = "storage-batteries";
+  if (product.category === "battery") solutionSlug = "solar-batteries";
   else if (product.category === "inverter") solutionSlug = "solar-inverters";
-  else if (product.category === "electric-mobility") solutionSlug = "electric-mobility";
+  else if (product.category === "electric-mobility") solutionSlug = "electric-motorcycles";
   else if (product.category === "portable-power") solutionSlug = "portable-power-stations";
   else if (product.category === "power-bank") solutionSlug = "power-banks";
-  else if (product.category === "accessories") solutionSlug = "accessories";
+  else if (product.category === "accessories") solutionSlug = "solar-accessories";
 
   // Handle Sanity block content description
   let plainTextDescription = "";

@@ -1,27 +1,37 @@
 import { blogPosts as localBlogPosts } from "@/data";
 import Link from "next/link";
+import { PiArrowRight } from "react-icons/pi";
 import BlogCard from "@/components/blogCard/BlogCard";
 import PageHeader from "@/components/pageHeader/PageHeader";
 import SectionHeader from "@/components/sectionHeader/SectionHeader";
-import Script from "next/script";
 import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import "./blog.css";
 
-// Static
+// Static ISR revalidation
 export const revalidate = 60;
 
 export const metadata = {
-  title: "Manufacturing Intel & Energy Insights | JoyHand Blog",
-  description: "Deep-dives into global energy storage. Read about LFP vs Lead-Acid, OEM vs ODM strategies, and container export guides for markets like Nairobi and Karachi.",
-  keywords: ["energy manufacturing blog", "LFP battery insights", "OEM manufacturing strategy", "solar export guide", "B2B energy intelligence", "Africa solar logistics"],
+  title: {
+    absolute: "Factory Engineering & B2B Sourcing Guides | JoyHand",
+  },
+  description: "Direct-from-factory engineering reports, quality benchmarks, and technical sourcing guides for LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar energy systems.",
+  keywords: [
+    "B2B manufacturing blog",
+    "LiFePO4 battery sourcing guide",
+    "factory engineering reports",
+    "e-motorcycle production news",
+    "OEM vs ODM guide",
+    "solar inverter benchmarks",
+    "hardware supply chain intelligence"
+  ],
   alternates: {
-    canonical: '/blog',
+    canonical: 'https://www.joyhand.com/blog',
   },
   openGraph: {
-    title: "Manufacturing Intel & Energy Insights | JoyHand Blog",
-    description: "Deep-dives into global energy storage. Read about LFP vs Lead-Acid, OEM vs ODM strategies, and container export guides for markets like Nairobi and Karachi.",
+    title: "Factory Engineering & B2B Sourcing Guides | JoyHand",
+    description: "Direct-from-factory engineering reports, quality benchmarks, and technical sourcing guides for LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar energy systems.",
     url: "https://www.joyhand.com/blog",
     type: "website",
     images: [
@@ -29,7 +39,7 @@ export const metadata = {
         url: "/pageHeadImg/pageheader-blog1.jpg", 
         width: 1200,
         height: 630,
-        alt: "JoyHand Manufacturing Insights",
+        alt: "JoyHand Factory Engineering & Sourcing Guides",
       },
     ],
   }
@@ -75,37 +85,43 @@ export default async function BlogPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "JoyHand Energy Intelligence",
-    "description": "Technical engineering reports and manufacturing updates for B2B energy distributors.",
+    "@id": "https://www.joyhand.com/blog#blog",
+    "name": "Factory Engineering & B2B Sourcing Guides | JoyHand",
+    "description": "Direct-from-factory engineering reports, quality benchmarks, and technical sourcing guides for LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar energy systems.",
+    "url": "https://www.joyhand.com/blog",
     "publisher": {
       "@type": "Organization",
+      "@id": "https://www.joyhand.com/#organization",
       "name": "JoyHand Energy",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.joyhand.com/homeImg/businessModelImage001.jpg"
-      }
+      "legalName": "Guangzhou Joyhand Energy Technology Co., Ltd.",
+      "url": "https://www.joyhand.com",
+      "logo": "https://www.joyhand.com/logo.png"
     }
   };
 
   return (
     <main className="blog-page">
-      <Script
+      <script
         id="blog-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      
+      {/* ================= HEADER (HERO SECTION) ================= */}
       <PageHeader
-        title="Technical Reports & Industry Insights"
-        subtitle="Technical engineering reports, manufacturing updates, and global supply chain strategy for energy importers and distributors."
+        title="Factory Engineering & B2B Sourcing Guides"
+        subtitle="Direct-from-factory engineering reports, quality benchmarks, and practical sourcing guides covering LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar energy systems."
         pageImage="/pageHeadImg/pageheader-blog1.jpg"
+        breadcrumbCurrent="Blog"
       />
 
+      {/* ================= SECTION 1: INTRO & QUICK NAVIGATION & SECTION 2: ARTICLES GRID ================= */}
       <ScrollRevealWrapper as="section" className="blog-section">
         <div className="container">
           <SectionHeader
-            badge="Engineering Insights"
-            title="Professional Energy & Tech Intelligence"
-            subtitle="Deep-dives into LFP battery assembly, hybrid inverter engineering, and specialized export compliance for the Africa and South Asia energy sectors."
+            badge="PRODUCT & ENGINEERING INSIGHTS"
+            title="Technical Insights for Our Energy & Mobility Products"
+            subtitle="Deep-dive into the engineering, assembly, and real-world performance of JoyHand's product portfolio. From Grade-A LiFePO4 battery storage packs and intelligent BMS integration to electric motorcycles, hybrid solar inverters, and portable power stations, our factory engineering team shares the technical benchmarks, compliance data, and product specifications you need to make confident B2B sourcing decisions."
           />
 
           <div className="blog-internal-links" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center", marginBottom: "3rem" }}>
@@ -119,6 +135,30 @@ export default async function BlogPage() {
             {allPosts.map((post, index) => (
               <BlogCard key={post.id || post.slug} post={post} priority={index < 4} />
             ))}
+          </div>
+        </div>
+      </ScrollRevealWrapper>
+
+      {/* ================= SECTION 3: BOTTOM CTA ================= */}
+      <ScrollRevealWrapper as="section" className="blog-cta-section">
+        <div className="container">
+          <div className="blog-cta-banner">
+            <div className="blog-cta-content">
+              <h2 className="blog-cta-title">
+                Have a Technical Question About Our Products?
+              </h2>
+              <p className="blog-cta-description">
+                Whether you need custom cell configurations for our LiFePO4 batteries, motor and frame specifications for our e-motorcycles, or wholesale container pricing, our engineering and sales teams are here to help.
+              </p>
+              <div className="blog-cta-actions">
+                <Link href="/contact-us" className="btn btn--primary">
+                  Contact Our Engineers <PiArrowRight weight="bold" />
+                </Link>
+                <Link href="/contact-us" className="btn btn--outline-light">
+                  Request a Factory Quote <PiArrowRight weight="bold" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </ScrollRevealWrapper>

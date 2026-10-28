@@ -53,8 +53,8 @@ const CtaBanner = () => {
           <div className="cta-content">
             <div className="cta-text">
               <h2 className="cta-title">
-                Ready to Supply Your <br />
-                <span className="cta-title--highlight">Market with Reliable Energy?</span>
+                Ready to Manufacture for <br />
+                <span className="cta-title--highlight">Your Market?</span>
               </h2>
 
              <p className="cta-description">

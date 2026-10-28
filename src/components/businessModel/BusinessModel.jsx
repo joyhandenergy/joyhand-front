@@ -147,7 +147,7 @@ export default function BusinessModel() {
 
           <div className="businessModel__actions">
             <Link href="/manufacturing" className="btn btn--primary">
-              EXPLORE CAPABILITY <PiArrowRight />
+              EXPLORE MANUFACTURING CAPABILITY <PiArrowRight />
             </Link>
           </div>
         </div>

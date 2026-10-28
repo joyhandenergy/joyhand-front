@@ -1,23 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import ProductCard from "@/components/productCard/ProductCard";
 import Pagination from "@/components/pagination/Pagination";
 import { PiPackage, PiArrowRight, PiFilePdf } from "react-icons/pi";
 import { useScrollReveal } from "@/components/useScrollReveal";
+import { solutionLinks } from "@/data";
 
-const PRODUCTS_PER_PAGE = 24;
-
-const solutionLinks = [
-  { slug: "storage-batteries",        name: "Battery Storage" },
-  { slug: "solar-inverters",          name: "Hybrid Inverters" },
-  { slug: "portable-power-stations",  name: "Portable Power Stations" },
-  { slug: "electric-mobility",        name: "E‑Mobility" },
-  { slug: "power-banks",              name: "Power Banks" },
-  { slug: "accessories",              name: "Accessories" },
-];
+const DESKTOP_PER_PAGE = 24;
+const MOBILE_PER_PAGE = 12;
 
 export default function CategoryClient({ slug, config, allProducts }) {
   const searchParams = useSearchParams();
@@ -25,11 +18,47 @@ export default function CategoryClient({ slug, config, allProducts }) {
   const isComingSoon = config.comingSoon === true;
 
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
+  const [itemsPerPage, setItemsPerPage] = useState(DESKTOP_PER_PAGE);
+  const navRef = useRef(null);
 
-  const start = (page - 1) * PRODUCTS_PER_PAGE;
-  const end = start + PRODUCTS_PER_PAGE;
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth < 768 ? MOBILE_PER_PAGE : DESKTOP_PER_PAGE);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const onTabClick = () => {
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("catalog_tab_clicked", "true");
+    }
+  };
+
+  useEffect(() => {
+    const isTabClick = typeof window !== "undefined" && sessionStorage.getItem("catalog_tab_clicked");
+    if (isTabClick) {
+      sessionStorage.removeItem("catalog_tab_clicked");
+      if (navRef.current) {
+        navRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [slug]);
+
+  const totalPages = Math.ceil(allProducts.length / itemsPerPage);
+  const currentPage = Math.min(page, Math.max(1, totalPages));
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
   const paginatedProducts = allProducts.slice(start, end);
-  const totalPages = Math.ceil(allProducts.length / PRODUCTS_PER_PAGE);
+
+  useEffect(() => {
+    if (page > 1 && navRef.current) {
+      navRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [page]);
 
   const handleDownload = async () => {
     if (isGeneratingPDF) return;
@@ -60,22 +89,59 @@ export default function CategoryClient({ slug, config, allProducts }) {
 
   const sectionReveal = useScrollReveal();
 
+  const introData = config.intro || (config.topContent ? null : {
+    heading: config.h1Title || config.title,
+    body: config.description || config.heroSubtitle,
+    advantages: []
+  });
+
   return (
     <>
-
       <section ref={sectionReveal.ref} className={`products-page__section reveal ${sectionReveal.isVisible ? 'is-visible' : ''}`}>
         <div className="container">
 
-          {/* ── Top-Level Category Navigation ── */}
+          {/* ── Section 1: Intro & Authority (Above Filter Bar) ── */}
+          {introData ? (
+            <section className="products-page__intro" aria-labelledby="category-intro-heading">
+              <div className="products-page__intro-content">
+                <h2 id="category-intro-heading" className="products-page__intro-title">
+                  {introData.heading}
+                </h2>
+                <p className="products-page__intro-text">
+                  {introData.body}
+                </p>
+                {introData.advantages && introData.advantages.length > 0 && (
+                  <div className="products-page__intro-advantages">
+                    {introData.advantages.map((adv, idx) => (
+                      <div key={idx} className="products-page__intro-advantage-card">
+                        <span className="products-page__intro-advantage-bullet" aria-hidden="true" />
+                        <div className="products-page__intro-advantage-text">
+                          <strong className="products-page__intro-advantage-title">{adv.title}</strong>
+                          <p className="products-page__intro-advantage-desc">{adv.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </section>
+          ) : config.topContent ? (
+            <div className="products-page__top-content">
+              <div dangerouslySetInnerHTML={{ __html: config.topContent }} />
+            </div>
+          ) : null}
+
+          {/* ── Category Filter Bar (Directly Above Product Cards) ── */}
           <div className="products-page__nav-container">
-            <nav className="products-page__category-nav" aria-label="Product categories">
-              <Link href="/products" className="products-page__category-link">
-                All Products
+            <nav ref={navRef} className="products-page__category-nav" aria-label="Product categories">
+              <Link href="/products" onClick={onTabClick} className="products-page__category-link">
+                All
               </Link>
               {solutionLinks.map((cat) => (
                 <Link
                   key={cat.slug}
                   href={`/products/category/${cat.slug}`}
+                  onClick={onTabClick}
                   className={`products-page__category-link ${
                     slug === cat.slug ? "products-page__category-link--active" : ""
                   }`}
@@ -127,7 +193,7 @@ export default function CategoryClient({ slug, config, allProducts }) {
 
               {totalPages > 1 && (
                 <Pagination
-                  currentPage={page}
+                  currentPage={currentPage}
                   totalPages={totalPages}
                   baseUrl={`/products/category/${slug}`}
                 />
@@ -148,10 +214,10 @@ export default function CategoryClient({ slug, config, allProducts }) {
             </div>
           )}
 
-          {/* ── SEO Content Block ── */}
-          {config.seoContent && (
+          {/* ── Bottom Content Block (Below Cards) ── */}
+          {(config.bottomContent || config.seoContent) && (
             <div className="products-page__seo-block">
-              <div dangerouslySetInnerHTML={{ __html: config.seoContent }} />
+              <div dangerouslySetInnerHTML={{ __html: config.bottomContent || config.seoContent }} />
             </div>
           )}
 

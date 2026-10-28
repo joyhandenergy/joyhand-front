@@ -44,16 +44,18 @@ export default function ManufacturingClient() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "OEM/ODM Energy Manufacturing",
+    "name": "Custom Lithium Battery & E-Motorcycle OEM",
+    "serviceType": "Custom Lithium Battery OEM Production",
     "provider": {
       "@type": "Organization",
-      "name": "JoyHand Energy"
+      "name": "JoyHand Energy",
+      "url": "https://www.joyhand.com"
     },
     "areaServed": ["NG", "PK", "BD", "KE", "ZA", "Global"],
-    "description": "Direct factory custom manufacturing, white label branding, and container consolidation for LFP batteries and solar inverters in a facility operating under ISO standards.",
+    "description": "End-to-end OEM/ODM production for custom lithium batteries, e-motorcycles & solar hardware. We handle custom engineering, batch testing & global export.",
     "offers": {
       "@type": "Offer",
-      "description": "Factory direct B2B wholesale pricing for energy storage systems and electric mobility solutions tested to international standards."
+      "description": "Factory direct B2B wholesale pricing for custom lithium batteries, e-motorcycles, and solar hardware tested to CE, UL, and UN38.3 standards."
     }
   };
 
@@ -65,9 +67,10 @@ export default function ManufacturingClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageHeader
-        title="Direct Factory OEM Production"
-        subtitle="From custom battery assembly to container export, we supply energy hardware directly from automated production lines optimized for high-capacity export."
+        title="Custom Lithium Battery & E-Motorcycle OEM"
+        subtitle="End-to-end OEM/ODM production for custom lithium batteries, e-motorcycles & solar hardware. We handle custom engineering, batch testing & global export."
         pageImage="/pageHeadImg/pageheader-services.jpg"
+        breadcrumbCurrent="Manufacturing"
       />
 
       {/* INTRO */}
