@@ -2,23 +2,23 @@ import ManufacturingClient from "./ManufacturingClient";
 
 export const metadata = {
   title: {
-    absolute: "Custom Lithium Battery & E-Motorcycle OEM | JoyHand",
+    absolute: "OEM/ODM Manufacturing Facilities & Production Hub | JoyHand",
   },
-  description: "End-to-end OEM/ODM production for custom lithium batteries, e-motorcycles & solar hardware. We handle custom engineering, batch testing & global export.",
+  description: "Explore JoyHand's 50,000 m² Guangzhou production facility. Automated LiFePO4 battery assembly, solar inverter lines, EV chassis fabrication, and ISO 9001:2015 QC testing.",
   keywords: [
-    "custom lithium battery OEM",
-    "custom e-motorcycle production",
-    "custom solar assembly",
-    "battery cell grading",
+    "OEM ODM manufacturing facility",
+    "lithium battery production plant",
+    "electric motorcycle assembly factory",
     "ISO 9001 production line",
-    "B2B factory export"
+    "custom hardware engineering China",
+    "B2B manufacturing hub"
   ],
   alternates: {
     canonical: 'https://www.joyhand.com/manufacturing',
   },
   openGraph: {
-    title: "Custom Lithium Battery & E-Motorcycle OEM | JoyHand",
-    description: "End-to-end OEM/ODM production for custom lithium batteries, e-motorcycles & solar hardware. We handle custom engineering, batch testing & global export.",
+    title: "OEM/ODM Manufacturing Facilities & Production Hub | JoyHand",
+    description: "Explore JoyHand's 50,000 m² Guangzhou production facility. Automated LiFePO4 battery assembly, solar inverter lines, EV chassis fabrication, and ISO 9001:2015 QC testing.",
     url: "https://www.joyhand.com/manufacturing",
     type: "website",
     images: [
@@ -26,7 +26,7 @@ export const metadata = {
         url: "/serviceImg/serviceoem.jpg", 
         width: 1200,
         height: 630,
-        alt: "JoyHand Custom Lithium Battery & E-Motorcycle OEM Line",
+        alt: "JoyHand 50,000 m² OEM/ODM Manufacturing Facility in Guangzhou",
       },
     ],
   }

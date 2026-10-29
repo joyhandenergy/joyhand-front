@@ -61,11 +61,11 @@ export default function Hero() {
               </div>
 
               <h1 className="hero__title">
-                <span className="hero__title-line">Reliable Power &</span>
+                <span className="hero__title-line">Solar Battery &</span>
                 <span className="hero__title-line">
                   Electric{' '}
                   <span className="hero__title-line--highlight">
-                    Scooter Manufacturing
+                    Scooter Manufacturer
                   </span>
                 </span>
               </h1>
@@ -88,7 +88,7 @@ export default function Hero() {
 
               <div className="hero__trust">
                 <div className="hero__trust-dot"></div>
-                <span>Factory pricing | White-label ready | Global logistics</span>
+                <span>Direct Factory Pricing | White-Label OEM/ODM | Certified for US, Africa & Asia</span>
               </div>
             </div>
 

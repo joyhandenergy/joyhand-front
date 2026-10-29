@@ -40,7 +40,7 @@ export const partners = [
 // FOOTER DATA
 // ==============================
 export const footerData = {
-  brandDescription: "JoyHand is a direct factory manufacturer of storage batteries, solar power stations, solar panels, inverters, electric motorcycles, accessories, and complete solar solutions. We engineer reliable power systems for global markets.",
+  brandDescription: "JoyHand is a direct OEM/ODM factory manufacturer of LiFePO4 energy storage systems, hybrid solar inverters, solar panels, streetlights, and balance-of-system hardware accessories, alongside electric scooters and cargo motorcycles. Built to ISO 9001:2015, UL, and CE standards, we engineer reliable hardware for distributors across the Americas, Europe, Africa, and Asia.",
   socialLinks: [
     { name: "YouTube", url: "https://www.youtube.com/@joyhandenergy", icon: "youtube" },
     { name: "TikTok", url: "https://www.tiktok.com/@joyhandenergy", icon: "tiktok" },
@@ -172,7 +172,7 @@ export const innovationPillars = [
     id: "un383",
     title: "UN38.3 Logistics Compliance",
     preview: "Safe sea & air transport",
-    description: "Safe lithium battery transport documentation provided for seamless customs clearance to global ports."
+    description: "Full UN38.3 & MSDS test summaries provided for seamless ocean container clearance across US, African, and Asian ports."
   },
   {
     id: "docs",
@@ -188,7 +188,7 @@ export const innovationPillars = [
 export const logisticsFeatures = [
   {
     title: "Direct Port Logistics",
-    desc: "We ship full containers from Guangzhou to global ports. Skip the middlemen for faster delivery."
+    desc: "Direct container shipping from our Guangzhou and Shenzhen factory docks to major commercial ports in the Americas, Africa, Europe, and Asia."
   },
   {
     title: "Customs Documentation Support",
@@ -257,7 +257,7 @@ export const featuredCategories = [
     title: "Electric Scooters & Motorcycles",
     slug: "electric-motorcycles",
     image: "/homeImg/energyPlatformImage04.jpg",
-    desc: "High-performance batteries and complete vehicles for urban fleets and dirt bikes.",
+    desc: "UL 2272 & DOT-compliant commuter scooters, 200kg+ commercial cargo EVs, and sub-30s swappable dual-battery fleets.",
     sourceNote: "E-Mobility"
   },
   {
@@ -315,7 +315,7 @@ export const aboutValues = [
   {
     iconType: "gear",
     title: "Quality Control Lab",
-    description: "Proprietary testing for BMS and thermal management ensures reliability in diverse global environments."
+    description: "Proprietary testing for BMS thermal management and voltage surge handling across tropical, desert, and variable seasonal climates."
   },
   {
     iconType: "shield",
@@ -364,8 +364,8 @@ export const aboutSectors = [
   },
   {
     title: "E-Mobility & EV Solutions",
-    desc: "Full-vehicle OEM assembly and high-discharge lithium battery packs for electric motorcycles, dirt bikes, and electric scooters. Engineered with reinforced steel chassis, high-torque brushless motors, and smart fleet BMS.",
-    features: ["High-Torque Brushless Motors", "72V Automotive-Grade Battery Packs", "IP65 Weatherproof Sealed Chassis", "EEC & DOT Export Certification"],
+    desc: "Full-vehicle OEM assembly and automotive-grade lithium battery packs for electric commuter scooters, delivery motorcycles, and cargo tricycles. Built to UL 2272, DOT, and EEC standards with reinforced 200kg+ payload frames and smart fleet telematics.",
+    features: ["UL 2272 & DOT Ready", "Sub-30s Swappable Dual Battery", "200kg+ Heavy-Duty Chassis", "Custom US & Global OEM Branding"],
     img: "/aboutImg/aboutProductimg04.jpg",
     tag: "E-Mobility",
     link: "/products/category/electric-motorcycles"
@@ -402,7 +402,7 @@ export const aboutTimeline = [
   {
     year: "2026",
     title: "JoyHand Global",
-    description: "Operating a fully integrated manufacturing hub in Guangzhou, serving B2B partners across 40+ countries.",
+    description: "Operating a fully integrated manufacturing hub in Guangzhou, supplying commercial distributors across the Americas, Africa, Europe, and Asia.",
     iconType: "shield"
   }
 ];
@@ -454,14 +454,14 @@ export const servicesList = [
   },
   {
     title: "Batch Testing Audit",
-    desc: "100% inline inspection. Our lab runs capacity grading and thermal stress tests on every wholesale batch for Nigeria.",
+    desc: "100% inline inspection. Our lab runs capacity grading and thermal stress tests on every wholesale batch before export.",
     iconType: "shield",
     tag: "Quality",
     bgImage: "/serviceImg/servicequality1.jpg"
   },
   {
     title: "Container Logistics",
-    desc: "We manage freight consolidation, export compliance, and port-to-port shipping to Lagos, Karachi, and Dhaka.",
+    desc: "We manage freight consolidation, export compliance, and port-to-port shipping to major commercial ports worldwide.",
     iconType: "boat",
     tag: "Logistics",
     bgImage: "/serviceImg/servicelogistic.jpg"
@@ -525,7 +525,7 @@ export const servicesProcess = [
   {
     step: "06",
     title: "Port Delivery",
-    desc: "We manage customs out of Guangzhou for delivery to Lagos, Karachi, or Dhaka.",
+    desc: "We manage customs clearance and export documentation for direct container freight to your target port.",
     iconType: "boat"
   }
 ];
@@ -536,7 +536,7 @@ export const serviceHighlights = [
   "UL Compliant Products",
   "IEC 62619 Standard",
   "28+ Years Heritage",
-  "50+ Countries Served",
+  "50+ Global Markets Served",
   "1M+ Units Shipped",
   "In-house QC Lab",
   "Full OEM/ODM Support"
@@ -585,7 +585,7 @@ export const contactFeatures = [
   {
     iconType: "factory",
     label: "Custom Manufacturing",
-    subtext: "We produce battery packs, e-motorcycles, and inverters engineered for diverse global markets."
+    subtext: "We produce battery packs, e-motorcycles, and inverters engineered for regional electrical grids and terrain across the Americas, Africa, and Asia."
   },
   {
     iconType: "shield",
@@ -594,13 +594,13 @@ export const contactFeatures = [
   },
   {
     iconType: "handshake",
-    label: "Global Support",
-    subtext: "Our team provides technical support for distributors worldwide."
+    label: "Regional Support",
+    subtext: "Our sales and engineering teams provide direct support across time zones in North America, Africa, and the Asia-Pacific."
   },
   {
     iconType: "check",
     label: "Customs Assistance",
-    subtext: "We supply the CE, UL, and UN38.3 documentation needed to clear customs at any major international port."
+    subtext: "We supply the CE, UL 1973, UN38.3, and MSDS documentation needed to clear customs at major international ports."
   }
 ];
 
@@ -633,86 +633,92 @@ export const solutionLinks = [
 
 export const solutionConfigs = {
   "solar-batteries": {
-    pageTitle: "Bulk Solar Batteries & LiFePO4 Factory Direct | JoyHand",
-    metaDescription: "Direct factory supplier of LiFePO4 solar batteries for residential and commercial backup. Grade-A cells, 6000+ cycles. Flexible MOQs for global B2B.",
+    pageTitle: "LiFePO4 Solar Battery Manufacturer | UL 1973, CE & Off-Grid ESS | JoyHand",
+    metaDescription: "Direct factory OEM manufacturer of Grade-A LiFePO4 solar batteries (5kWh–100kWh+). Engineered for split-phase US systems, tropical African grids, and Asian commercial ESS.",
     canonicalUrl: "https://www.joyhand.com/products/category/solar-batteries",
-    metaKeywords: ["bulk LiFePO4 battery", "solar batteries manufacturer", "LFP storage factory direct", "wall mount battery OEM", "rack battery manufacturer", "6000 cycle battery"],
+    metaKeywords: ["LiFePO4 battery manufacturer", "solar batteries factory direct", "UL 1973 battery manufacturer", "rack mount battery OEM", "wall mount solar battery", "6000 cycle LFP battery", "commercial ESS manufacturer", "off-grid battery backup"],
     breadcrumbBadge: "SOLAR BATTERIES",
-    h1Title: "Industrial LiFePO4 Storage Battery Manufacturing",
-    heroSubtitle: "Grade-A LFP batteries for global backup and off-grid applications. Factory-direct with competitive B2B pricing and flexible wholesale MOQs.",
+    h1Title: "Industrial LiFePO4 Storage Battery Manufacturer & OEM",
+    heroSubtitle: "Grade-A prismatic LFP storage engineered for heavy daily cycling, extreme ambient temperatures, and seamless hybrid inverter sync across the Americas, Africa, Europe, and Asia.",
     title: "Wholesale LFP Battery Manufacturing",
     image: "/homeImg/energyPlatformImage01.jpg",
     filterCategory: "battery",
-    description: "Grade-A LFP batteries for global backup and off-grid applications. Factory-direct with competitive B2B pricing and flexible wholesale MOQs.",
-    keywords: "bulk LiFePO4 battery, LFP storage factory direct, wall mount battery OEM, rack battery manufacturer, 6000 cycle battery",
+    description: "Grade-A prismatic LFP storage engineered for heavy daily cycling, extreme ambient temperatures, and seamless hybrid inverter sync across the Americas, Africa, Europe, and Asia.",
+    keywords: "LiFePO4 battery manufacturer, solar batteries factory direct, UL 1973 battery manufacturer, rack mount battery OEM, wall mount solar battery, 6000 cycle LFP battery",
     intro: {
-      heading: "Bulk LiFePO4 (LFP) Storage Batteries: Factory Direct to Global Markets",
-      body: "As grid instability and rolling blackouts continue to affect developing economies across global markets, the demand for robust, deep-cycle energy storage has never been higher. JoyHand Energy’s proprietary series of Lithium Iron Phosphate (LiFePO4/LFP) wall-mounted and rack-mounted batteries are specifically engineered to withstand harsh temperatures, frequent deep-discharge cycles, and intense voltage fluctuations. By sourcing directly from our 50,000m² ISO 9001:2015 certified manufacturing facility in Guangzhou, distributors bypass the traditional layers of middlemen. Every battery pack undergoes rigorous 100% inline thermal stress testing, cell-matching, and capacity grading, ensuring your end-customers receive a product that lasts well beyond its 6000-cycle warranty.",
+      heading: "Industrial LiFePO4 Solar Batteries: Built for High-Capacity Grids & Off-Grid Resilience",
+      body: "From split-phase 120V/240V residential solar backup in North America to mission-critical telecom towers and commercial micro-grids combating daily load-shedding across Africa and South Asia, JoyHand Energy manufactures high-cycle Lithium Iron Phosphate (LiFePO4) energy storage systems. Operating from our 50,000m² ISO 9001:2015 certified Guangzhou production hub, we build wall-mounted packs, server-rack modules, and high-voltage commercial ESS units using 100% Grade-A prismatic cells. Each unit integrates proprietary smart BMS protection engineered for ambient temperatures up to 55°C, high-discharge surge demands, and 6,000+ cycles at 80% DoD. By sourcing factory direct, B2B distributors and EPC contractors secure competitive container pricing backed by full UL 1973, CE, and UN38.3 customs compliance documentation.",
       advantages: [
         {
-          title: "Tropical Climate Optimization",
-          desc: "Proprietary BMS thermal throttling keeps cells stable in non-air-conditioned utility rooms."
+          title: "Multi-Region Inverter Sync",
+          desc: "Pre-configured CAN/RS485 firmware protocols communicate natively with Deye, Growatt, Victron, Schneider, and major international hybrid inverters."
         },
         {
-          title: "Compliance & Safety",
-          desc: "Full UN38.3, CE, and UL certified documentation for expedited international customs clearance."
+          title: "High-Ambient Heat BMS",
+          desc: "Proprietary multi-tier thermal throttling protects cells in unconditioned utility rooms and high-heat climates across Africa, the Middle East, and South Asia."
         },
         {
-          title: "Modular Scalability",
-          desc: "High-voltage and low-voltage parallel stringing scaling from 5kWh to 100kWh+ commercial grids."
+          title: "Commercial Micro-Grid Scalability",
+          desc: "Parallel modular architecture from 5.12kWh residential units up to 100kWh+ high-voltage commercial ESS arrays for hospitals, estates, and industrial facilities."
+        },
+        {
+          title: "Customs & Port Certification",
+          desc: "Full UN38.3 dangerous goods reports, CE, and UL 1973 compliance documentation provided for seamless container clearance at major seaports."
         }
       ]
     },
     topContent: `
-      <h2>Bulk LiFePO4 (LFP) Storage Batteries: Factory Direct to Global Markets</h2>
-      <p>As grid instability and rolling blackouts continue to affect developing economies across global markets, the demand for robust, deep-cycle energy storage has never been higher. JoyHand Energy’s proprietary series of Lithium Iron Phosphate (LiFePO4/LFP) wall-mounted and rack-mounted batteries are specifically engineered to withstand harsh temperatures, frequent deep-discharge cycles, and intense voltage fluctuations. By sourcing directly from our 50,000m² ISO 9001:2015 certified manufacturing facility in Guangzhou, distributors bypass the traditional layers of middlemen. This allows you to scale your local distribution network reliably. Every battery pack undergoes rigorous 100% inline thermal stress testing, cell-matching, and capacity grading, ensuring your end-customers receive a product that lasts well beyond its 6000-cycle warranty.</p>
+      <h2>Industrial LiFePO4 Solar Batteries: Built for High-Capacity Grids & Off-Grid Resilience</h2>
+      <p>From split-phase 120V/240V residential solar installations in North America to mission-critical telecom towers and commercial micro-grids combating daily load-shedding across Africa and South Asia, the demand for robust, deep-cycle energy storage requires purpose-built engineering. JoyHand Energy’s proprietary series of Lithium Iron Phosphate (LiFePO4/LFP) wall-mounted and server-rack batteries are specifically designed to withstand extreme ambient temperatures, frequent deep-discharge cycles, and intense voltage fluctuations. By sourcing directly from our 50,000m² ISO 9001:2015 certified manufacturing facility in Guangzhou, distributors and EPC contractors bypass trading middlemen to scale their regional networks reliably. Every battery pack undergoes rigorous 100% inline thermal stress testing, cell-matching, and capacity grading, ensuring your end-customers receive dependable hardware that lasts well beyond its 6000-cycle warranty.</p>
     `,
     bottomContent: `
-      <h2>Why Partner with Joyhand for LFP Storage?</h2>
+      <h2>Why Partner with JoyHand for LFP Energy Storage?</h2>
       <ul>
-        <li><strong>Tropical Climate Optimization:</strong> Our custom BMS architecture includes proprietary thermal throttling, ensuring the battery core remains stable even in non-air-conditioned utility rooms common in global markets.</li>
-        <li><strong>Logistics & Legal Compliance:</strong> We provide full UN38.3, CE, and UL testing documentation, dramatically accelerating port clearance times. We routinely manage end-to-end freight from China directly to major international ports.</li>
-        <li><strong>Modular Scalability:</strong> Our high-voltage rack systems and modular low-voltage wall units support advanced parallel stringing, capable of scaling from a 5kWh home backup to a 100kWh commercial micro-grid.</li>
+        <li><strong>Multi-Region Inverter Sync:</strong> Pre-configured CAN and RS485 communication protocols sync seamlessly with Deye, Growatt, Victron, Schneider, and Solis inverters, eliminating manual voltage programming errors by local installers.</li>
+        <li><strong>High-Ambient Heat Protection:</strong> Our custom BMS architecture includes proprietary thermal throttling, ensuring the battery core remains stable even in non-air-conditioned utility rooms common across tropical and desert regions (up to 55°C ambient).</li>
+        <li><strong>Full Sea Freight & Customs Compliance:</strong> We provide complete UN38.3, CE, and UL testing documentation with MSDS, dramatically accelerating port customs clearance times for ocean container shipments.</li>
+        <li><strong>Modular Commercial Scalability:</strong> Our high-voltage rack systems and modular low-voltage wall units support advanced parallel stringing, capable of scaling from a 5.12kWh residential backup to a 100kWh+ commercial micro-grid.</li>
       </ul>
-      <h2>Distributor FAQ</h2>
-      <p><strong>Q: What is the typical lead time for a 40HQ container of LFP batteries?</strong><br/>A: Production lead times depend heavily on specific product configurations, total order volume, and custom OEM branding requirements. For accurate manufacturing and shipping timelines, please contact our sourcing team with your exact specifications.</p>
-      <p><strong>Q: Can we apply our own brand to your battery chassis (OEM)?</strong><br/>A: Yes. Over 60% of our production volume is OEM/ODM. We offer laser-engraving, custom sheet metal color matching, and bespoke firmware interfaces that load your company's logo on the LCD display.</p>
+      <h2>Distributor & EPC FAQ</h2>
+      <p><strong>Q: What is the typical lead time for a 40HQ container of LFP batteries?</strong><br/>A: Standard production lead time for full container orders is typically 20–30 days depending on specific voltage configurations and custom OEM branding requirements. For accurate manufacturing and shipping schedules to your destination port, contact our factory sourcing team.</p>
+      <p><strong>Q: Can we apply our own brand to your battery chassis (OEM)?</strong><br/>A: Yes. Over 60% of our production volume is OEM/ODM. We offer laser-engraving, custom sheet metal color matching, branded carton packaging, and bespoke firmware interfaces that load your company logo on the LCD display.</p>
     `,
     seoContent: `
-      <h2>Bulk LiFePO4 (LFP) Storage Batteries: Factory Direct to Global Markets</h2>
-      <p>As grid instability and rolling blackouts continue to affect developing economies across global markets, the demand for robust, deep-cycle energy storage has never been higher. JoyHand Energy’s proprietary series of Lithium Iron Phosphate (LiFePO4/LFP) wall-mounted and rack-mounted batteries are specifically engineered to withstand harsh temperatures, frequent deep-discharge cycles, and intense voltage fluctuations. By sourcing directly from our 50,000m² ISO 9001:2015 certified manufacturing facility in Guangzhou, distributors bypass the traditional layers of middlemen. This allows you to scale your local distribution network reliably. Every battery pack undergoes rigorous 100% inline thermal stress testing, cell-matching, and capacity grading, ensuring your end-customers receive a product that lasts well beyond its 6000-cycle warranty.</p>
+      <h2>Industrial LiFePO4 Solar Batteries: Built for High-Capacity Grids & Off-Grid Resilience</h2>
+      <p>From split-phase 120V/240V residential solar installations in North America to mission-critical telecom towers and commercial micro-grids combating daily load-shedding across Africa and South Asia, the demand for robust, deep-cycle energy storage requires purpose-built engineering. JoyHand Energy’s proprietary series of Lithium Iron Phosphate (LiFePO4/LFP) wall-mounted and server-rack batteries are specifically designed to withstand extreme ambient temperatures, frequent deep-discharge cycles, and intense voltage fluctuations. By sourcing directly from our 50,000m² ISO 9001:2015 certified manufacturing facility in Guangzhou, distributors and EPC contractors bypass trading middlemen to scale their regional networks reliably. Every battery pack undergoes rigorous 100% inline thermal stress testing, cell-matching, and capacity grading, ensuring your end-customers receive dependable hardware that lasts well beyond its 6000-cycle warranty.</p>
       <br/>
-      <h2>Why Partner with Joyhand for LFP Storage?</h2>
+      <h2>Why Partner with JoyHand for LFP Energy Storage?</h2>
       <ul>
-        <li><strong>Tropical Climate Optimization:</strong> Our custom BMS architecture includes proprietary thermal throttling, ensuring the battery core remains stable even in non-air-conditioned utility rooms common in global markets.</li>
-        <li><strong>Logistics & Legal Compliance:</strong> We provide full UN38.3, CE, and UL testing documentation, dramatically accelerating port clearance times. We routinely manage end-to-end freight from China directly to major international ports.</li>
-        <li><strong>Modular Scalability:</strong> Our high-voltage rack systems and modular low-voltage wall units support advanced parallel stringing, capable of scaling from a 5kWh home backup to a 100kWh commercial micro-grid.</li>
+        <li><strong>Multi-Region Inverter Sync:</strong> Pre-configured CAN and RS485 communication protocols sync seamlessly with Deye, Growatt, Victron, Schneider, and Solis inverters, eliminating manual voltage programming errors by local installers.</li>
+        <li><strong>High-Ambient Heat Protection:</strong> Our custom BMS architecture includes proprietary thermal throttling, ensuring the battery core remains stable even in non-air-conditioned utility rooms common across tropical and desert regions (up to 55°C ambient).</li>
+        <li><strong>Full Sea Freight & Customs Compliance:</strong> We provide complete UN38.3, CE, and UL testing documentation with MSDS, dramatically accelerating port customs clearance times for ocean container shipments.</li>
+        <li><strong>Modular Commercial Scalability:</strong> Our high-voltage rack systems and modular low-voltage wall units support advanced parallel stringing, capable of scaling from a 5.12kWh residential backup to a 100kWh+ commercial micro-grid.</li>
       </ul>
-      <h2>Distributor FAQ</h2>
-      <p><strong>Q: What is the typical lead time for a 40HQ container of LFP batteries?</strong><br/>A: Production lead times depend heavily on specific product configurations, total order volume, and custom OEM branding requirements. For accurate manufacturing and shipping timelines, please contact our sourcing team with your exact specifications.</p>
-      <p><strong>Q: Can we apply our own brand to your battery chassis (OEM)?</strong><br/>A: Yes. Over 60% of our production volume is OEM/ODM. We offer laser-engraving, custom sheet metal color matching, and bespoke firmware interfaces that load your company's logo on the LCD display.</p>
+      <h2>Distributor & EPC FAQ</h2>
+      <p><strong>Q: What is the typical lead time for a 40HQ container of LFP batteries?</strong><br/>A: Standard production lead time for full container orders is typically 20–30 days depending on specific voltage configurations and custom OEM branding requirements. For accurate manufacturing and shipping schedules to your destination port, contact our factory sourcing team.</p>
+      <p><strong>Q: Can we apply our own brand to your battery chassis (OEM)?</strong><br/>A: Yes. Over 60% of our production volume is OEM/ODM. We offer laser-engraving, custom sheet metal color matching, branded carton packaging, and bespoke firmware interfaces that load your company logo on the LCD display.</p>
     `
   },
   "solar-inverters": {
-    pageTitle: "Hybrid Solar Inverter Manufacturer | JoyHand",
-    metaDescription: "Factory-direct OEM production of hybrid and off-grid solar inverters. Pure sine wave, dual MPPT, and parallel capabilities for global distributors.",
+    pageTitle: "Hybrid Solar Inverter Manufacturer | Split-Phase & Off-Grid | JoyHand",
+    metaDescription: "Direct factory OEM manufacturer of pure sine wave hybrid solar inverters (3kW–12kW+). Dual MPPT, split-phase 120V/240V, and high-surge load handling for global grids.",
     canonicalUrl: "https://www.joyhand.com/products/category/solar-inverters",
-    metaKeywords: ["hybrid solar inverter manufacturer", "off-grid inverter factory", "dual MPPT inverter", "pure sine wave inverter supplier", "parallel inverter OEM"],
+    metaKeywords: ["hybrid solar inverter manufacturer", "off-grid inverter factory", "split-phase solar inverter", "dual MPPT inverter", "pure sine wave inverter supplier", "parallel inverter OEM"],
     breadcrumbBadge: "HYBRID INVERTERS",
-    h1Title: "Heavy-Duty Hybrid Inverters for Global Grids",
-    heroSubtitle: "Direct OEM production of hybrid and off-grid solar inverters. Engineered for grid stability worldwide. Get a custom B2B quote in 24h.",
+    h1Title: "Heavy-Duty Hybrid Inverters: Split-Phase & Unstable Grid Resilience",
+    heroSubtitle: "Direct factory OEM hybrid and off-grid solar inverters. Engineered for split-phase US residential systems and extreme grid fluctuations across Africa and South Asia.",
     title: "Wholesale Hybrid Inverter Production",
     filterCategory: "inverter",
     image: "/homeImg/energyPlatformImage002.jpg",
-    description: "Direct OEM production of hybrid and off-grid solar inverters. Engineered for grid stability worldwide. Get a custom B2B quote in 24h.",
-    keywords: "hybrid solar inverter manufacturer, off-grid inverter factory, dual MPPT inverter, pure sine wave inverter supplier, parallel inverter OEM",
+    description: "Direct factory OEM hybrid and off-grid solar inverters. Engineered for split-phase US residential systems and extreme grid fluctuations across Africa and South Asia.",
+    keywords: "hybrid solar inverter manufacturer, off-grid inverter factory, split-phase solar inverter, dual MPPT inverter, pure sine wave inverter supplier, parallel inverter OEM",
     intro: {
-      heading: "Heavy-Duty Solar Hybrid Inverters Built for Unstable Grids",
-      body: "In regions where municipal grids are unpredictable, off-the-shelf inverters fail prematurely. JoyHand Energy's line of Hybrid and Off-Grid Solar Inverters are engineered with heavy-duty pure sine wave circuitry and oversized copper transformers that absorb massive surge loads from pumps, air conditioners, and industrial machinery without tripping. We supply high-frequency parallel units and IP54-rated outdoor systems to EPC contractors and solar distributors worldwide, featuring millisecond grid-bypass switching to prevent sensitive equipment reboots.",
+      heading: "Heavy-Duty Solar Hybrid Inverters: Built for Split-Phase Systems & Extreme Grids",
+      body: "In regions where municipal grids are unpredictable or feature split-phase architecture, off-the-shelf consumer inverters fail prematurely. JoyHand Energy manufactures commercial-grade Hybrid and Off-Grid Solar Inverters engineered with heavy-duty pure copper transformers and over-specced pure sine wave circuitry that absorb massive motor surges from water pumps, air conditioners, and agricultural machinery without tripping. Supporting split-phase 120V/240V for the Americas as well as 220V/230V 50Hz single- and three-phase for Africa, the Middle East, and Asia, our systems feature sub-10ms automatic grid bypass and built-in generator auto-start contacts to ensure continuous power during rolling blackouts.",
       advantages: [
         {
           title: "Surge Load Architecture",
-          desc: "Industrial-grade AC protection absorbs chaotic voltage spikes and heavy motor surges."
+          desc: "Industrial-grade AC protection and heavy copper chokes absorb chaotic voltage spikes and 3x inductive motor surges."
         },
         {
           title: "Plug-and-Play BMS",
@@ -725,29 +731,29 @@ export const solutionConfigs = {
       ]
     },
     topContent: `
-      <h2>Heavy-Duty Solar Hybrid Inverters Built for Unstable Grids</h2>
-      <p>In regions where the municipal grid is unpredictable, an off-the-shelf inverter will fail prematurely. JoyHand Energy's line of Hybrid and Off-Grid Solar Inverters are fundamentally different. Engineered with heavy-duty copper transformers and over-specced pure sine wave circuitry, our inverters absorb massive surge loads from water pumps, industrial air conditioners, and heavy machinery without tripping. We supply massive volumes of IP54-rated outdoor inverters and high-frequency parallel units to EPC contractors, real estate developers, and solar distributors worldwide. Our proprietary grid-bypass logic senses voltage drops in milliseconds, switching to battery power so fast that sensitive electronics never reboot. This is the ultimate factory-direct solution for combating load-shedding and rolling blackouts globally.</p>
+      <h2>Heavy-Duty Solar Hybrid Inverters Built for Unstable Grids & Split-Phase Architecture</h2>
+      <p>In regions where the municipal grid is unpredictable, an off-the-shelf inverter will fail prematurely. JoyHand Energy's line of Hybrid and Off-Grid Solar Inverters are fundamentally different. Engineered with heavy-duty copper transformers and over-specced pure sine wave circuitry, our inverters absorb massive surge loads from water pumps, industrial air conditioners, and heavy machinery without tripping. Supporting split-phase 120V/240V for North American installations as well as 220V/230V 50Hz single- and three-phase configurations for African, Asian, and European distribution, we supply massive volumes of IP54-rated outdoor inverters and high-frequency parallel units to EPC contractors, real estate developers, and solar distributors worldwide. Our proprietary grid-bypass logic senses voltage drops in milliseconds, switching to battery power so fast that sensitive electronics never reboot.</p>
     `,
     bottomContent: `
       <h2>The JoyHand Engineering Advantage</h2>
       <ul>
-        <li><strong>Surge Protection Architecture:</strong> Designed specifically for international markets, our internal AC breakers can handle chaotic voltage spikes, protecting the sensitive MPPT solar charge controllers inside.</li>
+        <li><strong>Surge Protection Architecture:</strong> Designed specifically for fluctuating grids, our internal AC breakers handle chaotic voltage spikes, protecting the sensitive dual-MPPT solar charge controllers inside.</li>
         <li><strong>Plug-and-Play LFP Communication:</strong> Every JoyHand inverter is pre-flashed with communication protocols that natively talk to our LiFePO4 battery BMS, maximizing charging efficiency and completely eliminating manual voltage configuration errors by local installers.</li>
-        <li><strong>True Parallel Capability:</strong> Need to power a hospital or a factory? Distribute our inverters and link up to 9 units in parallel or 3-phase configurations, unlocking massive megawatts of off-grid power.</li>
+        <li><strong>True Parallel & 3-Phase Capability:</strong> Need to power a hospital, estate, or agricultural facility? Distribute our inverters and link up to 9 units in parallel or 3-phase configurations, unlocking massive multi-megawatt off-grid power.</li>
       </ul>
       <h2>Distributor FAQ</h2>
       <p><strong>Q: Do these inverters support generator auto-start functionality?</strong><br/>A: Yes, all our hybrid models feature built-in dry contacts. When the lithium battery bank drops below a customizable threshold (e.g., 20%), the inverter automatically sends a signal to start the diesel generator, creating a flawless tri-power hybrid system.</p>
       <p><strong>Q: Are your inverters capable of feeding power back into the grid (Net Metering)?</strong><br/>A: We offer both strictly off-grid models (zero export) and fully certified grid-tied hybrid models depending on your local regulatory environment.</p>
     `,
     seoContent: `
-      <h2>Heavy-Duty Solar Hybrid Inverters Built for Unstable Grids</h2>
-      <p>In regions where the municipal grid is unpredictable, an off-the-shelf inverter will fail prematurely. JoyHand Energy's line of Hybrid and Off-Grid Solar Inverters are fundamentally different. Engineered with heavy-duty copper transformers and over-specced pure sine wave circuitry, our inverters absorb massive surge loads from water pumps, industrial air conditioners, and heavy machinery without tripping. We supply massive volumes of IP54-rated outdoor inverters and high-frequency parallel units to EPC contractors, real estate developers, and solar distributors worldwide. Our proprietary grid-bypass logic senses voltage drops in milliseconds, switching to battery power so fast that sensitive electronics never reboot. This is the ultimate factory-direct solution for combating load-shedding and rolling blackouts globally.</p>
+      <h2>Heavy-Duty Solar Hybrid Inverters Built for Unstable Grids & Split-Phase Architecture</h2>
+      <p>In regions where the municipal grid is unpredictable, an off-the-shelf inverter will fail prematurely. JoyHand Energy's line of Hybrid and Off-Grid Solar Inverters are fundamentally different. Engineered with heavy-duty copper transformers and over-specced pure sine wave circuitry, our inverters absorb massive surge loads from water pumps, industrial air conditioners, and heavy machinery without tripping. Supporting split-phase 120V/240V for North American installations as well as 220V/230V 50Hz single- and three-phase configurations for African, Asian, and European distribution, we supply massive volumes of IP54-rated outdoor inverters and high-frequency parallel units to EPC contractors, real estate developers, and solar distributors worldwide. Our proprietary grid-bypass logic senses voltage drops in milliseconds, switching to battery power so fast that sensitive electronics never reboot.</p>
       <br/>
       <h2>The JoyHand Engineering Advantage</h2>
       <ul>
-        <li><strong>Surge Protection Architecture:</strong> Designed specifically for international markets, our internal AC breakers can handle chaotic voltage spikes, protecting the sensitive MPPT solar charge controllers inside.</li>
+        <li><strong>Surge Protection Architecture:</strong> Designed specifically for fluctuating grids, our internal AC breakers handle chaotic voltage spikes, protecting the sensitive dual-MPPT solar charge controllers inside.</li>
         <li><strong>Plug-and-Play LFP Communication:</strong> Every JoyHand inverter is pre-flashed with communication protocols that natively talk to our LiFePO4 battery BMS, maximizing charging efficiency and completely eliminating manual voltage configuration errors by local installers.</li>
-        <li><strong>True Parallel Capability:</strong> Need to power a hospital or a factory? Distribute our inverters and link up to 9 units in parallel or 3-phase configurations, unlocking massive megawatts of off-grid power.</li>
+        <li><strong>True Parallel & 3-Phase Capability:</strong> Need to power a hospital, estate, or agricultural facility? Distribute our inverters and link up to 9 units in parallel or 3-phase configurations, unlocking massive multi-megawatt off-grid power.</li>
       </ul>
       <h2>Distributor FAQ</h2>
       <p><strong>Q: Do these inverters support generator auto-start functionality?</strong><br/>A: Yes, all our hybrid models feature built-in dry contacts. When the lithium battery bank drops below a customizable threshold (e.g., 20%), the inverter automatically sends a signal to start the diesel generator, creating a flawless tri-power hybrid system.</p>
@@ -755,20 +761,20 @@ export const solutionConfigs = {
     `
   },
   "portable-power-stations": {
-    pageTitle: "Portable Power Station OEM Factory | JoyHand",
-    metaDescription: "Factory-direct OEM manufacturing of LiFePO4 portable power stations. Optimized for emergency backup and off-grid use. B2B pricing.",
+    pageTitle: "Portable Power Station OEM Factory | LiFePO4 Solar Generators | JoyHand",
+    metaDescription: "Factory-direct OEM manufacturing of LiFePO4 portable power stations (300W–3600W). Multi-region AC outlets (US/UK/EU/Universal) & 2h fast AC recharge.",
     canonicalUrl: "https://www.joyhand.com/products/category/portable-power-stations",
-    metaKeywords: ["portable power station OEM", "LiFePO4 solar generator factory", "emergency backup power manufacturer", "off-grid power supplier"],
+    metaKeywords: ["portable power station OEM", "LiFePO4 solar generator factory", "emergency backup power manufacturer", "off-grid power supplier", "portable lithium battery pack"],
     breadcrumbBadge: "PORTABLE POWER",
-    h1Title: "Portable Power Station Manufacturing & OEM",
-    heroSubtitle: "Manufacturer-direct portable power stations. Optimized for emergency backup and off-grid applications worldwide. Low MOQs for distributors.",
+    h1Title: "Portable Power Station & Solar Generator Manufacturer",
+    heroSubtitle: "Direct factory OEM portable power stations (300W–3600W). Multi-region AC outlets and rapid dual-inverter charging for off-grid operations and emergency backup across the Americas, Africa, and Asia.",
     title: "Portable Power Station OEM Manufacturing",
     filterCategory: "portable-power",
     image: "/homeImg/energyPlatformImage003.jpg",
-    description: "Manufacturer-direct portable power stations. Optimized for emergency backup and off-grid applications worldwide. Low MOQs for distributors.",
+    description: "Direct factory OEM portable power stations (300W–3600W). Multi-region AC outlets and rapid dual-inverter charging for off-grid operations and emergency backup across the Americas, Africa, and Asia.",
     keywords: "portable power station OEM, LiFePO4 solar generator factory, emergency backup power manufacturer, off-grid power supplier",
     intro: {
-      heading: "Portable Power Stations for Off-Grid and Emergency Backup",
+      heading: "Heavy-Duty Portable Power Stations: Engineered for Extreme Field & Emergency Backup",
       body: "As remote operations and off-grid demands grow, JoyHand Energy manufactures industrial-grade LiFePO4 and Lithium-Ion Portable Power Stations designed to run field clinics, telecommunications gear, work sites, and households through extended blackouts. Engineered with advanced dual-inverter architectures for extreme fast-charging from AC wall sockets or direct solar arrays in under 2 hours, our units deliver clean, fume-free, high-wattage power anywhere in the world.",
       advantages: [
         {
@@ -781,97 +787,121 @@ export const solutionConfigs = {
         },
         {
           title: "Universal Multi-Outlet",
-          desc: "US, UK, EU, and Universal AC outlets paired with 100W USB-C PD high-speed ports."
+          desc: "US (120V), UK/EU (230V), and Universal AC outlets paired with 100W USB-C PD high-speed ports."
         }
       ]
     },
     topContent: `
       <h2>Portable Power Stations for Off-Grid and Emergency Use</h2>
-      <p>As remote work and outdoor logistics boom, the market for massive-capacity portable power is experiencing exponential growth. JoyHand Energy's Lithium-Ion and LiFePO4 Portable Power Stations are not basic camping accessories—they are industrial-grade solar generators engineered to keep mobile clinics, remote construction sites, and entire households running during extended power failures. Unlike consumer-grade units that take 8 hours to charge, our advanced dual-inverter architecture allows for extreme fast-charging from an AC wall outlet or direct solar panel input in under 2 hours. We supply these units in bulk to retail chains, disaster relief NGOs, and telecom field crews across global markets, offering a rugged, fume-free alternative to traditional gasoline generators.</p>
+      <p>As remote work and outdoor logistics boom, the market for massive-capacity portable power is experiencing exponential growth. JoyHand Energy's Lithium-Ion and LiFePO4 Portable Power Stations are not basic camping accessories—they are industrial-grade solar generators engineered to keep mobile clinics, remote construction sites, and entire households running during extended power failures. Unlike consumer-grade units that take 8 hours to charge, our advanced dual-inverter architecture allows for extreme fast-charging from an AC wall outlet or direct solar panel input in under 2 hours. We supply these units in bulk to retail chains, disaster relief NGOs, and telecom field crews across the Americas, Africa, Europe, and Asia, offering a rugged, fume-free alternative to traditional gasoline generators.</p>
     `,
     bottomContent: `
       <h2>Key Market Advantages</h2>
       <ul>
         <li><strong>Simultaneous Pass-Through Charging:</strong> The internal BMS allows users to charge the power station via solar while simultaneously powering AC heavy loads or medical equipment.</li>
         <li><strong>Commercial Safety Standards:</strong> Built with automotive-grade lithium cells, our units are wrapped in fire-retardant, drop-resistant ABS+PC shells. They possess full UN38.3 certification for safe international freight.</li>
-        <li><strong>Universal Outlet Designs:</strong> For global distribution, we manufacture models with US, UK, EU, and Universal AC socket configurations, paired with 100W USB-C PD ports for modern electronics.</li>
+        <li><strong>Universal Outlet Designs:</strong> Configured for international markets with US (120V), UK/EU (230V), and Universal multi-pin AC socket configurations, paired with 100W USB-C PD ports for modern electronics.</li>
       </ul>
       <h2>Distributor FAQ</h2>
       <p><strong>Q: Can these replace a small gasoline generator?</strong><br/>A: Yes. A 2000W Joyhand power station can comfortably run full-size refrigerators, power tools, and medical CPAP machines without the noise, maintenance, or toxic fumes of a petrol generator.</p>
     `,
     seoContent: `
       <h2>Portable Power Stations for Off-Grid and Emergency Use</h2>
-      <p>As remote work and outdoor logistics boom, the market for massive-capacity portable power is experiencing exponential growth. JoyHand Energy's Lithium-Ion and LiFePO4 Portable Power Stations are not basic camping accessories—they are industrial-grade solar generators engineered to keep mobile clinics, remote construction sites, and entire households running during extended power failures. Unlike consumer-grade units that take 8 hours to charge, our advanced dual-inverter architecture allows for extreme fast-charging from an AC wall outlet or direct solar panel input in under 2 hours. We supply these units in bulk to retail chains, disaster relief NGOs, and telecom field crews across global markets, offering a rugged, fume-free alternative to traditional gasoline generators.</p>
+      <p>As remote work and outdoor logistics boom, the market for massive-capacity portable power is experiencing exponential growth. JoyHand Energy's Lithium-Ion and LiFePO4 Portable Power Stations are not basic camping accessories—they are industrial-grade solar generators engineered to keep mobile clinics, remote construction sites, and entire households running during extended power failures. Unlike consumer-grade units that take 8 hours to charge, our advanced dual-inverter architecture allows for extreme fast-charging from an AC wall outlet or direct solar panel input in under 2 hours. We supply these units in bulk to retail chains, disaster relief NGOs, and telecom field crews across the Americas, Africa, Europe, and Asia, offering a rugged, fume-free alternative to traditional gasoline generators.</p>
       <br/>
       <h2>Key Market Advantages</h2>
       <ul>
         <li><strong>Simultaneous Pass-Through Charging:</strong> The internal BMS allows users to charge the power station via solar while simultaneously powering AC heavy loads or medical equipment.</li>
         <li><strong>Commercial Safety Standards:</strong> Built with automotive-grade lithium cells, our units are wrapped in fire-retardant, drop-resistant ABS+PC shells. They possess full UN38.3 certification for safe international freight.</li>
-        <li><strong>Universal Outlet Designs:</strong> For global distribution, we manufacture models with US, UK, EU, and Universal AC socket configurations, paired with 100W USB-C PD ports for modern electronics.</li>
+        <li><strong>Universal Outlet Designs:</strong> Configured for international markets with US (120V), UK/EU (230V), and Universal multi-pin AC socket configurations, paired with 100W USB-C PD ports for modern electronics.</li>
       </ul>
       <h2>Distributor FAQ</h2>
       <p><strong>Q: Can these replace a small gasoline generator?</strong><br/>A: Yes. A 2000W Joyhand power station can comfortably run full-size refrigerators, power tools, and medical CPAP machines without the noise, maintenance, or toxic fumes of a petrol generator.</p>
     `
   },
   "electric-motorcycles": {
-    pageTitle: "Electric Motorcycle, Scooter & Light EV Manufacturer | JoyHand",
-    metaDescription: "Direct factory manufacturer of electric motorcycles, commercial scooters, cargo tricycles, and custom EV battery packs for global distributors. B2B wholesale.",
+    pageTitle: "Electric Scooter & Motorcycle OEM Manufacturer | UL 2272 & DOT Ready | JoyHand",
+    metaDescription: "Direct factory manufacturer of UL 2272 & DOT-compliant commuter scooters, 200kg+ commercial delivery e-motorcycles, and swappable battery systems for US, European, African & Asian markets.",
     canonicalUrl: "https://www.joyhand.com/products/category/electric-motorcycles",
-    metaKeywords: ["electric motorcycle manufacturer", "electric scooter supplier", "electric tricycle factory", "light EV manufacturer", "commercial cargo scooter OEM", "electric dirt bike factory", "EV battery pack supplier"],
-    breadcrumbBadge: "E-MOTORCYCLES & SCOOTERS",
-    h1Title: "Electric Motorcycle, Scooter & Light EV Manufacturing",
-    heroSubtitle: "Direct factory manufacturer of electric motorcycles, commercial scooters, cargo tricycles, and custom EV battery packs for global distributors and fleet operators.",
-    title: "Electric Motorcycle, Scooter & Light EV Manufacturing",
+    metaKeywords: ["electric scooter manufacturer", "UL 2272 electric scooter OEM", "DOT electric motorcycle factory", "commercial delivery scooter supplier", "swappable battery e-motorcycle", "private label electric scooter USA", "fleet EV manufacturer", "72V EV battery pack OEM", "cargo electric tricycle factory"],
+    breadcrumbBadge: "E-SCOOTERS & MOTORCYCLES",
+    h1Title: "Electric Scooter, Motorcycle & Commercial Fleet EV Manufacturer",
+    heroSubtitle: "UL 2272 & DOT-compliant urban commuter scooters for US retailers, alongside heavy-duty 200kg+ cargo motorcycles and swappable battery systems engineered for delivery fleets across the Americas, Europe, Africa, and Asia.",
+    title: "Electric Scooter, Motorcycle & Commercial EV Manufacturer",
     filterCategory: "electric-mobility",
     image: "/homeImg/energyPlatformImage04.jpg",
-    description: "Direct factory manufacturer of electric motorcycles, commercial scooters, cargo tricycles, and custom EV battery packs for global distributors and fleet operators.",
-    keywords: "electric motorcycle manufacturer, electric scooter supplier, electric tricycle factory, light EV manufacturer, commercial cargo scooter OEM, electric dirt bike factory, EV battery pack supplier",
+    description: "UL 2272 & DOT-compliant urban commuter scooters for US retailers, alongside heavy-duty 200kg+ cargo motorcycles and swappable battery systems engineered for delivery fleets across the Americas, Europe, Africa, and Asia.",
+    keywords: "electric scooter manufacturer, UL 2272 electric scooter OEM, DOT electric motorcycle factory, commercial delivery scooter supplier, swappable battery e-motorcycle, private label electric scooter USA, fleet EV manufacturer, 72V EV battery pack OEM, cargo electric tricycle factory",
     intro: {
-      heading: "Electric Motorcycles, Commercial Scooters & Fleet Vehicles: Factory Direct",
-      body: "The transition to electric logistics and urban mobility demands rugged light electric vehicles built for extreme road conditions, high ambient temperatures, and heavy daily payloads. JoyHand Energy is a direct OEM/ODM factory manufacturer of commercial delivery scooters, electric motorcycles, cargo tricycles, and high-performance dirt bikes. In addition to complete vehicle assembly, our in-house engineering team designs IP67 waterproof laser-welded battery powertrains and fleet telematics for commercial operators worldwide.",
+      heading: "UL-Certified E-Scooters & Commercial Fleet Powertrains: Factory-Direct OEM Production",
+      body: "Light electric vehicles must be engineered for their operational reality. In the United States and North American retail markets, safety and road compliance come first—specifically UL 2272 electrical system safety, UL 2271 battery certification (mandated by CPSC and NYC Local Law 39), FCC Part 15 electronic shielding, and DOT/NHTSA street-legal lighting and braking. Concurrently, across Latin America, Europe, Africa, and South Asia, commercial courier fleets and e-boda boda taxi operators demand extreme structural endurance—featuring 200kg+ payload chassis, sub-30-second swappable dual-battery systems, EEC/COC road homologation, and IP67 waterproof sealed powertrains that shrug off monsoon rains, rough roads, and high ambient heat. JoyHand Energy operates an integrated 50,000 m² manufacturing plant in Guangzhou, building complete turnkey vehicles and proprietary lithium powertrains for global brands, fleet operators, and distributors.",
       advantages: [
         {
-          title: "Swappable Battery System",
-          desc: "Universal quick-swap battery architecture eliminates fleet charging downtime in under 30 seconds."
+          title: "UL 2272 & DOT Compliance for US Markets",
+          desc: "Engineered to satisfy strict US CPSC and municipal fire safety codes (UL 2272 / UL 2271), FCC Part 15 shielding, and DOT/NHTSA street-legal lighting, dual hydraulic disc brakes + E-ABS, and 17-digit VIN stamping."
         },
         {
-          title: "Reinforced Fleet Chassis",
-          desc: "Heavy-duty steel frames and reinforced dual suspension rated for 200kg+ daily commercial payload."
+          title: "EEC & CE Homologation for Europe",
+          desc: "Full factory documentation for European Whole Vehicle Type-Approval (EU 168/2013), Certificate of Conformity (COC) for L1e-B/L3e categories, EN 17128 compliance, and programmable 25km/h speed limiters."
         },
         {
-          title: "Smart Fleet Telematics",
-          desc: "Optional integrated 4G IoT modules and GPS tracking for real-time battery health and diagnostics."
+          title: "Sub-30s Swappable Dual-Battery Architecture",
+          desc: "Universal quick-swap battery docks eliminate charging downtime, keeping commercial delivery couriers and passenger taxi fleets in continuous 24/7 revenue operation."
+        },
+        {
+          title: "200kg+ Heavy-Payload Chassis & Suspension",
+          desc: "Robotically welded high-tensile carbon steel frames with dual heavy-duty hydraulic coil springs, engineered for rough, potholed, and unpaved terrain without chassis fatigue."
+        },
+        {
+          title: "All-Weather IP67 Waterproof Powertrain",
+          desc: "Laser-welded aluminum battery enclosures and sealed brushless hub/mid-drive motors built for flooded street wading, torrential rains, high dust, and ambient heat up to 55°C."
+        },
+        {
+          title: "Turnkey US & Multi-Region OEM Branding",
+          desc: "Private-label customization from custom silk-screen liveries and branded LCD dash startup screens to ISTA 3A drop-tested retail packaging with bilingual manuals, UPC barcodes, and EEC/CE/DOT certificates."
         }
       ]
     },
     topContent: `
-      <h2>Electric Motorcycles, Commercial Scooters & Fleet Vehicles: Factory Direct</h2>
-      <p>The global transition to electric logistics and urban transport requires purpose-built light electric vehicles engineered for extreme durability, heavy payloads, and demanding daily commercial use. JoyHand Energy is a direct OEM/ODM manufacturer of electric motorcycles, delivery scooters, cargo tricycles, and high-performance electric dirt bikes. Beyond complete vehicle assembly, we engineer the core powertrain and battery systems in-house. Utilizing high-density NMC and Grade-A LiFePO4 cells enclosed in IP67-rated waterproof laser-welded aluminum casings, our electric two-wheelers and tricycles withstand heavy daily cargo runs, high ambient temperatures, and rough road conditions. We partner directly with fleet operators, municipal transport contractors, and regional distributors to deliver container-load wholesale shipments worldwide.</p>
+      <h2>UL-Certified E-Scooters & Commercial Fleet Powertrains: Factory-Direct OEM Production</h2>
+      <p>The global transition to light electric mobility requires vehicles purpose-built for distinct regulatory and physical environments. For North American brands, retail distributors, and Amazon sellers, compliance is non-negotiable: JoyHand manufactures electric commuter scooters and light urban motorcycles tested to UL 2272 and UL 2271 fire safety standards, meeting strict US Consumer Product Safety Commission (CPSC) and municipal fire codes (such as NYC Local Law 39). Every unit is built with smart multi-tier BMS protection, FCC Part 15 certified controllers, DOT-compliant LED safety illumination, and 17-digit VIN stamping for street-legal registration.</p>
+      <p>Concurrently, for commercial fleet operators across Africa, South Asia, Europe, and Latin America, our heavy-duty delivery e-scooters, cargo tricycles, and utility motorcycles are engineered for relentless commercial uptime. Built on robotically welded high-tensile carbon steel frames rated for 200kg+ daily payload, they feature quick-swap dual-battery bays that eliminate charging downtime, and IP67 waterproof laser-welded battery enclosures that operate reliably through tropical monsoon downpours and flooded roadways. Whether you are launching a private-label scooter brand in the United States or deploying a 500-unit courier fleet in emerging markets, JoyHand provides direct factory engineering, wholesale pricing, and containerized logistics.</p>
     `,
     bottomContent: `
-      <h2>The JoyHand Electric Vehicle Engineering Advantage</h2>
+      <h2>The JoyHand Electric Mobility Engineering Advantage</h2>
       <ul>
-        <li><strong>Swappable Battery Architecture:</strong> Eliminate charging downtime. Our commercial e-motorcycles and delivery scooters feature quick-swap modular battery systems, allowing riders to swap a depleted battery for a fully charged unit in under 30 seconds.</li>
-        <li><strong>Reinforced Commercial Chassis:</strong> Engineered for rugged international road conditions, our electric motorcycles and cargo tricycles are built on heavy-duty reinforced steel frames and dual-spring suspension systems rated for 200kg+ daily cargo capacity.</li>
-        <li><strong>Smart Fleet Telematics:</strong> Optional integrated 4G IoT modules and GPS tracking connect directly with your fleet management software for real-time battery diagnostics, geo-fencing, and anti-theft monitoring.</li>
+        <li><strong>US Market Safety & Street Legality (UL 2272 & DOT):</strong> Purpose-built for US retail brands and city commuting. Features UL 2272 certified electrical systems, UL 2271 battery packs with smart thermal cut-offs, FCC Part 15 Class B compliance, FMVSS-grade LED headlights and turn signals, and dual hydraulic disc brakes with E-ABS.</li>
+        <li><strong>European Homologation (EEC / COC & CE EN 17128):</strong> Export-ready documentation for European road registration under L1e-B and L3e classifications, including Certificate of Conformity (COC), CE marking, and switchable 25 km/h / 45 km/h speed governors.</li>
+        <li><strong>Sub-30-Second Swappable Battery Architecture:</strong> Eliminate charging downtime for commercial logistics. Our dual-battery docks allow riders to swap depleted NMC or Grade-A LiFePO4 packs for fully charged units in under 30 seconds, maintaining 24/7 fleet productivity.</li>
+        <li><strong>200kg+ Heavy-Duty Commercial Chassis:</strong> Built on heavy-gauge carbon steel frames with reinforced rear cargo racks and dual hydraulic coil-spring shock absorbers, engineered to withstand potholes, unpaved dirt tracks, and heavy commercial cargo.</li>
+        <li><strong>Smart 4G IoT Fleet Telematics:</strong> Optional integrated 4G IoT modules and GPS tracking connect directly with your fleet management software for real-time battery SoC diagnostics, geo-fencing, speed control, remote lock/unlock, and anti-theft monitoring.</li>
+        <li><strong>Multi-Voltage Global Charging:</strong> Intelligent auto-switching chargers compatible with 110V–120V 60Hz (US, Canada, Americas) and 220V–240V 50Hz (Europe, UK, Africa, Asia) grids with market-specific NEMA, Schuko, or BS 1363 plugs.</li>
       </ul>
-      <h2>Distributor & Fleet FAQ</h2>
-      <p><strong>Q: Can you manufacture custom cargo boxes and delivery attachments for fleet fleets?</strong><br/>A: Yes. We offer full OEM customization for delivery fleets, including insulated food delivery boxes, heavy-duty rear cargo racks, custom color liveries, and branded LCD dashboard startup logos.</p>
-      <p><strong>Q: Can you supply custom battery packs and retrofits for electric tricycles and utility vehicles?</strong><br/>A: Absolutely. Our ODM engineering department custom-manufactures 48V, 60V, and 72V lithium battery packs tailored to specific electric tricycles, passenger tuk-tuks, golf carts, and light commercial haulers.</p>
+      <h2>Distributor, Brand & Fleet FAQ</h2>
+      <p><strong>Q: Can JoyHand manufacture private-label electric scooters for US retailers and Amazon sellers?</strong><br/>A: Yes. We provide end-to-end OEM/ODM private labeling for the US market, including custom frame colors, laser-engraved brand logos, customized LCD dashboard boot animations, ISTA 3A drop-tested retail packaging, bilingual English/Spanish user manuals, UPC barcodes, and full UL 2272 documentation.</p>
+      <p><strong>Q: What certifications are provided for US and European road registration?</strong><br/>A: We provide complete compliance testing documentation: UL 2272 and UL 2271 battery test reports, FCC Part 15 certificates, and 17-digit VIN stamping for North America. For European distributors, we provide EEC/COC type-approval documentation for L1e-B (up to 45 km/h) and L3e motorcycle categories, alongside CE and EN 17128 certifications.</p>
+      <p><strong>Q: Can you manufacture custom cargo boxes and delivery racks for logistics fleets?</strong><br/>A: Yes. We offer bespoke fleet configurations, including insulated food delivery boxes, heavy-duty rear steel cargo racks, passenger footrests for e-boda boda taxi fleets, custom corporate liveries, and centralized fleet battery swap stations.</p>
+      <p><strong>Q: Can you supply custom battery packs and retrofits for electric tricycles and utility vehicles?</strong><br/>A: Absolutely. Our ODM engineering department custom-manufactures 48V, 60V, and 72V lithium battery packs tailored to specific electric tricycles, passenger tuk-tuks, golf carts, and light commercial haulers with IP67 waterproof laser-welded casings.</p>
     `,
     seoContent: `
-      <h2>Electric Motorcycles, Commercial Scooters & Fleet Vehicles: Factory Direct</h2>
-      <p>The global transition to electric logistics and urban transport requires purpose-built light electric vehicles engineered for extreme durability, heavy payloads, and demanding daily commercial use. JoyHand Energy is a direct OEM/ODM manufacturer of electric motorcycles, delivery scooters, cargo tricycles, and high-performance electric dirt bikes. Beyond complete vehicle assembly, we engineer the core powertrain and battery systems in-house. Utilizing high-density NMC and Grade-A LiFePO4 cells enclosed in IP67-rated waterproof laser-welded aluminum casings, our electric two-wheelers and tricycles withstand heavy daily cargo runs, high ambient temperatures, and rough road conditions. We partner directly with fleet operators, municipal transport contractors, and regional distributors to deliver container-load wholesale shipments worldwide.</p>
+      <h2>UL-Certified E-Scooters & Commercial Fleet Powertrains: Factory-Direct OEM Production</h2>
+      <p>The global transition to light electric mobility requires vehicles purpose-built for distinct regulatory and physical environments. For North American brands, retail distributors, and Amazon sellers, compliance is non-negotiable: JoyHand manufactures electric commuter scooters and light urban motorcycles tested to UL 2272 and UL 2271 fire safety standards, meeting strict US Consumer Product Safety Commission (CPSC) and municipal fire codes (such as NYC Local Law 39). Every unit is built with smart multi-tier BMS protection, FCC Part 15 certified controllers, DOT-compliant LED safety illumination, and 17-digit VIN stamping for street-legal registration.</p>
+      <p>Concurrently, for commercial fleet operators across Africa, South Asia, Europe, and Latin America, our heavy-duty delivery e-scooters, cargo tricycles, and utility motorcycles are engineered for relentless commercial uptime. Built on robotically welded high-tensile carbon steel frames rated for 200kg+ daily payload, they feature quick-swap dual-battery bays that eliminate charging downtime, and IP67 waterproof laser-welded battery enclosures that operate reliably through tropical monsoon downpours and flooded roadways. Whether you are launching a private-label scooter brand in the United States or deploying a 500-unit courier fleet in emerging markets, JoyHand provides direct factory engineering, wholesale pricing, and containerized logistics.</p>
       <br/>
-      <h2>The JoyHand Electric Vehicle Engineering Advantage</h2>
+      <h2>The JoyHand Electric Mobility Engineering Advantage</h2>
       <ul>
-        <li><strong>Swappable Battery Architecture:</strong> Eliminate charging downtime. Our commercial e-motorcycles and delivery scooters feature quick-swap modular battery systems, allowing riders to swap a depleted battery for a fully charged unit in under 30 seconds.</li>
-        <li><strong>Reinforced Commercial Chassis:</strong> Engineered for rugged international road conditions, our electric motorcycles and cargo tricycles are built on heavy-duty reinforced steel frames and dual-spring suspension systems rated for 200kg+ daily cargo capacity.</li>
-        <li><strong>Smart Fleet Telematics:</strong> Optional integrated 4G IoT modules and GPS tracking connect directly with your fleet management software for real-time battery diagnostics, geo-fencing, and anti-theft monitoring.</li>
+        <li><strong>US Market Safety & Street Legality (UL 2272 & DOT):</strong> Purpose-built for US retail brands and city commuting. Features UL 2272 certified electrical systems, UL 2271 battery packs with smart thermal cut-offs, FCC Part 15 Class B compliance, FMVSS-grade LED headlights and turn signals, and dual hydraulic disc brakes with E-ABS.</li>
+        <li><strong>European Homologation (EEC / COC & CE EN 17128):</strong> Export-ready documentation for European road registration under L1e-B and L3e classifications, including Certificate of Conformity (COC), CE marking, and switchable 25 km/h / 45 km/h speed governors.</li>
+        <li><strong>Sub-30-Second Swappable Battery Architecture:</strong> Eliminate charging downtime for commercial logistics. Our dual-battery docks allow riders to swap depleted NMC or Grade-A LiFePO4 packs for fully charged units in under 30 seconds, maintaining 24/7 fleet productivity.</li>
+        <li><strong>200kg+ Heavy-Duty Commercial Chassis:</strong> Built on heavy-gauge carbon steel frames with reinforced rear cargo racks and dual hydraulic coil-spring shock absorbers, engineered to withstand potholes, unpaved dirt tracks, and heavy commercial cargo.</li>
+        <li><strong>Smart 4G IoT Fleet Telematics:</strong> Optional integrated 4G IoT modules and GPS tracking connect directly with your fleet management software for real-time battery SoC diagnostics, geo-fencing, speed control, remote lock/unlock, and anti-theft monitoring.</li>
+        <li><strong>Multi-Voltage Global Charging:</strong> Intelligent auto-switching chargers compatible with 110V–120V 60Hz (US, Canada, Americas) and 220V–240V 50Hz (Europe, UK, Africa, Asia) grids with market-specific NEMA, Schuko, or BS 1363 plugs.</li>
       </ul>
-      <h2>Distributor & Fleet FAQ</h2>
-      <p><strong>Q: Can you manufacture custom cargo boxes and delivery attachments for fleet fleets?</strong><br/>A: Yes. We offer full OEM customization for delivery fleets, including insulated food delivery boxes, heavy-duty rear cargo racks, custom color liveries, and branded LCD dashboard startup logos.</p>
-      <p><strong>Q: Can you supply custom battery packs and retrofits for electric tricycles and utility vehicles?</strong><br/>A: Absolutely. Our ODM engineering department custom-manufactures 48V, 60V, and 72V lithium battery packs tailored to specific electric tricycles, passenger tuk-tuks, golf carts, and light commercial haulers.</p>
+      <h2>Distributor, Brand & Fleet FAQ</h2>
+      <p><strong>Q: Can JoyHand manufacture private-label electric scooters for US retailers and Amazon sellers?</strong><br/>A: Yes. We provide end-to-end OEM/ODM private labeling for the US market, including custom frame colors, laser-engraved brand logos, customized LCD dashboard boot animations, ISTA 3A drop-tested retail packaging, bilingual English/Spanish user manuals, UPC barcodes, and full UL 2272 documentation.</p>
+      <p><strong>Q: What certifications are provided for US and European road registration?</strong><br/>A: We provide complete compliance testing documentation: UL 2272 and UL 2271 battery test reports, FCC Part 15 certificates, and 17-digit VIN stamping for North America. For European distributors, we provide EEC/COC type-approval documentation for L1e-B (up to 45 km/h) and L3e motorcycle categories, alongside CE and EN 17128 certifications.</p>
+      <p><strong>Q: Can you manufacture custom cargo boxes and delivery racks for logistics fleets?</strong><br/>A: Yes. We offer bespoke fleet configurations, including insulated food delivery boxes, heavy-duty rear steel cargo racks, passenger footrests for e-boda boda taxi fleets, custom corporate liveries, and centralized fleet battery swap stations.</p>
+      <p><strong>Q: Can you supply custom battery packs and retrofits for electric tricycles and utility vehicles?</strong><br/>A: Absolutely. Our ODM engineering department custom-manufactures 48V, 60V, and 72V lithium battery packs tailored to specific electric tricycles, passenger tuk-tuks, golf carts, and light commercial haulers with IP67 waterproof laser-welded casings.</p>
     `
   },
   "power-banks": {
@@ -880,12 +910,12 @@ export const solutionConfigs = {
     canonicalUrl: "https://www.joyhand.com/products/category/power-banks",
     metaKeywords: ["custom power bank OEM", "private label power bank manufacturer", "PD fast charging power bank", "bulk mobile chargers"],
     breadcrumbBadge: "POWER BANKS",
-    h1Title: "High-Capacity PD Fast Power Bank Manufacturing",
-    heroSubtitle: "High-volume power bank manufacturing. Direct wholesale supply for retail networks and telecom distributors worldwide.",
+    h1Title: "High-Capacity PD Fast Power Bank Manufacturer & OEM",
+    heroSubtitle: "High-volume OEM power bank manufacturing. 20W to 100W Power Delivery with UN38.3 airline compliance for retail chains and telecom distributors across the Americas, Europe, Africa, and Asia.",
     title: "High-Capacity PD Fast Power Bank Manufacturing",
     filterCategory: "power-bank",
     image: "/homeImg/energyPlatformImage005.jpg",
-    description: "High-volume power bank manufacturing. Direct wholesale supply for retail networks and telecom distributors worldwide.",
+    description: "High-volume OEM power bank manufacturing. 20W to 100W Power Delivery with UN38.3 airline compliance for retail chains and telecom distributors across the Americas, Europe, Africa, and Asia.",
     keywords: "custom power bank OEM, private label power bank manufacturer, PD fast charging power bank, bulk mobile chargers",
     intro: {
       heading: "Custom PD Fast Power Banks: Direct OEM Manufacturing",
@@ -939,12 +969,12 @@ export const solutionConfigs = {
     canonicalUrl: "https://www.joyhand.com/products/category/solar-accessories",
     metaKeywords: ["bulk solar panels", "LED street light manufacturer", "solar accessories supplier", "USB-C accessory supplier", "tech accessories factory", "docking station OEM"],
     breadcrumbBadge: "SOLAR ACCESSORIES",
-    h1Title: "Solar Hardware & Consumer Tech Accessory Manufacturing",
-    heroSubtitle: "Comprehensive factory-direct OEM supply. From bulk solar panels and LED street lights to USB-C fast charging cables and MagSafe-compatible chargers for global distributors.",
+    h1Title: "Solar Hardware & Consumer Tech Accessory Manufacturer",
+    heroSubtitle: "Factory-direct Tier-1 monocrystalline solar panels (up to 550W), commercial LED solar streetlights & industrial PV cabling for micro-grids and turnkey installations across high-sunbelt regions.",
     title: "Solar Hardware & Consumer Tech Accessory Manufacturing",
     filterCategory: "accessories",
     image: "/homeImg/energyPlatformImage06.jpg",
-    description: "Comprehensive factory-direct OEM supply. From bulk solar panels and LED street lights to USB-C fast charging cables and MagSafe-compatible chargers for global distributors.",
+    description: "Factory-direct Tier-1 monocrystalline solar panels (up to 550W), commercial LED solar streetlights & industrial PV cabling for micro-grids and turnkey installations across high-sunbelt regions.",
     keywords: "bulk solar panels, LED street light manufacturer, USB-C accessory supplier, tech accessories factory, docking station OEM",
     intro: {
       heading: "Comprehensive OEM Tech & Off-Grid Energy Accessories",

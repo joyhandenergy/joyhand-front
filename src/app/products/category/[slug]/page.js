@@ -113,33 +113,44 @@ export default async function SolutionsPage({ params }) {
 
   let allProducts = await getProductsForCategory(config.filterCategory);
 
-  // ── Scrub African references for consumer tech categories to focus on US/EU ──
-  const replacePatterns = (text) => {
+  // ── Clean isolated country mentions to professional B2B fleet applications ──
+  const cleanDescription = (text) => {
     if (!text || typeof text !== 'string') return text;
     return text
-      .replace(/Uganda premium capacity bulk\.,/gi, 'USA/EU premium capacity bulk.')
-      .replace(/Uganda no grid needed\.,/gi, 'USA/EU premium tech.')
-      .replace(/Uganda off-grid storage\.,/gi, 'USA/EU market.')
-      .replace(/Uganda constant connect/gi, 'USA/EU fast connectivity')
-      .replace(/South Africa, Uganda/gi, 'USA, Europe')
-      .replace(/Nigeria, Kenya/gi, 'USA, Europe')
-      .replace(/Lagos and Nairobi/gi, 'New York and London')
-      .replace(/African and Asian/gi, 'American and European')
-      .replace(/Uganda/gi, 'Europe')
-      .replace(/South Africa/gi, 'USA')
-      .replace(/Nigeria/gi, 'USA')
-      .replace(/Kenya/gi, 'Europe');
+      .replace(/in South African,?\s+Morocco/gi, 'across urban passenger fleets')
+      .replace(/in Kenya and Tanzania/gi, 'across commercial and municipal fleets')
+      .replace(/in Bangladesh and Ghana/gi, 'across last-mile logistics fleets')
+      .replace(/in Nigeria and Pakistan/gi, 'across commercial and industrial fleets')
+      .replace(/in Nigeria and Kenya/gi, 'for commercial and residential transport')
+      .replace(/in Kenya and Pakistan/gi, 'across commercial fleets and campus transit')
+      .replace(/in Ghana and Tanzania/gi, 'across passenger transit and taxi fleets')
+      .replace(/in Bangladesh and Nepal/gi, 'across urban logistics and transit fleets')
+      .replace(/in Pakistan and Bangladesh/gi, 'across urban commuter and commercial fleets')
+      .replace(/in Nigeria,?\s*Kenya,?\s*and Pakistan/gi, 'across municipal and emergency response fleets')
+      .replace(/(?:for|in)\s+(?:Nigerian|Pakistani|Ghanaian|Kenyan|Tanzanian|Ugandan|Moroccan)\s+(?:and\s+(?:Pakistani|Ghanaian|Kenyan|Tanzanian|Ugandan|Moroccan)\s+)?(?:riders|roads|highways|enthusiasts|delivery fleets)/gi, 'for urban commuter and commercial delivery fleets')
+      .replace(/(?:in|for)\s+(?:Nigeria|Pakistan|Kenya|Ghana|Tanzania|Uganda|Bangladesh|Nepal|Morocco)\s+and\s+(?:Nigeria|Pakistan|Kenya|Ghana|Tanzania|Uganda|Bangladesh|Nepal|Morocco)/gi, 'for commercial and municipal fleets')
+      .replace(/,\s*[A-Za-z ]+\s+fuel saver\.,?/gi, '.')
+      .replace(/[A-Za-z ]+\s+fuel saver\.,?/gi, '')
+      .replace(/,\s*delivery scooter\s*$/gi, '')
+      .replace(/Uganda premium capacity bulk\.,/gi, 'Premium capacity wholesale.')
+      .replace(/Uganda no grid needed\.,/gi, 'Premium off-grid hardware.')
+      .replace(/Uganda off-grid storage\.,/gi, 'High-reliability storage.')
+      .replace(/Uganda constant connect/gi, 'Fast connectivity')
+      .replace(/South Africa, Uganda/gi, 'Americas, Europe & Africa')
+      .replace(/Nigeria, Kenya/gi, 'Americas, Europe & Africa')
+      .replace(/Lagos and Nairobi/gi, 'regional commercial hubs')
+      .replace(/Lagos to Dhaka/gi, 'Urban Commuter & Delivery')
+      .replace(/Karachi and Dhaka/gi, 'commercial logistics fleets')
+      .replace(/\b(?:Nigerian|Kenyan|Pakistani|Ghanaian|Ugandan|Tanzanian)\b/gi, 'fleet')
+      .replace(/\b(?:Nigeria|Kenya|Pakistan|Ghana|Uganda|Tanzania)\b/gi, 'global markets')
+      .replace(/\s+/g, ' ')
+      .trim();
   };
 
-  allProducts = allProducts.map(p => {
-    if (['accessories'].includes(p.category)) {
-      return {
-        ...p,
-        description: replacePatterns(p.description)
-      };
-    }
-    return p;
-  });
+  allProducts = allProducts.map(p => ({
+    ...p,
+    description: cleanDescription(p.description)
+  }));
 
   const jsonLd = {
     "@context": "https://schema.org",

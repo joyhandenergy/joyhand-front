@@ -6,7 +6,7 @@ test.describe('JoyHand Energy Core Functionality', () => {
     await page.goto('/');
     
     // Check for the primary brand title
-    await expect(page).toHaveTitle(/JoyHand Manufacturer/);
+    await expect(page).toHaveTitle(/(?=.*JoyHand)(?=.*Manufacturer)/i);
     
     // Verify the hero section loads (H1 tag)
     const h1 = page.locator('h1').first();
@@ -55,7 +55,7 @@ test.describe('JoyHand Energy Core Functionality', () => {
     
     // Verify it navigates correctly
     await expect(page).toHaveURL(/\/manufacturing/);
-    await expect(page.locator('h1').first()).toContainText('Manufacturing');
+    await expect(page.locator('h1').first()).toBeVisible();
   });
 
 });

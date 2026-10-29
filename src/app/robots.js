@@ -6,9 +6,6 @@ export default function robots() {
         allow: "/",
         disallow: [
           "/api/",
-          "/privacy",
-          "/terms",
-          "/cookie-policy",
           "/studio/",
         ],
       },

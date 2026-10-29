@@ -220,18 +220,37 @@ export async function generateMetadata({ params }) {
 
   // Category-specific keyword banks for richer indexing
   const categoryKeywords = {
-    battery:          ["LiFePO4 battery Nigeria", "solar backup battery Africa", "stop blackouts battery", "wholesale LFP battery"],
-    inverter:         ["hybrid solar inverter Nigeria", "MPPT inverter wholesale", "blackout proof inverter", "solar inverter Africa"],
-    "electric-mobility": ["electric scooter Nigeria delivery", "e-motorcycle no fuel Africa", "electric bike wholesale"],
-    "portable-power": ["portable power station Nigeria", "solar generator blackout backup", "LiFePO4 power station Africa"],
-    "power-bank":     ["power bank wholesale Nigeria", "wireless power bank Africa", "phone backup NEPA outage"],
+    battery: [
+      "LiFePO4 battery manufacturer", "UL 1973 solar battery OEM", "server rack battery wholesale",
+      "solar storage Americas Africa Asia", "48V 100Ah lithium battery", "home energy storage supplier"
+    ],
+    inverter: [
+      "hybrid solar inverter manufacturer", "split-phase 120V 240V inverter OEM", "pure sine wave inverter factory",
+      "off-grid inverter supplier", "commercial solar inverter wholesale", "CE UL compliant inverter"
+    ],
+    "electric-mobility": [
+      "UL 2272 electric scooter manufacturer", "DOT electric motorcycle factory", "commercial delivery scooter OEM",
+      "swappable battery e-motorcycle", "private label electric scooter USA", "heavy cargo electric tricycle factory"
+    ],
+    "portable-power": [
+      "portable power station manufacturer", "solar generator OEM", "LiFePO4 portable power station",
+      "emergency backup power supply", "outdoor lithium generator factory"
+    ],
+    "power-bank": [
+      "custom power bank manufacturer", "USB-C PD fast charging OEM", "bulk mobile charger supplier",
+      "private label power bank factory", "UN38.3 travel power bank"
+    ],
+    accessories: [
+      "Tier 1 monocrystalline solar panels", "commercial solar streetlight manufacturer",
+      "pure copper PV cable supplier", "wholesale solar accessories"
+    ],
   };
   const keywords = [
     ...(categoryKeywords[product.category] || []),
     product.name,
     product.model,
     ...(product.features || []),
-    "B2B energy supplier Nigeria",
+    "B2B energy & EV manufacturer",
     "JoyHand factory direct",
   ].filter(Boolean);
 
@@ -271,25 +290,41 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// ── Scrub African references for consumer tech categories to focus on US/EU ──
+// ── Clean isolated country mentions to professional B2B fleet applications ──
 function applyUsEuPivot(product) {
-  if (!product || !["accessories"].includes(product.category)) return product;
+  if (!product) return product;
 
   const replacePatterns = (text) => {
     if (!text || typeof text !== 'string') return text;
     return text
-      .replace(/Uganda premium capacity bulk\.,/gi, 'USA/EU premium capacity bulk.')
-      .replace(/Uganda no grid needed\.,/gi, 'USA/EU premium tech.')
-      .replace(/Uganda off-grid storage\.,/gi, 'USA/EU market.')
-      .replace(/Uganda constant connect/gi, 'USA/EU fast connectivity')
-      .replace(/South Africa, Uganda/gi, 'USA, Europe')
-      .replace(/Nigeria, Kenya/gi, 'USA, Europe')
-      .replace(/Lagos and Nairobi/gi, 'New York and London')
-      .replace(/African and Asian/gi, 'American and European')
-      .replace(/Uganda/gi, 'Europe')
-      .replace(/South Africa/gi, 'USA')
-      .replace(/Nigeria/gi, 'USA')
-      .replace(/Kenya/gi, 'Europe');
+      .replace(/in South African,?\s+Morocco/gi, 'across urban passenger fleets')
+      .replace(/in Kenya and Tanzania/gi, 'across commercial and municipal fleets')
+      .replace(/in Bangladesh and Ghana/gi, 'across last-mile logistics fleets')
+      .replace(/in Nigeria and Pakistan/gi, 'across commercial and industrial fleets')
+      .replace(/in Nigeria and Kenya/gi, 'for commercial and residential transport')
+      .replace(/in Kenya and Pakistan/gi, 'across commercial fleets and campus transit')
+      .replace(/in Ghana and Tanzania/gi, 'across passenger transit and taxi fleets')
+      .replace(/in Bangladesh and Nepal/gi, 'across urban logistics and transit fleets')
+      .replace(/in Pakistan and Bangladesh/gi, 'across urban commuter and commercial fleets')
+      .replace(/in Nigeria,?\s*Kenya,?\s*and Pakistan/gi, 'across municipal and emergency response fleets')
+      .replace(/(?:for|in)\s+(?:Nigerian|Pakistani|Ghanaian|Kenyan|Tanzanian|Ugandan|Moroccan)\s+(?:and\s+(?:Pakistani|Ghanaian|Kenyan|Tanzanian|Ugandan|Moroccan)\s+)?(?:riders|roads|highways|enthusiasts|delivery fleets)/gi, 'for urban commuter and commercial delivery fleets')
+      .replace(/(?:in|for)\s+(?:Nigeria|Pakistan|Kenya|Ghana|Tanzania|Uganda|Bangladesh|Nepal|Morocco)\s+and\s+(?:Nigeria|Pakistan|Kenya|Ghana|Tanzania|Uganda|Bangladesh|Nepal|Morocco)/gi, 'for commercial and municipal fleets')
+      .replace(/,\s*[A-Za-z ]+\s+fuel saver\.,?/gi, '.')
+      .replace(/[A-Za-z ]+\s+fuel saver\.,?/gi, '')
+      .replace(/,\s*delivery scooter\s*$/gi, '')
+      .replace(/Uganda premium capacity bulk\.,/gi, 'Premium capacity wholesale.')
+      .replace(/Uganda no grid needed\.,/gi, 'Premium off-grid hardware.')
+      .replace(/Uganda off-grid storage\.,/gi, 'High-reliability storage.')
+      .replace(/Uganda constant connect/gi, 'Fast connectivity')
+      .replace(/South Africa, Uganda/gi, 'Americas, Europe & Africa')
+      .replace(/Nigeria, Kenya/gi, 'Americas, Europe & Africa')
+      .replace(/Lagos and Nairobi/gi, 'regional commercial hubs')
+      .replace(/Lagos to Dhaka/gi, 'Urban Commuter & Delivery')
+      .replace(/Karachi and Dhaka/gi, 'commercial logistics fleets')
+      .replace(/\b(?:Nigerian|Kenyan|Pakistani|Ghanaian|Ugandan|Tanzanian)\b/gi, 'fleet')
+      .replace(/\b(?:Nigeria|Kenya|Pakistan|Ghana|Uganda|Tanzania)\b/gi, 'global markets')
+      .replace(/\s+/g, ' ')
+      .trim();
   };
 
   if (product.shortDescription) product.shortDescription = replacePatterns(product.shortDescription);
@@ -333,11 +368,12 @@ function applyUsEuPivot(product) {
 // ── Fallback builders – category-aware pain-point copy ────────────────────
 function buildFallbackTitle(product) {
   const painMap = {
-    battery:          `End Blackouts: ${product.name} for Nigeria & Kenya | JoyHand`,
-    inverter:         `No More Outages: ${product.name} – Global Export | JoyHand`,
-    "electric-mobility": `Zero Fuel Bills: ${product.name} – Lagos to Dhaka | JoyHand`,
-    "portable-power": `Beat Blackouts: ${product.name} – Reliable Backup | JoyHand`,
-    "power-bank":     `Stay Charged: ${product.name} – Blackout Proof | JoyHand`,
+    battery:          `UL-Ready LiFePO4: ${product.name} – Storage Battery | JoyHand`,
+    inverter:         `Smart Hybrid: ${product.name} – Pure Sine Inverter | JoyHand`,
+    "electric-mobility": `UL 2272 & DOT-Ready: ${product.name} – Commercial EV | JoyHand`,
+    "portable-power": `Beat Outages: ${product.name} – Portable Power | JoyHand`,
+    "power-bank":     `PD Fast Charge: ${product.name} – Mobile Backup | JoyHand`,
+    accessories:      `Tier-1 Quality: ${product.name} – Solar Hardware | JoyHand`,
   };
   return painMap[product.category] || `${product.name} | JoyHand`;
 }
@@ -345,14 +381,14 @@ function buildFallbackTitle(product) {
 function buildFallbackDesc(product) {
   const modelText = product.model ? ` (${product.model})` : "";
   const descMap = {
-    battery:          `Factory-direct ${product.name}${modelText} – LiFePO4 chemistry, 6000+ cycles. Wholesale backup battery for homes, SMEs, and telecom in Lagos and Nairobi.`,
-    inverter:         `${product.name}${modelText} – auto-switch solar, battery & grid during grid failures. CE certified. B2B wholesale pricing for global distributors.`,
-    "electric-mobility": `${product.name}${modelText} – eliminate petrol costs for delivery fleets in Karachi and Dhaka. CE certified, bulk import pricing available.`,
-    "portable-power": `${product.name}${modelText} – LiFePO4 power station with pure sine wave. Emergency backup for homes and businesses during frequent power cuts.`,
-    "power-bank":     `${product.name}${modelText} – stay connected anywhere. CE/FCC certified. B2B wholesale pricing for global distributors.`,
-    "accessories":    `${product.name}${modelText} – premium factory-direct tech & energy accessories. Engineered for high performance in global markets. B2B wholesale pricing available.`,
+    battery:          `Factory-direct ${product.name}${modelText} – Grade-A LiFePO4 chemistry, 6000+ cycles. High-efficiency backup storage for residential, commercial, and microgrid solar systems. UL 1973 & CE compliant.`,
+    inverter:         `${product.name}${modelText} – auto-switch solar, battery & grid power with sub-10ms transfer time. CE & UL compliant for split-phase 120V/240V and 230V global grids.`,
+    "electric-mobility": `Factory-direct ${product.name}${modelText} – high-efficiency electric mobility engineered for US commuter retail and heavy-payload commercial delivery fleets. UL 2272, DOT & CE certified. B2B container pricing available.`,
+    "portable-power": `${product.name}${modelText} – rugged LiFePO4 portable power station with pure sine wave AC output and multi-region sockets. Reliable off-grid and emergency backup power.`,
+    "power-bank":     `${product.name}${modelText} – high-capacity Power Delivery fast charging with multi-layer safety IC protection. CE/FCC/UN38.3 certified for global retail distribution.`,
+    accessories:      `${product.name}${modelText} – premium factory-direct solar hardware and tech accessories. Engineered for high performance in global markets. B2B wholesale pricing available.`,
   };
-  return descMap[product.category] || `JoyHand ${product.name}${modelText} – factory-direct energy solution. Request B2B wholesale pricing for emerging markets.`;
+  return descMap[product.category] || `JoyHand ${product.name}${modelText} – factory-direct energy and e-mobility solution. Request B2B wholesale pricing for American, European, African, and Asian markets.`;
 }
 
 export async function generateStaticParams() {

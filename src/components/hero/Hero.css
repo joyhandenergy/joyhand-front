@@ -182,10 +182,9 @@
 }
 
 .hero__title-line--highlight {
-  background: linear-gradient(135deg, var(--primary-color) 0%, #ff9e66 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-color);
+  background: none;
+  -webkit-text-fill-color: var(--primary-color);
 }
 
 /* Description */

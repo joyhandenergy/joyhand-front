@@ -44,18 +44,18 @@ export default function ManufacturingClient() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Custom Lithium Battery & E-Motorcycle OEM",
-    "serviceType": "Custom Lithium Battery OEM Production",
+    "name": "OEM/ODM Manufacturing Facilities & Production Hub",
+    "serviceType": "OEM/ODM Hardware Manufacturing & Facility Production",
     "provider": {
       "@type": "Organization",
       "name": "JoyHand Energy",
       "url": "https://www.joyhand.com"
     },
-    "areaServed": ["NG", "PK", "BD", "KE", "ZA", "Global"],
-    "description": "End-to-end OEM/ODM production for custom lithium batteries, e-motorcycles & solar hardware. We handle custom engineering, batch testing & global export.",
+    "areaServed": ["Americas", "Africa", "Asia", "Europe", "Global"],
+    "description": "50,000 m² integrated production facility in Guangzhou, China. Automated LiFePO4 battery assembly, solar inverter lines, EV chassis fabrication, and ISO 9001:2015 QC testing.",
     "offers": {
       "@type": "Offer",
-      "description": "Factory direct B2B wholesale pricing for custom lithium batteries, e-motorcycles, and solar hardware tested to CE, UL, and UN38.3 standards."
+      "description": "Direct factory B2B wholesale pricing and custom OEM/ODM production for lithium batteries, e-motorcycles, and solar hardware tested to CE, UL, and UN38.3 standards."
     }
   };
 
@@ -67,8 +67,8 @@ export default function ManufacturingClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageHeader
-        title="Custom Lithium Battery & E-Motorcycle OEM"
-        subtitle="End-to-end OEM/ODM production for custom lithium batteries, e-motorcycles & solar hardware. We handle custom engineering, batch testing & global export."
+        title="Direct Factory Manufacturing & OEM/ODM Production Hub"
+        subtitle="50,000 m² integrated production facility in Guangzhou, China. Complete in-house manufacturing for custom lithium batteries, electric mobility platforms, and solar hardware."
         pageImage="/pageHeadImg/pageheader-services.jpg"
         breadcrumbCurrent="Manufacturing"
       />
@@ -86,7 +86,7 @@ export default function ManufacturingClient() {
             </div>
             <div className="services-intro__content stagger-2">
               <p className="services-intro__desc">
-                We manage the entire production lifecycle at our Guangzhou manufacturing hub. Whether you require tailored BMS engineering for hybrid solar setups or white labeled portable power, our automated assembly lines deliver precision at scale.
+                We manage the entire production lifecycle at our Guangzhou manufacturing hub. Whether you require UL-compliant split-phase inverters for North America, tropicalized high-heat BMS batteries for Africa, or heavy-payload delivery scooters for Asian fleets, our automated assembly lines deliver precision at scale.
               </p>
             </div>
           </div>
@@ -161,7 +161,7 @@ export default function ManufacturingClient() {
             <div className="why-item stagger-3">
               <div className="why-item__number">03</div>
               <h4 className="why-item__title">Container Consolidation</h4>
-              <p className="why-item__text">Mix batteries, inverters, and accessories into single freight shipments bound directly for Apapa, Mombasa, or Durban.</p>
+              <p className="why-item__text">Mix batteries, inverters, and accessories into single freight shipments bound directly for your designated destination port.</p>
             </div>
             <div className="why-item stagger-4">
               <div className="why-item__number">04</div>
@@ -226,7 +226,7 @@ export default function ManufacturingClient() {
                 <li><PiCheckCircleFill /> Solar inverter production (Tier 1 components)</li>
                 <li><PiCheckCircleFill /> Tech & Solar Accessories (Panels, Street Lights, Screen Protectors)</li>
                 <li><PiCheckCircleFill /> Portable power stations & power banks</li>
-                <li><PiCheckCircleFill /> Electric motorcycles & electric mobility platforms</li>
+                <li><PiCheckCircleFill /> Electric commuter scooters, cargo motorcycles & light EV platforms (UL 2272 & DOT ready)</li>
               </ul>
               <Link href="/about-us" className="btn btn--outline-light">Explore Our Facility <PiArrowRight /></Link>
             </div>
