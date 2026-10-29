@@ -73,11 +73,8 @@ export async function GET() {
   lines.push(`- [ODM & Custom Engineering](${baseUrl}/manufacturing): 30+ in-house engineers developing custom BMS protocols, surge protection, and high-heat thermal designs for weak electrical grids.`);
 
   lines.push("");
-  lines.push("## B2B Wholesale & Ordering Tools");
+  lines.push("## B2B Wholesale & Inquiries");
   lines.push(`- [Direct Factory Quotes & OEM Inquiries](${baseUrl}/contact-us): Connect directly with our Guangzhou factory sales department for container orders, custom specifications, and 24h quotation.`);
-  lines.push(`- [Interactive Quotation Builder](${baseUrl}/quotation): Build custom container orders, calculate wholesale pricing, and export formal proforma quotes.`);
-  lines.push(`- [Full Set Solar Package Quotations](${baseUrl}/quotation/packages): Download fixed package quotations for 3.3kW, 5kW, and 10kW residential and commercial solar full sets.`);
-  lines.push(`- [Download Product Catalog](${baseUrl}/catalog/download): Download the full offline engineering catalog with complete hardware datasheets.`);
 
   lines.push("");
   lines.push("## Factory Engineering & B2B Sourcing Guides");

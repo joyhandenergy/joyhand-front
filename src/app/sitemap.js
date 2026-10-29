@@ -29,12 +29,11 @@ export default async function sitemap() {
     "/contact-us",
     "/blog",
     "/products",
-    "/quotation",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1.0 : (route === "/quotation" ? 0.8 : 0.9),
+    priority: route === "" ? 1.0 : 0.9,
   }));
 
   // 3. Legal & Compliance Pages

@@ -4,6 +4,14 @@ import "./Quotation.css";
 
 export const revalidate = 60;
 
+export const metadata = {
+  title: "Quotation Builder | JoyHand Energy",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default async function QuotationPage() {
   const products = await client.fetch(`*[_type == "product"]{
     _id,

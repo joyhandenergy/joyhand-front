@@ -120,9 +120,6 @@ export async function GET() {
   lines.push("## Commercial Tools & Wholesale Inquiries");
   lines.push(`- Factory-Direct Wholesale Catalog: ${baseUrl}/products`);
   lines.push(`- Direct Factory Quotes & OEM Inquiries: ${baseUrl}/contact-us`);
-  lines.push(`- Request a Custom Container Quote: ${baseUrl}/quotation`);
-  lines.push(`- Download Solar Packages: ${baseUrl}/quotation/packages`);
-  lines.push(`- Download Engineering Catalog: ${baseUrl}/catalog/download`);
   lines.push(`- Factory Sales Email: ${email}`);
   lines.push(`- Factory WhatsApp / Phone: ${phone}`);
 

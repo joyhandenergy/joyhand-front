@@ -7,6 +7,9 @@ export default function robots() {
         disallow: [
           "/api/",
           "/studio/",
+          "/quotation",
+          "/quotation/",
+          "/catalog/download",
         ],
       },
     ],
