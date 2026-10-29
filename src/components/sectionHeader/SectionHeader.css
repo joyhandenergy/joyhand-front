@@ -41,15 +41,15 @@
 .section-header__badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   background: rgba(46, 196, 182, 0.1); /* Teal glass */
   color: var(--accent-color-dark); /* Teal text */
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 100px;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   margin-bottom: var(--spacing-2);
   border: 1px solid rgba(46, 196, 182, 0.2);
   backdrop-filter: blur(8px);
@@ -60,23 +60,24 @@
 
 @media screen and (min-width: 768px) {
   .section-header__badge {
-    gap: 8px;
-    padding: 6px 16px;
-    font-size: 0.85rem;
+    gap: 6px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    letter-spacing: 0.6px;
   }
 }
 
 .section-header__badge-icon {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   fill: var(--primary-color);
-  filter: drop-shadow(0 0 5px rgba(46, 196, 182, 0.4));
+  filter: drop-shadow(0 0 4px rgba(46, 196, 182, 0.4));
 }
 
 @media screen and (min-width: 768px) {
   .section-header__badge-icon {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 }
 

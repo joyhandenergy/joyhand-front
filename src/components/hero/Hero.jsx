@@ -56,7 +56,7 @@ export default function Hero() {
             <div className="hero__content">
               <div className="hero__badge-wrapper">
                 <span className="hero__badge">
-                  <PiLightningFill className="hero__badge-icon" /> China Factory | OEM & ODM Production
+                  <PiLightningFill className="hero__badge-icon" /> China Factory | OEM & ODM
                 </span>
               </div>
 

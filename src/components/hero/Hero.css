@@ -120,18 +120,18 @@
 .hero__badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background: rgba(46, 196, 182, 0.1);
   /* Green tint */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: var(--accent-color-dark);
   /* Teal text */
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
-  padding: 8px 16px;
+  padding: 5px 12px;
   border-radius: 50px;
   border: 1px solid rgba(46, 196, 182, 0.3);
   /* Teal border */
@@ -144,20 +144,21 @@
 
 @media screen and (max-width: 767px) {
   .hero__badge {
-    font-size: 0.75rem;
-    padding: 6px 14px;
-    letter-spacing: 0.8px;
+    font-size: 0.68rem;
+    padding: 4px 10px;
+    letter-spacing: 0.4px;
+    gap: 5px;
   }
 }
 
 .hero__badge-icon {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: var(--primary-color);
 }
 
 @media screen and (max-width: 767px) {
   .hero__badge-icon {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 }
 

@@ -28,14 +28,13 @@ const InnovationShowcase = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           section.classList.add("is-visible");
-        } else {
-          section.classList.remove("is-visible");
+          observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.05, rootMargin: "0px 0px 50px 0px" }
     );
     observer.observe(section);
-    return () => observer.unobserve(section);
+    return () => observer.disconnect();
   }, []);
 
   return (
