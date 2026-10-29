@@ -277,9 +277,15 @@
   font-weight: 400;
   margin: 0;
   line-height: 1.6;
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
+  text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+  .feature-card__desc {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
 }
 
 /* ========================================

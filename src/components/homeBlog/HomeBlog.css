@@ -20,14 +20,22 @@
 
 .home-blog__track {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  padding: 40px 24px 60px 24px; /* Generous padding to hold hover transforms and shadows */
+  padding: 20px 0 40px 0;
   cursor: grab;
   scroll-behavior: smooth;
-  margin: -40px -24px -60px -24px; /* Exact negative margin to offset the padding, keeping alignment perfect */
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .home-blog__track {
+    gap: 24px;
+    padding: 40px 24px 60px 24px;
+    margin: -40px -24px -60px -24px;
+  }
 }
 
 .home-blog__track::-webkit-scrollbar {
@@ -39,8 +47,8 @@
 }
 
 .home-blog__slide {
-  flex: 0 0 85vw;
-  max-width: 380px;
+  flex: 0 0 82vw;
+  max-width: 320px;
   scroll-snap-align: center;
 }
 
@@ -48,6 +56,7 @@
   .home-blog__slide {
     flex: 0 0 350px;
     scroll-snap-align: start;
+    max-width: 380px;
   }
 }
 

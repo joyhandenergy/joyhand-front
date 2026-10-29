@@ -97,10 +97,10 @@
    TYPOGRAPHY
 ======================================== */
 .cta-title {
-  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-size: clamp(1.45rem, 5vw, 2.8rem);
   font-weight: 800;
   color: var(--neutral-white);
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
@@ -114,18 +114,18 @@
 }
 
 .cta-description {
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 0;
   line-height: 1.6;
   font-weight: 400;
+  text-align: center;
 }
 
 @media screen and (min-width: 992px) {
   .cta-description {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
+    font-size: 1.05rem;
+    text-align: left;
   }
 }
 

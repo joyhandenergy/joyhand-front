@@ -271,18 +271,20 @@
 }
 
 .innovation-card__description-text {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--neutral-medium);
-  line-height: 1.5;
+  line-height: 1.55;
   margin: 0;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 @media screen and (min-width: 768px) {
   .innovation-card__description-text {
-    font-size: 0.9rem;
+    font-size: 0.925rem;
     line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
   }
 }
 

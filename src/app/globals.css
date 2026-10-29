@@ -25,6 +25,8 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -260,7 +262,7 @@ p {
   color: var(--neutral-medium);
 }
 
-/* Apply justify alignment for main text blocks to prevent ragged edges */
+/* Main text alignment: left-aligned on mobile to prevent ugly gaps & hyphenation blowout, justify on desktop */
 .hero__desc,
 .product-card__desc,
 .product-details__description,
@@ -278,11 +280,33 @@ p {
 .innovation-card__description-text,
 .platform-card__description,
 .contact-map__text {
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
+  text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__desc,
+  .product-card__desc,
+  .product-details__description,
+  .page-header__description,
+  .services-intro__desc,
+  .service-card__desc,
+  .qc-card__desc,
+  .feature-card__desc,
+  .footer__description,
+  .about-intro__description p,
+  .timeline__description,
+  .value-card__description,
+  .blog-card__excerpt p,
+  .blog-details__paragraph,
+  .innovation-card__description-text,
+  .platform-card__description,
+  .contact-map__text {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+  }
 }
 
 /* =====================================================
@@ -406,14 +430,18 @@ p {
 
 @media screen and (max-width: 480px) {
   .btn {
-    padding: 12px 24px;
-    font-size: 0.9rem;
-    min-width: 140px;
+    padding: 12px 20px;
+    font-size: 0.875rem;
+    min-width: 120px;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.35;
     gap: 6px;
   }
 
   .btn svg {
     font-size: 1rem;
+    flex-shrink: 0;
   }
 }
 
