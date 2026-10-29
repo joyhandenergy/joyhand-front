@@ -391,6 +391,9 @@
   position: relative;
   margin-bottom: var(--spacing-6);
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .products-page__scroll-hint {
@@ -401,22 +404,24 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  padding: 6px;
+  justify-content: center;
+  gap: 10px;
+  padding: 6px 12px;
   background: var(--neutral-white);
   border-radius: 100px;
-  border: 1px solid rgba(18, 27, 45, 0.06);
-  box-shadow: 0 4px 16px rgba(18, 27, 45, 0.04);
+  border: 1px solid rgba(18, 27, 45, 0.07);
+  box-shadow: 0 4px 18px rgba(18, 27, 45, 0.05);
   width: fit-content;
   max-width: 100%;
+  margin: 0 auto;
 }
 
 .products-page__category-link {
   padding: 8px 18px;
   background: transparent;
-  color: var(--neutral-medium);
+  color: var(--secondary-color);
   border-radius: 100px;
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.25s ease;
@@ -429,19 +434,21 @@
 }
 
 .products-page__category-link:hover {
-  color: var(--secondary-color);
-  background: var(--neutral-light);
+  color: var(--primary-color);
+  background: rgba(255, 127, 65, 0.08);
+  transform: translateY(-1px);
 }
 
 .products-page__category-link--active {
   background: var(--primary-color);
   color: var(--neutral-white);
-  box-shadow: 0 4px 12px rgba(255, 127, 65, 0.3);
+  box-shadow: 0 4px 14px rgba(255, 127, 65, 0.35);
 }
 
 .products-page__category-link--active:hover {
   background: var(--primary-color);
   color: var(--neutral-white);
+  transform: none;
 }
 
 /* ── Mobile Stacking & Full-Width Responsiveness ── */
@@ -506,40 +513,57 @@
 
   .products-page__nav-container {
     width: 100%;
-    margin-bottom: var(--spacing-4);
+    margin-bottom: var(--spacing-5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4px;
   }
 
-  /* Stack category tabs on mobile into clean, directly tappable pills */
+  /* Stack category tabs on mobile into clean, centered, directly tappable pills */
   .products-page__category-nav {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px 6px;
+    justify-content: center;
+    gap: 9px 8px;
     background: transparent;
     border: none;
     box-shadow: none;
     padding: 0;
     width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
     border-radius: 0;
   }
 
   .products-page__category-link {
     background: var(--neutral-white);
-    border: 1px solid rgba(18, 27, 45, 0.08);
+    border: 1px solid rgba(18, 27, 45, 0.09);
     border-radius: 100px;
-    padding: 8px 14px;
-    font-size: 0.76rem;
+    padding: 8px 16px;
+    font-size: 0.78rem;
     font-weight: 700;
     color: var(--secondary-color);
-    box-shadow: 0 2px 6px rgba(18, 27, 45, 0.03);
+    box-shadow: 0 2px 8px rgba(18, 27, 45, 0.04);
     flex-shrink: 0;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .products-page__category-link:hover {
+    background: var(--neutral-light);
+    border-color: rgba(18, 27, 45, 0.15);
+    color: var(--primary-color);
   }
 
   .products-page__category-link--active {
     background: var(--primary-color);
     color: var(--neutral-white);
     border-color: var(--primary-color);
-    box-shadow: 0 4px 12px rgba(255, 127, 65, 0.3);
+    box-shadow: 0 4px 14px rgba(255, 127, 65, 0.35);
   }
 }
 
@@ -555,13 +579,22 @@
     margin-bottom: var(--spacing-3);
   }
 
+  .products-page__nav-container {
+    margin-bottom: var(--spacing-4);
+    padding: 0;
+  }
+
   .products-page__category-nav {
-    gap: 7px 5px;
+    gap: 8px 6px;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .products-page__category-link {
-    padding: 7px 11px;
-    font-size: 0.72rem;
+    padding: 7px 13px;
+    font-size: 0.74rem;
+    box-shadow: 0 2px 6px rgba(18, 27, 45, 0.04);
   }
 }
 
