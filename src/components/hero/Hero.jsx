@@ -71,7 +71,7 @@ export default function Hero() {
               </h1>
 
               <p className="hero__desc">
-                From LiFePO4 batteries and solar inverters to electric motorcycles, dirt bikes, solar panels, and power stations; we are a direct China-based manufacturer and supplier. Operating under ISO 9001:2015 standards, we engineer hardware built to meet CE, UL, and UN38.3 specifications based on your market requirements.
+                From LiFePO4 batteries and solar inverters to electric motorcycles, electric dirt bikes, solar panels, and portable power stations; we are a direct China-based manufacturer and supplier. Operating under ISO 9001:2015 standards, we engineer hardware built to meet CE, UL, and UN38.3 specifications based on your market requirements.
               </p>
 
               <div className="hero__actions">

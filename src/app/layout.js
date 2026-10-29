@@ -24,7 +24,22 @@ export const metadata = {
     template: "%s | JoyHand",
   },
   description: "Direct OEM/ODM factory manufacturer of LiFePO4 batteries, hybrid inverters, solar panels, and light electric vehicles. Built to ISO 9001, CE, and UL standards for global B2B supply chains.",
-  keywords: ["solar factory China", "OEM energy manufacturer", "wholesale LFP batteries", "ISO standard production", "B2B energy supplier", "portable power stations", "solar hardware", "electric scooter factory"],
+  keywords: [
+    "joyhand energy",
+    "lifepo4 battery manufacturer china",
+    "solar battery factory china",
+    "oem solar battery manufacturer",
+    "wholesale lifepo4 supplier",
+    "hybrid solar inverter manufacturer",
+    "electric motorcycle factory china",
+    "electric dirt bike wholesale china",
+    "electric scooter manufacturer china",
+    "portable power station odm manufacturer",
+    "solar panel wholesale manufacturer",
+    "solar battery",
+    "solar inverter",
+    "portable power station"
+  ],
   robots: {
     index: true,
     follow: true,

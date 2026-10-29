@@ -15,12 +15,16 @@ export const metadata = {
   },
   description: "Direct-from-factory catalog of Grade-A LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar hardware. Flexible MOQs and wholesale container pricing for global B2B buyers.",
   keywords: [
-    "wholesale LiFePO4 batteries",
-    "wholesale electric motorcycles",
-    "factory direct batteries",
-    "B2B product catalog",
-    "wholesale solar panels",
-    "hybrid inverters wholesale"
+    "wholesale lifepo4 supplier",
+    "lifepo4 battery manufacturer china",
+    "solar battery factory china",
+    "oem solar battery manufacturer",
+    "hybrid solar inverter manufacturer",
+    "electric motorcycle factory china",
+    "electric dirt bike wholesale china",
+    "electric scooter manufacturer china",
+    "portable power station odm manufacturer",
+    "solar panel wholesale manufacturer"
   ],
   alternates: {
     canonical: 'https://www.joyhand.com/products',

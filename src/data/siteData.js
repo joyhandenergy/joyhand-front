@@ -633,10 +633,10 @@ export const solutionLinks = [
 
 export const solutionConfigs = {
   "solar-batteries": {
-    pageTitle: "LiFePO4 Solar Battery Manufacturer | UL 1973, CE & Off-Grid ESS | JoyHand",
-    metaDescription: "Direct factory OEM manufacturer of Grade-A LiFePO4 solar batteries (5kWh–100kWh+). Engineered for split-phase US systems, tropical African grids, and Asian commercial ESS.",
+    pageTitle: "LiFePO4 Battery Manufacturer & Solar Factory | JoyHand",
+    metaDescription: "China OEM solar battery manufacturer and wholesale LiFePO4 supplier. Factory-direct Grade-A 5kWh-100kWh+ storage systems with UL 1973 & CE certificates.",
     canonicalUrl: "https://www.joyhand.com/products/category/solar-batteries",
-    metaKeywords: ["LiFePO4 battery manufacturer", "solar batteries factory direct", "UL 1973 battery manufacturer", "rack mount battery OEM", "wall mount solar battery", "6000 cycle LFP battery", "commercial ESS manufacturer", "off-grid battery backup"],
+    metaKeywords: ["lifepo4 battery manufacturer china", "solar battery factory china", "oem solar battery manufacturer", "wholesale lifepo4 supplier", "lifepo4 battery", "solar battery", "rack mount battery OEM", "wall mount solar battery", "commercial ESS manufacturer", "off-grid battery backup"],
     breadcrumbBadge: "SOLAR BATTERIES",
     h1Title: "Industrial LiFePO4 Storage Battery Manufacturer & OEM",
     heroSubtitle: "Grade-A prismatic LFP storage engineered for heavy daily cycling, extreme ambient temperatures, and seamless hybrid inverter sync across the Americas, Africa, Europe, and Asia.",
@@ -644,10 +644,10 @@ export const solutionConfigs = {
     image: "/homeImg/energyPlatformImage01.jpg",
     filterCategory: "battery",
     description: "Grade-A prismatic LFP storage engineered for heavy daily cycling, extreme ambient temperatures, and seamless hybrid inverter sync across the Americas, Africa, Europe, and Asia.",
-    keywords: "LiFePO4 battery manufacturer, solar batteries factory direct, UL 1973 battery manufacturer, rack mount battery OEM, wall mount solar battery, 6000 cycle LFP battery",
+    keywords: "lifepo4 battery manufacturer china, solar battery factory china, oem solar battery manufacturer, wholesale lifepo4 supplier, lifepo4 battery, solar battery",
     intro: {
       heading: "Industrial LiFePO4 Solar Batteries: Built for High-Capacity Grids & Off-Grid Resilience",
-      body: "From split-phase 120V/240V residential solar backup in North America to mission-critical telecom towers and commercial micro-grids combating daily load-shedding across Africa and South Asia, JoyHand Energy manufactures high-cycle Lithium Iron Phosphate (LiFePO4) energy storage systems. Operating from our 50,000m² ISO 9001:2015 certified Guangzhou production hub, we build wall-mounted packs, server-rack modules, and high-voltage commercial ESS units using 100% Grade-A prismatic cells. Each unit integrates proprietary smart BMS protection engineered for ambient temperatures up to 55°C, high-discharge surge demands, and 6,000+ cycles at 80% DoD. By sourcing factory direct, B2B distributors and EPC contractors secure competitive container pricing backed by full UL 1973, CE, and UN38.3 customs compliance documentation.",
+      body: "Operating as a premier LiFePO4 battery manufacturer China and solar battery factory China, JoyHand Energy is an OEM solar battery manufacturer and wholesale LiFePO4 supplier for residential backup, telecom towers, and commercial micro-grids globally. From split-phase 120V/240V systems in North America to off-grid resilience across Africa and South Asia, we build wall-mounted packs, server-rack modules, and high-voltage commercial ESS units using 100% Grade-A prismatic cells. Operating from our 50,000m² ISO 9001:2015 certified Guangzhou production hub, each unit integrates proprietary smart BMS protection engineered for ambient temperatures up to 55°C, high-discharge surge demands, and 6,000+ cycles at 80% DoD. By sourcing factory direct, B2B distributors and EPC contractors secure competitive container pricing backed by full UL 1973, CE, and UN38.3 customs compliance documentation.",
       advantages: [
         {
           title: "Multi-Region Inverter Sync",
@@ -700,10 +700,10 @@ export const solutionConfigs = {
     `
   },
   "solar-inverters": {
-    pageTitle: "Hybrid Solar Inverter Manufacturer | Split-Phase & Off-Grid | JoyHand",
-    metaDescription: "Direct factory OEM manufacturer of pure sine wave hybrid solar inverters (3kW–12kW+). Dual MPPT, split-phase 120V/240V, and high-surge load handling for global grids.",
+    pageTitle: "Hybrid Solar Inverter Manufacturer | JoyHand",
+    metaDescription: "Direct hybrid solar inverter manufacturer in China. Pure sine wave split-phase and off-grid solar inverters (3kW–12kW+) with dual MPPT for B2B distributors.",
     canonicalUrl: "https://www.joyhand.com/products/category/solar-inverters",
-    metaKeywords: ["hybrid solar inverter manufacturer", "off-grid inverter factory", "split-phase solar inverter", "dual MPPT inverter", "pure sine wave inverter supplier", "parallel inverter OEM"],
+    metaKeywords: ["hybrid solar inverter manufacturer", "solar inverter", "solar inverter factory china", "off-grid inverter factory", "split-phase solar inverter", "dual MPPT inverter", "pure sine wave inverter supplier", "parallel inverter OEM"],
     breadcrumbBadge: "HYBRID INVERTERS",
     h1Title: "Heavy-Duty Hybrid Inverters: Split-Phase & Unstable Grid Resilience",
     heroSubtitle: "Direct factory OEM hybrid and off-grid solar inverters. Engineered for split-phase US residential systems and extreme grid fluctuations across Africa and South Asia.",
@@ -711,7 +711,7 @@ export const solutionConfigs = {
     filterCategory: "inverter",
     image: "/homeImg/energyPlatformImage002.jpg",
     description: "Direct factory OEM hybrid and off-grid solar inverters. Engineered for split-phase US residential systems and extreme grid fluctuations across Africa and South Asia.",
-    keywords: "hybrid solar inverter manufacturer, off-grid inverter factory, split-phase solar inverter, dual MPPT inverter, pure sine wave inverter supplier, parallel inverter OEM",
+    keywords: "hybrid solar inverter manufacturer, solar inverter, solar inverter factory china, off-grid inverter factory, pure sine wave inverter supplier",
     intro: {
       heading: "Heavy-Duty Solar Hybrid Inverters: Built for Split-Phase Systems & Extreme Grids",
       body: "In regions where municipal grids are unpredictable or feature split-phase architecture, off-the-shelf consumer inverters fail prematurely. JoyHand Energy manufactures commercial-grade Hybrid and Off-Grid Solar Inverters engineered with heavy-duty pure copper transformers and over-specced pure sine wave circuitry that absorb massive motor surges from water pumps, air conditioners, and agricultural machinery without tripping. Supporting split-phase 120V/240V for the Americas as well as 220V/230V 50Hz single- and three-phase for Africa, the Middle East, and Asia, our systems feature sub-10ms automatic grid bypass and built-in generator auto-start contacts to ensure continuous power during rolling blackouts.",
@@ -761,10 +761,10 @@ export const solutionConfigs = {
     `
   },
   "portable-power-stations": {
-    pageTitle: "Portable Power Station OEM Factory | LiFePO4 Solar Generators | JoyHand",
-    metaDescription: "Factory-direct OEM manufacturing of LiFePO4 portable power stations (300W–3600W). Multi-region AC outlets (US/UK/EU/Universal) & 2h fast AC recharge.",
+    pageTitle: "Portable Power Station ODM Manufacturer | JoyHand",
+    metaDescription: "Direct portable power station ODM manufacturer. Factory wholesale 300W–3600W LiFePO4 solar generators with global AC outlets and 2h fast AC recharge.",
     canonicalUrl: "https://www.joyhand.com/products/category/portable-power-stations",
-    metaKeywords: ["portable power station OEM", "LiFePO4 solar generator factory", "emergency backup power manufacturer", "off-grid power supplier", "portable lithium battery pack"],
+    metaKeywords: ["portable power station odm manufacturer", "portable power station", "portable power station OEM", "LiFePO4 solar generator factory", "emergency backup power manufacturer", "off-grid power supplier", "portable lithium battery pack"],
     breadcrumbBadge: "PORTABLE POWER",
     h1Title: "Portable Power Station & Solar Generator Manufacturer",
     heroSubtitle: "Direct factory OEM portable power stations (300W–3600W). Multi-region AC outlets and rapid dual-inverter charging for off-grid operations and emergency backup across the Americas, Africa, and Asia.",
@@ -772,10 +772,10 @@ export const solutionConfigs = {
     filterCategory: "portable-power",
     image: "/homeImg/energyPlatformImage003.jpg",
     description: "Direct factory OEM portable power stations (300W–3600W). Multi-region AC outlets and rapid dual-inverter charging for off-grid operations and emergency backup across the Americas, Africa, and Asia.",
-    keywords: "portable power station OEM, LiFePO4 solar generator factory, emergency backup power manufacturer, off-grid power supplier",
+    keywords: "portable power station odm manufacturer, portable power station, LiFePO4 solar generator factory, emergency backup power manufacturer, off-grid power supplier",
     intro: {
       heading: "Heavy-Duty Portable Power Stations: Engineered for Extreme Field & Emergency Backup",
-      body: "As remote operations and off-grid demands grow, JoyHand Energy manufactures industrial-grade LiFePO4 and Lithium-Ion Portable Power Stations designed to run field clinics, telecommunications gear, work sites, and households through extended blackouts. Engineered with advanced dual-inverter architectures for extreme fast-charging from AC wall sockets or direct solar arrays in under 2 hours, our units deliver clean, fume-free, high-wattage power anywhere in the world.",
+      body: "Operating as an experienced portable power station ODM manufacturer and factory supplier, JoyHand Energy manufactures industrial-grade LiFePO4 and Lithium-Ion Portable Power Stations designed to run field clinics, telecommunications gear, work sites, and households through extended blackouts. Engineered with advanced dual-inverter architectures for extreme fast-charging from AC wall sockets or direct solar arrays in under 2 hours, our units deliver clean, fume-free, high-wattage power anywhere in the world.",
       advantages: [
         {
           title: "Simultaneous Pass-Through",
@@ -820,21 +820,21 @@ export const solutionConfigs = {
     `
   },
   "electric-motorcycles": {
-    pageTitle: "Electric Scooter & Motorcycle OEM Manufacturer | UL 2272 & DOT Ready | JoyHand",
-    metaDescription: "Direct factory manufacturer of UL 2272 & DOT-compliant commuter scooters, 200kg+ commercial delivery e-motorcycles, and swappable battery systems for US, European, African & Asian markets.",
+    pageTitle: "Electric Dirt Bike & Motorcycle Factory China | JoyHand",
+    metaDescription: "China factory & wholesale supplier of electric dirt bikes, motorcycles & scooters. High-torque powertrains, swappable batteries, and UL 2272/DOT compliance.",
     canonicalUrl: "https://www.joyhand.com/products/category/electric-motorcycles",
-    metaKeywords: ["electric scooter manufacturer", "UL 2272 electric scooter OEM", "DOT electric motorcycle factory", "commercial delivery scooter supplier", "swappable battery e-motorcycle", "private label electric scooter USA", "fleet EV manufacturer", "72V EV battery pack OEM", "cargo electric tricycle factory"],
-    breadcrumbBadge: "E-SCOOTERS & MOTORCYCLES",
-    h1Title: "Electric Scooter, Motorcycle & Commercial Fleet EV Manufacturer",
-    heroSubtitle: "UL 2272 & DOT-compliant urban commuter scooters for US retailers, alongside heavy-duty 200kg+ cargo motorcycles and swappable battery systems engineered for delivery fleets across the Americas, Europe, Africa, and Asia.",
-    title: "Electric Scooter, Motorcycle & Commercial EV Manufacturer",
+    metaKeywords: ["electric motorcycle factory china", "electric dirt bike wholesale china", "electric scooter manufacturer china", "electric dirt bike", "electric motorcycle", "commercial delivery scooter supplier", "swappable battery e-motorcycle", "private label electric scooter USA", "fleet EV manufacturer", "72V EV battery pack OEM"],
+    breadcrumbBadge: "E-MOTORCYCLES & DIRT BIKES",
+    h1Title: "Electric Motorcycle, Dirt Bike & Scooter Factory China",
+    heroSubtitle: "Direct China factory & wholesale supplier of high-performance electric dirt bikes, commuter scooters, cargo motorcycles, and swappable battery systems for global distributors.",
+    title: "Electric Motorcycle, Dirt Bike & Scooter Factory China",
     filterCategory: "electric-mobility",
     image: "/homeImg/energyPlatformImage04.jpg",
-    description: "UL 2272 & DOT-compliant urban commuter scooters for US retailers, alongside heavy-duty 200kg+ cargo motorcycles and swappable battery systems engineered for delivery fleets across the Americas, Europe, Africa, and Asia.",
-    keywords: "electric scooter manufacturer, UL 2272 electric scooter OEM, DOT electric motorcycle factory, commercial delivery scooter supplier, swappable battery e-motorcycle, private label electric scooter USA, fleet EV manufacturer, 72V EV battery pack OEM, cargo electric tricycle factory",
+    description: "Direct China factory & wholesale supplier of high-performance electric dirt bikes, commuter scooters, cargo motorcycles, and swappable battery systems for global distributors.",
+    keywords: "electric motorcycle factory china, electric dirt bike wholesale china, electric scooter manufacturer china, electric dirt bike, electric motorcycle",
     intro: {
-      heading: "UL-Certified E-Scooters & Commercial Fleet Powertrains: Factory-Direct OEM Production",
-      body: "Light electric vehicles must be engineered for their operational reality. In the United States and North American retail markets, safety and road compliance come first—specifically UL 2272 electrical system safety, UL 2271 battery certification (mandated by CPSC and NYC Local Law 39), FCC Part 15 electronic shielding, and DOT/NHTSA street-legal lighting and braking. Concurrently, across Latin America, Europe, Africa, and South Asia, commercial courier fleets and e-boda boda taxi operators demand extreme structural endurance—featuring 200kg+ payload chassis, sub-30-second swappable dual-battery systems, EEC/COC road homologation, and IP67 waterproof sealed powertrains that shrug off monsoon rains, rough roads, and high ambient heat. JoyHand Energy operates an integrated 50,000 m² manufacturing plant in Guangzhou, building complete turnkey vehicles and proprietary lithium powertrains for global brands, fleet operators, and distributors.",
+      heading: "Electric Motorcycles, Dirt Bikes & Scooters: Direct China Factory Manufacturing",
+      body: "Operating as an advanced electric motorcycle factory China and electric scooter manufacturer China, JoyHand Energy engineers high-torque electric motorcycles, electric dirt bike wholesale China production models, and UL-certified commuter scooters. In North American retail, safety and road compliance come first—including UL 2272 electrical safety, UL 2271 battery certification, FCC Part 15 shielding, and DOT/NHTSA street-legal compliance. Across Latin America, Europe, Africa, and South Asia, commercial courier fleets and e-mobility operators demand heavy-duty 200kg+ payload chassis, sub-30-second swappable dual-battery systems, and IP67 waterproof powertrains that withstand extreme terrain. Operating from our integrated 50,000 m² Guangzhou production facility, we supply complete turnkey vehicles and OEM powertrains to global brands and B2B distributors.",
       advantages: [
         {
           title: "UL 2272 & DOT Compliance for US Markets",
@@ -964,10 +964,10 @@ export const solutionConfigs = {
     `
   },
   "solar-accessories": {
-    pageTitle: "Bulk Solar Panels & Tech Accessories | JoyHand",
-    metaDescription: "Bulk solar panels, LED street lights, docking stations, and USB-C accessories. Direct factory OEM for global hardware distributors.",
+    pageTitle: "Solar Panel Wholesale Manufacturer | JoyHand",
+    metaDescription: "Tier-1 solar panel wholesale manufacturer & supplier. High-efficiency mono solar panels, solar streetlights, and balance-of-system accessories for importers.",
     canonicalUrl: "https://www.joyhand.com/products/category/solar-accessories",
-    metaKeywords: ["bulk solar panels", "LED street light manufacturer", "solar accessories supplier", "USB-C accessory supplier", "tech accessories factory", "docking station OEM"],
+    metaKeywords: ["solar panel wholesale manufacturer", "wholesale solar panels", "bulk solar panels", "LED street light manufacturer", "solar accessories supplier", "solar hardware factory", "docking station OEM"],
     breadcrumbBadge: "SOLAR ACCESSORIES",
     h1Title: "Solar Hardware & Consumer Tech Accessory Manufacturer",
     heroSubtitle: "Factory-direct Tier-1 monocrystalline solar panels (up to 550W), commercial LED solar streetlights & industrial PV cabling for micro-grids and turnkey installations across high-sunbelt regions.",
@@ -975,10 +975,10 @@ export const solutionConfigs = {
     filterCategory: "accessories",
     image: "/homeImg/energyPlatformImage06.jpg",
     description: "Factory-direct Tier-1 monocrystalline solar panels (up to 550W), commercial LED solar streetlights & industrial PV cabling for micro-grids and turnkey installations across high-sunbelt regions.",
-    keywords: "bulk solar panels, LED street light manufacturer, USB-C accessory supplier, tech accessories factory, docking station OEM",
+    keywords: "solar panel wholesale manufacturer, wholesale solar panels, bulk solar panels, LED street light manufacturer, solar accessories supplier",
     intro: {
       heading: "Comprehensive OEM Tech & Off-Grid Energy Accessories",
-      body: "Whether deploying rural micro-grids in low-infrastructure regions or stocking high-turnover consumer tech for global retail chains, JoyHand Energy serves as your dedicated single-source OEM factory. Our accessories span high-efficiency monocrystalline solar panels, commercial LED street lights, pure copper industrial cabling, and premium nylon-braided 100W USB-C fast charging stations.",
+      body: "Operating as an integrated solar panel wholesale manufacturer and balance-of-system factory in China, JoyHand Energy serves as your dedicated single-source B2B supplier. Whether deploying rural micro-grids in low-infrastructure regions or stocking high-turnover consumer tech for global retail chains, our accessories span high-efficiency monocrystalline solar panels, commercial LED street lights, pure copper industrial cabling, and premium nylon-braided 100W USB-C fast charging stations.",
       advantages: [
         {
           title: "Consolidated Container Logistics",

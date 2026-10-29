@@ -39,7 +39,7 @@ export async function GET() {
   const lines = [
     "# JoyHand Energy",
     "",
-    "> JoyHand Energy is a direct OEM/ODM factory manufacturer of commercial and residential LiFePO4 energy storage systems, hybrid solar inverters, Tier-1 monocrystalline solar panels, commercial solar streetlights, balance-of-system solar accessories & hardware, electric commuter scooters, commercial cargo motorcycles, and portable power stations. Founded in 1998 and operating under ISO 9001:2015 certified standards from our 50,000 sq.m manufacturing facility in Guangzhou, China, JoyHand specializes in factory-direct B2B container supply, white-label manufacturing, and custom engineering for brand owners, fleet operators, and distributors across the Americas, Europe, Africa, and Asia.",
+    "> JoyHand Energy is a direct OEM/ODM factory manufacturer of commercial and residential LiFePO4 energy storage systems, hybrid solar inverters, Tier-1 monocrystalline solar panels, commercial solar streetlights, balance-of-system solar accessories & hardware, electric commuter scooters, commercial cargo motorcycles, electric dirt bikes, and portable power stations. Founded in 1998 and operating under ISO 9001:2015 certified standards from our 50,000 sq.m manufacturing facility in Guangzhou, China, JoyHand specializes in factory-direct B2B container supply, white-label manufacturing, and custom engineering for brand owners, fleet operators, and distributors across the Americas, Europe, Africa, and Asia.",
     "",
     "## Company & Factory Overview",
     `- Website: ${baseUrl}`,

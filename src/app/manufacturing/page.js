@@ -6,12 +6,15 @@ export const metadata = {
   },
   description: "Explore JoyHand's 50,000 m² Guangzhou production facility. Automated LiFePO4 battery assembly, solar inverter lines, EV chassis fabrication, and ISO 9001:2015 QC testing.",
   keywords: [
+    "lifepo4 battery manufacturer china",
+    "solar battery factory china",
+    "oem solar battery manufacturer",
+    "electric motorcycle factory china",
+    "electric scooter manufacturer china",
+    "portable power station odm manufacturer",
+    "solar panel wholesale manufacturer",
     "OEM ODM manufacturing facility",
-    "lithium battery production plant",
-    "electric motorcycle assembly factory",
-    "ISO 9001 production line",
-    "custom hardware engineering China",
-    "B2B manufacturing hub"
+    "lithium battery production plant"
   ],
   alternates: {
     canonical: 'https://www.joyhand.com/manufacturing',

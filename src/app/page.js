@@ -20,12 +20,17 @@ export const metadata = {
   },
   description: "China-based factory & supplier of LiFePO4 batteries, electric motorcycles, solar panels & inverters. We offer OEM/ODM manufacturing to global standards.",
   keywords: [
-    "LiFePO4 battery manufacturer",
-    "electric scooter supplier",
-    "OEM manufacturing",
-    "battery factory China",
-    "wholesale power solutions",
-    "B2B hardware factory"
+    "joyhand energy",
+    "lifepo4 battery manufacturer china",
+    "solar battery factory china",
+    "oem solar battery manufacturer",
+    "wholesale lifepo4 supplier",
+    "hybrid solar inverter manufacturer",
+    "electric motorcycle factory china",
+    "electric dirt bike wholesale china",
+    "electric scooter manufacturer china",
+    "portable power station odm manufacturer",
+    "solar panel wholesale manufacturer"
   ],
   alternates: {
     canonical: 'https://www.joyhand.com/',
