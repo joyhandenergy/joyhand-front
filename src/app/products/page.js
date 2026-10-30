@@ -4,7 +4,7 @@ import ProductsClient from "./ProductsClient";
 import Script from "next/script";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
-import { productData, productsCatalogData } from "@/data";
+import { productData, productsCatalogData, isRedirectedSlug } from "@/data";
 import "./Products.css";
 
 // Static
@@ -13,7 +13,7 @@ export const metadata = {
   title: {
     absolute: "Factory-Direct Wholesale Catalog | JoyHand Energy",
   },
-  description: "Direct-from-factory catalog of Grade-A LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar hardware. Flexible MOQs and wholesale container pricing for global B2B buyers.",
+  description: "Factory-direct catalog of Grade-A LiFePO4 batteries, electric motorcycles, hybrid inverters & solar hardware. Wholesale container pricing for B2B buyers.",
   keywords: [
     "wholesale lifepo4 supplier",
     "lifepo4 battery manufacturer china",
@@ -31,7 +31,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Factory-Direct Wholesale Catalog | JoyHand Energy",
-    description: "Direct-from-factory catalog of Grade-A LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar hardware. Flexible MOQs and wholesale container pricing for global B2B buyers.",
+    description: "Factory-direct catalog of Grade-A LiFePO4 batteries, electric motorcycles, hybrid inverters & solar hardware. Wholesale container pricing for B2B buyers.",
     url: "https://www.joyhand.com/products",
     type: "website",
     images: [
@@ -50,7 +50,12 @@ async function getAllProducts() {
   try {
     const rawSanity = await client.fetch(`*[_type == "product"]`);
 
-    sanityProducts = rawSanity.map((p) => {
+    sanityProducts = rawSanity
+      .filter((p) => {
+        const s = p.slug?.current || p.slug;
+        return s && !isRedirectedSlug(s);
+      })
+      .map((p) => {
       let image = "/images/placeholder.jpg";
       try {
         if (p.mainImage?.asset) image = urlFor(p.mainImage).url();
@@ -87,7 +92,7 @@ async function getAllProducts() {
   }
 
   const sanitySlugs = new Set(sanityProducts.map((p) => p.slug));
-  const uniqueLocal = productData.filter((p) => !sanitySlugs.has(p.slug));
+  const uniqueLocal = productData.filter((p) => !sanitySlugs.has(p.slug) && !isRedirectedSlug(p.slug));
 
   // ── Clean isolated country mentions to professional B2B fleet applications ──
   const cleanDescription = (text) => {
@@ -186,19 +191,34 @@ export default async function ProductsPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Wholesale LFP Batteries & Electric Scooters | JoyHand",
-    "description": "Comprehensive catalog of wholesale LFP batteries, electric scooters, motorcycles, hybrid inverters, and solar hardware manufactured by JoyHand.",
+    "name": "Factory-Direct Wholesale Catalog | JoyHand Energy",
+    "description": "Direct-from-factory catalog of Grade-A LiFePO4 batteries, electric motorcycles, hybrid inverters & solar hardware. Wholesale container pricing for B2B buyers.",
     "url": "https://www.joyhand.com/products",
     "publisher": {
       "@type": "Organization",
-      "name": "JoyHand Energy Manufacturing",
+      "name": "JoyHand Energy",
       "url": "https://www.joyhand.com"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": allProducts.length,
+      "itemListElement": allProducts.map((product, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "Product",
+          "name": product.name,
+          "url": `https://www.joyhand.com/products/${product.slug}`,
+          "image": product.image?.startsWith('http') ? product.image : `https://www.joyhand.com${product.image || "/images/placeholder.jpg"}`,
+          "description": (product.description || "").slice(0, 160)
+        }
+      }))
     }
   };
 
   return (
     <main className="products-page">
-      <Script
+      <script
         id="products-catalog-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -284,14 +284,13 @@ const nextConfig = {
       { source: "/courses/:slug*", destination: "/about-us", permanent: true },
       { source: "/organizing-your-workspace", destination: "/blog", permanent: true },
       { source: "/webinars", destination: "/about-us", permanent: true },
-      { source: "/group-buy", destination: "/quotation", permanent: true },
+      { source: "/group-buy", destination: "/contact-us", permanent: true },
       { source: "/content", destination: "/about-us", permanent: true },
       { source: "/about", destination: "/about-us", permanent: true },
       { source: "/contact", destination: "/contact-us", permanent: true },
       { source: "/terms-of-service", destination: "/terms", permanent: true },
       { source: "/shipping", destination: "/terms", permanent: true },
       { source: "/return-policy", destination: "/terms", permanent: true },
-      { source: "/cookie-policy", destination: "/terms", permanent: true },
       { source: "/sitemap", destination: "/sitemap.xml", permanent: true },
       
       // Legacy Categories

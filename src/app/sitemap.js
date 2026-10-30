@@ -1,4 +1,4 @@
-import { blogPosts, productData, solutionConfigs } from "@/data";
+import { blogPosts, productData, solutionConfigs, isRedirectedSlug } from "@/data";
 import { client } from "@/sanity/lib/client";
 
 // Cloudflare Pages requires strict static generation
@@ -11,10 +11,11 @@ export default async function sitemap() {
   const sanityProducts = await client.fetch(`*[_type == "product"]{ "slug": slug.current, _updatedAt }`);
   const sanityPosts = await client.fetch(`*[_type == "post"]{ "slug": slug.current, _updatedAt }`);
 
-  // Merge products
-  const sanityProductSlugs = new Set(sanityProducts.map(p => p.slug));
-  const localProducts = productData.filter(p => !sanityProductSlugs.has(p.slug));
-  const allProducts = [...sanityProducts, ...localProducts.map(p => ({ slug: p.slug, _updatedAt: new Date().toISOString() }))];
+  // Merge products and filter out any 301-redirected legacy slugs
+  const validSanityProducts = (sanityProducts || []).filter(p => p.slug && !isRedirectedSlug(p.slug));
+  const sanityProductSlugs = new Set(validSanityProducts.map(p => p.slug));
+  const localProducts = productData.filter(p => !sanityProductSlugs.has(p.slug) && !isRedirectedSlug(p.slug));
+  const allProducts = [...validSanityProducts, ...localProducts.map(p => ({ slug: p.slug, _updatedAt: new Date().toISOString() }))];
 
   // Merge posts
   const sanityPostSlugs = new Set(sanityPosts.map(p => p.slug));

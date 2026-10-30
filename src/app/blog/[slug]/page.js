@@ -157,64 +157,65 @@ export default async function BlogDetailsPage({ params }) {
     });
   };
 
-  const jsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": `https://www.joyhand.com/blog/${blogPost.slug}`
-      },
-      "headline": blogPost.title,
-      "image": [
-        blogPost.image?.startsWith('http') ? blogPost.image : `https://www.joyhand.com${blogPost.image || "/homeImg/businessModelImage001.jpg"}`
-      ],
-      "datePublished": blogPost.date ? new Date(blogPost.date).toISOString() : new Date().toISOString(),
-      "dateModified": blogPost.date ? new Date(blogPost.date).toISOString() : new Date().toISOString(),
-      "author": {
-        "@type": "Organization",
-        "name": "JoyHand Editorial Team",
-        "url": "https://www.joyhand.com/about-us"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "JoyHand Energy",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.joyhand.com/homeImg/businessModelImage001.jpg"
-        }
-      },
-      "description": blogPost.excerpt || ""
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Manufacturing Intel",
-          "item": "https://www.joyhand.com/blog"
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Article", "BlogPosting"],
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://www.joyhand.com/blog/${blogPost.slug}`
         },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": blogPost.category || "Technology",
-          "item": `https://www.joyhand.com/blog?category=${encodeURIComponent(blogPost.category || "Technology")}`
+        "headline": blogPost.title,
+        "image": [
+          blogPost.image?.startsWith('http') ? blogPost.image : `https://www.joyhand.com${blogPost.image || "/homeImg/businessModelImage001.jpg"}`
+        ],
+        "datePublished": blogPost.date ? new Date(blogPost.date).toISOString() : new Date().toISOString(),
+        "dateModified": blogPost.date ? new Date(blogPost.date).toISOString() : new Date().toISOString(),
+        "author": {
+          "@type": "Organization",
+          "name": "JoyHand Editorial Team",
+          "url": "https://www.joyhand.com/about-us"
         },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": blogPost.title,
-          "item": `https://www.joyhand.com/blog/${blogPost.slug}`
-        }
-      ]
-    }
-  ];
+        "publisher": {
+          "@type": "Organization",
+          "name": "JoyHand Energy",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.joyhand.com/homeImg/businessModelImage001.jpg"
+          }
+        },
+        "description": blogPost.excerpt || blogPost.metaDescription || ""
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Manufacturing Intel",
+            "item": "https://www.joyhand.com/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": blogPost.category || "Technology",
+            "item": `https://www.joyhand.com/blog?category=${encodeURIComponent(blogPost.category || "Technology")}`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": blogPost.title,
+            "item": `https://www.joyhand.com/blog/${blogPost.slug}`
+          }
+        ]
+      }
+    ]
+  };
 
   return (
     <article className="blog-details">
-      <Script
+      <script
         id="article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

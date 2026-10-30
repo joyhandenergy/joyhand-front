@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import { getProductsByCategory, solutionConfigs } from "@/data";
+import { getProductsByCategory, solutionConfigs, isRedirectedSlug } from "@/data";
 import CategoryClient from "./CategoryClient";
 import PageHeader from "@/components/pageHeader/PageHeader";
 import Script from "next/script";
@@ -59,8 +59,13 @@ async function getProductsForCategory(filterCategory) {
       { filterCategory }
     );
 
-    // Map Sanity schema to match local ProductCard expectations
-    sanityProducts = rawSanity.map((p) => {
+    // Map Sanity schema to match local ProductCard expectations, excluding 301 redirected slugs
+    sanityProducts = rawSanity
+      .filter((p) => {
+        const s = p.slug?.current || p.slug;
+        return s && !isRedirectedSlug(s);
+      })
+      .map((p) => {
       let image = "/images/placeholder.jpg";
       try {
         if (p.mainImage?.asset) image = urlFor(p.mainImage).url();
@@ -99,9 +104,9 @@ async function getProductsForCategory(filterCategory) {
   // 2. Fetch local products
   let localProducts = getProductsByCategory(filterCategory) || [];
 
-  // 3. Merge products (Sanity takes precedence on slug matches)
+  // 3. Merge products (Sanity takes precedence on slug matches, excluding redirected slugs)
   const sanitySlugs = new Set(sanityProducts.map((p) => p.slug));
-  const uniqueLocal = localProducts.filter((p) => !sanitySlugs.has(p.slug));
+  const uniqueLocal = localProducts.filter((p) => !sanitySlugs.has(p.slug) && !isRedirectedSlug(p.slug));
 
   return [...sanityProducts, ...uniqueLocal];
 }

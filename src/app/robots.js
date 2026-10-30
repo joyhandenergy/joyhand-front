@@ -1,16 +1,32 @@
 export default function robots() {
+  const disallowedPaths = [
+    "/api/",
+    "/studio/",
+    "/quotation",
+    "/quotation/",
+    "/catalog/download",
+  ];
+
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: [
-          "/api/",
-          "/studio/",
-          "/quotation",
-          "/quotation/",
-          "/catalog/download",
+        disallow: disallowedPaths,
+      },
+      {
+        userAgent: [
+          "GPTBot",
+          "ChatGPT-User",
+          "OAI-SearchBot",
+          "ClaudeBot",
+          "PerplexityBot",
+          "Google-Extended",
+          "Applebot-Extended",
+          "cohere-ai",
         ],
+        allow: "/",
+        disallow: disallowedPaths,
       },
     ],
     sitemap: "https://www.joyhand.com/sitemap.xml",

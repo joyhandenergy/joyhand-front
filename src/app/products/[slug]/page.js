@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PiBatteryHigh, PiLightning, PiMotorcycle, PiFactory, PiPlug, PiBatteryCharging, PiDeviceMobile } from "react-icons/pi";
-import { productData } from "@/data";
+import { productData, isRedirectedSlug } from "@/data";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import ProductGallery from "./ProductGallery";
@@ -212,10 +212,10 @@ export async function generateMetadata({ params }) {
   const finalTitle  = title.length > 60 ? title.substring(0, 57) + "..." : title;
 
   let description = (product.metaDescription || fallbackDesc);
-  let finalDescription = description.length > 160 ? description.substring(0, 157) + "..." : description;
-  if (finalDescription.length < 110) {
+  let finalDescription = description.length > 154 ? description.substring(0, 151).trim() + "..." : description;
+  if (finalDescription.length < 100) {
     finalDescription += " Request a factory-direct B2B wholesale quote today.";
-    if (finalDescription.length > 160) finalDescription = finalDescription.substring(0, 157) + "...";
+    if (finalDescription.length > 154) finalDescription = finalDescription.substring(0, 151).trim() + "...";
   }
 
   // Category-specific keyword banks for richer indexing
@@ -394,15 +394,18 @@ function buildFallbackDesc(product) {
 export async function generateStaticParams() {
   const sanityProducts = await client.fetch(`*[_type == "product"]{ "slug": slug.current }`);
   
-  if (sanityProducts.length > 0) {
-    return sanityProducts.map((product) => ({
+  const validSanity = (sanityProducts || []).filter(p => p.slug && !isRedirectedSlug(p.slug));
+  if (validSanity.length > 0) {
+    return validSanity.map((product) => ({
       slug: product.slug,
     }));
   }
 
-  return productData.map((product) => ({
-    slug: product.slug,
-  }));
+  return productData
+    .filter((product) => !isRedirectedSlug(product.slug))
+    .map((product) => ({
+      slug: product.slug,
+    }));
 }
 
 export default async function ProductDetailsPage({ params }) {
@@ -501,7 +504,6 @@ export default async function ProductDetailsPage({ params }) {
     : `https://www.joyhand.com${images[0]}`;
 
   const productSchema = {
-    "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
     "image": jsonLdImageUrl,
@@ -514,8 +516,23 @@ export default async function ProductDetailsPage({ params }) {
       "@type": "Organization",
       "name": "JoyHand Energy"
     },
-    "model": product.model,
+    "model": product.model || product.name,
+    "sku": product.model || product.slug?.current || product.slug,
+    "mpn": product.model || product.slug?.current || product.slug,
     "category": categoryDisplay,
+    "offers": {
+      "@type": "Offer",
+      "url": `https://www.joyhand.com/products/${product.slug?.current || product.slug}`,
+      "priceCurrency": "USD",
+      "price": "0",
+      "priceValidUntil": "2027-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": {
+        "@type": "Organization",
+        "name": "JoyHand Energy"
+      }
+    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
@@ -530,29 +547,30 @@ export default async function ProductDetailsPage({ params }) {
     })
   };
 
-  const schemas = [productSchema];
-
-  if (product.faq && product.faq.length > 0) {
-    schemas.push({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": product.faq.map(item => ({
-        "@type": "Question",
-        "name": item.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": item.answer
-        }
-      }))
-    });
-  }
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      productSchema,
+      ...(product.faq && product.faq.length > 0 ? [{
+        "@type": "FAQPage",
+        "mainEntity": product.faq.map(item => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        }))
+      }] : [])
+    ]
+  };
 
   return (
     <main className="product-details">
-      <Script
+      <script
         id="product-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="container">
         <Breadcrumbs 
@@ -622,8 +640,11 @@ async function RelatedProductsServerWrapper({ currentProductId }) {
       { _id, name, model, category, slug, mainImage }`;
     const pool = await client.fetch(query, { currentProductId });
 
+    // Exclude redirected legacy slugs
+    const validPool = (pool || []).filter(p => p.slug?.current && !isRedirectedSlug(p.slug.current));
+
     // Fisher-Yates shuffle — gives true random order on every server render
-    const arr = [...pool];
+    const arr = [...validPool];
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];

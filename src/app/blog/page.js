@@ -16,7 +16,7 @@ export const metadata = {
   title: {
     absolute: "Factory Engineering & B2B Sourcing Guides | JoyHand",
   },
-  description: "Direct-from-factory engineering reports, quality benchmarks, and technical sourcing guides for LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar energy systems.",
+  description: "Factory engineering reports, quality benchmarks, and technical sourcing guides for LiFePO4 batteries, electric motorcycles, inverters, and solar systems.",
   keywords: [
     "B2B manufacturing blog",
     "LiFePO4 battery sourcing guide",
@@ -31,7 +31,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Factory Engineering & B2B Sourcing Guides | JoyHand",
-    description: "Direct-from-factory engineering reports, quality benchmarks, and technical sourcing guides for LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar energy systems.",
+    description: "Factory engineering reports, quality benchmarks, and technical sourcing guides for LiFePO4 batteries, electric motorcycles, inverters, and solar systems.",
     url: "https://www.joyhand.com/blog",
     type: "website",
     images: [

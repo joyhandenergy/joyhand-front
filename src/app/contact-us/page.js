@@ -4,7 +4,7 @@ export const metadata = {
   title: {
     absolute: "Direct Factory Quotes & OEM Inquiries | JoyHand",
   },
-  description: "Connect directly with our Guangzhou manufacturing facility. Request wholesale container pricing and custom OEM specifications with a guaranteed 24-hour response.",
+  description: "Connect directly with our Guangzhou factory. Request wholesale container pricing and custom OEM specifications with a guaranteed 24-hour response.",
   keywords: [
     "LiFePO4 battery factory quote",
     "electric motorcycle OEM inquiry",
@@ -18,7 +18,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Direct Factory Quotes & OEM Inquiries | JoyHand",
-    description: "Connect directly with our Guangzhou manufacturing facility. Request wholesale container pricing and custom OEM specifications with a guaranteed 24-hour response.",
+    description: "Connect directly with our Guangzhou factory. Request wholesale container pricing and custom OEM specifications with a guaranteed 24-hour response.",
     url: "https://www.joyhand.com/contact-us",
     type: "website",
     images: [

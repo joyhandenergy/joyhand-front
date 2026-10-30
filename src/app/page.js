@@ -87,54 +87,65 @@ async function getFeaturedBlogPosts() {
 
 export default async function Home() {
   const featuredPosts = await getFeaturedBlogPosts();
-  const jsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "JoyHand Energy",
-      "url": "https://www.joyhand.com",
-      "logo": "https://www.joyhand.com/homeImg/businessModelImage001.jpg",
-      "description": "China-based factory and supplier of LiFePO4 batteries, electric motorcycles, solar panels, and inverters offering OEM and ODM manufacturing to global standards.",
-      "address": [
-        {
-          "@type": "PostalAddress",
-          "addressLocality": "Guangzhou",
-          "addressRegion": "Guangdong",
-          "addressCountry": "CN"
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "JoyHand Energy",
+        "legalName": "Guangzhou Joyhand Technology Co., Ltd.",
+        "url": "https://www.joyhand.com",
+        "logo": "https://www.joyhand.com/homeImg/businessModelImage001.jpg",
+        "image": "https://www.joyhand.com/homeImg/businessModelImage001.jpg",
+        "description": "China-based factory and supplier of LiFePO4 batteries, electric motorcycles, solar panels, and inverters offering OEM and ODM manufacturing to global standards.",
+        "email": "sales@joyhand.com",
+        "foundingDate": "1998",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Guangzhou",
+            "addressRegion": "Guangdong",
+            "addressCountry": "CN"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Lagos",
+            "addressCountry": "NG"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+86-186-0202-1144",
+          "contactType": "wholesale sales",
+          "email": "sales@joyhand.com",
+          "availableLanguage": ["en", "zh"]
         },
-        {
-          "@type": "PostalAddress",
-          "addressLocality": "Lagos",
-          "addressCountry": "NG"
-        }
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+86-186-0202-1144",
-        "contactType": "wholesale sales",
-        "availableLanguage": "en"
+        "sameAs": [
+          "https://www.linkedin.com/company/joyhand"
+        ],
+        "hasCertification": [
+          "ISO 9001:2015",
+          "CE",
+          "UL",
+          "UN38.3"
+        ]
       },
-      "hasCertification": [
-        "ISO 9001:2015",
-        "Manufacturing capabilities align with CE, UL, and UN38.3 standards"
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "JoyHand Energy",
-      "url": "https://www.joyhand.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.joyhand.com/products?search={search_term_string}",
-        "query-input": "required name=search_term_string"
+      {
+        "@type": "WebSite",
+        "name": "JoyHand Energy",
+        "url": "https://www.joyhand.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.joyhand.com/products?search={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       }
-    }
-  ];
+    ]
+  };
 
   return (
     <>
-      <Script
+      <script
         id="organization-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

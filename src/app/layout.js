@@ -23,7 +23,7 @@ export const metadata = {
     default: "Factory Direct Solar & Batteries | JoyHand",
     template: "%s | JoyHand",
   },
-  description: "Direct OEM/ODM factory manufacturer of LiFePO4 batteries, hybrid inverters, solar panels, and light electric vehicles. Built to ISO 9001, CE, and UL standards for global B2B supply chains.",
+  description: "Direct OEM/ODM manufacturer of LiFePO4 batteries, hybrid inverters, solar panels, and e-motorcycles. ISO 9001, CE & UL certified for global wholesale.",
   keywords: [
     "joyhand energy",
     "lifepo4 battery manufacturer china",
@@ -46,7 +46,7 @@ export const metadata = {
   },
   openGraph: {
     title: "JoyHand Energy | Direct Factory Partnership",
-    description: "Scale your energy & e-mobility brand with our industrial-grade production of solar storage, hybrid inverters, and light electric vehicles across the Americas, Europe, Africa, and Asia.",
+    description: "Direct factory manufacturing of LiFePO4 batteries, hybrid inverters, solar panels & e-motorcycles. ISO 9001, CE & UL certified for global B2B supply chains.",
     type: "website",
     siteName: "JoyHand Energy",
     locale: "en_US",
