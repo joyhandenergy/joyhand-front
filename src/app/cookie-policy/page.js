@@ -3,7 +3,9 @@ import SafeEmail from "@/components/SafeEmail";
 import "../legal.css";
 
 export const metadata = {
-  title: "Cookie Policy | JoyHand Energy",
+  title: {
+    absolute: "Cookie Policy | JoyHand Energy",
+  },
   description: "Understand how JoyHand Energy uses cookies and tracking technologies to improve your B2B browsing experience and provide personalized manufacturing insights.",
   alternates: { canonical: '/cookie-policy' },
   openGraph: {

@@ -10,6 +10,7 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import { ShareButtons, ScaleBrandButton } from "./BlogInteractiveElements";
+import { formatSeoTitle, formatSeoDescription } from "@/lib/seoSanitizer";
 import "../blog.css";
 
 export const dynamicParams = true;
@@ -67,20 +68,17 @@ export async function generateMetadata({ params }) {
 
   if (!blogPost) {
     return {
-      title: "Article Not Found | JoyHand Energy",
+      title: {
+        absolute: "Article Not Found | JoyHand",
+      },
     };
   }
 
-  const title = blogPost.metaTitle || `${blogPost.title} | JoyHand`;
-  const description = blogPost.metaDescription || blogPost.excerpt || "JoyHand Energy intelligence blog.";
-
-  const finalTitle = title.length > 60 ? title.substring(0, 57) + "..." : title;
-  
-  let finalDescription = description.length > 160 ? description.substring(0, 157) + "..." : description;
-  if (finalDescription.length < 70) {
-    finalDescription += " Read our latest B2B energy insights and manufacturing updates.";
-    if (finalDescription.length > 160) finalDescription = finalDescription.substring(0, 157) + "...";
-  }
+  const finalTitle = formatSeoTitle(blogPost.metaTitle || blogPost.title);
+  const finalDescription = formatSeoDescription(
+    blogPost.metaDescription || blogPost.excerpt,
+    "Read factory engineering reports and B2B energy manufacturing insights from JoyHand."
+  );
 
   // Generate dynamic keywords from the title for highly relevant SEO
   const titleKeywords = blogPost.title
@@ -92,7 +90,9 @@ export async function generateMetadata({ params }) {
   const dynamicKeywords = [...new Set([blogPost.category, ...titleKeywords, "wholesale", "B2B", "JoyHand", "energy manufacturing"])];
 
   return {
-    title: finalTitle,
+    title: {
+      absolute: finalTitle,
+    },
     description: finalDescription,
     keywords: dynamicKeywords,
     openGraph: {

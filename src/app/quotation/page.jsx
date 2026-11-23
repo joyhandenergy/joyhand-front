@@ -5,7 +5,9 @@ import "./Quotation.css";
 export const revalidate = 60;
 
 export const metadata = {
-  title: "Quotation Builder | JoyHand Energy",
+  title: {
+    absolute: "Quotation Builder | JoyHand Energy",
+  },
   robots: {
     index: false,
     follow: false,

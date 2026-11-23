@@ -37,19 +37,7 @@ export default async function sitemap() {
     priority: route === "" ? 1.0 : 0.9,
   }));
 
-  // 3. Legal & Compliance Pages
-  const legalRoutes = [
-    "/privacy",
-    "/terms",
-    "/cookie-policy",
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: "yearly",
-    priority: 0.3,
-  }));
-
-  // 4. Product Category / Solutions Pages
+  // 3. Product Category / Solutions Pages
   const solutionRoutes = Object.keys(solutionConfigs).map((slug) => ({
     url: `${baseUrl}/products/category/${slug}`,
     lastModified: new Date().toISOString(),
@@ -57,7 +45,7 @@ export default async function sitemap() {
     priority: 0.8,
   }));
 
-  // 5. Individual Product Pages (High Priority for B2B Search)
+  // 4. Individual Product Pages (High Priority for B2B Search)
   const productRoutes = allProducts.map((product) => ({
     url: `${baseUrl}/products/${product.slug}`,
     lastModified: product._updatedAt,
@@ -65,7 +53,7 @@ export default async function sitemap() {
     priority: 0.8,
   }));
 
-  // 6. Individual Blog / Intel Pages
+  // 5. Individual Blog / Intel Pages
   const blogRoutes = allPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post._updatedAt, 
@@ -73,5 +61,5 @@ export default async function sitemap() {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...legalRoutes, ...solutionRoutes, ...productRoutes, ...blogRoutes];
+  return [...staticRoutes, ...solutionRoutes, ...productRoutes, ...blogRoutes];
 }

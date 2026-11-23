@@ -48,7 +48,7 @@ export const metadata = {
     title: "JoyHand Energy | Direct Factory Partnership",
     description: "Direct factory manufacturing of LiFePO4 batteries, hybrid inverters, solar panels & e-motorcycles. ISO 9001, CE & UL certified for global B2B supply chains.",
     type: "website",
-    siteName: "JoyHand Energy",
+    siteName: "JoyHand",
     locale: "en_US",
     images: [
       {

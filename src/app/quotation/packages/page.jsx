@@ -2,7 +2,9 @@ import PageHeader from "@/components/pageHeader/PageHeader";
 import PackageQuotationBuilder from "./PackageQuotationBuilder";
 
 export const metadata = {
-  title: "Full Set Solar Quotations | JoyHand Energy",
+  title: {
+    absolute: "Full Set Solar Quotations | JoyHand Energy",
+  },
   description: "Download fixed package quotations for our 3.3KW, 5KW, and 10KW solar full sets.",
   robots: {
     index: false,

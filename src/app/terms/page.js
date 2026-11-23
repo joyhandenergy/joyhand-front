@@ -3,7 +3,9 @@ import SafeEmail from "@/components/SafeEmail";
 import "../legal.css";
 
 export const metadata = {
-  title: "Terms of Service | JoyHand Energy",
+  title: {
+    absolute: "Terms of Service | JoyHand Energy",
+  },
   description: "Read the comprehensive terms and conditions governing the use of JoyHand Energy’s website, B2B wholesale manufacturing services, and global export operations.",
   alternates: { canonical: '/terms' },
   openGraph: {

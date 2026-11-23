@@ -4,7 +4,9 @@ import SafeEmail from "@/components/SafeEmail";
 import "../legal.css";
 
 export const metadata = {
-  title: "Privacy Policy | JoyHand Energy",
+  title: {
+    absolute: "Privacy Policy | JoyHand Energy",
+  },
   description: "Learn how JoyHand Energy collects, uses, and protects your personal and B2B corporate information when using our website and OEM manufacturing services.",
   alternates: { canonical: '/privacy' },
   openGraph: {

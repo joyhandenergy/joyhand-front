@@ -4,7 +4,9 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 
 export const metadata = {
-  title: "Downloading Catalog | JoyHand Energy",
+  title: {
+    absolute: "Downloading Catalog | JoyHand Energy",
+  },
   robots: { index: false, follow: false }
 };
 

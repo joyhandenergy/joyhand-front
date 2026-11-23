@@ -132,7 +132,8 @@ export default async function Home() {
       },
       {
         "@type": "WebSite",
-        "name": "JoyHand Energy",
+        "name": "JoyHand",
+        "alternateName": "JoyHand Energy",
         "url": "https://www.joyhand.com",
         "potentialAction": {
           "@type": "SearchAction",

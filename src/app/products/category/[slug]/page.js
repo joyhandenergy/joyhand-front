@@ -6,6 +6,7 @@ import PageHeader from "@/components/pageHeader/PageHeader";
 import Script from "next/script";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+import { cleanGeoText, formatSeoTitle, formatSeoDescription } from "@/lib/seoSanitizer";
 import "../../Products.css";
 
 export const dynamicParams = false;
@@ -13,10 +14,10 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const config = solutionConfigs[slug];
-  if (!config) return { title: "Category Not Found" };
+  if (!config) return { title: { absolute: "Category Not Found | JoyHand" } };
 
-  const title = config.pageTitle || `${config.title} | JoyHand`;
-  const description = config.metaDescription || config.description;
+  const title = formatSeoTitle(config.pageTitle || config.title);
+  const description = formatSeoDescription(config.metaDescription || config.description);
   const canonical = config.canonicalUrl || `https://www.joyhand.com/products/category/${slug}`;
   const keywords = config.metaKeywords || config.keywords;
 
@@ -118,53 +119,20 @@ export default async function SolutionsPage({ params }) {
 
   let allProducts = await getProductsForCategory(config.filterCategory);
 
-  // ── Clean isolated country mentions to professional B2B fleet applications ──
-  const cleanDescription = (text) => {
-    if (!text || typeof text !== 'string') return text;
-    return text
-      .replace(/in South African,?\s+Morocco/gi, 'across urban passenger fleets')
-      .replace(/in Kenya and Tanzania/gi, 'across commercial and municipal fleets')
-      .replace(/in Bangladesh and Ghana/gi, 'across last-mile logistics fleets')
-      .replace(/in Nigeria and Pakistan/gi, 'across commercial and industrial fleets')
-      .replace(/in Nigeria and Kenya/gi, 'for commercial and residential transport')
-      .replace(/in Kenya and Pakistan/gi, 'across commercial fleets and campus transit')
-      .replace(/in Ghana and Tanzania/gi, 'across passenger transit and taxi fleets')
-      .replace(/in Bangladesh and Nepal/gi, 'across urban logistics and transit fleets')
-      .replace(/in Pakistan and Bangladesh/gi, 'across urban commuter and commercial fleets')
-      .replace(/in Nigeria,?\s*Kenya,?\s*and Pakistan/gi, 'across municipal and emergency response fleets')
-      .replace(/(?:for|in)\s+(?:Nigerian|Pakistani|Ghanaian|Kenyan|Tanzanian|Ugandan|Moroccan)\s+(?:and\s+(?:Pakistani|Ghanaian|Kenyan|Tanzanian|Ugandan|Moroccan)\s+)?(?:riders|roads|highways|enthusiasts|delivery fleets)/gi, 'for urban commuter and commercial delivery fleets')
-      .replace(/(?:in|for)\s+(?:Nigeria|Pakistan|Kenya|Ghana|Tanzania|Uganda|Bangladesh|Nepal|Morocco)\s+and\s+(?:Nigeria|Pakistan|Kenya|Ghana|Tanzania|Uganda|Bangladesh|Nepal|Morocco)/gi, 'for commercial and municipal fleets')
-      .replace(/,\s*[A-Za-z ]+\s+fuel saver\.,?/gi, '.')
-      .replace(/[A-Za-z ]+\s+fuel saver\.,?/gi, '')
-      .replace(/,\s*delivery scooter\s*$/gi, '')
-      .replace(/Uganda premium capacity bulk\.,/gi, 'Premium capacity wholesale.')
-      .replace(/Uganda no grid needed\.,/gi, 'Premium off-grid hardware.')
-      .replace(/Uganda off-grid storage\.,/gi, 'High-reliability storage.')
-      .replace(/Uganda constant connect/gi, 'Fast connectivity')
-      .replace(/South Africa, Uganda/gi, 'Americas, Europe & Africa')
-      .replace(/Nigeria, Kenya/gi, 'Americas, Europe & Africa')
-      .replace(/Lagos and Nairobi/gi, 'regional commercial hubs')
-      .replace(/Lagos to Dhaka/gi, 'Urban Commuter & Delivery')
-      .replace(/Karachi and Dhaka/gi, 'commercial logistics fleets')
-      .replace(/\b(?:Nigerian|Kenyan|Pakistani|Ghanaian|Ugandan|Tanzanian)\b/gi, 'fleet')
-      .replace(/\b(?:Nigeria|Kenya|Pakistan|Ghana|Uganda|Tanzania)\b/gi, 'global markets')
-      .replace(/\s+/g, ' ')
-      .trim();
-  };
-
   allProducts = allProducts.map(p => ({
     ...p,
-    description: cleanDescription(p.description)
+    name: cleanGeoText(p.name),
+    description: cleanGeoText(p.description),
   }));
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": config.title,
-    "description": config.description,
+    "name": cleanGeoText(config.title),
+    "description": cleanGeoText(config.description),
     "publisher": {
       "@type": "Organization",
-      "name": "JoyHand Energy Manufacturing"
+      "name": "JoyHand"
     },
     "mainEntity": {
       "@type": "ItemList",
@@ -174,12 +142,7 @@ export default async function SolutionsPage({ params }) {
         "item": {
           "@type": "Product",
           "name": product.name,
-          "url": `https://www.joyhand.com/products/${product.slug}`,
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "89"
-          }
+          "url": `https://www.joyhand.com/products/${product.slug}`
         }
       }))
     }
