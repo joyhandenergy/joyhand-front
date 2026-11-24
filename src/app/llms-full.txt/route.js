@@ -40,7 +40,7 @@ export async function GET() {
   const lines = [
     "# JoyHand Energy - Full Context & Technical Documentation",
     "",
-    "> JoyHand Energy is a direct OEM/ODM factory manufacturer of commercial and residential LiFePO4 energy storage systems, hybrid solar inverters, Tier-1 monocrystalline solar panels, commercial solar streetlights, balance-of-system solar accessories & hardware, electric commuter scooters, commercial cargo motorcycles, electric dirt bikes, and portable power stations. Founded in 1998 and operating under ISO 9001:2015 certified standards from our 50,000 sq.m manufacturing facility in Guangzhou, China, JoyHand specializes in factory-direct B2B container supply, white-label manufacturing, and custom engineering for brand owners, fleet operators, and distributors across the Americas, Europe, Africa, and Asia.",
+    "> JoyHand Energy is a direct OEM/ODM factory manufacturer of commercial and residential LiFePO4 energy storage systems, hybrid solar inverters, Tier-1 monocrystalline solar panels, commercial solar streetlights, balance-of-system solar accessories & hardware, electric commuter scooters, commercial cargo motorcycles, electric dirt bikes, and portable power stations. Founded in 1998 and operating to ISO 9001:2015 manufacturing standards from our 50,000 sq.m manufacturing facility in Guangzhou, China, JoyHand specializes in factory-direct B2B container supply, white-label manufacturing, and custom engineering for brand owners, fleet operators, and distributors across the Americas, Europe, Africa, and Asia.",
     "",
     "## Corporate & Contact Details",
     `- Official Website: ${baseUrl}`,
@@ -51,7 +51,7 @@ export async function GET() {
     `- Wholesale Inquiries Email: ${email}`,
     `- Factory WhatsApp / Phone: ${phone}`,
     `- Priority Target Regions & Logistics Ports: North America (US retail, Amazon FBA, commercial distribution), Europe (EEC homologated urban mobility), Africa (Lagos, Nairobi, Mombasa, Durban), and Asia (Karachi, Dhaka, Chittagong)`,
-    `- Quality & Logistics Accreditations: ISO 9001:2015, UL 1973 (batteries), UL 2272 (e-scooters), UL 2271 (EV batteries), DOT/NHTSA street-legal compliance, FCC Part 15, CE, EEC/COC European type-approval, and UN38.3/MSDS documentation for safe maritime and air freight`,
+    `- Quality & Manufacturing Standards: Built to ISO 9001:2015, UL 1973 (batteries), UL 2272 (e-scooters), UL 2271 (EV batteries), DOT/NHTSA street-legal standards, FCC Part 15, CE, and UN38.3/MSDS documentation for safe maritime and air freight`,
     "",
     "## Manufacturing, Quality Control & OEM/ODM Capabilities",
     "JoyHand Energy controls every stage of production from raw cell grading to final export packing:",

@@ -171,7 +171,7 @@ function ProductCertifications({ certifications }) {
   if (!certifications || certifications.length === 0) return null;
   return (
     <div className="product-details__certifications">
-      <h3 className="product-details__certifications-heading">Certifications</h3>
+      <h3 className="product-details__certifications-heading">Manufacturing Standards</h3>
       <div className="product-details__certifications-list">
         {certifications.map((cert, idx) => (
           <span key={idx} className="product-details__certification-badge">{cert}</span>
@@ -304,9 +304,9 @@ function buildFallbackDesc(product) {
   const descMap = {
     battery: `Factory-direct ${product.name}${modelText} – Grade-A LiFePO4 chemistry, 6000+ cycles. Backup storage for residential, commercial, and microgrid solar systems.`,
     inverter: `${product.name}${modelText} – auto-switch solar, battery & grid power with sub-10ms transfer time. CE & UL compliant for split-phase 120V/240V and 230V grids.`,
-    "electric-mobility": `Factory-direct ${product.name}${modelText} – high-efficiency electric mobility engineered for commuter retail and commercial delivery fleets. UL 2272, DOT & CE certified.`,
+    "electric-mobility": `Factory-direct ${product.name}${modelText} – high-efficiency electric mobility engineered for commuter retail and commercial delivery fleets. Built to UL 2272, DOT & CE standards.`,
     "portable-power": `${product.name}${modelText} – rugged LiFePO4 portable power station with pure sine wave AC output and multi-region sockets for off-grid and emergency backup.`,
-    "power-bank": `${product.name}${modelText} – high-capacity Power Delivery fast charging with multi-layer safety IC protection. CE/FCC/UN38.3 certified for OEM wholesale.`,
+    "power-bank": `${product.name}${modelText} – high-capacity Power Delivery fast charging with multi-layer safety IC protection. Built to CE/FCC/UN38.3 standards for OEM wholesale.`,
     accessories: `${product.name}${modelText} – factory-direct solar hardware and tech accessories engineered for commercial B2B distribution and OEM/ODM supply.`,
   };
   return descMap[product.category] || `JoyHand ${product.name}${modelText} – factory-direct energy and e-mobility solution. Request B2B wholesale pricing.`;
@@ -471,7 +471,7 @@ export default async function ProductDetailsPage({ params }) {
           "@type": "Organization",
           "name": "Verified B2B Procurement Partner"
         },
-        "reviewBody": "Certified factory direct OEM/ODM supply with strict ISO 9001 quality compliance, robust Grade-A cell configuration, and reliable export packaging."
+        "reviewBody": "Factory direct OEM/ODM supply manufactured to ISO 9001 standards, with robust Grade-A cell configuration and compliant export packaging."
       }
     ],
     ...(product.features && product.features.length > 0 && {

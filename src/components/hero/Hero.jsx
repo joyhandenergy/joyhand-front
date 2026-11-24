@@ -88,7 +88,7 @@ export default function Hero() {
 
               <div className="hero__trust">
                 <div className="hero__trust-dot"></div>
-                <span>Direct Factory Pricing | White-Label OEM/ODM | Certified for US, Africa & Asia</span>
+                <span>Direct Factory Pricing | White-Label OEM/ODM | Built to Standards for US, Africa & Asia</span>
               </div>
             </div>
 

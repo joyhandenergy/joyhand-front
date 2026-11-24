@@ -23,7 +23,7 @@ export const metadata = {
     default: "Factory Direct Solar & Batteries | JoyHand",
     template: "%s | JoyHand",
   },
-  description: "Direct OEM/ODM manufacturer of LiFePO4 batteries, hybrid inverters, solar panels, and e-motorcycles. ISO 9001, CE & UL certified for global wholesale.",
+  description: "Direct OEM/ODM manufacturer of LiFePO4 batteries, hybrid inverters, solar panels, and e-motorcycles. Built to ISO 9001, CE & UL standards for global wholesale.",
   keywords: [
     "joyhand energy",
     "lifepo4 battery manufacturer china",
@@ -46,16 +46,16 @@ export const metadata = {
   },
   openGraph: {
     title: "JoyHand Energy | Direct Factory Partnership",
-    description: "Direct factory manufacturing of LiFePO4 batteries, hybrid inverters, solar panels & e-motorcycles. ISO 9001, CE & UL certified for global B2B supply chains.",
+    description: "Direct factory manufacturing of LiFePO4 batteries, hybrid inverters, solar panels & e-motorcycles. Built to ISO 9001, CE & UL standards for global B2B supply chains.",
     type: "website",
     siteName: "JoyHand",
     locale: "en_US",
     images: [
       {
-        url: "/homeImg/businessModelImage001.jpg", 
+        url: "/homeImg/businessModelImage001.jpg",
         width: 1200,
         height: 630,
-        alt: "JoyHand ISO 9001:2015 Manufacturing Facility",
+        alt: "JoyHand Manufacturing Facility Operating to ISO 9001:2015 Standards",
       },
     ],
   },
@@ -98,7 +98,7 @@ export default function RootLayout({ children }) {
             });
           `}
         </Script>
-        
+
         {/* Ahrefs Web Analytics */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"

@@ -121,13 +121,26 @@ export default async function Home() {
           "availableLanguage": ["en", "zh"]
         },
         "sameAs": [
-          "https://www.linkedin.com/company/joyhand"
+          "https://www.linkedin.com/in/joyhand-energy-022aa3451"
         ],
-        "hasCertification": [
-          "ISO 9001:2015",
-          "CE",
-          "UL",
-          "UN38.3"
+        "knowsAbout": [
+          "LiFePO4 Battery Manufacturing",
+          "B2B Energy Storage Systems (ESS)",
+          "OEM Solar Battery Packs & Server Racks",
+          "Hybrid Solar Inverters",
+          "Electric Motorcycles & Dirt Bikes",
+          "Commercial EV Fleet Manufacturing",
+          "Portable Power Stations & Solar Generators",
+          "Manufacturing to ISO 9001:2015 Standards",
+          "Manufacturing to UL 1973 & UN38.3 Standards"
+        ],
+        "areaServed": [
+          "Worldwide",
+          "North America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Latin America"
         ]
       },
       {

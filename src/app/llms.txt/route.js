@@ -39,7 +39,7 @@ export async function GET() {
   const lines = [
     "# JoyHand Energy",
     "",
-    "> JoyHand Energy is a direct OEM/ODM factory manufacturer of commercial and residential LiFePO4 energy storage systems, hybrid solar inverters, Tier-1 monocrystalline solar panels, commercial solar streetlights, balance-of-system solar accessories & hardware, electric commuter scooters, commercial cargo motorcycles, electric dirt bikes, and portable power stations. Founded in 1998 and operating under ISO 9001:2015 certified standards from our 50,000 sq.m manufacturing facility in Guangzhou, China, JoyHand specializes in factory-direct B2B container supply, white-label manufacturing, and custom engineering for brand owners, fleet operators, and distributors across the Americas, Europe, Africa, and Asia.",
+    "> JoyHand Energy is a direct OEM/ODM factory manufacturer of commercial and residential LiFePO4 energy storage systems, hybrid solar inverters, Tier-1 monocrystalline solar panels, commercial solar streetlights, balance-of-system solar accessories & hardware, electric commuter scooters, commercial cargo motorcycles, electric dirt bikes, and portable power stations. Founded in 1998 and operating to ISO 9001:2015 manufacturing standards from our 50,000 sq.m manufacturing facility in Guangzhou, China, JoyHand specializes in factory-direct B2B container supply, white-label manufacturing, and custom engineering for brand owners, fleet operators, and distributors across the Americas, Europe, Africa, and Asia.",
     "",
     "## Company & Factory Overview",
     `- Website: ${baseUrl}`,
@@ -50,8 +50,8 @@ export async function GET() {
     `- Direct Wholesale Email: ${email}`,
     `- Direct Phone & WhatsApp: ${phone}`,
     `- Priority Target Regions: North America (US retail, Amazon FBA & commercial distribution), Europe (EEC homologated urban mobility), Africa (Lagos, Nairobi, Mombasa, Durban), and Asia (Karachi, Dhaka, Chittagong)`,
-    `- Compliance & Certifications: UL 1973 (batteries), UL 2272 (e-scooters), UL 2271 (EV batteries), DOT/NHTSA street-legal compliance, FCC Part 15, CE, EEC/COC European type-approval, and UN38.3/MSDS documentation for seamless sea/air container freight`,
-    `- Facility Standards: ISO 9001:2015 audited quality control, 100% inline thermal stress testing, cell-matching, capacity grading, and automated laser welding`,
+    `- Compliance Standards: Engineered to comply with UL 1973 (batteries), UL 2272 (e-scooters), UL 2271 (EV batteries), DOT/NHTSA street-legal standards, FCC Part 15, CE, EEC/COC European type-approval standards, and UN38.3/MSDS documentation for seamless sea/air container freight`,
+    `- Facility Standards: Built to ISO 9001:2015 quality control standards, 100% inline thermal stress testing, cell-matching, capacity grading, and automated laser welding`,
     "",
     "## Core Product Categories",
   ];

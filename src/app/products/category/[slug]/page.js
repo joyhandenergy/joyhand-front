@@ -125,27 +125,56 @@ export default async function SolutionsPage({ params }) {
     description: cleanGeoText(p.description),
   }));
 
+  // Extract B2B FAQs for AI Search (Perplexity, ChatGPT, Gemini) & Google Rich Results
+  const rawFaqHtml = (config.bottomContent || '') + ' ' + (config.seoContent || '');
+  const faqMatches = [...rawFaqHtml.matchAll(/<p><strong>Q:\s*([^<]+)<\/strong><br\s*\/?>A:\s*([^<]+)<\/p>/gi)];
+  const categoryFaqs = [];
+  const seenQuestions = new Set();
+  for (const match of faqMatches) {
+    const q = match[1].trim();
+    const a = match[2].trim();
+    if (q && a && !seenQuestions.has(q)) {
+      seenQuestions.add(q);
+      categoryFaqs.push({ question: q, answer: a });
+    }
+  }
+
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": cleanGeoText(config.title),
-    "description": cleanGeoText(config.description),
-    "publisher": {
-      "@type": "Organization",
-      "name": "JoyHand"
-    },
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": allProducts.map((product, index) => ({
-        "@type": "ListItem",
-        "position": index + 1,
-        "item": {
-          "@type": "Product",
-          "name": product.name,
-          "url": `https://www.joyhand.com/products/${product.slug}`
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "name": cleanGeoText(config.title),
+        "description": cleanGeoText(config.description),
+        "publisher": {
+          "@type": "Organization",
+          "name": "JoyHand"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": allProducts.map((product, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+              "@type": "Product",
+              "name": product.name,
+              "url": `https://www.joyhand.com/products/${product.slug}`
+            }
+          }))
         }
-      }))
-    }
+      },
+      ...(categoryFaqs.length > 0 ? [{
+        "@type": "FAQPage",
+        "mainEntity": categoryFaqs.map(item => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        }))
+      }] : [])
+    ]
   };
 
   return (
