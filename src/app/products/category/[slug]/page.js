@@ -155,11 +155,8 @@ export default async function SolutionsPage({ params }) {
           "itemListElement": allProducts.map((product, index) => ({
             "@type": "ListItem",
             "position": index + 1,
-            "item": {
-              "@type": "Product",
-              "name": product.name,
-              "url": `https://www.joyhand.com/products/${product.slug}`
-            }
+            "url": `https://www.joyhand.com/products/${product.slug}`,
+            "name": product.name
           }))
         }
       },

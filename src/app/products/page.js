@@ -173,13 +173,8 @@ export default async function ProductsPage() {
       "itemListElement": allProducts.map((product, index) => ({
         "@type": "ListItem",
         "position": index + 1,
-        "item": {
-          "@type": "Product",
-          "name": product.name,
-          "url": `https://www.joyhand.com/products/${product.slug}`,
-          "image": product.image?.startsWith('http') ? product.image : `https://www.joyhand.com${product.image || "/images/placeholder.jpg"}`,
-          "description": (product.description || "").slice(0, 160)
-        }
+        "url": `https://www.joyhand.com/products/${product.slug}`,
+        "name": product.name
       }))
     }
   };
