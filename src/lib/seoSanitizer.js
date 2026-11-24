@@ -54,6 +54,10 @@ export function cleanGeoText(text) {
     .replace(/\s*[–—|,-]?\s*\bglobal markets\b\s*$/gi, "")
     // Clean orphaned punctuation left after removals
     .replace(/\s+([,.;:])/g, "$1")
+    .replace(/[,;:]+\s*\./g, ".")
+    .replace(/\s*,\s*,+/g, ",")
+    .replace(/\.+/g, ".")
+    .replace(/,\s*$/g, ".")
     .replace(/([–—|-])\s*$/g, "")
     .replace(/^\s*([–—|,-])\s*/g, "")
     .replace(/\s{2,}/g, " ")

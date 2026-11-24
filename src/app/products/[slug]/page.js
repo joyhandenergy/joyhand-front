@@ -11,7 +11,7 @@ import ProductFAQ from "./ProductFAQ";
 import ProductRelated from "./ProductRelated";
 import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
-import { sanitizeProductForSeo, formatSeoTitle, formatSeoDescription } from "@/lib/seoSanitizer";
+import { sanitizeProductForSeo, formatSeoTitle, formatSeoDescription, cleanGeoText } from "@/lib/seoSanitizer";
 import "../Products.css";
 
 export const dynamicParams = false;
@@ -419,13 +419,14 @@ export default async function ProductDetailsPage({ params }) {
   } else {
     plainTextDescription = `Direct factory supply of ${product.name}. Request wholesale pricing for B2B importers.`;
   }
+  plainTextDescription = cleanGeoText(plainTextDescription);
 
   const jsonLdImageUrl = images[0]?.startsWith('http')
     ? images[0]
     : `https://www.joyhand.com${images[0]}`;
 
   // Generate deterministic B2B rating metrics per product for Google Rich Snippets
-  const slugStr = String(product.slug?.current || product.slug || product.name);
+  const slugStr = String(product.slug?.current || product.slug || product.name || slug || "product");
   let hash = 0;
   for (let i = 0; i < slugStr.length; i++) {
     hash = (hash << 5) - hash + slugStr.charCodeAt(i);
@@ -434,6 +435,41 @@ export default async function ProductDetailsPage({ params }) {
   const positiveHash = Math.abs(hash);
   const reviewCount = 32 + (positiveHash % 35); // 32 to 66 reviews
   const ratingValue = (4.8 + ((positiveHash % 3) * 0.1)).toFixed(1); // 4.8, 4.9, or 5.0
+
+  // ── Normalize B2B Model Number and Alphanumeric SKU ──
+  const rawModel = typeof product.model === 'string' ? product.model.trim().replace(/\s+/g, ' ') : "";
+  const categoryPrefixMap = {
+    battery: "JH-BAT",
+    inverter: "JH-INV",
+    "electric-mobility": "JH-EV",
+    "portable-power": "JH-PPS",
+    "power-bank": "JH-PB",
+    accessories: "JH-SOL"
+  };
+  const categoryPrefix = categoryPrefixMap[product.category] || "JH-PROD";
+  const slugClean = slugStr
+    .toUpperCase()
+    .replace(/^JOYHAND-|^JH-/, "")
+    .replace(/[^A-Z0-9]/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 24);
+
+  // Format UI model display: clean spaces & format multi-model chains (e.g. W24100-W51100-W51200 -> W24100 / W51100 / W51200)
+  let displayModel = rawModel;
+  if (!displayModel) {
+    displayModel = `${categoryPrefix}-${slugClean || "STANDARD"}`;
+  } else if (/^[A-Z0-9]+-[A-Z0-9]+-[A-Z0-9]+/i.test(displayModel)) {
+    displayModel = displayModel.split('-').join(' / ');
+  }
+
+  // Pure alphanumeric SKU for Google Schema (converts slashes to hyphens so Google validator accepts it)
+  const cleanSku = String(rawModel || slugClean || "SKU")
+    .toUpperCase()
+    .replace(/[^A-Z0-9_-]/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 40);
 
   const productSchema = {
     "@type": "Product",
@@ -448,9 +484,9 @@ export default async function ProductDetailsPage({ params }) {
       "@type": "Organization",
       "name": "JoyHand"
     },
-    "model": product.model || product.name,
-    "sku": product.model || product.slug?.current || product.slug,
-    "mpn": product.model || product.slug?.current || product.slug,
+    "model": displayModel,
+    "sku": cleanSku,
+    "mpn": cleanSku,
     "category": categoryDisplay,
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -525,7 +561,7 @@ export default async function ProductDetailsPage({ params }) {
             <div className="product-details__meta">
               <span className="product-details__badge">{categoryIcon} {categoryDisplay}</span>
               <span className="product-details__type">{typeDisplay}</span>
-              {product.model && <span className="product-details__model">Model: {product.model}</span>}
+              <span className="product-details__model">Model: {displayModel}</span>
             </div>
             <h1 className="product-details__title">{product.name}</h1>
             <p className="product-details__description">{plainTextDescription}</p>
