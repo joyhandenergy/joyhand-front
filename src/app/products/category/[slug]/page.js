@@ -7,7 +7,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { cleanGeoText, formatSeoTitle, formatSeoDescription } from "@/lib/seoSanitizer";
 import "../../Products.css";
 
-export const dynamicParams = false;
+export const runtime = "edge";
 
 export async function generateMetadata({ params, searchParams }) {
   const { slug } = await params;
@@ -47,10 +47,6 @@ export async function generateMetadata({ params, searchParams }) {
       canonical: canonical,
     }
   };
-}
-
-export async function generateStaticParams() {
-  return Object.keys(solutionConfigs).map((slug) => ({ slug }));
 }
 
 const PRODUCTS_PER_PAGE = 24;

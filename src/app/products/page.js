@@ -6,6 +6,8 @@ import { productData, productsCatalogData, isRedirectedSlug } from "@/data";
 import { cleanGeoText } from "@/lib/seoSanitizer";
 import "./Products.css";
 
+export const runtime = "edge";
+
 export async function generateMetadata({ searchParams }) {
   const resolvedSearchParams = await searchParams;
   const page = Math.max(1, Number(resolvedSearchParams?.page) || 1);
