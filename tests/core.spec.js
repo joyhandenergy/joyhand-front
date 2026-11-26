@@ -33,7 +33,7 @@ test.describe('JoyHand Energy Core Functionality', () => {
     await page.goto('/products');
     
     // Check that the products page loaded
-    await expect(page).toHaveTitle(/Products/i);
+    await expect(page).toHaveTitle(/Wholesale Battery.*JoyHand/i);
     
     // Click on the first product link
     const firstProduct = page.locator('.product-card__inner').first();

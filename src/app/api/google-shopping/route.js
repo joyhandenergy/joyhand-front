@@ -62,7 +62,7 @@ export async function GET() {
   <channel>
     <title>JoyHand Energy Products</title>
     <link>https://www.joyhand.com</link>
-    <description>Direct factory wholesale of LFP batteries, hybrid inverters, e-mobility solutions, and portable power stations.</description>
+    <description>Direct factory wholesale of LFP solar batteries, hybrid inverters, electric scooters & motorcycles, and portable power stations.</description>
 `;
 
     // Add each product to the XML feed

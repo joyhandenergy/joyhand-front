@@ -1,4 +1,5 @@
 import { blogPosts as localBlogPosts } from "@/data";
+import { cleanGeoText } from "@/lib/seoSanitizer";
 import Link from "next/link";
 import { PiArrowRight } from "react-icons/pi";
 import BlogCard from "@/components/blogCard/BlogCard";
@@ -14,41 +15,48 @@ export const revalidate = 60;
 
 export const metadata = {
   title: {
-    absolute: "Factory Engineering & B2B Sourcing Guides | JoyHand",
+    absolute: "Factory Engineering & Sourcing Guides | JoyHand Blog",
   },
-  description: "Factory engineering reports, quality benchmarks, and technical sourcing guides for LiFePO4 batteries, electric motorcycles, inverters, and solar systems.",
+  description: "B2B factory engineering guides, QC benchmarks, and sourcing tips for LiFePO4 solar batteries, electric scooters, hybrid inverters & power banks.",
   keywords: [
-    "B2B manufacturing blog",
+    "JoyHand Blog",
+    "B2B solar manufacturing blog",
     "LiFePO4 battery sourcing guide",
-    "factory engineering reports",
-    "e-motorcycle production news",
-    "OEM vs ODM guide",
-    "solar inverter benchmarks",
-    "hardware supply chain intelligence"
+    "electric scooter OEM guide",
+    "OEM vs ODM sourcing",
+    "hybrid solar inverter benchmarks",
+    "China factory quality control"
   ],
   alternates: {
     canonical: 'https://www.joyhand.com/blog',
   },
   openGraph: {
-    title: "Factory Engineering & B2B Sourcing Guides | JoyHand",
-    description: "Factory engineering reports, quality benchmarks, and technical sourcing guides for LiFePO4 batteries, electric motorcycles, inverters, and solar systems.",
+    title: "Factory Engineering & Sourcing Guides | JoyHand Blog",
+    description: "B2B factory engineering guides, QC benchmarks, and sourcing tips for LiFePO4 solar batteries, electric scooters, hybrid inverters & power banks.",
     url: "https://www.joyhand.com/blog",
+    siteName: "JoyHand Blog",
     type: "website",
     images: [
       {
         url: "/pageHeadImg/pageheader-blog1.jpg", 
         width: 1200,
         height: 630,
-        alt: "JoyHand Factory Engineering & Sourcing Guides",
+        alt: "JoyHand Blog – Factory Engineering & Sourcing Guides",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Factory Engineering & Sourcing Guides | JoyHand Blog",
+    description: "B2B factory engineering guides, QC benchmarks, and sourcing tips for LiFePO4 solar batteries, electric scooters, hybrid inverters & power banks.",
+    images: ["/pageHeadImg/pageheader-blog1.jpg"],
   }
 };
 
 async function getBlogPosts() {
   let sanityPosts = [];
   try {
-    const rawSanity = await client.fetch(`*[_type == "post"] | order(publishedAt desc) {
+    const rawSanity = await client.fetch(`*[_type == "post" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
       _id,
       title,
       "slug": slug.current,
@@ -61,13 +69,13 @@ async function getBlogPosts() {
 
     sanityPosts = rawSanity.map((p) => ({
       id: p._id,
-      title: p.title,
+      title: cleanGeoText(p.title),
       slug: p.slug,
-      excerpt: p.excerpt || "",
+      excerpt: cleanGeoText(p.excerpt || ""),
       image: p.mainImage?.asset ? urlFor(p.mainImage).url() : "/images/placeholder.jpg",
       date: p.publishedAt,
-      readTime: p.readTime || "5 min read",
-      category: p.category || "Energy Technology"
+      readTime: p.readTime || "6 min read",
+      category: cleanGeoText(p.category || "Energy Technology")
     }));
   } catch (error) {
     console.error("Failed to fetch blog posts from Sanity:", error);
@@ -86,7 +94,7 @@ export default async function BlogPage() {
     "@context": "https://schema.org",
     "@type": "Blog",
     "@id": "https://www.joyhand.com/blog#blog",
-    "name": "Factory Engineering & B2B Sourcing Guides | JoyHand",
+    "name": "Factory Engineering & Sourcing Guides | JoyHand Blog",
     "description": "Direct-from-factory engineering reports, quality benchmarks, and technical sourcing guides for LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar energy systems.",
     "url": "https://www.joyhand.com/blog",
     "publisher": {
@@ -120,7 +128,7 @@ export default async function BlogPage() {
         <div className="container">
           <SectionHeader
             badge="PRODUCT & ENGINEERING INSIGHTS"
-            title="Technical Insights for Our Energy & Mobility Products"
+            title="Technical Insights for Our Solar, Battery & Scooter Products"
             subtitle="Deep-dive into the engineering, assembly, and real-world performance of JoyHand's product portfolio. From Grade-A LiFePO4 battery storage packs and intelligent BMS integration to electric motorcycles, hybrid solar inverters, and portable power stations, our factory engineering team shares the technical benchmarks, compliance data, and product specifications you need to make confident B2B sourcing decisions."
           />
 

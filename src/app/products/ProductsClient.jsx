@@ -1,32 +1,21 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRef, useEffect } from "react";
 import Link from "next/link";
 import { solutionLinks, productsCatalogData } from "@/data";
 import ProductCard from "@/components/productCard/ProductCard";
 import Pagination from "@/components/pagination/Pagination";
 import { PiPackage } from "react-icons/pi";
-import { useScrollReveal } from "@/components/useScrollReveal";
+import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import "./Products.css";
 
-const DESKTOP_PER_PAGE = 24;
-const MOBILE_PER_PAGE = 12;
-
-export default function ProductsClient({ initialProducts = [] }) {
-  const searchParams = useSearchParams();
-  const page = Number(searchParams.get("page")) || 1;
+export default function ProductsClient({
+  products = [],
+  totalCount = 0,
+  totalPages = 1,
+  currentPage = 1,
+}) {
   const navRef = useRef(null);
-  const [itemsPerPage, setItemsPerPage] = useState(DESKTOP_PER_PAGE);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setItemsPerPage(window.innerWidth < 768 ? MOBILE_PER_PAGE : DESKTOP_PER_PAGE);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const onTabClick = () => {
     if (typeof window !== "undefined") {
@@ -41,27 +30,15 @@ export default function ProductsClient({ initialProducts = [] }) {
       if (navRef.current) {
         navRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
       }
+    } else if (currentPage > 1 && navRef.current) {
+      navRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
       window.scrollTo(0, 0);
     }
-  }, []);
-
-  const totalPages = Math.ceil(initialProducts.length / itemsPerPage);
-  const currentPage = Math.min(page, Math.max(1, totalPages));
-  const start = (currentPage - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  const paginatedProducts = initialProducts.slice(start, end);
-
-  useEffect(() => {
-    if (page > 1 && navRef.current) {
-      navRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }, [page]);
-
-  const sectionReveal = useScrollReveal();
+  }, [currentPage]);
 
   return (
-    <section ref={sectionReveal.ref} className={`products-page__section reveal ${sectionReveal.isVisible ? 'is-visible' : ''}`}>
+    <ScrollRevealWrapper as="section" className="products-page__section">
       <div className="container">
 
         {/* ── Section 1: Intro & Authority (Above Filter Bar) ── */}
@@ -113,15 +90,15 @@ export default function ProductsClient({ initialProducts = [] }) {
         {/* ── Results Header ── */}
         <div className="products-page__results-header">
           <p className="products-page__results-count">
-            Showing <strong>{paginatedProducts.length}</strong> of{" "}
-            <strong>{initialProducts.length}</strong> products
+            Showing <strong>{products.length}</strong> of{" "}
+            <strong>{totalCount}</strong> products
           </p>
         </div>
 
         {/* ── Products Grid ── */}
         <div className="products-page__grid">
-          {paginatedProducts.length > 0 ? (
-            paginatedProducts.map((product, index) => (
+          {products.length > 0 ? (
+            products.map((product, index) => (
               <ProductCard key={product.id} product={product} priority={index < 4} />
             ))
           ) : (
@@ -164,6 +141,6 @@ export default function ProductsClient({ initialProducts = [] }) {
           </div>
         </section>
       </div>
-    </section>
+    </ScrollRevealWrapper>
   );
 }

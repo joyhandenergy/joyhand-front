@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
 const categoryMeta = {
   battery: { name: "Energy Storage Systems", desc: "Industrial-grade LiFePO4 battery solutions. Engineered for reliability, vertical integration, and long cycle life in residential and commercial environments." },
   inverter: { name: "Solar Power Conversion", desc: "Advanced MPPT hybrid and off-grid inverters. Built with Tier-1 power electronics for high-efficiency energy management and smart grid integration." },
-  "electric-mobility": { name: "E-Mobility Solutions", desc: "Sustainable urban transportation. High-torque electric motors and long-range battery packs designed for commercial logistics and personal mobility." },
+  "electric-mobility": { name: "Electric Scooters & Motorcycles", desc: "High-torque electric scooters, motorcycles, and commercial cargo tricycles built with durable steel frames and swappable lithium packs for global fleets." },
   "portable-power": { name: "Portable Energy Hubs", desc: "Production-ready portable power solutions. High-capacity LFP cells and pure sine wave technology for reliable off-grid energy anywhere." },
   "power-bank": { name: "Mobile Energy Solutions", desc: "Premium consumer tech chargers. Ultra-fast PD charging, wireless integration, and ruggedized designs for global distribution." },
   "accessories": { name: "Tech & Solar Accessories", desc: "Wholesale solar panels, LED street lights, and mobile tech accessories engineered for global distributors." },

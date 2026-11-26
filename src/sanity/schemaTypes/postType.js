@@ -102,6 +102,76 @@ export const postType = defineType({
       type: 'blockContent',
       title: 'Body Content',
     }),
+    defineField({
+      name: 'relatedLinks',
+      title: 'Recommended Product & Category Links (Bottom Card Box)',
+      description: 'Internal links shown in the Recommended Factory Product Lines box at the bottom of the article.',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          fields: [
+            {
+              name: 'label',
+              title: 'Link Keyword Label (e.g., LiFePO4 Solar Battery OEM Manufacturer)',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'reference',
+              title: 'Link to Product or Blog Post',
+              type: 'reference',
+              to: [{type: 'product'}, {type: 'post'}],
+            },
+            {
+              name: 'routePath',
+              title: 'Or Category / Factory Page',
+              type: 'string',
+              options: {
+                list: [
+                  {title: 'All Wholesale Products (/products)', value: '/products'},
+                  {title: 'LiFePO4 Solar Batteries (/products/category/solar-batteries)', value: '/products/category/solar-batteries'},
+                  {title: 'Hybrid Solar Inverters (/products/category/solar-inverters)', value: '/products/category/solar-inverters'},
+                  {title: 'Portable Power Stations (/products/category/portable-power-stations)', value: '/products/category/portable-power-stations'},
+                  {title: 'Electric Scooters & Motorcycles (/products/category/electric-motorcycles)', value: '/products/category/electric-motorcycles'},
+                  {title: 'Solar Panels & Tech Accessories (/products/category/solar-accessories)', value: '/products/category/solar-accessories'},
+                  {title: 'Custom Power Bank OEM (/products/category/power-banks)', value: '/products/category/power-banks'},
+                  {title: 'Manufacturing Facility (/manufacturing)', value: '/manufacturing'},
+                  {title: 'About JoyHand (/about-us)', value: '/about-us'},
+                  {title: 'Contact / Request Quote (/contact-us)', value: '/contact-us'},
+                ],
+              },
+            },
+            {
+              name: 'customHref',
+              title: 'Or Custom Relative Path (e.g., /products/10kwh-wall-mount-battery)',
+              type: 'string',
+            },
+          ],
+          preview: {
+            select: {
+              title: 'label',
+              routePath: 'routePath',
+              customHref: 'customHref',
+              refSlug: 'reference.slug.current',
+            },
+            prepare({title, routePath, customHref, refSlug}) {
+              return {
+                title: title || 'Internal Link',
+                subtitle: refSlug ? `/products/${refSlug}` : (routePath || customHref || 'Select target'),
+              };
+            },
+          },
+        }),
+      ],
+    }),
+    defineField({
+      name: 'autoKeywordLinks',
+      title: 'Auto-Link Unlinked Product Keywords',
+      type: 'boolean',
+      description: 'Automatically links the first mention of key product terms (LiFePO4 batteries, hybrid inverters, electric scooters, power banks) if not manually linked in Body.',
+      initialValue: true,
+    }),
   ],
   preview: {
     select: {

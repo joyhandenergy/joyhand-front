@@ -22,8 +22,8 @@ export const structure = (S) =>
                 .title('Power Banks')
                 .child(S.documentList().title('Power Banks').filter('_type == "product" && category == "power-bank"').apiVersion('v2024-05-28')),
               S.listItem()
-                .title('E-Mobility')
-                .child(S.documentList().title('E-Mobility').filter('_type == "product" && category == "electric-mobility"').apiVersion('v2024-05-28')),
+                .title('Electric Scooters & Motorcycles')
+                .child(S.documentList().title('Electric Scooters & Motorcycles').filter('_type == "product" && category == "electric-mobility"').apiVersion('v2024-05-28')),
               S.listItem()
                 .title('Tech & Solar Accessories')
                 .child(S.documentList().title('Tech & Solar Accessories').filter('_type == "product" && category == "accessories"').apiVersion('v2024-05-28')),

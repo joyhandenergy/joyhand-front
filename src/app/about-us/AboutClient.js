@@ -100,8 +100,8 @@ export default function AboutClient() {
   return (
     <main className="about-page">
       <PageHeader
-        title="The Factory Behind Global Power & Mobility Supply"
-        subtitle="JoyHand is a direct manufacturer based in Guangzhou, China. Founded in 1998, we own and operate a 50,000 m² production facility where we build LiFePO4 batteries, electric motorcycles, and solar hardware."
+        title="The Factory Behind Global Solar & Scooter Supply"
+        subtitle="JoyHand is a direct manufacturer based in Guangzhou, China. Founded in 1998, we own and operate a 50,000 m² production facility where we build LiFePO4 batteries, electric scooters & motorcycles, and solar hardware."
         pageImage="/pageHeadImg/pageheader-about01.jpg"
         breadcrumbCurrent="About Us"
       />
@@ -364,7 +364,7 @@ export default function AboutClient() {
             <div className="abtCta-banner__text">
               <h4 className="abtCta-banner__title">Dominate Your Local Market with a <span className="title--highlight">Direct Factory Partner</span></h4>
               <p className="abtCta-banner__subtitle">
-                Unlock Tier 1 OEM/ODM manufacturing, ISO 9001:2015 standard production, and customized engineering support for your battery and mobility business.
+                Unlock Tier 1 OEM/ODM manufacturing, ISO 9001:2015 standard production, and customized engineering support for your battery and electric scooter business.
               </p>
             </div>
             <Link

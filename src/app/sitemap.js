@@ -7,9 +7,9 @@ export const revalidate = 3600; // Update sitemap every hour
 export default async function sitemap() {
   const baseUrl = "https://www.joyhand.com";
 
-  // 1. Fetch live slugs from Sanity
-  const sanityProducts = await client.fetch(`*[_type == "product"]{ "slug": slug.current, _updatedAt }`);
-  const sanityPosts = await client.fetch(`*[_type == "post"]{ "slug": slug.current, _updatedAt }`);
+  // 1. Fetch live published slugs from Sanity
+  const sanityProducts = await client.fetch(`*[_type == "product" && !(_id in path("drafts.**"))]{ "slug": slug.current, _updatedAt }`);
+  const sanityPosts = await client.fetch(`*[_type == "post" && !(_id in path("drafts.**"))]{ "slug": slug.current, _updatedAt }`);
 
   // Merge products and filter out any 301-redirected legacy slugs
   const validSanityProducts = (sanityProducts || []).filter(p => p.slug && !isRedirectedSlug(p.slug));
@@ -57,7 +57,7 @@ export default async function sitemap() {
   const blogRoutes = allPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post._updatedAt, 
-    changeFrequency: "yearly",
+    changeFrequency: "monthly",
     priority: 0.7,
   }));
 

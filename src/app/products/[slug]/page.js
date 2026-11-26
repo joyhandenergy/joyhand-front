@@ -33,7 +33,7 @@ function getCategoryDisplay(category) {
   switch (category) {
     case "battery": return "Battery Storage Solutions";
     case "inverter": return "Smart Hybrid Inverters";
-    case "electric-mobility": return "Electric Mobility Solutions";
+    case "electric-mobility": return "Electric Scooters & Motorcycles";
     case "portable-power": return "Portable Power Stations";
     case "power-bank": return "Premium Power Banks";
     case "accessories": return "Tech & Solar Accessories";
@@ -193,6 +193,114 @@ function ProductWarranty({ warranty }) {
 
 import Script from "next/script";
 
+// ── Unique Spec-Driven H1 & B2B Title/Description Builders ────────────────
+function formatSpecTokenFromSlug(slugStr) {
+  const match = String(slugStr || "").match(/(?:^|-)(\d+(?:\.\d+)?(?:kwh|kw|mah|wh|w|v|ah))(?=-|$)/i);
+  if (!match) return "";
+  return match[1]
+    .replace(/kwh/i, "kWh")
+    .replace(/kw/i, "kW")
+    .replace(/mah/i, "mAh")
+    .replace(/wh/i, "Wh")
+    .replace(/w$/i, "W")
+    .replace(/v$/i, "V")
+    .replace(/ah$/i, "Ah");
+}
+
+function buildUniqueProductH1(product, slugStr) {
+  let baseName = cleanGeoText(product?.name || "Energy Solution");
+  const model = typeof product?.model === "string" ? product.model.trim().replace(/\s+/g, " ") : "";
+  const specToken = formatSpecTokenFromSlug(slugStr);
+  const specUnitMatch = specToken.match(/(kwh|kw|mah|wh|w|v|ah)$/i);
+  const hasSameUnitSpec = specUnitMatch
+    ? new RegExp(`\\d+(?:\\.\\d+)?\\s*${specUnitMatch[1]}\\b`, "i").test(baseName)
+    : false;
+
+  if (specToken && !hasSameUnitSpec && !baseName.toLowerCase().includes(specToken.toLowerCase())) {
+    baseName = `${specToken} ${baseName}`;
+  }
+
+  const genericNames = [
+    "wall mount battery pack",
+    "mobile battery pack",
+    "s-series battery",
+    "lithium battery pack",
+    "wall mounted inverter",
+    "foldable monocrystalline solar panel"
+  ];
+  const isGeneric = genericNames.some((g) => baseName.toLowerCase().includes(g));
+
+  if (model && (isGeneric || !baseName.toLowerCase().includes(model.toLowerCase()))) {
+    if (isGeneric && !baseName.includes(model)) {
+      baseName = `${baseName} (${model})`;
+    }
+  }
+
+  return baseName;
+}
+
+function getCategoryB2bRole(category) {
+  const roleMap = {
+    battery: "OEM Manufacturer",
+    inverter: "Manufacturer & Supplier",
+    "electric-mobility": "Wholesale Factory",
+    "portable-power": "ODM Manufacturer",
+    "power-bank": "OEM Supplier",
+    accessories: "Wholesale Supplier",
+  };
+  return roleMap[category] || "OEM Manufacturer";
+}
+
+function getCategoryBodyCopy(product, uniqueH1, displayModel) {
+  const roleCopyMap = {
+    battery: `Direct China LiFePO4 battery manufacturer & wholesale ESS supplier for ${uniqueH1} (Model: ${displayModel}). Engineered with Grade-A cells for 48V/51.2V solar backup, telecom racks, and commercial ESS with private-label OEM branding.`,
+    inverter: `Direct China hybrid solar inverter manufacturer & B2B supplier for ${uniqueH1} (Model: ${displayModel}). Built for split-phase 120V/240V and off-grid solar systems with wholesale container pricing and custom OEM firmware.`,
+    "electric-mobility": `Direct China electric motorcycle, scooter & cargo tricycle factory for ${uniqueH1} (Model: ${displayModel}). Supplied wholesale to dealers and fleet operators with private-label liveries and compliance built to UL 2272 / EEC / DOT standards.`,
+    "portable-power": `Direct portable power station ODM manufacturer & bulk solar generator supplier for ${uniqueH1} (Model: ${displayModel}). Available for white-label retail distribution with regional AC outlets and fast AC/solar recharge.`,
+    "power-bank": `Direct custom power bank OEM manufacturer & private-label wholesale supplier for ${uniqueH1} (Model: ${displayModel}). Built to UN38.3 airline-safe standards with laser logo engraving and retail-ready packaging.`,
+    accessories: `Direct China solar panel & PV hardware wholesale manufacturer for ${uniqueH1} (Model: ${displayModel}). Available in consolidated B2B container shipments engineered to CE, IEC, and RoHS standards.`,
+  };
+  return roleCopyMap[product.category] || `Direct China OEM/ODM manufacturer and wholesale B2B supplier for ${uniqueH1} (Model: ${displayModel}). Factory-direct container pricing and private-label customization available.`;
+}
+
+function buildSingleProductTitle(product, slugStr) {
+  const role = getCategoryB2bRole(product.category);
+  const cleanedExisting = cleanGeoText(product.seoTitle || "")
+    .replace(/\s*[|\-–—]\s*JoyHand(?:\s+Energy)?\s*$/i, "")
+    .trim();
+
+  if (cleanedExisting && /\b(manufacturer|supplier|factory|oem|odm|wholesale)\b/i.test(cleanedExisting)) {
+    return cleanedExisting;
+  }
+
+  let base = cleanedExisting
+    ? cleanedExisting
+        .replace(/\s*[–—-]\s*(?:B2B|Global|Fleet|Off-Grid|Wholesale Africa|Solar Storage|Backup Power|Telecom UPS|Data Center Backup)\b.*$/i, "")
+        .replace(/\b(?:B2B\s*-\s*Global|B2B)\b/gi, "")
+        .trim()
+    : buildUniqueProductH1(product, slugStr);
+
+  // Strip trailing parentheses if long so the B2B supplier keyword fits cleanly in 64 chars
+  if (base.length > 36) {
+    base = base.replace(/\s*\([^)]*\)\s*$/, "").trim();
+  }
+
+  const candidate = `${base} ${role}`;
+  if (candidate.length <= 52) return candidate;
+
+  // Trim base cleanly so the B2B supplier/manufacturer keyword is NEVER truncated
+  const h1Short = buildUniqueProductH1(product, slugStr).replace(/\s*\([^)]*\)\s*$/, "").trim();
+  const preferredBase = (base.length <= h1Short.length ? base : h1Short);
+  const maxBase = Math.max(18, 52 - role.length - 1);
+  let trimmedBase = preferredBase;
+  if (trimmedBase.length > maxBase) {
+    const sliced = trimmedBase.slice(0, maxBase);
+    const lastSpace = sliced.lastIndexOf(" ");
+    trimmedBase = (lastSpace > 12 ? sliced.slice(0, lastSpace) : sliced).replace(/[\s,.\-–—|:]+$/, "");
+  }
+  return `${trimmedBase} ${role}`;
+}
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
 
@@ -205,38 +313,40 @@ export async function generateMetadata({ params }) {
 
   product = sanitizeProductForSeo(JSON.parse(JSON.stringify(product)));
 
-  // ── Use dedicated SEO fields if available, else smart category fallback ──
-  const fallbackTitle = buildFallbackTitle(product);
+  // ── Build spec-specific + B2B supplier SEO fields (no weak legacy overrides) ──
   const fallbackDesc = buildFallbackDesc(product);
-
-  const finalTitle = formatSeoTitle(product.seoTitle || fallbackTitle);
-  const finalDescription = formatSeoDescription(product.metaDescription || product.shortDescription || fallbackDesc, fallbackDesc);
+  const finalTitle = formatSeoTitle(buildSingleProductTitle(product, slug));
+  const rawDesc = product.metaDescription || product.shortDescription || fallbackDesc;
+  const enrichedDesc = /\b(manufacturer|supplier|factory|oem|odm|wholesale)\b/i.test(rawDesc)
+    ? rawDesc
+    : `${rawDesc.replace(/[.!?]*$/, "")}. Direct China OEM manufacturer & wholesale supplier.`;
+  const finalDescription = formatSeoDescription(enrichedDesc, fallbackDesc);
 
   // Category-specific keyword banks for richer indexing
   const categoryKeywords = {
     battery: [
-      "LiFePO4 battery manufacturer", "UL 1973 solar battery OEM", "server rack battery wholesale",
-      "solar storage Americas Africa Asia", "48V 100Ah lithium battery", "home energy storage supplier"
+      "LiFePO4 battery manufacturer china", "UL 1973 solar battery OEM", "51.2V server rack battery wholesale",
+      "commercial ESS supplier", "48V 100Ah lithium battery supplier", "private label solar battery factory"
     ],
     inverter: [
-      "hybrid solar inverter manufacturer", "split-phase 120V 240V inverter OEM", "pure sine wave inverter factory",
-      "off-grid inverter supplier", "commercial solar inverter wholesale", "CE UL compliant inverter"
+      "hybrid solar inverter manufacturer", "split-phase 120V 240V inverter supplier", "pure sine wave inverter factory",
+      "off-grid solar inverter OEM", "commercial solar inverter wholesale", "IP54 outdoor solar inverter"
     ],
     "electric-mobility": [
-      "UL 2272 electric scooter manufacturer", "DOT electric motorcycle factory", "commercial delivery scooter OEM",
-      "swappable battery e-motorcycle", "private label electric scooter USA", "heavy cargo electric tricycle factory"
+      "UL 2272 electric scooter OEM", "EEC electric motorcycle factory china", "commercial delivery scooter supplier",
+      "swappable battery e-motorcycle", "electric cargo tricycle manufacturer", "electric dirt bike wholesale china"
     ],
     "portable-power": [
-      "portable power station manufacturer", "solar generator OEM", "LiFePO4 portable power station",
-      "emergency backup power supply", "outdoor lithium generator factory"
+      "portable power station ODM manufacturer", "bulk solar generator supplier", "LiFePO4 portable power station OEM",
+      "emergency backup power station wholesale", "fast charging power station factory"
     ],
     "power-bank": [
-      "custom power bank manufacturer", "USB-C PD fast charging OEM", "bulk mobile charger supplier",
-      "private label power bank factory", "UN38.3 travel power bank"
+      "custom power bank OEM manufacturer", "private label power bank supplier", "100W PD power bank factory",
+      "MagSafe wireless power bank OEM", "built-in cable power bank wholesale"
     ],
     accessories: [
-      "Tier 1 monocrystalline solar panels", "commercial solar streetlight manufacturer",
-      "pure copper PV cable supplier", "wholesale solar accessories"
+      "monocrystalline solar panel manufacturer", "550W bulk solar panels supplier", "foldable solar panel OEM",
+      "commercial solar street light manufacturer", "pure copper PV cable wholesale"
     ],
   };
   const keywords = [
@@ -244,8 +354,8 @@ export async function generateMetadata({ params }) {
     product.name,
     product.model,
     ...(product.features || []),
-    "B2B energy & EV manufacturer",
-    "JoyHand factory direct",
+    "China B2B OEM ODM manufacturer",
+    "JoyHand wholesale supplier",
   ].filter(Boolean);
 
   let imageUrl = "/homeImg/businessModelImage001.jpg";
@@ -271,7 +381,7 @@ export async function generateMetadata({ params }) {
           url: imageUrl,
           width: 800,
           height: 600,
-          alt: `${product.name} – JoyHand Energy`,
+          alt: `${product.name} – JoyHand OEM Manufacturer`,
         },
       ],
     },
@@ -288,28 +398,21 @@ export async function generateMetadata({ params }) {
 
 // ── Fallback builders – category-aware B2B copy ──────────────────────────
 function buildFallbackTitle(product) {
-  const painMap = {
-    battery: `UL-Ready LiFePO4: ${product.name} – Storage Battery`,
-    inverter: `Smart Hybrid: ${product.name} – Pure Sine Inverter`,
-    "electric-mobility": `UL 2272 & DOT-Ready: ${product.name} – Commercial EV`,
-    "portable-power": `Portable Power: ${product.name} – LiFePO4 Station`,
-    "power-bank": `PD Fast Charge: ${product.name} – OEM Power Bank`,
-    accessories: `Tier-1 Quality: ${product.name} – Solar Hardware`,
-  };
-  return painMap[product.category] || product.name;
+  const role = getCategoryB2bRole(product.category);
+  return `${product.name} ${role}`;
 }
 
 function buildFallbackDesc(product) {
   const modelText = product.model ? ` (${product.model})` : "";
   const descMap = {
-    battery: `Factory-direct ${product.name}${modelText} – Grade-A LiFePO4 chemistry, 6000+ cycles. Backup storage for residential, commercial, and microgrid solar systems.`,
-    inverter: `${product.name}${modelText} – auto-switch solar, battery & grid power with sub-10ms transfer time. CE & UL compliant for split-phase 120V/240V and 230V grids.`,
-    "electric-mobility": `Factory-direct ${product.name}${modelText} – high-efficiency electric mobility engineered for commuter retail and commercial delivery fleets. Built to UL 2272, DOT & CE standards.`,
-    "portable-power": `${product.name}${modelText} – rugged LiFePO4 portable power station with pure sine wave AC output and multi-region sockets for off-grid and emergency backup.`,
-    "power-bank": `${product.name}${modelText} – high-capacity Power Delivery fast charging with multi-layer safety IC protection. Built to CE/FCC/UN38.3 standards for OEM wholesale.`,
-    accessories: `${product.name}${modelText} – factory-direct solar hardware and tech accessories engineered for commercial B2B distribution and OEM/ODM supply.`,
+    battery: `Direct China OEM manufacturer & wholesale supplier of ${product.name}${modelText} – Grade-A LiFePO4 chemistry, 6000+ cycles, built to UL 1973 & CE standards.`,
+    inverter: `China hybrid solar inverter manufacturer & supplier: ${product.name}${modelText} with <10ms auto-switch solar, battery & grid bypass. Bulk OEM supply built to CE & UL standards.`,
+    "electric-mobility": `Direct China factory & wholesale supplier of ${product.name}${modelText} – high-torque electric scooters and motorcycles built to UL 2272, EEC & DOT standards for retail and delivery fleets.`,
+    "portable-power": `Portable power station ODM manufacturer & bulk solar generator supplier: ${product.name}${modelText} with pure sine wave AC output and fast solar/AC recharge.`,
+    "power-bank": `Custom power bank OEM manufacturer & white-label wholesale supplier: ${product.name}${modelText} with PD fast charging built to CE, FCC & UN38.3 standards.`,
+    accessories: `Direct China wholesale manufacturer of ${product.name}${modelText} – monocrystalline solar panels, street lighting & PV hardware for B2B container supply.`,
   };
-  return descMap[product.category] || `JoyHand ${product.name}${modelText} – factory-direct energy and e-mobility solution. Request B2B wholesale pricing.`;
+  return descMap[product.category] || `JoyHand ${product.name}${modelText} – China OEM/ODM manufacturer & wholesale B2B supplier. Request factory container pricing.`;
 }
 
 export async function generateStaticParams() {
@@ -471,9 +574,12 @@ export default async function ProductDetailsPage({ params }) {
     .replace(/^-|-$/g, "")
     .slice(0, 40);
 
+  const uniqueH1 = buildUniqueProductH1(product, slugStr);
+  const b2bBodyCopy = getCategoryBodyCopy(product, uniqueH1, displayModel);
+
   const productSchema = {
     "@type": "Product",
-    "name": product.name,
+    "name": uniqueH1,
     "image": jsonLdImageUrl,
     "description": plainTextDescription.substring(0, 200),
     "brand": {
@@ -550,12 +656,12 @@ export default async function ProductDetailsPage({ params }) {
             { label: "Products", link: "/products" },
             { label: categoryDisplay, link: `/products/category/${solutionSlug}` }
           ]}
-          currentTitle={product.name}
+          currentTitle={uniqueH1}
         />
         <div className="product-details__grid">
           <ScrollRevealWrapper as="section" className="product-details__gallery">
-            <ProductGallery images={images} productName={product.name} />
-            <ProductVideo videoId={videoId} productName={product.name} />
+            <ProductGallery images={images} productName={uniqueH1} />
+            <ProductVideo videoId={videoId} productName={uniqueH1} />
           </ScrollRevealWrapper>
           <ScrollRevealWrapper as="section" className="product-details__info">
             <div className="product-details__meta">
@@ -563,8 +669,9 @@ export default async function ProductDetailsPage({ params }) {
               <span className="product-details__type">{typeDisplay}</span>
               <span className="product-details__model">Model: {displayModel}</span>
             </div>
-            <h1 className="product-details__title">{product.name}</h1>
+            <h1 className="product-details__title">{uniqueH1}</h1>
             <p className="product-details__description">{plainTextDescription}</p>
+            <p className="product-details__description">{b2bBodyCopy}</p>
             <ProductKeySpecs product={product} />
             <ProductFeaturesCompact features={product.features} />
             <ProductActions category={product.category} />

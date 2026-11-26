@@ -1,34 +1,25 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import ProductCard from "@/components/productCard/ProductCard";
 import Pagination from "@/components/pagination/Pagination";
 import { PiPackage, PiArrowRight, PiFilePdf } from "react-icons/pi";
-import { useScrollReveal } from "@/components/useScrollReveal";
+import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import { solutionLinks } from "@/data";
 
-const DESKTOP_PER_PAGE = 24;
-const MOBILE_PER_PAGE = 12;
-
-export default function CategoryClient({ slug, config, allProducts }) {
-  const searchParams = useSearchParams();
-  const page = Number(searchParams.get("page")) || 1;
+export default function CategoryClient({
+  slug,
+  config,
+  products = [],
+  totalCount = 0,
+  totalPages = 1,
+  currentPage = 1,
+}) {
   const isComingSoon = config.comingSoon === true;
 
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
-  const [itemsPerPage, setItemsPerPage] = useState(DESKTOP_PER_PAGE);
   const navRef = useRef(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setItemsPerPage(window.innerWidth < 768 ? MOBILE_PER_PAGE : DESKTOP_PER_PAGE);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const onTabClick = () => {
     if (typeof window !== "undefined") {
@@ -43,22 +34,12 @@ export default function CategoryClient({ slug, config, allProducts }) {
       if (navRef.current) {
         navRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
       }
+    } else if (currentPage > 1 && navRef.current) {
+      navRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
       window.scrollTo(0, 0);
     }
-  }, [slug]);
-
-  const totalPages = Math.ceil(allProducts.length / itemsPerPage);
-  const currentPage = Math.min(page, Math.max(1, totalPages));
-  const start = (currentPage - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  const paginatedProducts = allProducts.slice(start, end);
-
-  useEffect(() => {
-    if (page > 1 && navRef.current) {
-      navRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }, [page]);
+  }, [slug, currentPage]);
 
   const handleDownload = async () => {
     if (isGeneratingPDF) return;
@@ -67,12 +48,12 @@ export default function CategoryClient({ slug, config, allProducts }) {
       // Fetch up-to-date products from our cached internal API
       const res = await fetch(`/api/catalog/${config.filterCategory}`);
       if (!res.ok) throw new Error("Failed to fetch catalog data");
-      const products = await res.json();
+      const catalogProducts = await res.json();
 
       const { pdf } = await import('@react-pdf/renderer');
       const CatalogDocument = (await import('@/components/CatalogDocument')).default;
       
-      const blob = await pdf(<CatalogDocument category={config.filterCategory} products={products} />).toBlob();
+      const blob = await pdf(<CatalogDocument category={config.filterCategory} products={catalogProducts} />).toBlob();
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
@@ -87,8 +68,6 @@ export default function CategoryClient({ slug, config, allProducts }) {
     }
   };
 
-  const sectionReveal = useScrollReveal();
-
   const introData = config.intro || (config.topContent ? null : {
     heading: config.h1Title || config.title,
     body: config.description || config.heroSubtitle,
@@ -97,7 +76,7 @@ export default function CategoryClient({ slug, config, allProducts }) {
 
   return (
     <>
-      <section ref={sectionReveal.ref} className={`products-page__section reveal ${sectionReveal.isVisible ? 'is-visible' : ''}`}>
+      <ScrollRevealWrapper as="section" className="products-page__section">
         <div className="container">
 
           {/* ── Section 1: Intro & Authority (Above Filter Bar) ── */}
@@ -167,12 +146,12 @@ export default function CategoryClient({ slug, config, allProducts }) {
                 </Link>
               </div>
             </div>
-          ) : paginatedProducts.length > 0 ? (
+          ) : products.length > 0 ? (
             <>
               <div className="products-page__results-header">
                 <p className="products-page__results-count">
-                  Showing <strong>{paginatedProducts.length}</strong> of{" "}
-                  <strong>{allProducts.length}</strong> {config.title.toLowerCase()} products
+                  Showing <strong>{products.length}</strong> of{" "}
+                  <strong>{totalCount}</strong> {config.title.toLowerCase()} products
                 </p>
                 <button 
                   onClick={handleDownload}
@@ -186,7 +165,7 @@ export default function CategoryClient({ slug, config, allProducts }) {
               </div>
 
               <div className="products-page__grid">
-                {paginatedProducts.map((product, index) => (
+                {products.map((product, index) => (
                   <ProductCard key={product.id} product={product} priority={index < 4} />
                 ))}
               </div>
@@ -222,7 +201,7 @@ export default function CategoryClient({ slug, config, allProducts }) {
           )}
 
         </div>
-      </section>
+      </ScrollRevealWrapper>
     </>
   );
 }

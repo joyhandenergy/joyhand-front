@@ -1,13 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { PiYoutubeLogo, PiTiktokLogo, PiInstagramLogo, PiFacebookLogo, PiPinterestLogo, PiGlobe, PiFactory, PiBuilding } from "react-icons/pi";
+import { PiYoutubeLogo, PiTiktokLogo, PiInstagramLogo, PiFacebookLogo, PiPinterestLogo, PiLinkedinLogo, PiGlobe, PiFactory, PiBuilding } from "react-icons/pi";
 import { footerData } from "@/data";
 import "./Footer.css";
 
 // Helper to render the correct social icon based on string identifier
 const renderSocialIcon = (iconStr, size = 24) => {
   switch(iconStr) {
+    case 'linkedin': return <PiLinkedinLogo size={size} />;
     case 'youtube': return <PiYoutubeLogo size={size} />;
     case 'tiktok': return <PiTiktokLogo size={size} />;
     case 'facebook': return <PiFacebookLogo size={size} />;

@@ -331,6 +331,7 @@
   bottom: 15px;
   left: 15px;
   background: rgba(18, 27, 45, 0.85);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 6px 12px;
   border-radius: 100px;
@@ -452,9 +453,9 @@
   /* original padding */
   border-radius: var(--spacing-2);
   /* original radius */
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 8px 20px rgba(9, 14, 24, 0.16), 0 18px 40px rgba(9, 14, 24, 0.14);
   transition: var(--transition);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   /* light border – keep or change? */
 }
 
@@ -652,8 +653,8 @@
   border-radius: 24px;
   text-align: center;
   transition: var(--transition);
-  border: 1px solid rgba(18, 27, 45, 0.05);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(18, 27, 45, 0.09);
+  box-shadow: var(--shadow-md);
   position: relative;
   overflow: hidden;
 }
@@ -1291,11 +1292,11 @@
   display: flex;
   flex-direction: column;
   background: var(--neutral-white);
-  border: 1px solid rgba(18, 27, 45, 0.08);
+  border: 1px solid rgba(18, 27, 45, 0.09);
   border-radius: 32px;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 15px 40px rgba(18, 27, 45, 0.04);
+  box-shadow: 0 6px 16px rgba(18, 27, 45, 0.07), 0 20px 48px rgba(18, 27, 45, 0.11);
 }
 
 @media screen and (min-width: 992px) {
@@ -1350,6 +1351,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 1.5px;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 2;
@@ -1482,6 +1484,7 @@
   background-image:
     radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
   background-size: 32px 32px;
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 40px 24px;

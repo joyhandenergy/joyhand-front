@@ -23,7 +23,7 @@ const CATEGORIES = [
   { id: "battery", label: "Storage Batteries" },
   { id: "inverter", label: "Solar Inverters" },
   { id: "portable-power", label: "Portable Power Stations" },
-  { id: "electric-mobility", label: "Electric Mobility" },
+  { id: "electric-mobility", label: "Electric Scooters & Motorcycles" },
   { id: "power-bank", label: "Power Banks" },
   { id: "accessories", label: "Tech & Solar Accessories" }
 ];

@@ -45,6 +45,16 @@ export function cleanGeoText(text) {
     .replace(/Lagos and Nairobi/gi, "regional commercial hubs")
     .replace(/Lagos to Dhaka/gi, "Urban Commuter & Delivery")
     .replace(/Karachi and Dhaka/gi, "commercial logistics fleets")
+    .replace(/\bPHCN(?:\s+supply)?\b/gi, "grid power")
+    .replace(/\s*[–—|,-]?\s*\bWholesale\s+Africa\b/gi, "")
+    .replace(/\b(?:across|in|for)\s+Africa\b/gi, "globally")
+    // Enforce "built to [Standard] standards" instead of claiming certificate ownership
+    .replace(/(?:built to|manufactured to|compliant with)\s+((?:UL\s*\d+|UN\s*38\.3|ISO\s*\d+(?::\d+)?|CE|IEC|FCC|RoHS|DOT|EEC|COC|EN\s*\d+)(?:\s*[,/&]\s*(?:UL\s*\d+|UN\s*38\.3|ISO\s*\d+(?::\d+)?|CE|IEC|FCC|RoHS|DOT|EEC|COC|EN\s*\d+))*)\s+certified\b/gi, "built to $1 standards")
+    .replace(/\b((?:UL\s*\d+|UN\s*38\.3|ISO\s*\d+(?::\d+)?|CE|IEC|FCC|RoHS|DOT|EEC|COC|EN\s*\d+)(?:\s*[,/&]\s*(?:UL\s*\d+|UN\s*38\.3|ISO\s*\d+(?::\d+)?|CE|IEC|FCC|RoHS|DOT|EEC|COC|EN\s*\d+))*)\s+certified\b/gi, "built to $1 standards")
+    .replace(/\bbuilt to\s+built to\b/gi, "built to")
+    .replace(/\bstandards\s+standards\b/gi, "standards")
+    .replace(/(^|[.!?]\s+)built to\b/g, "$1Built to")
+    .replace(/\bcertified\b/gi, "standard-compliant")
     .replace(DEMONONYM_RE, "commercial")
     // Strip trailing/standalone country names cleanly (e.g. "10kWh Battery Bangladesh" -> "10kWh Battery")
     .replace(/\s*[–—|,-]?\s*(?:for|in)\s+(?:Nigeria|Kenya|Pakistan|Ghana|Uganda|Tanzania|Bangladesh|Nepal|Morocco|South Africa|Sri Lanka)\b/gi, "")
@@ -52,7 +62,10 @@ export function cleanGeoText(text) {
     // Clean any leftover "global markets, global markets" or trailing "global markets"
     .replace(/\bglobal markets\s*,\s*global markets\b/gi, "global B2B markets")
     .replace(/\s*[–—|,-]?\s*\bglobal markets\b\s*$/gi, "")
-    // Clean orphaned punctuation left after removals
+    // Clean orphaned prepositions & punctuation left after removals (e.g. "built for off-grid and.")
+    .replace(/\s+\b(?:for|in|across|with|to)\s+and\s*\./gi, ".")
+    .replace(/\s+\band\s*\./gi, ".")
+    .replace(/\s+\b(?:for|in|across|with|to)\s*\./gi, ".")
     .replace(/\s+([,.;:])/g, "$1")
     .replace(/[,;:]+\s*\./g, ".")
     .replace(/\s*,\s*,+/g, ",")
@@ -119,13 +132,13 @@ export function sanitizeProductForSeo(product) {
 export function formatSeoTitle(rawTitle, brand = "JoyHand") {
   let base = cleanGeoText(rawTitle || "");
 
-  // Strip any existing "| JoyHand", "| JoyHand Energy", "- JoyHand" suffixes (even if repeated)
-  while (/\s*[|\-–—]\s*JoyHand(?:\s+Energy)?\s*$/i.test(base)) {
-    base = base.replace(/\s*[|\-–—]\s*JoyHand(?:\s+Energy)?\s*$/i, "").trim();
+  // Strip any existing "| JoyHand Blog", "| JoyHand Energy", "| JoyHand", "- JoyHand" suffixes
+  while (/\s*[|\-–—]\s*JoyHand(?:\s+(?:Blog|Energy))?\s*$/i.test(base)) {
+    base = base.replace(/\s*[|\-–—]\s*JoyHand(?:\s+(?:Blog|Energy))?\s*$/i, "").trim();
   }
 
   const suffix = ` | ${brand}`;
-  const maxBaseLen = 60 - suffix.length;
+  const maxBaseLen = 64 - suffix.length;
 
   if (base.length > maxBaseLen) {
     const sliced = base.slice(0, maxBaseLen);

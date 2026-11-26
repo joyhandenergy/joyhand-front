@@ -10,35 +10,37 @@ import Script from "next/script";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { blogPosts as localBlogPosts } from "@/data";
+import { cleanGeoText } from "@/lib/seoSanitizer";
 
 // Static
 export const revalidate = 60;
 
 export const metadata = {
   title: {
-    absolute: "LiFePO4 Battery, E-Scooter & Solar OEM Manufacturer | JoyHand",
+    absolute: "Solar Battery & Electric Scooter Manufacturer | JoyHand",
   },
-  description: "China-based factory & supplier of LiFePO4 batteries, electric motorcycles, solar panels & inverters. We offer OEM/ODM manufacturing to global standards.",
+  description: "Direct China OEM/ODM factory & wholesale supplier of LiFePO4 solar batteries, electric scooters & motorcycles, hybrid inverters, solar panels & power banks.",
   keywords: [
     "joyhand energy",
+    "solar battery electric scooter manufacturer",
     "lifepo4 battery manufacturer china",
-    "solar battery factory china",
-    "oem solar battery manufacturer",
-    "wholesale lifepo4 supplier",
-    "hybrid solar inverter manufacturer",
+    "electric scooter manufacturer china",
     "electric motorcycle factory china",
     "electric dirt bike wholesale china",
-    "electric scooter manufacturer china",
+    "commercial ess energy storage supplier",
+    "hybrid solar inverter manufacturer",
     "portable power station odm manufacturer",
-    "solar panel wholesale manufacturer"
+    "custom power bank oem supplier",
+    "monocrystalline solar panel wholesale manufacturer"
   ],
   alternates: {
     canonical: 'https://www.joyhand.com/',
   },
   openGraph: {
-    title: "LiFePO4 Battery, E-Scooter & Solar OEM Manufacturer | JoyHand",
-    description: "China-based factory & supplier of LiFePO4 batteries, electric motorcycles, solar panels & inverters. We offer OEM/ODM manufacturing to global standards.",
+    title: "Solar Battery & Electric Scooter Manufacturer | JoyHand",
+    description: "Direct China OEM/ODM factory & wholesale supplier of LiFePO4 solar batteries, electric scooters & motorcycles, hybrid inverters, solar panels & power banks.",
     url: "https://www.joyhand.com/",
+    siteName: "JoyHand",
     type: "website",
     images: [
       {
@@ -48,13 +50,19 @@ export const metadata = {
         alt: "JoyHand ISO 9001:2015 Manufacturing Facility",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Solar Battery & Electric Scooter Manufacturer | JoyHand",
+    description: "Direct China OEM/ODM factory & wholesale supplier of LiFePO4 solar batteries, electric scooters & motorcycles, hybrid inverters, solar panels & power banks.",
+    images: ["/homeImg/businessModelImage001.jpg"],
   }
 };
 
 async function getFeaturedBlogPosts() {
   let sanityPosts = [];
   try {
-    const rawSanity = await client.fetch(`*[_type == "post"] | order(publishedAt desc)[0...5] {
+    const rawSanity = await client.fetch(`*[_type == "post" && !(_id in path("drafts.**"))] | order(publishedAt desc)[0...5] {
       _id,
       title,
       "slug": slug.current,
@@ -67,13 +75,13 @@ async function getFeaturedBlogPosts() {
 
     sanityPosts = rawSanity.map((p) => ({
       id: p._id,
-      title: p.title,
+      title: cleanGeoText(p.title),
       slug: p.slug,
-      excerpt: p.excerpt || "",
+      excerpt: cleanGeoText(p.excerpt || ""),
       image: p.mainImage?.asset ? urlFor(p.mainImage).url() : "/images/placeholder.jpg",
       date: p.publishedAt,
-      readTime: p.readTime || "5 min read",
-      category: p.category || "Energy Technology"
+      readTime: p.readTime || "6 min read",
+      category: cleanGeoText(p.category || "Energy Technology")
     }));
   } catch (error) {
     console.error("Failed to fetch blog posts from Sanity:", error);
@@ -93,19 +101,33 @@ export default async function Home() {
       {
         "@type": "Organization",
         "name": "JoyHand Energy",
-        "legalName": "Guangzhou Joyhand Technology Co., Ltd.",
+        "legalName": "Guangzhou Joyhand Energy Technology Co., Ltd.",
         "url": "https://www.joyhand.com",
         "logo": "https://www.joyhand.com/homeImg/businessModelImage001.jpg",
         "image": "https://www.joyhand.com/homeImg/businessModelImage001.jpg",
-        "description": "China-based factory and supplier of LiFePO4 batteries, electric motorcycles, solar panels, and inverters offering OEM and ODM manufacturing to global standards.",
+        "description": "Direct China OEM/ODM factory & wholesale supplier of LiFePO4 solar batteries, electric scooters & motorcycles, hybrid inverters, solar panels & custom power banks.",
         "email": "sales@joyhand.com",
         "foundingDate": "1998",
         "address": [
           {
             "@type": "PostalAddress",
+            "streetAddress": "No. 7, Nansha District",
             "addressLocality": "Guangzhou",
             "addressRegion": "Guangdong",
+            "postalCode": "511400",
             "addressCountry": "CN"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Montgomery",
+            "addressRegion": "AL",
+            "addressCountry": "US"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Melbourne",
+            "addressRegion": "VIC",
+            "addressCountry": "AU"
           },
           {
             "@type": "PostalAddress",
@@ -124,20 +146,20 @@ export default async function Home() {
           "https://www.linkedin.com/in/joyhand-energy-022aa3451"
         ],
         "knowsAbout": [
-          "LiFePO4 Battery Manufacturing",
+          "LiFePO4 Solar Battery Manufacturing",
+          "Electric Scooter & Motorcycle OEM Manufacturing",
+          "Custom Power Bank OEM & Private Label Manufacturing",
           "B2B Energy Storage Systems (ESS)",
-          "OEM Solar Battery Packs & Server Racks",
           "Hybrid Solar Inverters",
-          "Electric Motorcycles & Dirt Bikes",
-          "Commercial EV Fleet Manufacturing",
-          "Portable Power Stations & Solar Generators",
+          "Portable Power Stations & Monocrystalline Solar Panels",
           "Manufacturing to ISO 9001:2015 Standards",
-          "Manufacturing to UL 1973 & UN38.3 Standards"
+          "Manufacturing to UL 1973, UL 2272, CE & UN38.3 Standards"
         ],
         "areaServed": [
           "Worldwide",
           "North America",
           "Europe",
+          "Oceania",
           "Africa",
           "Asia",
           "Latin America"
@@ -147,12 +169,7 @@ export default async function Home() {
         "@type": "WebSite",
         "name": "JoyHand",
         "alternateName": "JoyHand Energy",
-        "url": "https://www.joyhand.com",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.joyhand.com/products?search={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "url": "https://www.joyhand.com"
       }
     ]
   };

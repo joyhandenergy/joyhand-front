@@ -34,7 +34,7 @@ export const productType = defineType({
           {title: 'Solar Inverter', value: 'inverter'},
           {title: 'Portable Power Station', value: 'portable-power'},
           {title: 'Power Bank', value: 'power-bank'},
-          {title: 'E-Mobility', value: 'electric-mobility'},
+          {title: 'Electric Scooters & Motorcycles', value: 'electric-mobility'},
           {title: 'Tech & Solar Accessories', value: 'accessories'}
         ],
       }

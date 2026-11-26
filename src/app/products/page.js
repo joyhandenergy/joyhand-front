@@ -1,55 +1,75 @@
-import { Suspense } from "react";
 import PageHeader from "@/components/pageHeader/PageHeader";
 import ProductsClient from "./ProductsClient";
-import Script from "next/script";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { productData, productsCatalogData, isRedirectedSlug } from "@/data";
 import { cleanGeoText } from "@/lib/seoSanitizer";
 import "./Products.css";
 
-// Static
+export async function generateMetadata({ searchParams }) {
+  const resolvedSearchParams = await searchParams;
+  const page = Math.max(1, Number(resolvedSearchParams?.page) || 1);
+  const baseTitle = "Wholesale Battery, Solar & Scooter Supplier | JoyHand";
+  const title = page > 1
+    ? `Wholesale Battery, Solar & Scooter Supplier - Page ${page} | JoyHand`
+    : baseTitle;
+  const canonical = page > 1
+    ? `https://www.joyhand.com/products?page=${page}`
+    : "https://www.joyhand.com/products";
 
-export const metadata = {
-  title: {
-    absolute: "Factory-Direct Wholesale Catalog | JoyHand Energy",
-  },
-  description: "Factory-direct catalog of Grade-A LiFePO4 batteries, electric motorcycles, hybrid inverters & solar hardware. Wholesale container pricing for B2B buyers.",
-  keywords: [
-    "wholesale lifepo4 supplier",
-    "lifepo4 battery manufacturer china",
-    "solar battery factory china",
-    "oem solar battery manufacturer",
-    "hybrid solar inverter manufacturer",
-    "electric motorcycle factory china",
-    "electric dirt bike wholesale china",
-    "electric scooter manufacturer china",
-    "portable power station odm manufacturer",
-    "solar panel wholesale manufacturer"
-  ],
-  alternates: {
-    canonical: 'https://www.joyhand.com/products',
-  },
-  openGraph: {
-    title: "Factory-Direct Wholesale Catalog | JoyHand Energy",
-    description: "Factory-direct catalog of Grade-A LiFePO4 batteries, electric motorcycles, hybrid inverters & solar hardware. Wholesale container pricing for B2B buyers.",
-    url: "https://www.joyhand.com/products",
-    type: "website",
-    images: [
-      {
-        url: "/homeImg/energyPlatformImage01.jpg", 
-        width: 1200,
-        height: 630,
-        alt: "JoyHand Wholesale LiFePO4 Batteries & Electric Scooters",
-      },
+  return {
+    title: {
+      absolute: title,
+    },
+    description: "China wholesale supplier & OEM/ODM manufacturer of LiFePO4 solar batteries, hybrid inverters, electric scooters & motorcycles, solar panels & power banks.",
+    keywords: [
+      "china wholesale energy storage supplier",
+      "oem battery solar scooter manufacturer",
+      "wholesale lifepo4 supplier",
+      "51.2V 200Ah battery manufacturer china",
+      "hybrid solar inverter supplier",
+      "electric scooter manufacturer china",
+      "electric motorcycle factory china",
+      "portable power station odm manufacturer",
+      "private label power bank oem",
+      "monocrystalline solar panel wholesale"
     ],
-  }
-};
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      title,
+      description: "China wholesale supplier & OEM/ODM manufacturer of LiFePO4 solar batteries, hybrid inverters, electric scooters & motorcycles, solar panels & power banks.",
+      url: canonical,
+      type: "website",
+      images: [
+        {
+          url: "/homeImg/energyPlatformImage01.jpg",
+          width: 1200,
+          height: 630,
+          alt: "JoyHand China Wholesale LiFePO4 Batteries, Solar Inverters & Electric Scooters",
+        },
+      ],
+    }
+  };
+}
+
+const PRODUCTS_PER_PAGE = 24;
 
 async function getAllProducts() {
   let sanityProducts = [];
   try {
-    const rawSanity = await client.fetch(`*[_type == "product"]`);
+    const rawSanity = await client.fetch(`*[_type == "product" && !(_id in path("drafts.**"))]{
+      _id,
+      name,
+      "slug": slug.current,
+      shortDescription,
+      seoDescription,
+      mainImage,
+      category,
+      type,
+      keySpecs
+    }`);
 
     sanityProducts = rawSanity
       .filter((p) => {
@@ -57,37 +77,37 @@ async function getAllProducts() {
         return s && !isRedirectedSlug(s);
       })
       .map((p) => {
-      let image = "/images/placeholder.jpg";
-      try {
-        if (p.mainImage?.asset) image = urlFor(p.mainImage).url();
-      } catch (e) {
-        console.error("Image urlFor error", e);
-      }
+        let image = "/images/placeholder.jpg";
+        try {
+          if (p.mainImage?.asset) image = urlFor(p.mainImage).url();
+        } catch (e) {
+          console.error("Image urlFor error", e);
+        }
 
-      const specs = {};
-      if (p.keySpecs && Array.isArray(p.keySpecs)) {
-        p.keySpecs.forEach((s) => {
-          const specName = s.specName?.toLowerCase() || "";
-          if (specName.includes("capacity") || specName.includes("power") || specName.includes("energy")) {
-            specs.capacity = s.specValue;
-          }
-          if (specName.includes("voltage")) specs.nominalVoltage = s.specValue;
-          if (specName.includes("output")) specs.totalOutput = s.specValue;
-          if (specName.includes("speed")) specs.topSpeed = s.specValue;
-        });
-      }
+        const specs = {};
+        if (p.keySpecs && Array.isArray(p.keySpecs)) {
+          p.keySpecs.forEach((s) => {
+            const specName = s.specName?.toLowerCase() || "";
+            if (specName.includes("capacity") || specName.includes("power") || specName.includes("energy")) {
+              specs.capacity = s.specValue;
+            }
+            if (specName.includes("voltage")) specs.nominalVoltage = s.specValue;
+            if (specName.includes("output")) specs.totalOutput = s.specValue;
+            if (specName.includes("speed")) specs.topSpeed = s.specValue;
+          });
+        }
 
-      return {
-        id: p._id,
-        name: p.name,
-        slug: p.slug?.current || p.slug,
-        description: p.shortDescription || p.seoDescription || "",
-        image: image,
-        category: p.category,
-        type: p.type,
-        specifications: specs,
-      };
-    });
+        return {
+          id: p._id,
+          name: p.name,
+          slug: p.slug?.current || p.slug,
+          description: p.shortDescription || p.seoDescription || "",
+          image: image,
+          category: p.category,
+          type: p.type,
+          specifications: specs,
+        };
+      });
   } catch (error) {
     console.error("Sanity fetch failed", error);
   }
@@ -153,15 +173,22 @@ async function getAllProducts() {
   return scoredProducts.map(sp => sp.item);
 }
 
-export default async function ProductsPage() {
+export default async function ProductsPage({ searchParams }) {
+  const resolvedSearchParams = await searchParams;
+  const requestedPage = Math.max(1, Number(resolvedSearchParams?.page) || 1);
   const allProducts = await getAllProducts();
+  const totalCount = allProducts.length;
+  const totalPages = Math.max(1, Math.ceil(totalCount / PRODUCTS_PER_PAGE));
+  const currentPage = Math.min(requestedPage, totalPages);
+  const start = (currentPage - 1) * PRODUCTS_PER_PAGE;
+  const paginatedProducts = allProducts.slice(start, start + PRODUCTS_PER_PAGE);
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Factory-Direct Wholesale Catalog | JoyHand Energy",
-    "description": "Direct-from-factory catalog of Grade-A LiFePO4 batteries, electric motorcycles, hybrid inverters & solar hardware. Wholesale container pricing for B2B buyers.",
-    "url": "https://www.joyhand.com/products",
+    "name": "Wholesale Battery, Solar & Scooter Supplier | JoyHand",
+    "description": "China wholesale supplier & OEM/ODM manufacturer of LiFePO4 solar batteries, hybrid inverters, electric scooters & motorcycles, solar panels & power banks.",
+    "url": currentPage > 1 ? `https://www.joyhand.com/products?page=${currentPage}` : "https://www.joyhand.com/products",
     "publisher": {
       "@type": "Organization",
       "name": "JoyHand Energy",
@@ -169,10 +196,10 @@ export default async function ProductsPage() {
     },
     "mainEntity": {
       "@type": "ItemList",
-      "numberOfItems": allProducts.length,
-      "itemListElement": allProducts.map((product, index) => ({
+      "numberOfItems": totalCount,
+      "itemListElement": paginatedProducts.map((product, index) => ({
         "@type": "ListItem",
-        "position": index + 1,
+        "position": start + index + 1,
         "url": `https://www.joyhand.com/products/${product.slug}`,
         "name": product.name
       }))
@@ -192,9 +219,12 @@ export default async function ProductsPage() {
         pageImage={productsCatalogData.header.image}
         breadcrumbCurrent="Products"
       />
-      <Suspense fallback={<div className="container mt-3">Loading products...</div>}>
-        <ProductsClient initialProducts={allProducts} />
-      </Suspense>
+      <ProductsClient
+        products={paginatedProducts}
+        totalCount={totalCount}
+        totalPages={totalPages}
+        currentPage={currentPage}
+      />
     </main>
   );
 }

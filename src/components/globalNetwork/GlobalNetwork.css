@@ -222,7 +222,7 @@
 
 .global-network__feature-card {
   background: var(--neutral-white);
-  border: 1px solid rgba(46, 196, 182, 0.25);
+  border: 1px solid rgba(46, 196, 182, 0.28);
   border-left: 4px solid var(--accent-color-dark);
   border-radius: 16px;
   padding: 24px;
@@ -230,7 +230,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  box-shadow: 0 10px 30px rgba(46, 196, 182, 0.05);
+  box-shadow: 0 4px 12px rgba(18, 27, 45, 0.06), 0 14px 32px rgba(46, 196, 182, 0.12);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
 
@@ -246,8 +246,8 @@
 
 .global-network__feature-card:hover {
   transform: translateY(-5px);
-  background: rgba(46, 196, 182, 0.03);
-  box-shadow: 0 15px 40px rgba(46, 196, 182, 0.12);
+  background: var(--neutral-white);
+  box-shadow: 0 10px 24px rgba(18, 27, 45, 0.09), 0 20px 44px rgba(46, 196, 182, 0.18);
   border-color: var(--accent-color-dark);
   border-left-color: var(--primary-color);
 }

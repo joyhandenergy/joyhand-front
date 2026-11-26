@@ -26,7 +26,7 @@ export default function QuotationBuilder({ initialProducts = [] }) {
     'inverter': 'Solar Inverter',
     'portable-power': 'Portable Power Station',
     'power-bank': 'Power Bank',
-    'electric-mobility': 'E-Mobility',
+    'electric-mobility': 'Electric Scooters',
     'accessories': 'Tech & Solar Accessories'
   };
 

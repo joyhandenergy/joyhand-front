@@ -13,10 +13,12 @@ const Pagination = ({ currentPage, totalPages, baseUrl }) => {
 
   const pages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
 
+  const getPageHref = (pageNum) => (pageNum <= 1 ? baseUrl : `${baseUrl}?page=${pageNum}`);
+
   return (
-    <div className="pagination">
+    <nav className="pagination" aria-label="Pagination">
       {currentPage > 1 && (
-        <Link href={`${baseUrl}?page=${currentPage - 1}`} className="pagination__arrow" aria-label="Previous page">
+        <Link href={getPageHref(currentPage - 1)} className="pagination__arrow" aria-label="Previous page">
           <PiCaretLeft size={16} />
         </Link>
       )}
@@ -24,7 +26,7 @@ const Pagination = ({ currentPage, totalPages, baseUrl }) => {
       {pages.map((page) => (
         <Link
           key={page}
-          href={`${baseUrl}?page=${page}`}
+          href={getPageHref(page)}
           className={`pagination__item ${currentPage === page ? "pagination__item--active" : ""}`}
         >
           {page}
@@ -32,11 +34,11 @@ const Pagination = ({ currentPage, totalPages, baseUrl }) => {
       ))}
       
       {currentPage < totalPages && (
-        <Link href={`${baseUrl}?page=${currentPage + 1}`} className="pagination__arrow" aria-label="Next page">
+        <Link href={getPageHref(currentPage + 1)} className="pagination__arrow" aria-label="Next page">
           <PiCaretRight size={16} />
         </Link>
       )}
-    </div>
+    </nav>
   );
 };
 

@@ -1,5 +1,15 @@
 import { client } from "@/sanity/lib/client";
-import { solutionConfigs, headerData, contactFaqs } from "@/data";
+import { solutionConfigs, headerData, contactFaqs, isRedirectedSlug } from "@/data";
+import { cleanGeoText } from "@/lib/seoSanitizer";
+
+const CATEGORY_LABELS = {
+  battery: "LiFePO4 Solar Batteries",
+  inverter: "Hybrid Solar Inverters",
+  "portable-power": "Portable Power Stations",
+  "electric-mobility": "Electric Scooters & Motorcycles",
+  "power-bank": "Custom OEM Power Banks",
+  accessories: "Solar Panels & Tech Accessories",
+};
 
 export const revalidate = 3600;
 
@@ -12,7 +22,7 @@ export async function GET() {
   try {
     [products, posts] = await Promise.all([
       client.fetch(
-        `*[_type == "product"]{
+        `*[_type == "product" && !(_id in path("drafts.**"))]{
           name,
           model,
           "slug": slug.current,
@@ -22,7 +32,7 @@ export async function GET() {
         } | order(category asc, name asc)`
       ),
       client.fetch(
-        `*[_type == "post"]{
+        `*[_type == "post" && !(_id in path("drafts.**"))]{
           title,
           "slug": slug.current,
           excerpt,
@@ -30,6 +40,7 @@ export async function GET() {
         } | order(publishedAt desc)`
       ),
     ]);
+    products = (products || []).filter((p) => p.slug && !isRedirectedSlug(p.slug));
   } catch (err) {
     console.error("Error fetching live data for llms-full.txt:", err);
   }
@@ -40,24 +51,24 @@ export async function GET() {
   const lines = [
     "# JoyHand Energy - Full Context & Technical Documentation",
     "",
-    "> JoyHand Energy is a direct OEM/ODM factory manufacturer of commercial and residential LiFePO4 energy storage systems, hybrid solar inverters, Tier-1 monocrystalline solar panels, commercial solar streetlights, balance-of-system solar accessories & hardware, electric commuter scooters, commercial cargo motorcycles, electric dirt bikes, and portable power stations. Founded in 1998 and operating to ISO 9001:2015 manufacturing standards from our 50,000 sq.m manufacturing facility in Guangzhou, China, JoyHand specializes in factory-direct B2B container supply, white-label manufacturing, and custom engineering for brand owners, fleet operators, and distributors across the Americas, Europe, Africa, and Asia.",
+    "> JoyHand Energy is a direct China OEM/ODM factory manufacturer of LiFePO4 solar storage batteries, hybrid solar inverters, monocrystalline solar panels, portable power stations, custom OEM power banks, and electric scooters, motorcycles & cargo tricycles. Founded in 1998 and operating to ISO 9001:2015 manufacturing standards from our 50,000 sq.m Guangzhou facility, JoyHand specializes in factory-direct B2B container supply, private-label OEM, and custom ODM engineering for global distributors, retail brands, and fleet operators worldwide.",
     "",
     "## Corporate & Contact Details",
     `- Official Website: ${baseUrl}`,
     `- Manufacturing Hub & Global HQ: No. 7, Nansha District, Guangzhou 511400, Guangdong, China`,
     `- Americas Hub: 445 Dexter Avenue, Suite 4050, Montgomery, AL 36104, USA`,
-    `- Africa Regional Hub: New Mandilas International Market, Trade Fair, Ojo, Lagos, Nigeria`,
+    `- Regional Logistics Hub: New Mandilas International Market, Trade Fair, Ojo, Lagos`,
     `- Oceania Hub: 157 A'Beckett Street, Melbourne VIC 3000, Australia`,
     `- Wholesale Inquiries Email: ${email}`,
     `- Factory WhatsApp / Phone: ${phone}`,
-    `- Priority Target Regions & Logistics Ports: North America (US retail, Amazon FBA, commercial distribution), Europe (EEC homologated urban mobility), Africa (Lagos, Nairobi, Mombasa, Durban), and Asia (Karachi, Dhaka, Chittagong)`,
-    `- Quality & Manufacturing Standards: Built to ISO 9001:2015, UL 1973 (batteries), UL 2272 (e-scooters), UL 2271 (EV batteries), DOT/NHTSA street-legal standards, FCC Part 15, CE, and UN38.3/MSDS documentation for safe maritime and air freight`,
+    `- Target Export Regions: Global B2B supply across North America (US retail, Amazon FBA, commercial distribution), Europe (EEC homologated electric scooters & CE/IEC storage), Oceania, Africa, Asia, and Latin America`,
+    `- Quality & Manufacturing Standards: Built to ISO 9001:2015, UL 1973 (batteries), UL 2272 (electric scooters), UL 2271 (EV batteries), DOT/NHTSA street-legal specs, FCC Part 15, CE, EEC/COC, and UN38.3/MSDS documentation for safe maritime and air freight`,
     "",
     "## Manufacturing, Quality Control & OEM/ODM Capabilities",
     "JoyHand Energy controls every stage of production from raw cell grading to final export packing:",
     "- **Cell Grading & Matching**: 100% inline impedance and capacity grading to prevent premature pack degradation.",
-    "- **Cycle Life**: Automotive-grade LiFePO4 cells rated for 6,000+ deep discharge cycles at 80% DOD.",
-    "- **Custom BMS Engineering**: Tailored BMS architectures featuring high-voltage surge suppression, thermal throttling, and over/under-voltage cutoffs designed for weak electrical grids.",
+    "- **Cycle Life**: Grade-A LiFePO4 cells rated for 6,000+ deep discharge cycles at 80% DOD.",
+    "- **Custom BMS Engineering**: Tailored BMS architectures featuring high-voltage surge suppression, 55°C ambient thermal throttling, and CAN/RS485 inverter sync.",
     "- **OEM White-Labeling**: Custom metal chassis stamping, laser logo engraving, custom LCD/OLED display firmware, and distributor-branded retail packaging.",
     "- **Containerized Export Logistics**: Complete export paperwork management, including commercial invoices, packing lists, bill of lading, and UN38.3 battery dossiers.",
     "",
@@ -79,10 +90,10 @@ export async function GET() {
       const slug = p.slug || "";
       const model = p.model ? ` (Model: ${p.model})` : "";
       const category = p.category ? ` [Category: ${p.category}]` : "";
-      lines.push(`### [${p.name || "Product"}${model}](${baseUrl}/products/${slug})`);
+      lines.push(`### [${cleanGeoText(p.name || "Product")}${model}](${baseUrl}/products/${slug})`);
       lines.push(`- URL: ${baseUrl}/products/${slug}`);
-      if (p.category) lines.push(`- Type: ${p.category}`);
-      if (p.shortDescription) lines.push(`- Description: ${p.shortDescription}`);
+      if (p.category) lines.push(`- Category: ${CATEGORY_LABELS[p.category] || p.category}`);
+      if (p.shortDescription) lines.push(`- Description: ${cleanGeoText(p.shortDescription)}`);
 
       if (Array.isArray(p.keySpecs) && p.keySpecs.length > 0) {
         const specsText = p.keySpecs
@@ -102,8 +113,8 @@ export async function GET() {
     lines.push("## Factory Engineering & B2B Sourcing Guides");
     lines.push(`- Sourcing Guides Hub: [${baseUrl}/blog](${baseUrl}/blog)`);
     for (const post of posts) {
-      const desc = post.excerpt ? `: ${post.excerpt}` : "";
-      lines.push(`- [${post.title}](${baseUrl}/blog/${post.slug})${desc}`);
+      const desc = post.excerpt ? `: ${cleanGeoText(post.excerpt)}` : "";
+      lines.push(`- [${cleanGeoText(post.title)}](${baseUrl}/blog/${post.slug})${desc}`);
     }
     lines.push("");
   }

@@ -65,7 +65,7 @@ export default function AboutPage() {
           "@type": "Person",
           "name": "Dui Wangpeng (Winper)",
           "jobTitle": "CEO & Founder",
-          "description": "Drives global strategy, ensuring direct, high-quality factory output for battery and mobility distributors worldwide."
+          "description": "Drives global strategy, ensuring direct, high-quality factory output for solar battery and electric scooter distributors worldwide."
         },
         "employee": [
           {

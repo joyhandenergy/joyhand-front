@@ -11,7 +11,7 @@ const ProductCard = ({ product, priority = false }) => {
   const categoryMap = {
     battery:            { label: "Storage Battery",       icon: <PiBatteryHigh /> },
     inverter:           { label: "Solar Inverter",        icon: <PiLightning /> },
-    "electric-mobility":{ label: "Electric Mobility",    icon: <PiMotorcycle /> },
+    "electric-mobility":{ label: "Electric Scooters",    icon: <PiMotorcycle /> },
     "portable-power":   { label: "Portable Power",       icon: <PiPlug /> },
     "power-bank":       { label: "Power Bank",           icon: <PiBatteryCharging /> },
   };

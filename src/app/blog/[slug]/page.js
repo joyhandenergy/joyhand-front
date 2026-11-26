@@ -3,23 +3,154 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import Link from "next/link";
-import Script from "next/script";
-import { PiCalendarBlank, PiUser, PiClock, PiArrowLeft, PiArrowRight, PiLinkedinLogo, PiTwitterLogo, PiLinkSimple, PiFactory, PiShieldCheck } from "react-icons/pi";
+import { PiCalendarBlank, PiUser, PiClock, PiArrowLeft, PiArrowRight, PiFactory, PiShieldCheck } from "react-icons/pi";
 import ScrollRevealWrapper from "@/components/ScrollRevealWrapper";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import { ShareButtons, ScaleBrandButton } from "./BlogInteractiveElements";
-import { formatSeoTitle, formatSeoDescription } from "@/lib/seoSanitizer";
+import { formatSeoTitle, formatSeoDescription, cleanGeoText } from "@/lib/seoSanitizer";
 import "../blog.css";
 
 export const dynamicParams = true;
 export const revalidate = 60;
 
+function cleanBlogText(text) {
+  if (typeof text !== "string" || !text) return text;
+  let result = cleanGeoText(text);
+  const replacements = [
+    [/\bLagos,\s*Nairobi,?\s*(?:and\s*)?Dhaka\b/gi, "major global commercial hubs"],
+    [/\bDistributors\s+in\s+(?:Nigeria|Kenya|Pakistan|Africa|South\s+Asia)(?:,\s*(?:Nigeria|Kenya|Pakistan|Ghana|Uganda|Tanzania|Bangladesh))*\s*(?:&\s*(?:Nigeria|Kenya|Pakistan|South\s+Asia))?/gi, "Global B2B Distributors"],
+    [/\b(?:across|in|for)\s+(?:Sub-Saharan\s+)?Africa\s+and\s+South\s+Asia\b/gi, "across global export markets"],
+    [/\b(?:across|in|for)\s+(?:Sub-Saharan\s+)?Africa\b/gi, "across international markets"],
+    [/\b(?:across|in|for)\s+South\s+Asia\b/gi, "across global commercial markets"],
+    [/\bAfrican\s+(distributors|markets|grids|cities|operators|businesses|fleets|consumers|households|importers|wholesalers)\b/gi, "international $1"],
+    [/\bSouth\s+Asian\s+(distributors|markets|grids|cities|operators|importers)\b/gi, "international $1"],
+    [/\bAfrican\b/gi, "international"],
+    [/\bAfrica\b/gi, "international markets"],
+    [/\bSouth\s+Asia\b/gi, "global markets"],
+    [/\b(?:Nigeria|Kenya|Pakistan|Ghana|Uganda|Tanzania|Bangladesh|Nepal|Morocco|South\s+Africa|Lagos|Nairobi|Dhaka|Karachi)\b/gi, "global import markets"],
+    [/\belectric\s+mobility\b/gi, "electric scooters"],
+    [/\burban\s+mobility\b/gi, "urban electric scooters"],
+    [/\bpersonal\s+mobility\b/gi, "personal electric scooters"],
+    [/\bsmart\s+mobility\b/gi, "smart electric scooters"],
+    [/\bE-Mobility\b/g, "Electric Scooters"],
+    [/\be-mobility\b/g, "electric scooters"],
+    [/\bMobility\b/g, "Electric Scooter"],
+    [/\bmobility\b/g, "electric scooter"],
+    [/\bglobal import markets(?:\s*,\s*global import markets)+(?:\s*(?:,|and)\s*global import markets)?\b/gi, "global import markets"],
+    [/\binternational markets\s+and\s+global markets\b/gi, "global export markets"],
+    [/\s{2,}/g, " "]
+  ];
+  for (const [pattern, replacement] of replacements) {
+    result = result.replace(pattern, replacement);
+  }
+  return result;
+}
+
+const BLOG_INTERNAL_KEYWORD_LINKS = [
+  { pattern: /\b(?:51\.2V\s+200Ah|10kWh\s+wall[- ]mount\s+battery)\b/i, href: "/products/10kwh-wall-mount-battery" },
+  { pattern: /\b(?:51\.2V\s+LiFePO4(?:\s+batter(?:y|ies))?|LiFePO4\s+solar\s+batter(?:y|ies)|LiFePO4\s+batter(?:y|ies)|solar\s+storage\s+batter(?:y|ies)|solar\s+batter(?:y|ies)|LFP\s+batter(?:y|ies))\b/i, href: "/products/category/solar-batteries" },
+  { pattern: /\b(?:hybrid\s+solar\s+inverters?|hybrid\s+inverters?|solar\s+inverters?)\b/i, href: "/products/category/solar-inverters" },
+  { pattern: /\b(?:electric\s+scooters?(?:\s+and\s+(?:electric\s+)?motorcycles?)?|electric\s+motorcycles?|cargo\s+tricycles?|swappable\s+battery\s+scooters?)\b/i, href: "/products/category/electric-motorcycles" },
+  { pattern: /\b(?:portable\s+power\s+stations?)\b/i, href: "/products/category/portable-power-stations" },
+  { pattern: /\b(?:custom\s+power\s+banks?|OEM\s+power\s+banks?|power\s+banks?)\b/i, href: "/products/category/power-banks" },
+  { pattern: /\b(?:monocrystalline\s+solar\s+panels?|550W\s+solar\s+panels?|solar\s+panels?)\b/i, href: "/products/category/solar-accessories" },
+  { pattern: /\b(?:ISO\s+9001(?::2015)?\s+(?:production\s+lines?|quality\s+control|QC|factory)|automated\s+manufacturing\s+(?:lines?|facility))\b/i, href: "/manufacturing" },
+];
+
+function resolveInternalMarkHref(mark) {
+  if (!mark) return "/products";
+  if (mark.refSlug) {
+    return mark.refType === "post" ? `/blog/${mark.refSlug}` : `/products/${mark.refSlug}`;
+  }
+  return mark.routePath || mark.customHref || mark.href || "/products";
+}
+
+function sanitizePortableBlocks(blocks, enableAutoLinks = true, existingRelatedLinks = []) {
+  if (!Array.isArray(blocks)) return blocks;
+  const usedTargets = new Set();
+  for (const rl of existingRelatedLinks || []) {
+    if (rl?.href) usedTargets.add(rl.href);
+  }
+  for (const block of blocks) {
+    for (const md of block?.markDefs || []) {
+      if (md?._type === "internalLink" || md?._type === "link") {
+        usedTargets.add(resolveInternalMarkHref(md));
+      }
+    }
+  }
+  let autoKeyCounter = 0;
+
+  return blocks.map((block) => {
+    if (!block || !Array.isArray(block.children)) return block;
+
+    const isNormalParagraph = block._type === "block" && (!block.style || block.style === "normal") && !block.listItem;
+    const newMarkDefs = Array.isArray(block.markDefs) ? [...block.markDefs] : [];
+    const newChildren = [];
+
+    for (const child of block.children) {
+      if (typeof child?.text !== "string") {
+        newChildren.push(child);
+        continue;
+      }
+
+      const cleanedText = cleanBlogText(child.text);
+      const hasExistingMarks = Array.isArray(child.marks) && child.marks.length > 0;
+
+      if (!enableAutoLinks || !isNormalParagraph || hasExistingMarks) {
+        newChildren.push({ ...child, text: cleanedText });
+        continue;
+      }
+
+      let matched = null;
+      for (const rule of BLOG_INTERNAL_KEYWORD_LINKS) {
+        if (usedTargets.has(rule.href)) continue;
+        const m = cleanedText.match(rule.pattern);
+        if (m && m.index !== undefined) {
+          if (!matched || m.index < matched.index) {
+            matched = { index: m.index, matchText: m[0], href: rule.href };
+          }
+        }
+      }
+
+      if (!matched) {
+        newChildren.push({ ...child, text: cleanedText });
+        continue;
+      }
+
+      usedTargets.add(matched.href);
+      const markKey = `autolink_${autoKeyCounter++}`;
+      newMarkDefs.push({ _key: markKey, _type: "link", href: matched.href });
+
+      const before = cleanedText.slice(0, matched.index);
+      const after = cleanedText.slice(matched.index + matched.matchText.length);
+      if (before) {
+        newChildren.push({ ...child, _key: `${child._key || "sp"}_b`, text: before });
+      }
+      newChildren.push({
+        _type: "span",
+        _key: `${child._key || "sp"}_l`,
+        text: matched.matchText,
+        marks: [markKey],
+      });
+      if (after) {
+        newChildren.push({ ...child, _key: `${child._key || "sp"}_a`, text: after });
+      }
+    }
+
+    return {
+      ...block,
+      markDefs: newMarkDefs,
+      children: newChildren,
+    };
+  });
+}
+
 async function getAllPosts() {
   let sanityPosts = [];
   try {
-    const rawSanity = await client.fetch(`*[_type == "post"] | order(publishedAt desc) {
+    const rawSanity = await client.fetch(`*[_type == "post" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
       _id,
       title,
       metaTitle,
@@ -29,34 +160,66 @@ async function getAllPosts() {
       mainImage,
       publishedAt,
       readTime,
-      body,
+      body[]{
+        ...,
+        markDefs[]{
+          ...,
+          _type == "internalLink" => {
+            ...,
+            "refType": reference->_type,
+            "refSlug": reference->slug.current
+          }
+        }
+      },
+      relatedLinks[]{
+        label,
+        routePath,
+        customHref,
+        "refType": reference->_type,
+        "refSlug": reference->slug.current
+      },
+      autoKeywordLinks,
       gallery,
       "category": categories[0]->title
     }`);
 
-    sanityPosts = rawSanity.map((p) => ({
-      id: p._id,
-      title: p.title,
-      metaTitle: p.metaTitle,
-      metaDescription: p.metaDescription,
-      slug: p.slug,
-      excerpt: p.excerpt || "",
-      image: p.mainImage?.asset ? urlFor(p.mainImage).url() : "/images/placeholder.jpg",
-      date: p.publishedAt,
-      readTime: p.readTime || "5 min read",
-      category: p.category || "Energy Technology",
-      body: p.body,
-      gallery: p.gallery || [],
-      isSanity: true
-    }));
+    sanityPosts = rawSanity.map((p) => {
+      const resolvedRelatedLinks = (p.relatedLinks || [])
+        .filter((rl) => rl?.label)
+        .map((rl) => ({
+          label: cleanBlogText(rl.label),
+          href: resolveInternalMarkHref(rl),
+        }));
+
+      return {
+        id: p._id,
+        title: cleanBlogText(p.title),
+        metaTitle: cleanBlogText(p.metaTitle || p.title),
+        metaDescription: cleanBlogText(p.metaDescription || p.excerpt || ""),
+        slug: p.slug,
+        excerpt: cleanBlogText(p.excerpt || ""),
+        image: p.mainImage?.asset ? urlFor(p.mainImage).url() : "/images/placeholder.jpg",
+        date: p.publishedAt,
+        readTime: p.readTime || "6 min read",
+        category: cleanBlogText(p.category || "Energy Technology"),
+        body: sanitizePortableBlocks(p.body, p.autoKeywordLinks !== false, resolvedRelatedLinks),
+        relatedLinks: resolvedRelatedLinks,
+        gallery: p.gallery || [],
+        isSanity: true
+      };
+    });
   } catch (error) {
     console.error("Failed to fetch blog posts from Sanity:", error);
   }
 
   const sanitySlugs = new Set(sanityPosts.map((p) => p.slug));
-  const uniqueLocal = blogPosts.filter((p) => !sanitySlugs.has(p.slug));
+  const uniqueLocal = localBlogPostsSafe(sanitySlugs);
 
   return [...sanityPosts, ...uniqueLocal];
+}
+
+function localBlogPostsSafe(sanitySlugs) {
+  return (blogPosts || []).filter((p) => !sanitySlugs.has(p.slug));
 }
 
 export async function generateMetadata({ params }) {
@@ -69,16 +232,19 @@ export async function generateMetadata({ params }) {
   if (!blogPost) {
     return {
       title: {
-        absolute: "Article Not Found | JoyHand",
+        absolute: "Article Not Found | JoyHand Blog",
       },
     };
   }
 
-  const finalTitle = formatSeoTitle(blogPost.metaTitle || blogPost.title);
+  const finalTitle = formatSeoTitle(blogPost.metaTitle || blogPost.title, "JoyHand Blog");
   const finalDescription = formatSeoDescription(
     blogPost.metaDescription || blogPost.excerpt,
-    "Read factory engineering reports and B2B energy manufacturing insights from JoyHand."
+    "Read China factory engineering guides and B2B sourcing benchmarks from JoyHand Blog."
   );
+  const ogImage = blogPost.image?.startsWith("http")
+    ? blogPost.image
+    : `https://www.joyhand.com${blogPost.image || "/homeImg/businessModelImage001.jpg"}`;
 
   // Generate dynamic keywords from the title for highly relevant SEO
   const titleKeywords = blogPost.title
@@ -87,7 +253,7 @@ export async function generateMetadata({ params }) {
     .split(' ')
     .filter(word => word.length > 3 && !["with", "this", "that", "from", "your", "what", "which", "when"].includes(word));
     
-  const dynamicKeywords = [...new Set([blogPost.category, ...titleKeywords, "wholesale", "B2B", "JoyHand", "energy manufacturing"])];
+  const dynamicKeywords = [...new Set([blogPost.category, ...titleKeywords, "JoyHand Blog", "wholesale OEM", "China factory supplier"])];
 
   return {
     title: {
@@ -99,18 +265,28 @@ export async function generateMetadata({ params }) {
       title: finalTitle,
       description: finalDescription,
       url: `https://www.joyhand.com/blog/${blogPost.slug}`,
+      siteName: "JoyHand Blog",
       type: "article",
+      publishedTime: blogPost.date ? new Date(blogPost.date).toISOString() : undefined,
+      authors: ["JoyHand Engineering Team"],
+      section: blogPost.category || "Manufacturing & Engineering",
       images: [
         {
-          url: blogPost.image || "/homeImg/businessModelImage001.jpg",
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: blogPost.title,
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: finalTitle,
+      description: finalDescription,
+      images: [ogImage],
+    },
     alternates: {
-      canonical: `/blog/${blogPost.slug}`,
+      canonical: `https://www.joyhand.com/blog/${blogPost.slug}`,
     }
   };
 }
@@ -147,7 +323,7 @@ export default async function BlogDetailsPage({ params }) {
   // Simple parser for plain text content with headings
   const renderContent = (content) => {
     if (!content) return null;
-    return content.split('\n\n').map((block, index) => {
+    return cleanBlogText(content).split('\n\n').map((block, index) => {
       // Check if block is likely a heading (short, no period at end)
       const isHeading = block.length < 60 && !block.trim().endsWith('.');
       if (isHeading) {
@@ -185,7 +361,7 @@ export default async function BlogDetailsPage({ params }) {
             "url": "https://www.joyhand.com/homeImg/businessModelImage001.jpg"
           }
         },
-        "description": blogPost.excerpt || blogPost.metaDescription || ""
+        "description": cleanBlogText(blogPost.metaDescription || blogPost.excerpt || "")
       },
       {
         "@type": "BreadcrumbList",
@@ -273,6 +449,37 @@ export default async function BlogDetailsPage({ params }) {
                    <PortableText 
                      value={blogPost.body} 
                      components={{
+                        marks: {
+                          internalLink: ({ value, children }) => {
+                            const href = resolveInternalMarkHref(value);
+                            return (
+                              <Link href={href} className="blog-details__inline-link">
+                                {children}
+                              </Link>
+                            );
+                          },
+                          link: ({ value, children }) => {
+                            const href = value?.href || "/products";
+                            if (href.startsWith("/")) {
+                              return (
+                                <Link href={href} className="blog-details__inline-link">
+                                  {children}
+                                </Link>
+                              );
+                            }
+                            return (
+                              <a href={href} target="_blank" rel="noopener noreferrer" className="blog-details__inline-link">
+                                {children}
+                              </a>
+                            );
+                          }
+                        },
+                        list: {
+                          bullet: ({ children }) => <ul className="blog-details__list">{children}</ul>,
+                        },
+                        listItem: {
+                          bullet: ({ children }) => <li className="blog-details__list-item">{children}</li>,
+                        },
                         block: {
                           normal: ({children}) => <p className="blog-details__paragraph">{children}</p>,
                           h1: ({children}) => <h2 className="blog-details__heading h3">{children}</h2>,
@@ -342,16 +549,32 @@ export default async function BlogDetailsPage({ params }) {
                   ))}
                 </div>
               )}
+              {/* Contextual Category & Product Keyword Links */}
+              {blogPost.relatedLinks && blogPost.relatedLinks.length > 0 && (
+                <div className="blog-details__related-box">
+                  <h3 className="blog-details__related-title">Recommended Factory Product Lines</h3>
+                  <div className="blog-details__related-links">
+                    {blogPost.relatedLinks.map((rl, rIdx) => (
+                      <Link key={rIdx} href={rl.href} className="blog-details__related-link">
+                        <span>{rl.label}</span>
+                        <PiArrowRight />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Added explicit internal linking block for SEO */}
             <div className="blog-details__internal-links" style={{ padding: "2rem 0", borderTop: "1px solid var(--border-light)", borderBottom: "1px solid var(--border-light)", margin: "3rem 0" }}>
-              <h4 style={{ marginBottom: "1rem" }}>Continue Exploring JoyHand</h4>
+              <h4 style={{ marginBottom: "1rem" }}>Explore Direct JoyHand B2B Lines</h4>
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <Link href="/products" className="btn btn--outline btn--sm">View Storage Solutions</Link>
-                <Link href="/manufacturing" className="btn btn--outline btn--sm">OEM Manufacturing</Link>
-                <Link href="/blog" className="btn btn--outline btn--sm">More Technical Articles</Link>
-                <Link href="/contact-us" className="btn btn--outline btn--sm">Contact the Factory</Link>
+                <Link href="/products/category/solar-batteries" className="btn btn--outline btn--sm">LiFePO4 Solar Batteries</Link>
+                <Link href="/products/category/electric-motorcycles" className="btn btn--outline btn--sm">Electric Scooters &amp; Motorcycles</Link>
+                <Link href="/products/category/solar-inverters" className="btn btn--outline btn--sm">Hybrid Solar Inverters</Link>
+                <Link href="/products/category/power-banks" className="btn btn--outline btn--sm">Custom OEM Power Banks</Link>
+                <Link href="/manufacturing" className="btn btn--outline btn--sm">50,000 m² OEM Plant</Link>
+                <Link href="/contact-us" className="btn btn--outline btn--sm">Request Factory Quote</Link>
               </div>
             </div>
 
@@ -430,19 +653,22 @@ export default async function BlogDetailsPage({ params }) {
                 <div className="sidebar-card__icon-wrapper">
                   <PiShieldCheck />
                 </div>
-                <h4 className="sidebar-card__title">Explore Core Capabilities</h4>
+                <h4 className="sidebar-card__title">Core B2B Factory Lines</h4>
                 <ul className="sidebar-card__list">
                   <li>
-                    <Link href="/manufacturing">LFP Cell Grading & Assembly <PiArrowRight /></Link>
+                    <Link href="/products/category/solar-batteries">LiFePO4 Battery Manufacturer <PiArrowRight /></Link>
                   </li>
                   <li>
-                    <Link href="/products">Hybrid Inverter Production <PiArrowRight /></Link>
+                    <Link href="/products/category/electric-motorcycles">Electric Scooter Factory China <PiArrowRight /></Link>
                   </li>
                   <li>
-                    <Link href="/about-us">ISO Quality Control Standards <PiArrowRight /></Link>
+                    <Link href="/products/category/solar-inverters">Hybrid Solar Inverter Supplier <PiArrowRight /></Link>
                   </li>
                   <li>
-                    <Link href="/contact-us">Global Logistics & Support <PiArrowRight /></Link>
+                    <Link href="/products/category/power-banks">Custom Power Bank OEM <PiArrowRight /></Link>
+                  </li>
+                  <li>
+                    <Link href="/manufacturing">50,000 m² OEM QC Plant <PiArrowRight /></Link>
                   </li>
                 </ul>
               </div>

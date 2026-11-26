@@ -4,24 +4,23 @@ export const metadata = {
   title: {
     absolute: "OEM/ODM Manufacturing Facilities & Production Hub | JoyHand",
   },
-  description: "Explore JoyHand's 50,000 m² Guangzhou production facility. Automated LiFePO4 battery assembly, solar inverter lines, EV chassis fabrication, and ISO 9001:2015 QC testing.",
+  description: "Tour JoyHand's 50,000 m² Guangzhou OEM/ODM plant: automated LiFePO4 assembly, EV chassis lines, BMS lab & ISO 9001:2015 export QC testing.",
   keywords: [
-    "lifepo4 battery manufacturer china",
-    "solar battery factory china",
-    "oem solar battery manufacturer",
-    "electric motorcycle factory china",
-    "electric scooter manufacturer china",
-    "portable power station odm manufacturer",
-    "solar panel wholesale manufacturer",
-    "OEM ODM manufacturing facility",
-    "lithium battery production plant"
+    "China OEM ODM manufacturing facility",
+    "50000m2 lithium battery production plant",
+    "contract energy hardware manufacturing",
+    "white label OEM assembly China",
+    "automated LiFePO4 cell grading lab",
+    "ISO 9001 2015 export quality control",
+    "custom BMS battery pack engineering",
+    "turnkey EV chassis fabrication"
   ],
   alternates: {
     canonical: 'https://www.joyhand.com/manufacturing',
   },
   openGraph: {
     title: "OEM/ODM Manufacturing Facilities & Production Hub | JoyHand",
-    description: "Explore JoyHand's 50,000 m² Guangzhou production facility. Automated LiFePO4 battery assembly, solar inverter lines, EV chassis fabrication, and ISO 9001:2015 QC testing.",
+    description: "Tour JoyHand's 50,000 m² Guangzhou OEM/ODM plant: automated LiFePO4 assembly, EV chassis lines, BMS lab & ISO 9001:2015 export QC testing.",
     url: "https://www.joyhand.com/manufacturing",
     type: "website",
     images: [
@@ -36,5 +35,32 @@ export const metadata = {
 };
 
 export default function ManufacturingPage() {
-  return <ManufacturingClient />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OEM/ODM Manufacturing Facilities & Production Hub",
+    "serviceType": "OEM/ODM Hardware Manufacturing & Facility Production",
+    "provider": {
+      "@type": "Organization",
+      "name": "JoyHand Energy",
+      "url": "https://www.joyhand.com"
+    },
+    "areaServed": ["Americas", "Africa", "Asia", "Europe", "Global"],
+    "description": "50,000 m² integrated production facility in Guangzhou, China. Automated LiFePO4 battery assembly, solar inverter lines, EV chassis fabrication, and ISO 9001:2015 QC testing.",
+    "offers": {
+      "@type": "Offer",
+      "description": "Direct factory B2B container supply and custom OEM/ODM production for lithium batteries, e-motorcycles, and solar hardware built to CE, UL, and UN38.3 standards."
+    }
+  };
+
+  return (
+    <>
+      <script
+        id="manufacturing-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ManufacturingClient />
+    </>
+  );
 }

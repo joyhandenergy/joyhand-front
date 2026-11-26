@@ -1,9 +1,7 @@
-import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getProductsByCategory, solutionConfigs, isRedirectedSlug } from "@/data";
 import CategoryClient from "./CategoryClient";
 import PageHeader from "@/components/pageHeader/PageHeader";
-import Script from "next/script";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { cleanGeoText, formatSeoTitle, formatSeoDescription } from "@/lib/seoSanitizer";
@@ -11,14 +9,18 @@ import "../../Products.css";
 
 export const dynamicParams = false;
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params, searchParams }) {
   const { slug } = await params;
+  const resolvedSearchParams = await searchParams;
+  const page = Math.max(1, Number(resolvedSearchParams?.page) || 1);
   const config = solutionConfigs[slug];
   if (!config) return { title: { absolute: "Category Not Found | JoyHand" } };
 
-  const title = formatSeoTitle(config.pageTitle || config.title);
+  const baseTitle = formatSeoTitle(config.pageTitle || config.title);
+  const title = page > 1 ? `${baseTitle.replace(/\s*\|\s*JoyHand$/i, "")} - Page ${page} | JoyHand` : baseTitle;
   const description = formatSeoDescription(config.metaDescription || config.description);
-  const canonical = config.canonicalUrl || `https://www.joyhand.com/products/category/${slug}`;
+  const baseCanonical = config.canonicalUrl || `https://www.joyhand.com/products/category/${slug}`;
+  const canonical = page > 1 ? `${baseCanonical}?page=${page}` : baseCanonical;
   const keywords = config.metaKeywords || config.keywords;
 
   return {
@@ -51,12 +53,23 @@ export async function generateStaticParams() {
   return Object.keys(solutionConfigs).map((slug) => ({ slug }));
 }
 
+const PRODUCTS_PER_PAGE = 24;
+
 async function getProductsForCategory(filterCategory) {
-  // 1. Fetch products from Sanity
+  // 1. Fetch products from Sanity (projected slim fields for fast Cloudflare SSR)
   let sanityProducts = [];
   try {
     const rawSanity = await client.fetch(
-      `*[_type == "product" && category == $filterCategory]`,
+      `*[_type == "product" && category == $filterCategory && !(_id in path("drafts.**"))]{
+        _id,
+        name,
+        "slug": slug.current,
+        shortDescription,
+        seoDescription,
+        mainImage,
+        category,
+        keySpecs
+      }`,
       { filterCategory }
     );
 
@@ -112,8 +125,10 @@ async function getProductsForCategory(filterCategory) {
   return [...sanityProducts, ...uniqueLocal];
 }
 
-export default async function SolutionsPage({ params }) {
+export default async function SolutionsPage({ params, searchParams }) {
   const { slug } = await params;
+  const resolvedSearchParams = await searchParams;
+  const requestedPage = Math.max(1, Number(resolvedSearchParams?.page) || 1);
   const config = solutionConfigs[slug];
   if (!config) notFound();
 
@@ -124,6 +139,12 @@ export default async function SolutionsPage({ params }) {
     name: cleanGeoText(p.name),
     description: cleanGeoText(p.description),
   }));
+
+  const totalCount = allProducts.length;
+  const totalPages = Math.max(1, Math.ceil(totalCount / PRODUCTS_PER_PAGE));
+  const currentPage = Math.min(requestedPage, totalPages);
+  const start = (currentPage - 1) * PRODUCTS_PER_PAGE;
+  const paginatedProducts = allProducts.slice(start, start + PRODUCTS_PER_PAGE);
 
   // Extract B2B FAQs for AI Search (Perplexity, ChatGPT, Gemini) & Google Rich Results
   const rawFaqHtml = (config.bottomContent || '') + ' ' + (config.seoContent || '');
@@ -152,9 +173,10 @@ export default async function SolutionsPage({ params }) {
         },
         "mainEntity": {
           "@type": "ItemList",
-          "itemListElement": allProducts.map((product, index) => ({
+          "numberOfItems": totalCount,
+          "itemListElement": paginatedProducts.map((product, index) => ({
             "@type": "ListItem",
-            "position": index + 1,
+            "position": start + index + 1,
             "url": `https://www.joyhand.com/products/${product.slug}`,
             "name": product.name
           }))
@@ -189,9 +211,14 @@ export default async function SolutionsPage({ params }) {
         parentLabel="Products"
         breadcrumbCurrent={config.breadcrumbBadge || config.title}
       />
-      <Suspense fallback={<div className="container mt-3">Loading catalog...</div>}>
-        <CategoryClient slug={slug} config={config} allProducts={allProducts} />
-      </Suspense>
+      <CategoryClient
+        slug={slug}
+        config={config}
+        products={paginatedProducts}
+        totalCount={totalCount}
+        totalPages={totalPages}
+        currentPage={currentPage}
+      />
     </main>
   );
 }

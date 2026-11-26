@@ -43,14 +43,54 @@ export const blockContentType = defineType({
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
-            title: 'URL',
+            title: 'Internal Product / Page Link',
+            name: 'internalLink',
+            type: 'object',
+            fields: [
+              {
+                title: 'Link to Specific Product or Blog Post',
+                name: 'reference',
+                type: 'reference',
+                description: 'Pick a product or article directly from Sanity for safe internal keyword linking.',
+                to: [{type: 'product'}, {type: 'post'}],
+              },
+              {
+                title: 'Or Link to Category / Factory Page',
+                name: 'routePath',
+                type: 'string',
+                description: 'Used if no specific Product/Post is picked above.',
+                options: {
+                  list: [
+                    {title: 'All Wholesale Products (/products)', value: '/products'},
+                    {title: 'LiFePO4 Solar Batteries (/products/category/solar-batteries)', value: '/products/category/solar-batteries'},
+                    {title: 'Hybrid Solar Inverters (/products/category/solar-inverters)', value: '/products/category/solar-inverters'},
+                    {title: 'Portable Power Stations (/products/category/portable-power-stations)', value: '/products/category/portable-power-stations'},
+                    {title: 'Electric Scooters & Motorcycles (/products/category/electric-motorcycles)', value: '/products/category/electric-motorcycles'},
+                    {title: 'Solar Panels & Tech Accessories (/products/category/solar-accessories)', value: '/products/category/solar-accessories'},
+                    {title: 'Custom Power Bank OEM (/products/category/power-banks)', value: '/products/category/power-banks'},
+                    {title: 'Manufacturing Facility (/manufacturing)', value: '/manufacturing'},
+                    {title: 'About JoyHand (/about-us)', value: '/about-us'},
+                    {title: 'Contact / Request Quote (/contact-us)', value: '/contact-us'},
+                    {title: 'JoyHand Blog (/blog)', value: '/blog'},
+                  ],
+                },
+              },
+            ],
+          },
+          {
+            title: 'URL / Custom Link',
             name: 'link',
             type: 'object',
             fields: [
               {
-                title: 'URL',
+                title: 'URL (supports /products/... or https://...)',
                 name: 'href',
                 type: 'url',
+                validation: (Rule) =>
+                  Rule.uri({
+                    allowRelative: true,
+                    scheme: ['http', 'https', 'mailto', 'tel'],
+                  }),
               },
             ],
           },

@@ -1,5 +1,6 @@
 import { client } from "@/sanity/lib/client";
-import { solutionConfigs, headerData } from "@/data";
+import { solutionConfigs, headerData, isRedirectedSlug } from "@/data";
+import { cleanGeoText } from "@/lib/seoSanitizer";
 
 // Refresh every hour so new products or blog posts are automatically reflected
 export const revalidate = 3600;
@@ -13,7 +14,7 @@ export async function GET() {
   try {
     [products, posts] = await Promise.all([
       client.fetch(
-        `*[_type == "product"]{
+        `*[_type == "product" && !(_id in path("drafts.**"))]{
           name,
           model,
           "slug": slug.current,
@@ -22,13 +23,14 @@ export async function GET() {
         } | order(_createdAt desc)`
       ),
       client.fetch(
-        `*[_type == "post"]{
+        `*[_type == "post" && !(_id in path("drafts.**"))]{
           title,
           "slug": slug.current,
           excerpt
-        } | order(publishedAt desc)[0...8]`
+        } | order(publishedAt desc)[0...10]`
       ),
     ]);
+    products = (products || []).filter((p) => p.slug && !isRedirectedSlug(p.slug));
   } catch (err) {
     console.error("Error fetching live data for llms.txt:", err);
   }
@@ -39,19 +41,19 @@ export async function GET() {
   const lines = [
     "# JoyHand Energy",
     "",
-    "> JoyHand Energy is a direct OEM/ODM factory manufacturer of commercial and residential LiFePO4 energy storage systems, hybrid solar inverters, Tier-1 monocrystalline solar panels, commercial solar streetlights, balance-of-system solar accessories & hardware, electric commuter scooters, commercial cargo motorcycles, electric dirt bikes, and portable power stations. Founded in 1998 and operating to ISO 9001:2015 manufacturing standards from our 50,000 sq.m manufacturing facility in Guangzhou, China, JoyHand specializes in factory-direct B2B container supply, white-label manufacturing, and custom engineering for brand owners, fleet operators, and distributors across the Americas, Europe, Africa, and Asia.",
+    "> JoyHand Energy is a direct China OEM/ODM factory manufacturer of LiFePO4 solar storage batteries, hybrid solar inverters, monocrystalline solar panels, portable power stations, custom OEM power banks, and electric scooters, motorcycles & cargo tricycles. Founded in 1998 and operating to ISO 9001:2015 manufacturing standards from our 50,000 sq.m Guangzhou facility, JoyHand specializes in factory-direct B2B container supply, private-label OEM, and custom ODM engineering for global distributors, retail brands, and fleet operators worldwide.",
     "",
     "## Company & Factory Overview",
     `- Website: ${baseUrl}`,
     `- Factory & Global HQ: No. 7, Nansha District, Guangzhou 511400, Guangdong, China`,
     `- Americas Office: 445 Dexter Avenue, Suite 4050, Montgomery, AL 36104, USA`,
-    `- Africa Regional Office: New Mandilas International Market, Trade Fair, Ojo, Lagos, Nigeria`,
+    `- Regional Logistics Hub: New Mandilas International Market, Trade Fair, Ojo, Lagos`,
     `- Oceania Office: 157 A'Beckett Street, Melbourne VIC 3000, Australia`,
     `- Direct Wholesale Email: ${email}`,
     `- Direct Phone & WhatsApp: ${phone}`,
-    `- Priority Target Regions: North America (US retail, Amazon FBA & commercial distribution), Europe (EEC homologated urban mobility), Africa (Lagos, Nairobi, Mombasa, Durban), and Asia (Karachi, Dhaka, Chittagong)`,
-    `- Compliance Standards: Engineered to comply with UL 1973 (batteries), UL 2272 (e-scooters), UL 2271 (EV batteries), DOT/NHTSA street-legal standards, FCC Part 15, CE, EEC/COC European type-approval standards, and UN38.3/MSDS documentation for seamless sea/air container freight`,
-    `- Facility Standards: Built to ISO 9001:2015 quality control standards, 100% inline thermal stress testing, cell-matching, capacity grading, and automated laser welding`,
+    `- Target Export Markets: Global B2B distribution across North America (US retail, Amazon FBA, commercial distribution), Europe (EEC homologated electric scooters & CE/IEC storage), Oceania, Africa, Asia, and Latin America`,
+    `- Engineering & Export Standards: Built to UL 1973 (batteries), UL 2272 (electric scooters), UL 2271 (EV batteries), DOT/NHTSA lighting & VIN specs, FCC Part 15, CE, EEC/COC European type-approval specs, and UN38.3/MSDS documentation for compliant sea/air container freight`,
+    `- Facility Standards: Built to ISO 9001:2015 quality control standards, 100% inline thermal stress testing, Grade-A cell grading, and automated laser welding`,
     "",
     "## Core Product Categories",
   ];
@@ -70,7 +72,7 @@ export async function GET() {
   lines.push(`- [Manufacturing Capabilities](${baseUrl}/manufacturing): Automated SMT lines, pack assembly, BMS engineering, and rigorous cell-sorting quality control.`);
   lines.push(`- [About JoyHand Energy](${baseUrl}/about-us): 28-year manufacturing heritage, leadership, and global distribution network.`);
   lines.push(`- [OEM & Private Label Services](${baseUrl}/manufacturing): Custom brand logos, bespoke metal/ABS chassis design, and branded retail packaging.`);
-  lines.push(`- [ODM & Custom Engineering](${baseUrl}/manufacturing): 30+ in-house engineers developing custom BMS protocols, surge protection, and high-heat thermal designs for weak electrical grids.`);
+  lines.push(`- [ODM & Custom Engineering](${baseUrl}/manufacturing): 30+ in-house engineers developing custom BMS CAN/RS485 protocols, surge protection, and 55°C high-ambient thermal designs.`);
 
   lines.push("");
   lines.push("## B2B Wholesale & Inquiries");
@@ -81,8 +83,8 @@ export async function GET() {
   lines.push(`- [Factory Engineering & Sourcing Hub](${baseUrl}/blog): Direct-from-factory technical reports, engineering benchmarks, and practical sourcing guides covering LiFePO4 batteries, electric motorcycles, hybrid inverters, and solar systems.`);
   if (posts?.length > 0) {
     for (const post of posts) {
-      const desc = post.excerpt ? `: ${post.excerpt}` : "";
-      lines.push(`- [${post.title}](${baseUrl}/blog/${post.slug})${desc}`);
+      const desc = post.excerpt ? `: ${cleanGeoText(post.excerpt)}` : "";
+      lines.push(`- [${cleanGeoText(post.title)}](${baseUrl}/blog/${post.slug})${desc}`);
     }
   }
 

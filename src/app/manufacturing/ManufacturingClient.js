@@ -17,7 +17,6 @@ import {
   servicesProcess, 
   serviceHighlights 
 } from "@/data";
-import Script from "next/script";
 
 const ICON_MAP = {
   factory: <PiFactory weight="duotone" />,
@@ -41,34 +40,11 @@ export default function ManufacturingClient() {
   const facilityReveal   = useScrollReveal();
   const ctaReveal        = useScrollReveal();
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "OEM/ODM Manufacturing Facilities & Production Hub",
-    "serviceType": "OEM/ODM Hardware Manufacturing & Facility Production",
-    "provider": {
-      "@type": "Organization",
-      "name": "JoyHand Energy",
-      "url": "https://www.joyhand.com"
-    },
-    "areaServed": ["Americas", "Africa", "Asia", "Europe", "Global"],
-    "description": "50,000 m² integrated production facility in Guangzhou, China. Automated LiFePO4 battery assembly, solar inverter lines, EV chassis fabrication, and ISO 9001:2015 QC testing.",
-    "offers": {
-      "@type": "Offer",
-      "description": "Direct factory B2B wholesale pricing and custom OEM/ODM production for lithium batteries, e-motorcycles, and solar hardware tested to CE, UL, and UN38.3 standards."
-    }
-  };
-
   return (
     <main className="services-page">
-      <Script
-        id="manufacturing-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <PageHeader
         title="Direct Factory Manufacturing & OEM/ODM Production Hub"
-        subtitle="50,000 m² integrated production facility in Guangzhou, China. Complete in-house manufacturing for custom lithium batteries, electric mobility platforms, and solar hardware."
+        subtitle="50,000 m² integrated production facility in Guangzhou, China. Complete in-house manufacturing for custom lithium batteries, electric scooters & motorcycles, and solar hardware."
         pageImage="/pageHeadImg/pageheader-services.jpg"
         breadcrumbCurrent="Manufacturing"
       />
